@@ -1,0 +1,13 @@
+.cart{
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    p{
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+    p:hover{
+        text-decoration: underline;
+    }
+}
