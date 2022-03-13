@@ -1,0 +1,41 @@
+.mainImages{
+    display: flex;
+    flex-direction: center;
+    height: 85vh;
+    img{
+        width: 50%;
+    }
+    .right{
+        position: absolute;
+        width: 50%;
+        height: 85%;
+        background-color: black;
+        opacity: 0.6;
+    }
+    .right:hover{
+        opacity: 0;
+        transition: opacity 0.4s linear;
+    }
+    .left{
+        position: absolute;
+        width: 50%;
+        right: 0;
+        height: 85%;
+        background-color: black;
+        opacity: 0.6;
+    }
+    .left:hover{
+        opacity: 0;
+        transition: opacity 0.4s linear;
+    }
+    h1{
+        position: absolute;
+        font-size: 25rem;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 85%;
+    }
+}

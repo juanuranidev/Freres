@@ -5,6 +5,7 @@ import CartWidget from './Cart/Cart';
 import CartContent from './CartContent/CartContent';
 import Overlay from './Overlay/Overlay';
 import MessageBar from './MessageBar/MessageBar';
+import MainImages from './MainImages/MainImages';
 import './Header.scss';
 
 const Header = () => {
@@ -15,15 +16,15 @@ const Header = () => {
 
   return (
     <header className='header'>
-      <div className='a'>
+      <div className='navigation'>
         <Nav/>
         <Logo/>
         <CartWidget handleOpenMenu={handleOpenMenu} />
         <CartContent handleCloseMenu={handleCloseMenu} openMenu={openMenu} />
         <Overlay openMenu={openMenu} />
-
       </div>
         <MessageBar/>
+        <MainImages/>
     </header>
 
   );
