@@ -2,6 +2,16 @@
     display: flex;
     flex-direction: center;
     height: 85vh;
+    h1{
+        position: absolute;
+        font-size: 20rem;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 85%;
+    }
     img{
         width: 50%;
     }
@@ -27,15 +37,5 @@
     .left:hover{
         opacity: 0;
         transition: opacity 0.4s linear;
-    }
-    h1{
-        position: absolute;
-        font-size: 25rem;
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 85%;
     }
 }
