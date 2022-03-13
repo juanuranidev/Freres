@@ -3,7 +3,7 @@ import './ShopLink.scss';
 
 const ShopLink = () => {
     return (
-    <div className='shopLink' >
+    <div className='shopLink'>
       <div>
         <li>SHOP</li>
         <div className='shopLink_content'>
@@ -31,7 +31,6 @@ const ShopLink = () => {
             <img src={'https://freres.ar/wp-content/uploads/2021/09/5-3-scaled.jpg.webp'} />
             <p>ACCESORIOS</p>
           </div>
-
         </div>
       </div>
     </div>

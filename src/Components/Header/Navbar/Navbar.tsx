@@ -1,5 +1,6 @@
 import React from 'react';
 import ShopLink from './ShopLink/ShopLink';
+import OutfitsLink from './OutfitsLink/OutfitsLink';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -7,6 +8,7 @@ const Navbar = () => {
     <nav className='nav'>
       <ul>
       <ShopLink/>
+      <OutfitsLink/>
       </ul>
     </nav>
   )
