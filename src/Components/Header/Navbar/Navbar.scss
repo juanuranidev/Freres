@@ -4,9 +4,10 @@
         list-style-type: none;
         display: flex;
         li{
-            // font-size: 0.8rem;
+            font-size: 0.8rem;
             // margin: 0rem 1rem;
-            // cursor: pointer;
+            padding: 1rem;
+            cursor: pointer;
         }
         li:hover{
             text-decoration: underline;

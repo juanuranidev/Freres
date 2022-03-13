@@ -9,7 +9,7 @@ const OutfitsLink = () => {
   return (
     <div className='outfitsLink'>
     <div>
-      <li>OUTFITS</li>
+      <li>ESSENTIAL OUTFITS</li>
       <div className='outfitsLink_content'>
         <div>
           <img src={OUTFIT1}/>
