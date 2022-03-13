@@ -1,0 +1,42 @@
+.shopLink{
+    div{
+        li{
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding: 1rem 1rem;
+            height: 100%;
+        }
+        .shopLink_content{
+            display: none;
+            opacity: 0;
+            justify-content: center;
+            position: fixed;
+            visibility: hidden;
+            width: 100%;
+            left: 0rem;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            background-color: #EEEEEE;
+            box-shadow: 0 4px 10px -10px rgb(0 0 0 / 60%);
+            div{
+                text-align: center;
+                margin: 1rem 0rem;
+                img{
+                    width: 10rem;
+                    height: 10rem;
+                }
+                p{
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    div:hover > .shopLink_content{
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transition: all 12s ease-in-out;
+    }
+}

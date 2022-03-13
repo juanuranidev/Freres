@@ -1,13 +1,12 @@
 import React from 'react';
-import './_Navbar.scss';
+import ShopLink from './ShopLink/ShopLink';
+import './Navbar.scss';
 
 const Navbar = () => {
   return (
     <nav className='nav'>
       <ul>
-        <li>SHOP</li>
-        <li>COLECCIONES</li>
-        <li>NOSOTROS</li>
+      <ShopLink/>
       </ul>
     </nav>
   )

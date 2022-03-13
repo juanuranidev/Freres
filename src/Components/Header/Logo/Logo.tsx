@@ -1,6 +1,6 @@
 import React from 'react';
 import Logotype from './Img/freres.jpg';
-import './_Logo.scss';
+import './Logo.scss';
 
 const Logo = () => {
   return (
