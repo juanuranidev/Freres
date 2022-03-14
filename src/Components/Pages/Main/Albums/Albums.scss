@@ -1,13 +1,19 @@
 .albums{
     text-align: center;
-    padding: 2rem;
+    padding-top: 5rem;
     background: linear-gradient(to top, #131313, #494949);
-    .albums_h2{
-        color: #eeeeee;
-        margin-bottom: 2rem;
-    }
     .albums_div{
         display: flex;
         justify-content: center;
+        align-items: center;
+        padding-bottom: 5rem;
+        .albums_div_h2{
+            color: #eeeeee;
+            margin-right: 1rem;
+        }
+        .albums_div_img{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
 }

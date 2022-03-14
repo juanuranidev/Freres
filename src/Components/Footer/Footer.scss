@@ -1,0 +1,35 @@
+.footer{
+    padding-top: 5rem;
+    .footer_div{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .footer_brand{
+        text-align: center;
+        margin-top: 5rem;
+        padding: 1rem;
+        background-color: #000000;
+        color: #eeeeee;
+        font-weight: 700;
+        font-size: 1rem;
+        .footer_brand_p{
+            color: #eeeeee;
+            
+        }
+        .footer_brand_p_span{
+            color: #b6332b;
+        }
+        .footer_brand_p_a{
+            color: #eeeeee;
+            
+        }
+    }
+    .footer_brand_div{
+        text-align: center;
+        padding-bottom: 1rem;
+        background-color: #000000;
+        color: #eeeeee;
+        font-size: 0.8rem;
+    }
+}

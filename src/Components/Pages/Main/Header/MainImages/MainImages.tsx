@@ -7,7 +7,7 @@ const MainImages = () => {
     
   return (
     <div className='mainImages'>
-        <h1>Freres</h1>
+        <h1>Frères</h1>
         <img src={IMAGE1} />
         <div className='left'/>
         <img src={IMAGE2} />
