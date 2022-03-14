@@ -1,0 +1,13 @@
+.albums{
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to top, #131313, #494949);
+    .albums_h2{
+        color: #eeeeee;
+        margin-bottom: 2rem;
+    }
+    .albums_div{
+        display: flex;
+        justify-content: center;
+    }
+}
