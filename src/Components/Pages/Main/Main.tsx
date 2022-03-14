@@ -7,10 +7,10 @@ import Albums from './Albums/Albums';
 const Main = () => {
   return (
     <>
-        <Header/>
-        <TopSellers/>
-        <ShortcutsGallery/>
-        <Albums/>
+      <Header/>
+      <TopSellers/>
+      <ShortcutsGallery/>
+      <Albums/>
     </>
   );
 }

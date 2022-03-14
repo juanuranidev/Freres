@@ -1,0 +1,15 @@
+.topSellers{
+    padding: 5rem 0rem;
+    background-color: #eeeeee;
+    .topSellers_h2{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .topSellers_div{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
