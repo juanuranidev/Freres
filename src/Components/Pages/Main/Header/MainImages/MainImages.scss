@@ -19,11 +19,11 @@
         height: 85%;
         @media(max-width: 992px){
             font-size: 10rem;
-            height: 65%;
+            height: 65vh;
         }
         @media(max-width: 576px){
             font-size: 5rem;
-            height: 40%;
+            height: 40vh;
         }
     }
     img{
@@ -37,15 +37,18 @@
         opacity: 0.6;
         transition: opacity 0.4s linear;
         @media(max-width: 992px){
-            height: 65%;
+            height: 65vh;
         }
         @media(max-width: 576px){
-            height: 40%;
+            height: 40vh;
         }
     }
     .right:hover{
         opacity: 0;
         transition: opacity 0.4s linear;
+        @media(max-width: 576px){
+            opacity: 0.6;
+        }
     }
     .left{
         position: absolute;
@@ -56,14 +59,17 @@
         opacity: 0.6;
         transition: opacity 0.4s linear;
         @media(max-width: 992px){
-            height: 65%;
+            height: 65vh;
         }
         @media(max-width: 576px){
-            height: 40%;
+            height: 40vh;
         }
     }
     .left:hover{
         opacity: 0;
         transition: opacity 0.4s linear;
+        @media(max-width: 576px){
+            opacity: 0.6;
+        }
     }
 }
