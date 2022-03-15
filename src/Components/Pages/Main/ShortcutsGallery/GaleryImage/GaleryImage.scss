@@ -3,6 +3,10 @@
     width: 30%;
     height: 100%;
     position: relative;
+    @media(max-width: 576px){     
+        width: 80%;
+        margin-bottom: 5rem;
+    }
     .galeryImage_div{
         height: 99.5%;
         width: 100%;
@@ -26,6 +30,9 @@
         @media(max-width: 992px){
             font-size: 1.5rem;
         }
+        @media(max-width: 576px){
+            font-size: 1rem;
+        }
     }
     .galeryImage_img{
         width: 100%;
@@ -36,4 +43,7 @@
 .galeryImage:hover{
     opacity: 0.8;
     transition: opacity 0.4s linear;
+    @media(max-width: 576px){
+        opacity: 1;
+    }
 }

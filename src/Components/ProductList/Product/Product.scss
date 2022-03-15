@@ -6,6 +6,9 @@
     @media(max-width: 992px){
         width: 50%;
     }
+    @media(max-width: 576px){
+        width: 100%;
+    }
     .product_img{
         width: 100%;
     }
@@ -73,9 +76,16 @@
     justify-content: center;
     align-items: center;
     opacity: 1;
+    @media(max-width: 992px){
+        display: none;
+    }
 }
 
 .product:hover > .product_div{
     display: none;
     opacity: 0;
+    @media(max-width: 992px){
+        display: flex;
+        opacity: 1;
+    }
 }

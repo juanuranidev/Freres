@@ -5,6 +5,9 @@
     @media(max-width: 992px){
         height: 65vh;
     }
+    @media(max-width: 576px){
+        height: 40vh;
+    }
     h1{
         position: absolute;
         font-size: 20rem;
@@ -17,6 +20,10 @@
         @media(max-width: 992px){
             font-size: 10rem;
             height: 65%;
+        }
+        @media(max-width: 576px){
+            font-size: 5rem;
+            height: 40%;
         }
     }
     img{
@@ -31,6 +38,9 @@
         transition: opacity 0.4s linear;
         @media(max-width: 992px){
             height: 65%;
+        }
+        @media(max-width: 576px){
+            height: 40%;
         }
     }
     .right:hover{
@@ -47,6 +57,9 @@
         transition: opacity 0.4s linear;
         @media(max-width: 992px){
             height: 65%;
+        }
+        @media(max-width: 576px){
+            height: 40%;
         }
     }
     .left:hover{

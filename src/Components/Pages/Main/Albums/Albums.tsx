@@ -9,9 +9,9 @@ import './Albums.scss';
 const Albums = () => {
   return (
     <section className='albums'>
-        <div className='albums_div'>
-          <h2 className='albums_div_h2'>ÁLBUMES QUE REPRESENTAN FRÈRES</h2>
-          <img className='albums_div_img' src={SPOTIFY}/>
+        <div className='albums_title'>
+          <h2 className='albums_title_h2'>ÁLBUMES QUE REPRESENTAN FRÈRES</h2>
+          <img className='albums_title_img' src={SPOTIFY}/>
         </div>
         <div className='albums_div'>
           <Album img={ALBUMIMAGE1} h3='DIGITAL DRUGLORD' link='https://open.spotify.com/album/0a8WSH44kA5hR4MQ6LyFDB' />

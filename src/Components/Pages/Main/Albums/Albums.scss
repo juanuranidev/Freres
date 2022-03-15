@@ -5,7 +5,7 @@
     @media(max-width: 992px){
         padding-bottom: 0rem;
     }
-    .albums_div{
+    .albums_title{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -13,14 +13,14 @@
         @media(max-width: 992px){
             flex-direction: column;
         }
-        .albums_div_h2{
+        .albums_title_h2{
             color: #eeeeee;
             margin-right: 1rem;
             @media(max-width: 992px){
                 margin: 0rem 1rem 1rem 1rem;
             }
         }
-        .albums_div_img{
+        .albums_title_img{
             width: 1.5rem;
             height: 1.5rem;
             @media(max-width: 992px){
@@ -28,5 +28,15 @@
                 height: 1.6rem;
             }
         }
+    }
+    .albums_div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 5rem;
+        @media(max-width: 992px){
+            flex-direction: column;
+            padding-bottom: 0rem;
+        }   
     }
 }
