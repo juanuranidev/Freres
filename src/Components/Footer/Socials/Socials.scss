@@ -4,6 +4,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media(max-width: 992px){
+        margin-bottom: 5rem;
+    }
     img{
         width: 6rem;
         margin-bottom: 0.5rem;

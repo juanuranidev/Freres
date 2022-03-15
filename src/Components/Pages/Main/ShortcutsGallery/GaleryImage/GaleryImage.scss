@@ -23,6 +23,9 @@
         font-size: 2.5rem;
         font-weight: 700;
         color: #eeeeee;
+        @media(max-width: 992px){
+            font-size: 1.5rem;
+        }
     }
     .galeryImage_img{
         width: 100%;

@@ -15,9 +15,7 @@ const TopSellers = () => {
         .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
         .catch(err => console.log(err))
         .finally(() => setLoader(false))
-  },[])
-
-  console.log(data)
+  }, []);
 
   return (
     <section className='topSellers'>
@@ -26,6 +24,9 @@ const TopSellers = () => {
           {loader===true
           ? <Loader/>
           : <ProductList products={data}/>}
+        </div>
+        <div className='topSellers_button'>
+          <button>VER TODOS LOS PRODUCTOS</button>
         </div>
     </section>
   );

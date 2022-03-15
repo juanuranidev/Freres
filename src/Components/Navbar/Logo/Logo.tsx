@@ -5,7 +5,7 @@ import './Logo.scss';
 const Logo = () => {
   return (
     <img src={Logotype} className="logo" />
-  )
+  );
 }
 
 export default Logo;

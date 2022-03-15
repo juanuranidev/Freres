@@ -3,6 +3,9 @@
     width: 25%;
     text-align: center;
     padding-bottom: 1rem;
+    @media(max-width: 992px){
+        width: 50%;
+    }
     .product_img{
         width: 100%;
     }

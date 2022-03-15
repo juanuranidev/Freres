@@ -1,9 +1,11 @@
 import React from 'react';
+import Logo from '../Navbar/Logo/Logo';
+import './Loader.scss'
 
 const Loader = () => {
   return (
     <div className='loader'>
-      <h2>Loader</h2>
+      <Logo/>
     </div>
   );
 }
