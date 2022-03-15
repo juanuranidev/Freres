@@ -2,13 +2,13 @@ import React from 'react';
 import './Cart.scss';
 
 interface CartProps {
-  handleOpenMenu: () => void;
+  handleOpenCart: () => void;
 }
 
-const Cart = ({handleOpenMenu}: CartProps) => {
+const Cart = ({handleOpenCart}: CartProps) => {
   return (<>
     <div className='cartNavbar'>
-      <p onClick={handleOpenMenu}>CARRITO (0)</p>
+      <p onClick={handleOpenCart}>CARRITO (0)</p>
     </div>
   </>
   );

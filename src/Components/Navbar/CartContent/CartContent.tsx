@@ -2,15 +2,15 @@ import React from 'react';
 import './CartContent.scss';
 
 interface CartContentProps {
-    openMenu: boolean;
-    handleCloseMenu: () => void
+    openCart: boolean;
+    handleCloseCart: () => void
 }
 
-const CartContent = ({openMenu, handleCloseMenu}: CartContentProps) => {  
+const CartContent = ({openCart, handleCloseCart}: CartContentProps) => {  
     return (
-    <div className={openMenu===true ? 'cartOpen' : 'cartClose'}>
+    <div className={openCart===true ? 'cartOpen' : 'cartClose'}>
         <div className='cart_close'>
-          <p onClick={handleCloseMenu}>CERRAR</p>
+          <p onClick={handleCloseCart}>CERRAR</p>
         </div>
         <div className='cart_shipping'>
           <p>$123 más para tener envío gratis</p>

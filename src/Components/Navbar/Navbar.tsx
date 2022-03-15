@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import OpenMenu from './OpenMenu/OpenMenu';
+import MenuResponsive from './MenuResponsive/MenuResponsive';
 import ShopLink from './ShopLink/ShopLink';
 import OutfitsLink from './OutfitsLink/OutfitsLink';
 import Logo from './Logo/Logo';
@@ -8,24 +11,30 @@ import Overlay from './Overlay/Overlay';
 import './Navbar.scss';
 
 const Navbar = () => {
-    const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(true)
+  const [openCart, setOpenCart] = useState(false);
 
-    const handleOpenMenu = () => setOpenMenu(true);
-    const handleCloseMenu = () => setOpenMenu(false) ;
-    
-    return (
-      <nav>
-        <ul>
-          <ShopLink/>
-          <OutfitsLink/>
-          <li>NOSOTROS</li>
-        </ul>
-        <Logo/>
-        <Cart handleOpenMenu={handleOpenMenu} />
-        <CartContent handleCloseMenu={handleCloseMenu} openMenu={openMenu} />
-        <Overlay openMenu={openMenu} />
-      </nav>
-    );
+  const handleOpenCart = () => setOpenCart(true);
+  const handleCloseCart = () => setOpenCart(false) ;
+  
+  const handleOpenMenu = () => setOpenMenu(true)
+  const handleCloseMenu = () => setOpenMenu(false)
+
+  return (
+    <nav>
+      <OpenMenu handleOpenMenu={handleOpenMenu} />
+      <MenuResponsive handleCloseMenu={handleCloseMenu} openMenu={openMenu} />
+      <ul>
+        <ShopLink/>
+        <OutfitsLink/>
+        <Link to='/about'><li>NOSOTROS</li></Link>
+      </ul>
+      <Logo/>
+      <Cart handleOpenCart={handleOpenCart} />
+      <CartContent handleCloseCart={handleCloseCart} openCart={openCart} />
+      <Overlay openCart={openCart} />
+    </nav>
+  );
 }
 
 export default Navbar;

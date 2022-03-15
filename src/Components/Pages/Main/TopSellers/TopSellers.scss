@@ -1,9 +1,11 @@
 .topSellers{
     padding: 5rem 0rem;
     background-color: #eeeeee;
+    border-left: 0.12rem solid white;
     .topSellers_h2{
         text-align: center;
         font-size: 1.5rem;
+        margin-bottom: 5rem;
     }
     .topSellers_div{
         display: flex;
@@ -14,7 +16,7 @@
     .topSellers_button{
         display: flex;
         justify-content: center;
-        margin-top: 2.5rem;
+        margin-top: 5rem;
         button{
             justify-content: center;
             font-size: 0.8rem;

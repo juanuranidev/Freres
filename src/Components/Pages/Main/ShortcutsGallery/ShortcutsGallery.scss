@@ -3,6 +3,13 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    a{
+        width: 30%;
+        @media(max-width: 576px){     
+            width: 80%;
+            margin-bottom: 5rem;
+        }
+    }
     @media(max-width: 576px){
      flex-direction: column; 
      padding: 5rem 0rem 0rem 0rem;  

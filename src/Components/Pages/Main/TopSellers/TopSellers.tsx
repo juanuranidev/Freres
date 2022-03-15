@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
+import { Link } from 'react-router-dom';
 import Loader from '../../../Loader/Loader';
 import ProductList from '../../../ProductList/ProductList';
 import './TopSellers.scss';
@@ -26,7 +27,9 @@ const TopSellers = () => {
           : <ProductList products={data}/>}
         </div>
         <div className='topSellers_button'>
+        <Link to='/shop/all'>
           <button>VER TODOS LOS PRODUCTOS</button>
+        </Link>
         </div>
     </section>
   );

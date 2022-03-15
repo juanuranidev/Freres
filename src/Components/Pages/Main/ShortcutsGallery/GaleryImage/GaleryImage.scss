@@ -1,12 +1,7 @@
 .galeryImage{
     text-align: center;
-    width: 30%;
     height: 100%;
     position: relative;
-    @media(max-width: 576px){     
-        width: 80%;
-        margin-bottom: 5rem;
-    }
     .galeryImage_div{
         height: 99.5%;
         width: 100%;

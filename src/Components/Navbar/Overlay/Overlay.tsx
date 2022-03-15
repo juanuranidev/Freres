@@ -2,12 +2,12 @@ import React from 'react';
 import './Overlay.scss';
 
 interface OverlayProps {
-    openMenu: boolean;
+    openCart: boolean;
 }
 
-const Overlay = ({openMenu}: OverlayProps) => {
+const Overlay = ({openCart}: OverlayProps) => {
   return (
-    <div className={openMenu===true ?'overlay visible' :'overlay'}/>
+    <div className={openCart===true ?'overlay visible' :'overlay'}/>
   );
 }
 

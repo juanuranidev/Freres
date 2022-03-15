@@ -1,0 +1,9 @@
+.closeMenu{
+    div:after{
+      display: flex;
+      font-size: 2rem;
+      content: "\00d7";
+      margin-bottom: 0.5rem;
+    }
+  
+}
