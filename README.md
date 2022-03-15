@@ -1,12 +1,12 @@
 # Freres
-This is my personal website where i will leave information about myself like my knowledge, experience, technologies i know and my contact information.
+Frères is a store that sells clothes which I always liked, however after a while of browsing their site I thought it could have a better design so I set out to create it. Welcome to the new Frères.
 
 # Demo
 https://freres.netlify.app/
 
 # Main Technologies
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)<br>
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)<br>
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)<br>
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)<br>
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)<br>
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)<br>
@@ -14,7 +14,7 @@ https://freres.netlify.app/
 
 # Features
 **Desing**<br>
-Beautiful design<br>
+Beautiful and clean design<br>
 Responsive for all devices
 
 **Database**<br>
@@ -45,6 +45,9 @@ https://create-react-app.dev/docs/adding-a-sass-stylesheet/
 **SASS for styles 1.49.8**<br>
 npm install sass<br>
 https://create-react-app.dev/docs/adding-a-sass-stylesheet/
+
+# Data
+Products stolen from: <a href="https://freres.ar/" target="_blank">Freres</a> ❤️
 
 # My Portfolio
 https://juanurani.netlify.app/
