@@ -26,23 +26,32 @@
             border-bottom-right-radius: 0.5rem;
             background-color: #EEEEEE;
             box-shadow: 0 4px 10px -10px rgb(0 0 0 / 60%);
-            div{
-                text-align: center;
-                margin: 1rem 0rem;
-                img{
-                    width: 10rem;
-                    height: 10rem;
-                }
-                p{
-                    font-size: 0.8rem;
-                    font-weight: 700;
-                }
-            }
+            a{
+                text-decoration: none;  
+                color: #000000;    
+                transition: all 0.2s linear; 
+                div{
+                    text-align: center;
+                    margin: 1rem 0rem;
+                    img{
+                        width: 10rem;
+                        height: 10rem;
+                    }
+                    p{
+                        font-size: 0.8rem;
+                        font-weight: 700;
+                    }
+                } 
+            }  
+            a:hover{
+                transform: scale(1.05);
+                transition: all 0.2s linear;
+            }   
+            a:active{
+                transform: scale(.995);
+            } 
         }
-        a{
-            text-decoration: none;  
-            color: #000000;      
-        }
+        
     }
 
     div:hover > .shopLink_content{

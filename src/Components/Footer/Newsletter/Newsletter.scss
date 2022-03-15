@@ -36,6 +36,7 @@
             }
             .newsletter_div_form_button:active{
                 transform: scale(.95);
+                transition: all 0.1s linear; 
             }
         }
     }

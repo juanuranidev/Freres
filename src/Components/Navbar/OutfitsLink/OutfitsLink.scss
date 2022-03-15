@@ -32,6 +32,16 @@
                 img{
                     margin: 0rem 0.5rem;
                     width: 14rem;
+                    transition: all 0.2s linear; 
+                }
+                img:hover{
+                    transform: scale(1.05);
+                    transition: all 0.2s linear; 
+                    cursor: pointer;
+                }
+                img:active{
+                    transform: scale(.995);
+                    transition: all 0.2s linear; 
                 }
             }
         }

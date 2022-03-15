@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Freres
+This is my personal website where i will leave information about myself like my knowledge, experience, technologies i know and my contact information.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Demo
+https://freres.netlify.app/
 
-## Available Scripts
+# Main Technologies
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)<br>
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)<br>
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)<br>
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)<br>
+![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)<br>
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 
-In the project directory, you can run:
+# Features
+**Desing**<br>
+Beautiful design<br>
+Responsive for all devices
 
-### `npm start`
+**Database**<br>
+Display products from the database<br>
+Subscribe to the newsletter<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Libraries
+**React for creating a modern web app 17.0.2**<br>
+npx create-react-app my-app<br>
+https://create-react-app.dev/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**TypeScript for better code 4.6.2**<br>
+npm install sass<br>
+https://create-react-app.dev/docs/adding-a-sass-stylesheet/
 
-### `npm test`
+**React Router Dom for routing 6.2.2**<br>
+npm install react-router-dom@6<br>
+https://firebase.google.com/docs/web/setup?hl=es
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**SASS for styling 1.49.9**<br>
+npm install sass<br>
+https://create-react-app.dev/docs/adding-a-sass-stylesheet/
 
-### `npm run build`
+**Firebase for database 9.6.8**<br>
+npm install sass<br>
+https://create-react-app.dev/docs/adding-a-sass-stylesheet/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**SASS for styles 1.49.8**<br>
+npm install sass<br>
+https://create-react-app.dev/docs/adding-a-sass-stylesheet/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# My Portfolio
+https://juanurani.netlify.app/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# My LinkedIn
+https://www.linkedin.com/in/juanurani/
