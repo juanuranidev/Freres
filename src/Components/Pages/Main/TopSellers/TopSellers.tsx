@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {query, collection, getDocs, getFirestore} from 'firebase/firestore';
+import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import Loader from '../../../Loader/Loader';
 import ProductList from '../../../ProductList/ProductList';
 import './TopSellers.scss';
@@ -10,7 +10,7 @@ const TopSellers = () => {
 
   useEffect(() => {
     const dataBase = getFirestore()
-    const queryCollection = query(collection(dataBase, 'products'))
+    const queryCollection = query(collection(dataBase, 'products'), where('top_seller', '==', true))
     getDocs(queryCollection)
         .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
         .catch(err => console.log(err))

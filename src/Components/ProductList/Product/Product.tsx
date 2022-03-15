@@ -11,13 +11,25 @@ const Product = (product: any) => {
         </div>
         <div className='product_sizes'>      
           <p className='product_sizes_p'>AGREGADO RÁPIDO</p>
-          <div className='product_sizes_div'>
-            <button className='product_sizes_div_button'>XS</button>
-            <button className='product_sizes_div_button'>S</button>
-            <button className='product_sizes_div_button'>M</button>
-            <button className='product_sizes_div_button'>L</button>
-            <button className='product_sizes_div_button'>XL</button>
-          </div>
+          {product.format_of_size_chart==="number" &&
+            <div className='product_sizes_div'>
+              <button className='product_sizes_div_button'>38</button>
+              <button className='product_sizes_div_button'>40</button>
+              <button className='product_sizes_div_button'>42</button>
+              <button className='product_sizes_div_button'>44</button>
+            </div>}
+          {product.format_of_size_chart==="letter" &&
+            <div className='product_sizes_div'>
+              <button className='product_sizes_div_button'>XS</button>
+              <button className='product_sizes_div_button'>S</button>
+              <button className='product_sizes_div_button'>M</button>
+              <button className='product_sizes_div_button'>L</button>
+              <button className='product_sizes_div_button'>XL</button>
+            </div>} 
+          {product.format_of_size_chart==="none" &&
+            <div className='product_sizes_div'>
+              <button className='product_sizes_div_buttonAddToCart'>AGREGAR AL CARRITO</button>
+            </div>}
       </div>
     </div>
   );

@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './MessageBar.scss';
 
 const MessageBar = () => {
   const [showFirstMessage, setshowFirstMessage] = useState(true)  
-  const [changeMessage, setchangeMessage] = useState(true)
 
-  useEffect(() => {
-    const otherMessage:boolean = !showFirstMessage
-    setshowFirstMessage(otherMessage)
-
-    const contrary:boolean = !changeMessage
-    setTimeout(() => setchangeMessage(contrary), 5000);
-  }, [changeMessage]);
+  const otherMessage:boolean = !showFirstMessage
+  setTimeout(() => setshowFirstMessage(otherMessage), 5000);
 
   return (
     <div className='messageBar'>

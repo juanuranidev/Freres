@@ -10,7 +10,7 @@ const Albums = () => {
   return (
     <section className='albums'>
         <div className='albums_div'>
-          <h2 className='albums_div_h2'>ÁLBUMES QUE REPRESENTAN FRERES</h2>
+          <h2 className='albums_div_h2'>ÁLBUMES QUE REPRESENTAN FRÈRES</h2>
           <img className='albums_div_img' src={SPOTIFY}/>
         </div>
         <div className='albums_div'>

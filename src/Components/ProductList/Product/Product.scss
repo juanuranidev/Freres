@@ -50,6 +50,16 @@
             .product_sizes_div_button:active{
                 transform: scale(.95);
             }
+            .product_sizes_div_buttonAddToCart{
+                font-size: 0.8rem;
+                background-color: none;
+                border: 1px solid #000000;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+            }
+            .product_sizes_div_buttonAddToCart:active{
+                transform: scale(.95);
+            }
         }
     }
 }
