@@ -1,9 +1,8 @@
 .closeMenu{
     div:after{
-      display: flex;
-      font-size: 2rem;
+      display: inline-block;
+      font-size: 3rem;
       content: "\00d7";
-      margin-bottom: 0.5rem;
     }
   
 }

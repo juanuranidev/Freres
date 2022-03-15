@@ -19,13 +19,17 @@ nav{
         @media(max-width: 992px){
             display: none;
         }
-        li{
-            font-size: 0.8rem;
-            padding:  1.5rem 1rem;
-            cursor: pointer;
-        }
-        li:hover{
-            text-decoration: underline;
-        }
+        a{
+            color: #000000;
+            text-decoration: none;
+            li{
+                font-size: 0.8rem;
+                padding:  1.5rem 1rem;
+                cursor: pointer;
+            }
+            li:hover{
+                text-decoration: underline;
+            }
+        }      
     }
 }

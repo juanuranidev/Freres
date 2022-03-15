@@ -11,6 +11,12 @@
     padding: 1rem;
     transition: right 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     box-shadow: 0 50px 50px -30px rgb(0 0 0 / 20%), 0 30px 50px 0 rgb(0 0 0 / 15%);
+    @media(max-width: 992px){
+        width: 50%;
+    }
+    @media(max-width: 576px){
+        width: 80%
+    }
     .cart_close{
         display: flex;
         justify-content: flex-end;
@@ -40,6 +46,6 @@
 
 .cartClose{
     @extend .cartOpen;
-    right: -50%;
+    right: -100%;
     opacity: 0;   
 }

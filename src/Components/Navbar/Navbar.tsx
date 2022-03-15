@@ -11,7 +11,7 @@ import Overlay from './Overlay/Overlay';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(true)
+  const [openMenu, setOpenMenu] = useState(false)
   const [openCart, setOpenCart] = useState(false);
 
   const handleOpenCart = () => setOpenCart(true);
@@ -32,7 +32,7 @@ const Navbar = () => {
       <Logo/>
       <Cart handleOpenCart={handleOpenCart} />
       <CartContent handleCloseCart={handleCloseCart} openCart={openCart} />
-      <Overlay openCart={openCart} />
+      <Overlay openCart={openCart} openMenu={openMenu} />
     </nav>
   );
 }
