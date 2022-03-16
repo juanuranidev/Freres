@@ -22,10 +22,10 @@ const EssentialOutfits = () => {
 
   return (
     <div className='essentialOutfits'>
-      {/* {loader
+      {loader
       ?<Loader/>
-      :<ProductList products={data}/>} */}
-        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg'} name={'Elegant'} products={data.filter((product:any) => product.essential_outfit==="elegant")} />
+      :<EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg'} name={'Elegant'} products={data.filter((product:any) => product.essential_outfit==="elegant")} />}
+        
     </div>
   )
 }
