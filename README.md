@@ -13,7 +13,7 @@ https://freres.netlify.app/
 ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 
 # Features
-**Desing**<br>
+**Design**<br>
 Beautiful and clean design<br>
 Responsive for all devices
 
