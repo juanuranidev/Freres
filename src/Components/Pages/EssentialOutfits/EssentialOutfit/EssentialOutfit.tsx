@@ -6,12 +6,13 @@ interface EssentialOutfitProps {
     name: string
     products: any
     image: string
+    imageDirection: string
 }
 
-const EssentialOutfit = ({name, products, image}: EssentialOutfitProps) => {
+const EssentialOutfit = ({name, products, image, imageDirection}: EssentialOutfitProps) => {
   console.log(products)
     return (
-    <div className='essentialOutfit'>
+    <div className={imageDirection==="left" ?'essentialOutfit left' :'essentialOutfit'}>
         <div className='essentialOutfit_products'>
             <h2 className='essentialOutfit_products_h2'>{name}</h2>
             <div className='essentialOutfit_products_div'>

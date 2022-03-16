@@ -1,9 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import OUTFIT1 from './img/OUTFIT1.png';
-import OUTFIT2 from './img/OUTFIT2.png';
-import OUTFIT3 from './img/OUTFIT3.png';
-import OUTFIT4 from './img/OUTFIT4.png';
 import './OutfitsLink.scss';
 
 const OutfitsLink = () => {
@@ -13,16 +9,16 @@ const OutfitsLink = () => {
     <Link to='/essential_outfits'><li>ESSENTIAL OUTFITS</li></Link>
       <div className='outfitsLink_content'>
         <div>
-          <img src={OUTFIT1}/>
+          <img src={'https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg'}/>
         </div>
         <div>
-          <img src={OUTFIT2}/>
+          <img src={'https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg'}/>
         </div>
         <div>
-        <img src={OUTFIT3}/>
+        <img src={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-4-scaled-uai-720x720.jpg'}/>
         </div>
         <div>
-          <img src={OUTFIT4}/>
+          <img src={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-6-scaled-uai-720x720.jpg'}/>
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ const ShopLink = () => {
         <Link to='/shop/pantalones'>
           <div>
             <img src={'https://freres.ar/wp-content/uploads/2021/09/Pantalones-4-scaled.jpg.webp'} />
-            <p>PANTALONES</p>
+            <p>PANTALONES Y SHORTS</p>
           </div>
         </Link>
         <Link to='/shop/calzado'>

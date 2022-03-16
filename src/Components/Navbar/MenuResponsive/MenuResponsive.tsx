@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CloseMenu from '../CloseMenu/CloseMenu';
-import './MenuResponsive.scss'
+import './MenuResponsive.scss';
 
 interface MenuResponsiveProps{
     handleCloseMenu: any,
@@ -16,13 +16,16 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
         </div>
         <ul className='menuResponsive_ul'>
             <Link to='/shop/all'>
-                <li>Shop</li>
+                <li onClick={handleCloseMenu}>SHOP</li>
             </Link>
-            <Link to='/'>
-                <li>Essential Outfits</li>
+            <Link to='/essential_outfits'>
+                <li onClick={handleCloseMenu}>ESSENTIAL OUTFITS</li>
             </Link>
-            <Link to='/'>
-                <li>Nosotros</li>
+            <Link to='/contact'>
+                <li onClick={handleCloseMenu}>CONTACTO</li>
+            </Link>
+            <Link to='/about'>
+                <li onClick={handleCloseMenu}>NOSOTROS</li>
             </Link>
         </ul>
     </div>

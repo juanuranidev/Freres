@@ -27,7 +27,7 @@ const Navbar = () => {
       <ul>
         <ShopLink/>
         <OutfitsLink/>
-        <Link to='/about'><li>NOSOTROS</li></Link>
+        <Link to='/contact'><li>CONTACTO</li></Link>
       </ul>
       <Logo/>
       <Cart handleOpenCart={handleOpenCart} />

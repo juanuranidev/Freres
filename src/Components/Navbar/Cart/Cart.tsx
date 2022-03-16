@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Cart.scss';
 
 interface CartProps {
@@ -8,7 +9,8 @@ interface CartProps {
 const Cart = ({handleOpenCart}: CartProps) => {
   return (<>
     <div className='cartNavbar'>
-      <p onClick={handleOpenCart}>CARRITO (0)</p>
+      <Link to='/about' className='cartNavbar_a'><p>NOSOTROS</p></Link>
+      <p onClick={handleOpenCart} className='cartNavbar_p'>CARRITO (0)</p>
     </div>
   </>
   );

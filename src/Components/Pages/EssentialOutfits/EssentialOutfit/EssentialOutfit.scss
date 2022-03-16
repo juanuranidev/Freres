@@ -3,7 +3,9 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-bottom: 5rem;
     @media(max-width: 992px){
+        border-bottom: 0.2rem solid #eeeeee;
         flex-direction: column-reverse;
     }
     .essentialOutfit_products{
@@ -11,13 +13,13 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 60%;
+        width: 50%;
         @media(max-width: 992px){
             width: 100%;
             margin-bottom: 5rem;
         }
         .essentialOutfit_products_h2{
-            margin-bottom: 2.5rem;
+            margin-bottom: 5rem;
             font-size: 2rem;
         }
         .essentialOutfit_products_div{
@@ -42,9 +44,10 @@
             font-size: 0.8rem;
             background-color: #ffffff;
             border: 1px solid #000000;
+            box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
             padding: 0.5rem 1rem;
             transition: all 0.2s linear; 
-            margin-top: 2.5rem;
+            margin-top: 5rem;
             cursor: pointer;
         }
         .essentialOutfit_products_button:hover{
@@ -62,7 +65,7 @@
         }
     }
     .essentialOutfit_image{
-        width: 40%;
+        width: 50%;
         @media(max-width: 992px){
             width: 100%;
             margin-bottom: 5rem;
@@ -71,4 +74,15 @@
             width: 100%;
         }
     }
+}
+
+.left{
+    flex-direction: row-reverse;
+    @media(max-width: 992px){
+        flex-direction: column-reverse;
+    }
+}
+
+.left:last-child{
+    margin: 0rem;
 }

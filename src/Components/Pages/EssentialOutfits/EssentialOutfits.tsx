@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import Loader from '../../Loader/Loader';
-import ProductList from '../../ProductList/ProductList';
 import EssentialOutfit from './EssentialOutfit/EssentialOutfit';
-import './EssentialOutfits.scss'
+import './EssentialOutfits.scss';
 
 const EssentialOutfits = () => {
   const [data, setData] = useState<any>([])
@@ -22,12 +21,16 @@ const EssentialOutfits = () => {
 
   return (
     <div className='essentialOutfits'>
-      {loader
-      ?<Loader/>
-      :<EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg'} name={'Elegant'} products={data.filter((product:any) => product.essential_outfit==="elegant")} />}
-        
+    {loader
+    ? <Loader/>
+    : <div className='essentialOutfits_div'>
+        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg'} name=  {'ELEGANT'} products={data.filter((product:any) => product.essential_outfit==="elegant")} imageDirection={'right'} />
+        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg'} name=  {'STREET'} products={data.filter((product:any) => product.essential_outfit==="street")} imageDirection={'left'} />
+        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-4-scaled-uai-720x720.jpg'} name={'RELAXED'} products={data.filter((product:any) => product.essential_outfit==="relaxed")} imageDirection={'right'} />
+        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-6-scaled-uai-720x720.jpg'} name={'CASUAL'} products={data.filter((product:any) => product.essential_outfit==="casual")} imageDirection={'left'} />
+      </div>}     
     </div>
-  )
+  );
 }
 
-export default EssentialOutfits
+export default EssentialOutfits;

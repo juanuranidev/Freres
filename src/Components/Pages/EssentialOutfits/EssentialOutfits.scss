@@ -1,4 +1,8 @@
 .essentialOutfits{
     display: flex;
-    padding: 8vh 0rem 5rem 0rem;
+    padding: 10rem 0rem 0rem 0rem;
+    .essentialOutfits_div{
+        display: flex;
+        flex-direction: column;
+    }
 }

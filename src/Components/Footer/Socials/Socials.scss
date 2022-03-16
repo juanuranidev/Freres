@@ -27,6 +27,10 @@
                 color: #000000;
                 font-size: 2rem;
             }
+            span:active{
+                transform: scale(.95);
+                transition: all 0.1s linear; 
+            }
         }
     }
 }

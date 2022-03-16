@@ -2,12 +2,30 @@
     width: 35%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     text-align: right;
-    p{
+    .cartNavbar_a{
         font-size: 0.8rem;
+        text-decoration: none;
+        color: #000000;
+        padding: 1.5rem 1rem;
         cursor: pointer;
+        @media(max-width: 992px){
+            display: none;
+        }
     }
-    p:hover{
+    .cartNavbar_a:hover{
+        text-decoration: underline;
+    }
+    .cartNavbar_p{
+        font-size: 0.8rem;
+        padding: 1.5rem 1rem;
+        cursor: pointer;
+        @media(max-width: 992px){
+            padding: 1.5rem 1rem 1.5rem 0rem;
+        }
+    }
+    .cartNavbar_p:hover{
         text-decoration: underline;
     }
 }
