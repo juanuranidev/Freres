@@ -16,21 +16,21 @@ const TopSellers = () => {
         .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
         .catch(err => console.log(err))
         .finally(() => setLoader(false))
-  }, []);
+      }, []);
 
   return (
     <section className='topSellers'>
-        <h2 className='topSellers_h2'>TOP SELLERS</h2>
-        <div className='topSellers_div'>
-          {loader===true
-          ? <Loader/>
-          : <ProductList products={data}/>}
-        </div>
-        <div className='topSellers_button'>
-        <Link to='/shop/all'>
-          <button>VER TODOS LOS PRODUCTOS</button>
-        </Link>
-        </div>
+      <h2 className='topSellers_h2'>TOP SELLERS</h2>
+      <div className='topSellers_div'>
+        {loader===true
+        ? <Loader/>
+        : <ProductList products={data}/>}
+      </div>
+      <div className='topSellers_button'>
+      <Link to='/shop/all'>
+        <button>VER TODOS LOS PRODUCTOS</button>
+      </Link>
+      </div>
     </section>
   );
 }

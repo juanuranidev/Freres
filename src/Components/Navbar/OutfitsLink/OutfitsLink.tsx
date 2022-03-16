@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import OUTFIT1 from './img/OUTFIT1.png';
 import OUTFIT2 from './img/OUTFIT2.png';
 import OUTFIT3 from './img/OUTFIT3.png';
@@ -9,7 +10,7 @@ const OutfitsLink = () => {
   return (
     <div className='outfitsLink'>
     <div>
-      <li>ESSENTIAL OUTFITS</li>
+    <Link to='/essential_outfits'><li>ESSENTIAL OUTFITS</li></Link>
       <div className='outfitsLink_content'>
         <div>
           <img src={OUTFIT1}/>

@@ -1,5 +1,5 @@
 # Freres
-Frères is a store that sells clothes which I always liked, however after a while of browsing their site I thought it could have a better design so I set out to create it. Welcome to the new Frères.
+Frères is an online store that sells clothes which I always liked, however after a while of browsing their site I thought it could have a better design so I set out to create it. Welcome to the new Frères.
 
 # Demo
 https://freres.netlify.app/
@@ -38,7 +38,7 @@ https://firebase.google.com/docs/web/setup?hl=es
 npm install sass<br>
 https://create-react-app.dev/docs/adding-a-sass-stylesheet/
 
-**Firebase for database 9.6.8**<br>
+**Firebase for the database 9.6.8**<br>
 npm install sass<br>
 https://create-react-app.dev/docs/adding-a-sass-stylesheet/
 

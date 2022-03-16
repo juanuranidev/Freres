@@ -1,0 +1,74 @@
+.essentialOutfit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    @media(max-width: 992px){
+        flex-direction: column-reverse;
+    }
+    .essentialOutfit_products{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        @media(max-width: 992px){
+            width: 100%;
+            margin-bottom: 5rem;
+        }
+        .essentialOutfit_products_h2{
+            margin-bottom: 2.5rem;
+            font-size: 2rem;
+        }
+        .essentialOutfit_products_div{
+            display: flex;
+            justify-content: center;
+            border-left: 0.12rem solid #ffffff;
+            @media(max-width: 992px){
+               flex-direction: column;
+            }
+            .product{
+                width: 33.3%;
+                @media(max-width: 992px){
+                   width: 100%;
+                 }
+                .product_div{
+                    flex-direction: column;
+                }
+            }
+        }
+        .essentialOutfit_products_button{
+            justify-content: center;
+            font-size: 0.8rem;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            padding: 0.5rem 1rem;
+            transition: all 0.2s linear; 
+            margin-top: 2.5rem;
+            cursor: pointer;
+        }
+        .essentialOutfit_products_button:hover{
+            transform: scale(1.05);
+            @media(max-width: 992px){
+                transform: scale(1);
+            }
+        }
+        .essentialOutfit_products_button:active{
+            transform: scale(.995);
+            transition: all 0.1s linear; 
+            @media(max-width: 992px){
+                transform: scale(.95);
+            }
+        }
+    }
+    .essentialOutfit_image{
+        width: 40%;
+        @media(max-width: 992px){
+            width: 100%;
+            margin-bottom: 5rem;
+        }
+        img{
+            width: 100%;
+        }
+    }
+}

@@ -6,9 +6,9 @@ const ShopLink = () => {
     return (
     <div className='shopLink'>
       <div>
-        <li>SHOP</li>
+      <Link to='/shop/all'><li>SHOP</li></Link>
         <div className='shopLink_content'>
-        <Link to='/'>
+        <Link to='/shop/camperasybuzos'>
           <div>
             <img src={'https://freres.ar/wp-content/uploads/2021/12/productos-noviembre-6-scaled.jpeg.webp'} />
             <p>CAMPERAS Y BUZOS</p>
