@@ -15,10 +15,10 @@ const Navbar = () => {
   const [openCart, setOpenCart] = useState(false);
 
   const handleOpenCart = () => setOpenCart(true);
-  const handleCloseCart = () => setOpenCart(false) ;
+  const handleCloseCart = () => setOpenCart(false);
   
-  const handleOpenMenu = () => setOpenMenu(true)
-  const handleCloseMenu = () => setOpenMenu(false)
+  const handleOpenMenu = () => setOpenMenu(true);
+  const handleCloseMenu = () => setOpenMenu(false);
 
   return (
     <nav>
@@ -27,7 +27,7 @@ const Navbar = () => {
       <ul>
         <ShopLink/>
         <OutfitsLink/>
-        <Link to='/contact'><li>CONTACTO</li></Link>
+        <Link to='/about'><li>NOSOTROS</li></Link>
       </ul>
       <Logo/>
       <Cart handleOpenCart={handleOpenCart} />

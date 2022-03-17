@@ -14,17 +14,16 @@ getFirestoreApp()
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element={<Main/>}/>
-        <Route path='/shop/:idCategory' element={<Shop/>}/>
-        <Route path='/essential_outfits' element={<EssentialOutfits/>}/>
-        <Route path='/about' element={<About/>}/>
-        {/* <Route path='' element={}/> */}
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<Main/>}/>
+          <Route path='/shop/:idCategory' element={<Shop/>}/>
+          <Route path='/essential_outfits' element={<EssentialOutfits/>}/>
+          <Route path='/about' element={<About/>}/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
     </>
   );
 }

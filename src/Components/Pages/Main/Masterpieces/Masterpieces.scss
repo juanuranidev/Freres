@@ -1,0 +1,43 @@
+.masterpieces{
+    padding: 5rem 0rem;
+    background-color: #eeeeee;
+    border-left: 0.12rem solid white;
+    .masterpieces_h2{
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 5rem;
+    }
+    .masterpieces_div{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .masterpieces_button{
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
+        button{
+            justify-content: center;
+            font-size: 0.8rem;
+            background-color: none;
+            border: 1px solid #000000;
+            padding: 0.5rem 1rem;
+            transition: all 0.2s linear; 
+            cursor: pointer;
+        }
+        button:hover{
+            transform: scale(1.05);
+            @media(max-width: 992px){
+                transform: scale(1);
+            }
+        }
+        button:active{
+            transform: scale(.995);
+            transition: all 0.1s linear; 
+            @media(max-width: 992px){
+                transform: scale(.95);
+            }
+        }
+    }
+}

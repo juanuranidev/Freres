@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header/Header';
 import TopSellers from './TopSellers/TopSellers';
 import ShortcutsGallery from './ShortcutsGallery/ShortcutsGallery';
+import Masterpieces from './Masterpieces/Masterpieces';
 import Albums from './Albums/Albums';
 
 const Main = () => {
@@ -10,6 +11,7 @@ const Main = () => {
       <Header/>
       <TopSellers/>
       <ShortcutsGallery/>
+      <Masterpieces/>
       <Albums/>
     </>
   );
