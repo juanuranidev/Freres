@@ -13,7 +13,7 @@ const Slider = () => {
 
   return (
     <section className='slider'>
-      <motion.div className='slider_container' ref={carousel} drag='x' dragConstraints={{right: 0, left: -width}} whileTap={{cursor: "grabbing"}} >
+      <motion.div className='slider_container' ref={carousel} drag='x' dragConstraints={{right: 0, left: -width}} whileTap={{cursor: "grabbing"}}>
         {images.map((image:any) => <motion.div className='slider_container_div'><img src={image} className='slider_container_div_img'/></motion.div>)}
       </motion.div>
     </section>

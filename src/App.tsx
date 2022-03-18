@@ -8,6 +8,7 @@ import EssentialOutfits from './Components/Pages/EssentialOutfits/EssentialOutfi
 import About from './Components/Pages/About/About';
 import Footer from './Components/Footer/Footer';
 import './App.scss';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 
 getFirestoreApp()
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop/>
         <Navbar/>
         <Routes>
           <Route path='/' element={<Main/>}/>

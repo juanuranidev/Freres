@@ -1,9 +1,14 @@
 import React from 'react';
-import './Product.scss'
+import { motion } from 'framer-motion';
+import './Product.scss';
 
 const Product = (product: any) => {
   return (
-    <div key={product.id} className='product'>
+    <motion.div
+    initial={{  x:-100, opacity: 0  }}
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ ease: "linear", duration: 0.25 }}
+    key={product.id} className='product'>
     <img src={product.images[0]} className='product_img'/>
         <div className='product_div'>
             <h2 className='product_div_h2'>{product.name}</h2>
@@ -31,7 +36,7 @@ const Product = (product: any) => {
               <button className='product_sizes_div_buttonAddToCart'>AGREGAR AL CARRITO</button>
             </div>}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
