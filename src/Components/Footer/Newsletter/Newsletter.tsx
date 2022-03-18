@@ -1,24 +1,41 @@
 import React, { useState } from 'react';
+import { getFirestore, query, collection, getDocs, addDoc } from 'firebase/firestore';
 import './Newsletter.scss';
 
 const Newsletter = () => {
-  const [isSuscribed, setIsSuscribed] = useState<boolean>(false)
+  const [isUserSuscribed, setIsUserSuscribed] = useState<boolean>(false)
+  const [userEmail, setUserEmail] = useState<any>({email: ''})
 
-  const handleSubmit = (e:any):void => {
+  const handleSetUserEmail = (e:any):void => setUserEmail({...userEmail,[e.target.name] : e.target.value})
+
+  const handleSubmit = (e:any) => {
     e.preventDefault()
-    console.log("Suscrito")
+    let email:any = {}
+    email.email = userEmail.email
+
+    const dataBase = getFirestore()
+    const emailCollection = collection(dataBase, 'newsletter') 
+    addDoc(emailCollection, email)
+      .catch(err => console.log(err))
+      .finally (() => {setIsUserSuscribed(true)})
   }
 
   return (
     <div className='newsletter'>
       <h3 className='newsletter_h3'>ÚNETE A NUESTRA TRIBU</h3>
       <p className='newsletter_p'>RECIBE NOVEDADES Y BENEFICIOS EXCLUSIVOS</p>
-      <div className='newsletter_div'>
-        <form className='newsletter_div_form' onSubmit={(e) => handleSubmit(e)}>
-          <input type='email' placeholder='Email' className='newsletter_div_form_input'/>    
-          <button type='submit' className='newsletter_div_form_button'>UNIRME</button>
-        </form>            
-      </div>
+      {isUserSuscribed
+      ? <div className='newsletter_suscribed'>
+          <p className='newsletter_suscribed_p'>HAS SIDO SUSCRITO A NUESTRO NEWSLETTER</p>
+        </div>
+      : <div className='newsletter_div'>
+          <form className='newsletter_div_form' onSubmit={(e) => handleSubmit(e)}>
+            <input type='email' placeholder='Email' name='email' value={userEmail.email} className='newsletter_div_form_input' onChange={(e) => handleSetUserEmail(e)} />    
+            {userEmail.email
+            ?<button type='submit' className='newsletter_div_form_button'>UNIRME</button>
+            :<button type='submit' className='newsletter_div_form_button' disabled>UNIRME</button>}
+          </form>            
+        </div>}
     </div>
   );
 }

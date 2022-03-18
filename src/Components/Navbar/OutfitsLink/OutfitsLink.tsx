@@ -12,13 +12,13 @@ const OutfitsLink = () => {
           <img src={'https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg'}/>
         </div>
         <div>
-          <img src={'https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg'}/>
-        </div>
-        <div>
         <img src={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-4-scaled-uai-720x720.jpg'}/>
         </div>
         <div>
           <img src={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-6-scaled-uai-720x720.jpg'}/>
+        </div>
+        <div>
+          <img src={'https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg'}/>
         </div>
       </div>
     </div>

@@ -18,7 +18,10 @@ const EssentialOutfit = ({name, products, image, imageDirection}: EssentialOutfi
             <div className='essentialOutfit_products_div'>
                 <ProductList products={products}/>
             </div>
-            <button className='essentialOutfit_products_button'>Agregar outfit al carrito</button>
+            <div className='essentialOutfit_buttons'>
+                <button className='essentialOutfit_buttons_button'>VER CONJUNTO</button>
+                <button className='essentialOutfit_buttons_button'>AGREGAR AL CARRITO</button>
+            </div>
         </div>
         <div className='essentialOutfit_image'>
             <img src={image}/>

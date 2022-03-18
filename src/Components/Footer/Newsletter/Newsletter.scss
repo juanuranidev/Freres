@@ -29,7 +29,7 @@
             .newsletter_div_form_button{
                 background-color: #ffffff;
                 border: 1px solid #000000;
-                box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+                box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
                 border-radius: 0.25rem;
                 padding: 0.5rem;
                 font-weight: 500;
@@ -40,5 +40,14 @@
                 transition: all 0.1s linear; 
             }
         }
+    }
+    .newsletter_suscribed{
+        background: #d2e4c4;
+        color: #307a07;
+        padding: 1rem;
+        border-radius: 0.25rem;
+    }
+    .newsletter_suscribed_p{
+        font-size: 0.8rem;
     }
 }

@@ -21,9 +21,6 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
             <Link to='/essential_outfits'>
                 <li onClick={handleCloseMenu}>ESSENTIAL OUTFITS</li>
             </Link>
-            <Link to='/contact'>
-                <li onClick={handleCloseMenu}>CONTACTO</li>
-            </Link>
             <Link to='/about'>
                 <li onClick={handleCloseMenu}>NOSOTROS</li>
             </Link>

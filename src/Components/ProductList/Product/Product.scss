@@ -21,9 +21,9 @@
         height: 4rem;
         margin-top: -1rem;
         .product_div_h2{
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            margin-right: 0.4rem;
+            margin-right: 0.25rem;
         }
         .product_div_p{
             font-size: 0.8rem;
@@ -52,7 +52,7 @@
                 height: 2rem;
                 background-color: none;
                 border: 1px solid #000000;
-                box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+                box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
                 margin: 0rem 0.5rem;
                 cursor: pointer;
             }
@@ -63,7 +63,7 @@
                 font-size: 0.8rem;
                 background-color: none;
                 border: 1px solid #000000;
-                box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+                box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
                 transition: all 0.1s linear; 
                 padding: 0.5rem 1rem;
                 cursor: pointer;
