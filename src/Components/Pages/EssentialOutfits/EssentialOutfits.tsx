@@ -17,8 +17,6 @@ const EssentialOutfits = () => {
         .finally(() => setLoader(false))
       }, []);
 
-      console.log(data)
-
   return (
     <div className='essentialOutfits'>
     {loader
