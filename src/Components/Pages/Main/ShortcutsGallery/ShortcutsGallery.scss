@@ -4,9 +4,14 @@
     align-items: center;
     justify-content: space-evenly;
     a{
-        width: 30%;
+        width: 33%;
         @media(max-width: 576px){     
-            width: 80%;
+            width: 99%;
+            margin-bottom: 1%;
+        }
+    }
+    a:last-child{
+        @media(max-width: 576px){
             margin-bottom: 5rem;
         }
     }

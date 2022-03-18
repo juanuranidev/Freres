@@ -1,8 +1,4 @@
 .about{
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
     padding: 10rem 0rem 0rem 0rem;
     .about_content{
         display: flex;
@@ -22,7 +18,8 @@
             }
             .about_content_h2{
                 font-size: 1.5rem;
-                margin-bottom: 2.5rem
+                margin-bottom: 2.5rem;
+                animation: fadein 1s ease-in-out;
             }
             .about_content_p{
                 width: 80%;
@@ -30,6 +27,7 @@
                 margin: auto;
                 font-size: 1rem;
                 margin-bottom: 1rem;
+                animation: fadein 1s ease-in-out;
             }
         }
     }
@@ -37,11 +35,18 @@
         font-size: 1rem;
         margin-bottom: 5rem;
         text-align: center;
+        animation: fadein 1s ease-in-out;
         @media(max-width: 768px){
            margin: 0rem 1rem 5rem 1rem;
         }
     }
     .about_img{
         width: 100%;
+        animation: fadein 1s ease-in-out;
     }
+}
+
+@keyframes fadein {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }

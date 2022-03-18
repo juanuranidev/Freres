@@ -26,6 +26,9 @@
         }
         .footer_brand_p_span:hover{
             animation: heartbeat 1.25s infinite;
+            @media(max-width: 992px){
+                animation: none;
+            }
         }
         @keyframes heartbeat{
             0%{transform: scale(.75);}
