@@ -4,6 +4,7 @@ import TopSellers from './TopSellers/TopSellers';
 import ShortcutsGallery from './ShortcutsGallery/ShortcutsGallery';
 import Masterpieces from './Masterpieces/Masterpieces';
 import Albums from './Albums/Albums';
+import Slider from './Slider/Slider';
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
       <ShortcutsGallery/>
       <Masterpieces/>
       <Albums/>
+      <Slider/>
     </>
   );
 }

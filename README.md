@@ -46,6 +46,10 @@ https://create-react-app.dev/docs/adding-a-sass-stylesheet/
 npm install sass<br>
 https://create-react-app.dev/docs/adding-a-sass-stylesheet/
 
+**Framer Motion for animations 6.2.8**<br>
+npm install framer-motion<br>
+https://www.framer.com/motion/
+
 # Data
 Products stolen from: <a href="https://freres.ar/" target="_blank">Freres</a> ❤️
 
