@@ -1,24 +1,23 @@
 .productSizes{
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     transition: all 0.1s linear; 
     margin-bottom: 2.5rem;
-    @media(max-width: 576px){
-        justify-content: center;
+    .productSizes_buttons{
+        display: flex;
+        margin-bottom: 1rem;
+        @media(max-width: 576px){
+            justify-content: center;
+        } 
     }
-    .productSizes_button{
-        font-size: 0.8rem;
-        width: 2.5rem;
-        height: 2.5rem;
-        background-color: none;
-        border: 1px solid #000000;
-        margin-right: 1rem;
-        cursor: pointer;
-    }
-    .productSizes_button:active{
-        transform: scale(.95);
-    }
-    .productSizes_p{
-        font-size: 0.8rem;
+    .productSizes_clear{
+        display: flex;
+        @media(max-width: 576px){
+            justify-content: center;
+        } 
+        .productSizes_clear_p{
+            font-size: 1rem;
+        }
     }
 }

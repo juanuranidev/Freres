@@ -6,12 +6,13 @@ import Loader from '../Loader/Loader';
 import ProductSizes from './ProductSizes/ProductSizes';
 import AddToCart from './AddToCart/AddToCart';
 import ProductImages from './ProductImages/ProductImages';
-import Shipping from './Img/Shipping.png'
+import ProductTextContent from './ProductTextContent/ProductTextContent';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
     const [product, setProduct] = useState<any>({})
     const [loader, setLoader] = useState<boolean>(true)
+    const [size, setSize] = useState<any>("")
     const {idProduct}:any = useParams()
 
     
@@ -35,16 +36,8 @@ const ProductDetail = () => {
               className='container'>
               <ProductImages images={product.images}/>
               <div className='productDetail_content'>
-                <h1 className='productDetail_content_h1'>{product.name}</h1>
-                <p className='productDetail_content_p'>${product.price}</p>
-                <div className='productDetail_content_description'>
-                  {product.description.split(".").map((sentence:string, index:number) => <p className='productDetail_content_description_p' key={index} >{sentence}</p>)}
-                </div>
-                <div className='productDetail_content_shipping'>
-                  <img className='productDetail_content_shipping_img'src={Shipping}/>
-                  <p className='productDetail_content_shipping_p'>Envío gratis en compras mayores a $12.000 y express (sólo CABA) en menos de 48hs hábiles</p>
-                </div>
-                <ProductSizes size={product.format_of_size_chart} />
+                <ProductTextContent name={product.name} price={product.price} description={product.description} />
+                <ProductSizes productSize={product.format_of_size_chart} size={size} setSize={setSize} />
                 <AddToCart stock={product.stock} />
               </div>
             </motion.div>}

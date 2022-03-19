@@ -1,36 +1,53 @@
 import React from 'react';
+import ProductSizeButton from './ProductSizeButton/ProductSizeButton';
 import './ProductSizes.scss';
 
 interface ProductSizesProps{
-    size: string
+    productSize: string,
+    size: string,
+    setSize: any
 }
 
-const ProductSizes = ({size}:ProductSizesProps) => {
+const ProductSizes = ({productSize, size, setSize}:ProductSizesProps) => {
   
-    if(size==='number'){
+    const handleSelectSize = (size:string) => setSize(size)
+    console.log(size)
+    if(productSize==='number'){
         return (
             <div className='productSizes'>
-                <button className='productSizes_button'>38</button>
-                <button className='productSizes_button'>40</button>
-                <button className='productSizes_button'>42</button>
-                <button className='productSizes_button'>44</button>
+                <div className='productSizes_buttons'>
+                    <ProductSizeButton productSize="38" size={size} handleSelectSize={handleSelectSize} />
+                    <ProductSizeButton productSize="40" size={size} handleSelectSize={handleSelectSize} />
+                    <ProductSizeButton productSize="42" size={size} handleSelectSize={handleSelectSize} />
+                    <ProductSizeButton productSize="44" size={size} handleSelectSize={handleSelectSize} />
+                </div>
+                {size
+                && <div className='productSizes_clear'>
+                        <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
+                    </div>}
             </div>
         )
     }    
 
-    if(size==='letter'){
+    if(productSize==='letter'){
         return (
             <div className='productSizes'>
-                <button className='productSizes_button'>XS</button>
-                <button className='productSizes_button'>S</button>
-                <button className='productSizes_button'>M</button>
-                <button className='productSizes_button'>L</button>
-                <button className='productSizes_button'>XL</button>
+                <div className='productSizes_buttons'>
+                    <ProductSizeButton productSize="XS" size={size} handleSelectSize={handleSelectSize} />
+                    <ProductSizeButton productSize="S" size={size} handleSelectSize={handleSelectSize} />
+                    <ProductSizeButton productSize="M" size={size} handleSelectSize={handleSelectSize} />
+                    <ProductSizeButton productSize="L" size={size} handleSelectSize={handleSelectSize} />
+                    <ProductSizeButton productSize="XL" size={size} handleSelectSize={handleSelectSize} />
+                </div>
+                {size
+                && <div className='productSizes_clear'>
+                        <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
+                    </div>}
             </div>
         )
     }    
     
-    if(size==='none'){
+    if(productSize==='none'){
         return (
             <div className='productSizes'>
                 <p className='productSizes_p'>TALLE ÚNICO</p>
