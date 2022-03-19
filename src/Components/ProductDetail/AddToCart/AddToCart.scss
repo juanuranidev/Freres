@@ -1,0 +1,44 @@
+.addToCart{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2.5rem;
+    .addToCart_div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5rem;
+        .addToCart_div_span{
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.1s linear; 
+        }
+        .addToCart_div_span:active{
+            transform: scale(.8);
+        }
+        .addToCart_div_p{
+            margin: 0rem 2.5rem;
+        }
+    }
+    .addToCart_button{
+        justify-content: center;
+        font-size: 0.8rem;
+        background-color: none;
+        border: 1px solid #000000;
+        padding: 0.5rem 1rem;
+        transition: all 0.2s linear; 
+        cursor: pointer;
+    }
+    .addToCart_button:hover{
+        transform: scale(1.05);
+        @media(max-width: 992px){
+            transform: scale(1);
+        }
+    }
+    .addToCart_button:active{
+        transform: scale(.995);
+        transition: all 0.1s linear; 
+        @media(max-width: 992px){
+            transform: scale(.95);
+        }
+    }
+}

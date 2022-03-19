@@ -1,0 +1,32 @@
+.productImages{
+    width: 50%;
+    padding: 0rem 1rem;
+    .productImages_div{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: -2.5rem;
+        margin: auto;
+        .productImages_div_img{
+            z-index: 0;
+            width: 5rem;
+            height: 5rem;
+            margin: 0rem 0.5rem 1rem 0.5rem;
+            border: 1px solid lightgray;
+            box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
+            cursor: pointer;
+        }
+    }
+    .productImages_image_first{
+        width: 100%;
+        margin-top: -6rem;
+        z-index: 0;
+    }
+    .productImages_image{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        width: 90%;
+    }
+}
