@@ -3,6 +3,9 @@
     justify-content: flex-start;
     transition: all 0.1s linear; 
     margin-bottom: 2.5rem;
+    @media(max-width: 576px){
+        justify-content: center;
+    }
     .productSizes_button{
         font-size: 0.8rem;
         width: 2.5rem;

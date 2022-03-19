@@ -12,10 +12,12 @@ const ProductImages = ({images}:ProductImageProps) => {
 
   return (
     <div className='productImages'>
-      <div className='productImages_div'>
-        {images.map((image:any, index:any) => <img className='productImages_div_img' src={image} key={index} onClick={() => handleMainImage(index)} />)}
+      <div className='productImages_rest'>
+        {images.map((image:any, index:any) => <img className='productImages_rest_img' src={image} key={index} onClick={() => handleMainImage(index)} />)}
       </div>
-      <img src={images[(mainImage)]} className={mainImage===0 ?'productImages_image_first' :'productImages_image' }/>
+      <div className='productImages_main'>
+        <img src={images[(mainImage)]} className={mainImage===0 ?'productImages_main_img_first' :'productImages_main_image' }/>
+      </div>
     </div>
   );
 }
