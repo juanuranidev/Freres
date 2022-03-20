@@ -11,7 +11,7 @@ interface ProductSizesProps{
 const ProductSizes = ({productSize, size, setSize}:ProductSizesProps) => {
   
     const handleSelectSize = (size:string) => setSize(size)
-    console.log(size)
+
     if(productSize==='number'){
         return (
             <div className='productSizes'>
@@ -22,7 +22,7 @@ const ProductSizes = ({productSize, size, setSize}:ProductSizesProps) => {
                     <ProductSizeButton productSize="44" size={size} handleSelectSize={handleSelectSize} />
                 </div>
                 {size
-                && <div className='productSizes_clear'>
+                &&  <div className='productSizes_clear'>
                         <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
                     </div>}
             </div>
@@ -40,7 +40,7 @@ const ProductSizes = ({productSize, size, setSize}:ProductSizesProps) => {
                     <ProductSizeButton productSize="XL" size={size} handleSelectSize={handleSelectSize} />
                 </div>
                 {size
-                && <div className='productSizes_clear'>
+                &&  <div className='productSizes_clear'>
                         <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
                     </div>}
             </div>

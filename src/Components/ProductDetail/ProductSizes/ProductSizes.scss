@@ -3,10 +3,9 @@
     flex-direction: column;
     justify-content: flex-start;
     transition: all 0.1s linear; 
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     .productSizes_buttons{
         display: flex;
-        margin-bottom: 1rem;
         @media(max-width: 576px){
             justify-content: center;
         } 
@@ -17,7 +16,9 @@
             justify-content: center;
         } 
         .productSizes_clear_p{
-            font-size: 1rem;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            cursor: pointer;
         }
     }
 }

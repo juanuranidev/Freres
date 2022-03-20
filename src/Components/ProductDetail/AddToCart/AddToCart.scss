@@ -11,7 +11,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 5rem;
+        margin-right: 2.5rem;
+        background-color: #eeeeee;
         @media(max-width: 576px){
             margin: 0rem 0rem 2.5rem 0rem;
         }
@@ -19,12 +20,10 @@
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.1s linear; 
+            margin: 0rem 2rem;
         }
         .addToCart_div_span:active{
             transform: scale(.8);
-        }
-        .addToCart_div_p{
-            margin: 0rem 2.5rem;
         }
     }
     .addToCart_button{
@@ -32,7 +31,7 @@
         font-size: 0.8rem;
         background-color: #000000;
         border: none;
-        padding: 0.5rem 1rem;
+        padding: 1rem;
         transition: all 0.2s linear; 
         color: #eeeeee;
         cursor: pointer;
