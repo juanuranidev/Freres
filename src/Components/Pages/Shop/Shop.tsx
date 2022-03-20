@@ -28,8 +28,10 @@ const Shop = () => {
   return (
     <section className='shop'>
     {loader===true
-    ? <Loader/>
-    : <ProductList products={data}/>}
+      ? <Loader/>
+      : <div className='shop_div'>
+          <ProductList products={data}/>
+        </div>}
     </section>
   );
 }

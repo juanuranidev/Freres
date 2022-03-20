@@ -4,6 +4,9 @@
     justify-content: flex-start;
     transition: all 0.1s linear; 
     margin-bottom: 1rem;
+    @media(max-width: 576px){
+        margin-bottom: 0rem;
+    }
     .productSizes_buttons{
         display: flex;
         @media(max-width: 576px){

@@ -14,13 +14,13 @@
         margin-right: 2.5rem;
         background-color: #eeeeee;
         @media(max-width: 576px){
-            margin: 0rem 0rem 2.5rem 0rem;
+            margin: 2.5rem 0rem;
         }
         .addToCart_div_span{
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.1s linear; 
-            margin: 0rem 2rem;
+            margin: 1rem 2rem;
         }
         .addToCart_div_span:active{
             transform: scale(.8);
