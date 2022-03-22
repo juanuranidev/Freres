@@ -15,7 +15,8 @@ const ProductDetail = (product:any) => {
 
   useEffect( () => {
     const dataBase = getFirestore()
-    const queryCollection = query(collection(dataBase, 'products'), where('category', '==', product.category))  
+    const queryCollection = query(collection(dataBase, 'products'), where('category', '==', product.category))
+  
     getDocs(queryCollection)
     .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
     .catch(err => console.log(err))
@@ -26,7 +27,7 @@ const ProductDetail = (product:any) => {
       <motion.div 
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ ease: "linear", duration: 0.25 }}
+          transition={{ duration: 0.25 }}
           className='container'>
           <ProductImages images={product.images}/>
           <div className='productDetail_content'>
