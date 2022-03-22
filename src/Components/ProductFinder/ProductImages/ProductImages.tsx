@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import './ProductImages.scss';
 
-interface ProductImageProps{
-    images:any
-}
-
-const ProductImages = ({images}:ProductImageProps) => {
+const ProductImages = ({images}:any) => {
   const [mainImage, setMainImage] = useState<number>(0)
   
   const handleMainImage = (index:number) => setMainImage(index)

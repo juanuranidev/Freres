@@ -9,6 +9,7 @@ const Product = (product: any) => {
       initial={{  x:-100, opacity: 0  }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ ease: "linear", duration: 0.25 }}
+      exit={{opacity: 0}}
       key={product.id} className='product'>
       <Link to={`/product/${product.id}`}>
         <img src={product.images[0]} className='product_img'/>

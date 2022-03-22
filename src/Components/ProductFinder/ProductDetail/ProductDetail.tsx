@@ -1,35 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
-import { useParams } from 'react-router-dom';
+import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import { motion } from 'framer-motion';
-import Loader from '../Loader/Loader';
-import ProductSizes from './ProductSizes/ProductSizes';
-import AddToCart from './AddToCart/AddToCart';
-import ProductImages from './ProductImages/ProductImages';
-import ProductTextContent from './ProductTextContent/ProductTextContent';
+import ProductSizes from '../ProductSizes/ProductSizes';
+import AddToCart from '../AddToCart/AddToCart';
+import ProductImages from '../ProductImages/ProductImages';
+import ProductTextContent from '../ProductTextContent/ProductTextContent';
+import ProductPanel from '../ProductPanel/ProductPanel';
+import SimilarProducts from '../SimilarProducts/SimilarProducts';
 import './ProductDetail.scss';
-import ProductPanel from './ProductPanel/ProductPanel';
 
-const ProductDetail = () => {
-  const [loader, setLoader] = useState<boolean>(true)
-  const [product, setProduct] = useState<any>({})
+const ProductDetail = (product:any) => {
+  const [products, setProducts] = useState<any>([])
   const [size, setSize] = useState<any>("")
-  const {idProduct}:any = useParams()
-  
-  useEffect(() => {
+
+  useEffect( () => {
     const dataBase = getFirestore()
-    const queryProd = doc (dataBase, 'products', idProduct)
-    getDoc(queryProd)
-    .then(resp => setProduct({id: resp.id, ...resp.data()}))
+    const queryCollection = query(collection(dataBase, 'products'), where('category', '==', product.category))  
+    getDocs(queryCollection)
+    .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
     .catch(err => console.log(err))
-    .finally(() => setLoader(false))
-  }, [idProduct])
+  }, [])
 
   return (
     <section className='productDetail'>
-    {loader
-      ? <Loader/>
-      : <motion.div 
+      <motion.div 
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ ease: "linear", duration: 0.25 }}
@@ -43,7 +37,8 @@ const ProductDetail = () => {
             <ProductPanel title='ENVÍOS' text='Los envíos son realizados por Correo Argentino y moto mensajería. También podes retirar tu pedido gratis por nuestra oficina en CABA.'/>
             <ProductPanel title='POLÍTICA DE CAMBIOS' text='Podrás realizar un cambio hasta 10 días después de haber recibido tu compra. Los productos deberán encontrarse en el mismo estado en que fueron remitidos. Podes hacerlo acercándote a nuestras oficinas en CABA o bien abonando el envío hacia nuestra oficina, nosotros abonamos el envío a tu casa.'/>
           </div>
-        </motion.div>}
+      </motion.div>
+          <SimilarProducts products={[...products].sort(() => 0.5 - Math.random()).splice(1, 4)}/>
     </section>
   );
 }
