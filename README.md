@@ -1,5 +1,5 @@
 # Freres
-Frères is an online store that sells clothes which I always liked, however after a while of browsing their site I thought it could have a better design so I set out to create it. Welcome to the new Frères.
+<a href="https://freres.ar/" target="_blank">Frères</a> is an online store that sells clothes which I always liked, however after a while of browsing their site I thought it could have a better design so I set out to create it. Welcome to the new Frères.
 
 # Demo
 https://freres.netlify.app/

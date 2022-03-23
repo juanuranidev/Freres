@@ -11,7 +11,6 @@ const EssentialOutfitDetail = () => {
     const [loader, setLoader] = useState<boolean>(true)
     const { idOutfit } = useParams()
 
-    
     let image:any = Images.find((image) => image.id===idOutfit)
 
     useEffect(() => {
