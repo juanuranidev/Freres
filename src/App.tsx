@@ -7,9 +7,10 @@ import Main from './Components/Pages/Main/Main';
 import Shop from './Components/Pages/Shop/Shop';
 import EssentialOutfits from './Components/Pages/EssentialOutfits/EssentialOutfits';
 import About from './Components/Pages/About/About';
-import ProductFinder from './Components/ProductFinder/ProductFinder';
+import ProductFinder from './Components/Pages/ProductFinder/ProductFinder';
 import Footer from './Components/Footer/Footer';
 import './App.scss';
+import EssentialOutfitDetail from './Components/Pages/EssentialOutfitDetail/EssentialOutfitDetail';
 
 getFirestoreApp()
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/essential_outfits' element={<EssentialOutfits/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/product/:idProduct' element={<ProductFinder/>}/>
+          <Route path='/outfit/:idOutfit' element={<EssentialOutfitDetail/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

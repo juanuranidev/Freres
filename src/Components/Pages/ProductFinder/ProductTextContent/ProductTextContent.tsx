@@ -9,12 +9,16 @@ interface ProductTextContentProps{
 }
 
 const ProductTextContent = ({name, price, description}:ProductTextContentProps) => {
+  
+  let productDescription = description.split(".")
+  productDescription.pop()
+  
   return (
     <>
       <h1 className='productDetail_content_h1'>{name}</h1>
       <p className='productDetail_content_p'>${price}</p>
       <div className='productDetail_content_description'>
-        {description.split(".").map((sentence:string, index:number) => <p className='productDetail_content_description_p' key={index} >{sentence}</p>)}
+        {productDescription.map((sentence:string, index:number) => <p className='productDetail_content_description_p' key={index} >{sentence}.</p>)}
       </div>
       <div className='productDetail_content_shipping'>
         <img className='productDetail_content_shipping_img'src={Shipping}/>

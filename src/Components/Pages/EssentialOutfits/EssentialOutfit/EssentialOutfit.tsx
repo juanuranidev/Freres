@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ProductList from '../../../ProductList/ProductList';
 import './EssentialOutfit.scss';
 
@@ -6,10 +7,11 @@ interface EssentialOutfitProps {
     name: string
     products: any
     image: string
+    link:string
     imageDirection: string
 }
 
-const EssentialOutfit = ({name, products, image, imageDirection}: EssentialOutfitProps) => {
+const EssentialOutfit = ({name, products, link, image, imageDirection}: EssentialOutfitProps) => {
 
     return (
     <div className={imageDirection==="left" ?'essentialOutfit left' :'essentialOutfit'}>
@@ -19,7 +21,7 @@ const EssentialOutfit = ({name, products, image, imageDirection}: EssentialOutfi
                 <ProductList products={products}/>
             </div>
             <div className='essentialOutfit_buttons'>
-                <button className='essentialOutfit_buttons_button'>VER CONJUNTO</button>
+                <Link to={link}><button className='essentialOutfit_buttons_button'>VER CONJUNTO</button></Link>
                 <button className='essentialOutfit_buttons_button'>AGREGAR AL CARRITO</button>
             </div>
         </div>

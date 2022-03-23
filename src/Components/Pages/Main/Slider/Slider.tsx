@@ -5,7 +5,7 @@ import './Slider.scss';
 
 const Slider = () => {
   const [width, setWidth] = useState<number>(0);
-  const  carousel:any = useRef();
+  const carousel:any = useRef();
 
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);

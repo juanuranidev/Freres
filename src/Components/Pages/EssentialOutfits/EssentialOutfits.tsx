@@ -23,10 +23,10 @@ const EssentialOutfits = () => {
     {loader
     ? <Loader/>
     : <motion.div className='essentialOutfits_div' initial={{  x:-100, opacity: 0  }} animate={{ x: 0, opacity: 1 }} transition={{ ease: "linear", duration: 0.25 }}>
-        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg'} name=  {'ELEGANT'} products={data.filter((product:any) => product.essential_outfit==="elegant")} imageDirection={'right'} />
-        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-4-scaled-uai-720x720.jpg'} name={'RELAXED'} products={data.filter((product:any) => product.essential_outfit==="relaxed")} imageDirection={'left'} />
-        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-6-scaled-uai-720x720.jpg'} name={'CASUAL'} products={data.filter((product:any) => product.essential_outfit==="casual")} imageDirection={'right'} />
-        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg'} name=  {'STREET'} products={data.filter((product:any) => product.essential_outfit==="street")} imageDirection={'left'} />
+        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg'} name=  {'ELEGANT'} link={'/outfit/elegant'} products={data.filter((product:any) => product.essential_outfit==="elegant")} imageDirection={'right'} />
+        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-4-scaled-uai-720x720.jpg'} name={'RELAXED'} link={'/outfit/relaxed'} products={data.filter((product:any) => product.essential_outfit==="relaxed")} imageDirection={'left'} />
+        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-6-scaled-uai-720x720.jpg'} name={'CASUAL'} link={'/outfit/casual'} products={data.filter((product:any) => product.essential_outfit==="casual")} imageDirection={'right'} />
+        <EssentialOutfit image={'https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg'} name=  {'STREET'} link={'/outfit/street'} products={data.filter((product:any) => product.essential_outfit==="street")} imageDirection={'left'} />
       </motion.div>}     
     </div>
   );
