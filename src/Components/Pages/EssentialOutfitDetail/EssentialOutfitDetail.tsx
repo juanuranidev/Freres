@@ -1,8 +1,8 @@
 import React, {useState, useEffect } from 'react';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Loader from '../../Loader/Loader';
-import Images from './Img/ImportImages';
 import ProductList from '../../ProductList/ProductList';
 import './EssentialOutfitDetail.scss';
 
@@ -10,8 +10,6 @@ const EssentialOutfitDetail = () => {
     const [products, setProducts] = useState<any>([])
     const [loader, setLoader] = useState<boolean>(true)
     const { idOutfit } = useParams()
-
-    let image:any = Images.find((image) => image.id===idOutfit)
 
     useEffect(() => {
     const dataBase = getFirestore()
@@ -28,13 +26,21 @@ const EssentialOutfitDetail = () => {
       <section className='essentialOutfitDetail'>
           {loader
           ? <Loader/>
-          : <div>
-              <img src={image.path}/>
-              <h1>{idOutfit}</h1>
-              <div>
+          : <motion.div
+              initial={{  x:-100, opacity: 0  }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ ease: "linear", duration: 0.25 }}
+              exit={{opacity: 0}}
+              className='essentialOutfitDetail_content'>
+              <h1 className='essentialOutfitDetail_content_h1'>{idOutfit}</h1>
+              <img src={products[0].essential_outfit_image} className='essentialOutfitDetail_content_img'/>
+              <div className='essentialOutfitDetail_content_div'>
                 <ProductList products={products}/>
               </div>
-            </div>}
+              <video loop autoPlay={true} muted>
+                <source src='https://drive.google.com/file/d/1RFgARb88gq3xOfIc1ZToU5Z4wXyMKOfh/view?usp=sharing' type="video/mp4" />
+              </video>
+            </motion.div>}
       </section>
   );
 }

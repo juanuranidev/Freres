@@ -60,6 +60,7 @@
         @media(max-width: 576px){
            display: flex;
            flex-direction: column;
+           align-items: center;
         }
         .essentialOutfit_buttons_button:first-child{
             margin-right: 2.5rem;
