@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { getFirestore, query, collection, getDocs, addDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import './Newsletter.scss';
 
 const Newsletter = () => {
   const [isUserSuscribed, setIsUserSuscribed] = useState<boolean>(false)
   const [userEmail, setUserEmail] = useState<any>({email: ''})
 
-  const handleSetUserEmail = (e:any):void => setUserEmail({...userEmail,[e.target.name] : e.target.value})
+  const handleSetUserEmail = (e:any) => setUserEmail({...userEmail,[e.target.name] : e.target.value})
 
   const handleSubmit = (e:any) => {
     e.preventDefault()
@@ -15,6 +15,7 @@ const Newsletter = () => {
 
     const dataBase = getFirestore()
     const emailCollection = collection(dataBase, 'newsletter') 
+
     addDoc(emailCollection, email)
       .catch(err => console.log(err))
       .finally (() => {setIsUserSuscribed(true)})
