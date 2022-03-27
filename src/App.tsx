@@ -37,3 +37,5 @@ function App() {
 }
 
 export default App;
+// Falta terminar
+// CartContext, Vista de los productos agregados al carrito, CartView, Payment

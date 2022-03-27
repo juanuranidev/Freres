@@ -4,7 +4,7 @@ import './Product.scss';
 import { Link } from 'react-router-dom';
 
 const Product = (product: any) => {
-  return (
+return (
     <motion.div
       initial={{  x:-100, opacity: 0  }}
       animate={{ x: 0, opacity: 1 }}
