@@ -1,13 +1,13 @@
 .cartItem{
     display: flex;
     margin-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding: 0rem 1rem 1.5rem 0rem;
     border-bottom: 0.12rem solid #eeeeee;
     .cartItem_image{
         margin-right: 0.5rem;
         .cartItem_image_img{
             width: 8rem;
-            border-radius: 0.5rem;
+            border-radius: 0.25rem;
         }
     }
     .cartItem_content{

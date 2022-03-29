@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
-import './CartContent.scss';
 import CartItem from './CartItem/CartItem';
+import './CartContent.scss';
 
 interface CartContentProps {
     openCart: boolean;
@@ -33,7 +33,13 @@ const CartContent = ({openCart, handleCloseCart}: CartContentProps) => {
           <p>Tu carrito está vacío.</p>
         </div> */}
         <div className='cart_products'>
-        <CartItem products={data}/>
+          <CartItem products={data}/>
+        </div>
+        <div className='cart_subtotal'>
+          <p className='cart_subtotal_p'><b>SUBTOTAL:</b> $3924</p>
+        </div>
+        <div className='cart_checkout'>
+          <button>Finalizar Compra</button>
         </div>
     </div>
   )
