@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
+import { CartContext, ProductModel } from '../../../Context/CartContext'
 import { motion } from 'framer-motion';
 import ProductSizes from '../ProductSizes/ProductSizes';
 import AddToCart from '../AddToCart/AddToCart';
@@ -8,20 +9,23 @@ import ProductTextContent from '../ProductTextContent/ProductTextContent';
 import ProductPanel from '../ProductPanel/ProductPanel';
 import SimilarProducts from '../SimilarProducts/SimilarProducts';
 import './ProductDetail.scss';
-import { Product as IProduct } from '../../../Context/CartContext'
 
-const ProductDetail = (product:IProduct) => {
-  const [products, setProducts] = useState<IProduct[]>([])
-  const [size, setSize] = useState<any>("")
+const ProductDetail = (product:ProductModel) => {
+  const [products, setProducts] = useState<ProductModel[]>([])
+  const [size, setSize] = useState<string>("")
 
+  const { addToCart } = useContext(CartContext)
+  
   useEffect( () => {
     const dataBase = getFirestore()
     const queryCollection = query(collection(dataBase, 'products'), where('category', '==', product.category))
   
     getDocs(queryCollection)
-    .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()} as IProduct))))
+    .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()} as ProductModel))))
     .catch(err => console.log(err))
   }, [])
+
+
 
   return (
     <section className='productDetail'>
@@ -34,7 +38,7 @@ const ProductDetail = (product:IProduct) => {
           <div className='productDetail_content'>
             <ProductTextContent name={product.name} price={product.price} description={product.description} />
             <ProductSizes productSize={product.format_of_size_chart} size={size} setSize={setSize} />
-            <AddToCart stock={product.stock} />
+            <AddToCart product={product} stock={product.stock} size={size} addToCart={addToCart} />
             <ProductPanel title='DETALLES' text='lorem lorem lorem lorem'/>
             <ProductPanel title='ENVÍOS' text='Los envíos son realizados por Correo Argentino y moto mensajería. También podes retirar tu pedido gratis por nuestra oficina en CABA.'/>
             <ProductPanel title='POLÍTICA DE CAMBIOS' text='Podrás realizar un cambio hasta 10 días después de haber recibido tu compra. Los productos deberán encontrarse en el mismo estado en que fueron remitidos. Podes hacerlo acercándote a nuestras oficinas en CABA o bien abonando el envío hacia nuestra oficina, nosotros abonamos el envío a tu casa.'/>

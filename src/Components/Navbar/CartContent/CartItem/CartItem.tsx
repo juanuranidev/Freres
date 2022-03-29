@@ -1,6 +1,6 @@
 import React from 'react';
 import './CartItem.scss';
-import { Product as ProductModel } from '../../../Context/CartContext';
+import { ProductModel } from '../../../Context/CartContext';
 
 const CartItem = ({products}:any) => {
   return (

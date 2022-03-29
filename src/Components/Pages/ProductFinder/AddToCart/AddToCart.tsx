@@ -1,18 +1,16 @@
-import React, { useContext, useState } from 'react';
-import { CartContext } from '../../../Context/CartContext';
-import CartContent from '../../../Navbar/CartContent/CartContent';
+import React, { useState } from 'react';
+import { ProductModel } from '../../../Context/CartContext';
 import './AddToCart.scss';
 
 interface AddToCartProps{
-    stock: number
+    product: ProductModel;
+    stock: number;
+    size: string;
+    addToCart?: (product:ProductModel, quantity:number, size: string) => void;
 }
 
-const AddToCart = ({stock}:AddToCartProps) => {
+const AddToCart = ({product, stock, size, addToCart }:AddToCartProps) => {
     const [amount, setAmount] = useState<number>(1) 
-
-    const { addToCart } = useContext(CartContext)
-
-   
 
     const handleIncrement = () => stock > amount && setAmount(prev => prev + 1)
     const handleDecrement = () => amount > 1 && setAmount(prev => prev - 1)   
@@ -24,7 +22,7 @@ const AddToCart = ({stock}:AddToCartProps) => {
             <p className='addToCart_div_p'>{amount}</p>
             <span className='fa fa-plus addToCart_div_span' onClick={handleIncrement}/>   
         </div>
-        <button className='addToCart_button'>AGREGAR AL CARRITO</button>
+        <button className='addToCart_button' onClick={() => addToCart?.(product, amount, size)}>AGREGAR AL CARRITO</button>
     </div>
   );
 }

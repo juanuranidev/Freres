@@ -6,12 +6,12 @@ const initialValue = {
 }
 
 type CartContextType = {
-  cartList: Product[];
-  setCartList?: (value:Product) => void;
-  addToCart?: (product:Product, quantity:number, size: string) => void
+  cartList: ProductModel[];
+  setCartList?: (value:ProductModel) => void;
+  addToCart?: (product:ProductModel, quantity:number, size: string) => void
 }
 
-export type Product = {
+export type ProductModel = {
   category: string;
   description: string;
   format_of_size_chart: string;
@@ -19,7 +19,7 @@ export type Product = {
   images: string[];
   name: string;
   price: number;
-  quantity?: number;
+  quantity: number;
   stock: number;
   top_seller: boolean;
   is_an_essential_outfit?: boolean;
@@ -31,14 +31,14 @@ export type Product = {
 export const CartContext = createContext<CartContextType>(initialValue)
 
 export const CartContextProvider = ({children}:any) => {
-    const [cartList, setCartList] = useState<Product[]>([])
+    const [cartList, setCartList] = useState<ProductModel[]>([])
    
-    const addToCart = (product:Product, quantity:number, size: string) => {
+    const addToCart = (product:ProductModel, quantity:number, size: string) => {
         const isInCart = cartList.find(((x) => x.id === product.id))
         if(isInCart){
             const oldCart = cartList.map((x) => {
                 if (x.id === product.id) {
-                    return { ...product, quantity: (product.quantity??1) + (x.quantity??0), size }
+                    return { ...product, quantity: quantity + x.quantity, size }
                 }
                 return x
             })
@@ -46,6 +46,7 @@ export const CartContextProvider = ({children}:any) => {
         } else {
             setCartList([...cartList, {...product, quantity, size}])
         }
+        console.log(quantity, size)
     }
 
     console.log(cartList)

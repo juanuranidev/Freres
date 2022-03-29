@@ -1,12 +1,12 @@
-import React, { createContext, useContext } from 'react';
-import { motion } from 'framer-motion';
-import './Product.scss';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { ProductModel } from '../../Context/CartContext';
 import { CartContext } from '../../Context/CartContext';
-import { Product as IProduct } from '../../Context/CartContext';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import './Product.scss';
 
 
-const Product = (product: IProduct) => {
+const Product = (product: ProductModel) => {
 const {addToCart} = useContext(CartContext)
 
 return (
@@ -27,18 +27,18 @@ return (
         <p className='product_sizes_p'>AGREGADO RÁPIDO</p>
         {product.format_of_size_chart==="number" &&
           <div className='product_sizes_div'>
-            <button className='product_sizes_div_button'>38</button>
-            <button className='product_sizes_div_button'>40</button>
-            <button className='product_sizes_div_button'>42</button>
-            <button className='product_sizes_div_button'>44</button>
+            <button className='product_sizes_div_button' onClick={() => addToCart?.(product, 1, "38")}>38</button>
+            <button className='product_sizes_div_button' onClick={() => addToCart?.(product, 1, "40")}>40</button>
+            <button className='product_sizes_div_button' onClick={() => addToCart?.(product, 1, "42")}>42</button>
+            <button className='product_sizes_div_button' onClick={() => addToCart?.(product, 1, "44")}>44</button>
           </div>}
         {product.format_of_size_chart==="letter" &&
           <div className='product_sizes_div'>
-            <button className='product_sizes_div_button'>XS</button>
-            <button className='product_sizes_div_button'>S</button>
-            <button className='product_sizes_div_button'>M</button>
-            <button className='product_sizes_div_button'>L</button>
-            <button className='product_sizes_div_button'>XL</button>
+            <button className='product_sizes_div_button' onClick={() => addToCart?.(product, 1, "XX")}>XS</button>
+            <button className='product_sizes_div_button' onClick={() => addToCart?.(product, 1, "S")}>S</button>
+            <button className='product_sizes_div_button' onClick={() => addToCart?.(product, 1, "M")}>M</button>
+            <button className='product_sizes_div_button' onClick={() => addToCart?.(product, 1, "L")}>L</button>
+            <button className='product_sizes_div_button' onClick={() => addToCart?.(product, 1, "XL")}>XL</button>
           </div>} 
         {product.format_of_size_chart==="none" &&
           <div className='product_sizes_div'>
