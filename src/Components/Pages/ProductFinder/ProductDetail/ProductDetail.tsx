@@ -8,9 +8,10 @@ import ProductTextContent from '../ProductTextContent/ProductTextContent';
 import ProductPanel from '../ProductPanel/ProductPanel';
 import SimilarProducts from '../SimilarProducts/SimilarProducts';
 import './ProductDetail.scss';
+import { Product as IProduct } from '../../../Context/CartContext'
 
-const ProductDetail = (product:any) => {
-  const [products, setProducts] = useState<any>([])
+const ProductDetail = (product:IProduct) => {
+  const [products, setProducts] = useState<IProduct[]>([])
   const [size, setSize] = useState<any>("")
 
   useEffect( () => {
@@ -18,7 +19,7 @@ const ProductDetail = (product:any) => {
     const queryCollection = query(collection(dataBase, 'products'), where('category', '==', product.category))
   
     getDocs(queryCollection)
-    .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+    .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()} as IProduct))))
     .catch(err => console.log(err))
   }, [])
 

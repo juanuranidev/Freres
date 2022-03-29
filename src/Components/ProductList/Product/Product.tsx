@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { createContext, useContext } from 'react';
 import { motion } from 'framer-motion';
 import './Product.scss';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../Context/CartContext';
+import { Product as IProduct } from '../../Context/CartContext';
 
-const Product = (product: any) => {
+
+const Product = (product: IProduct) => {
+const {addToCart} = useContext(CartContext)
+
 return (
     <motion.div
       initial={{  x:-100, opacity: 0  }}
@@ -37,7 +42,7 @@ return (
           </div>} 
         {product.format_of_size_chart==="none" &&
           <div className='product_sizes_div'>
-            <button className='product_sizes_div_buttonAddToCart'>AGREGAR AL CARRITO</button>
+            <button className='product_sizes_div_buttonAddToCart' onClick={() => addToCart?.(product, 1, "No aplica")}>AGREGAR AL CARRITO</button>
           </div>}
       </div>
     </motion.div>

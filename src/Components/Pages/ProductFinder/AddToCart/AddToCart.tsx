@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { CartContext } from '../../../Context/CartContext';
+import CartContent from '../../../Navbar/CartContent/CartContent';
 import './AddToCart.scss';
 
 interface AddToCartProps{
@@ -7,6 +9,10 @@ interface AddToCartProps{
 
 const AddToCart = ({stock}:AddToCartProps) => {
     const [amount, setAmount] = useState<number>(1) 
+
+    const { addToCart } = useContext(CartContext)
+
+   
 
     const handleIncrement = () => stock > amount && setAmount(prev => prev + 1)
     const handleDecrement = () => amount > 1 && setAmount(prev => prev - 1)   
