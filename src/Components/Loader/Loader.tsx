@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../Navbar/Logo/Logo';
-import './Loader.scss'
+import './Loader.scss';
 
 const Loader = () => {
   return (

@@ -20,9 +20,8 @@ const EssentialOutfit = ({name, products, link, image, imageDirection}: Essentia
             <div className='essentialOutfit_products_div'>
                 <ProductList products={products}/>
             </div>
-            <div className='essentialOutfit_buttons'>
-                <Link to={link}><button className='essentialOutfit_buttons_button'>VER CONJUNTO</button></Link>
-                <button className='essentialOutfit_buttons_button'>AGREGAR AL CARRITO</button>
+            <div className='essentialOutfit_button'>
+                <Link to={link}><button className='essentialOutfit_button_button'>VER CONJUNTO</button></Link>
             </div>
         </div>
         <div className='essentialOutfit_image'>

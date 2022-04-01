@@ -5,7 +5,10 @@ import './About.scss';
 const About = () => {
   return (
     <section className='about'>
-      <motion.div initial={{  x:-100, opacity: 0  }} animate={{ x: 0, opacity: 1 }} transition={{ ease: "linear", duration: 0.25 }}>
+      <motion.div
+      initial={{  x:-100, opacity: 0  }} 
+      animate={{ x: 0, opacity: 1 }} 
+      transition={{ ease: "linear", duration: 0.25 }}>
         <div className='about_content'>
           <div className='about_content_div'>
             <h2 className='about_content_h2'>FRÈRES SIGNIFICA HERMANOS</h2>

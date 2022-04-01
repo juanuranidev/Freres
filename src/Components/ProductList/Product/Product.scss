@@ -1,8 +1,8 @@
 .product{
-    background-color: #eeeeee;
     width: 25%;
     text-align: center;
     padding-bottom: 1rem;
+    background-color: #eeeeee;
     border-right: 0.12rem solid #ffffff;
     border-bottom: 0.12rem solid #ffffff;
     @media(max-width: 992px){
@@ -41,37 +41,6 @@
             margin-bottom: 0.5rem;
             font-size: 0.8rem;
             font-weight: 700;
-        }
-        .product_sizes_div{
-            height: 2rem;
-            display: flex;
-            justify-content: center;
-            justify-content: center;
-            .product_sizes_div_button{
-                font-size: 0.8rem;
-                width: 2rem;
-                height: 2rem;
-                background-color: none;
-                border: 1px solid #000000;
-                box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
-                margin: 0rem 0.5rem;
-                cursor: pointer;
-            }
-            .product_sizes_div_button:active{
-                transform: scale(.95);
-            }
-            .product_sizes_div_buttonAddToCart{
-                font-size: 0.8rem;
-                background-color: none;
-                border: 1px solid #000000;
-                box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
-                transition: all 0.1s linear; 
-                padding: 0.5rem 1rem;
-                cursor: pointer;
-            }
-            .product_sizes_div_buttonAddToCart:active{
-                transform: scale(.95);
-            }
         }
     }
 }

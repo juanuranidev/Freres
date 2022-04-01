@@ -11,21 +11,19 @@ import SimilarProducts from '../SimilarProducts/SimilarProducts';
 import './ProductDetail.scss';
 
 const ProductDetail = (product:ProductModel) => {
-  const [products, setProducts] = useState<ProductModel[]>([])
-  const [size, setSize] = useState<string>("")
+  const [products, setProducts] = useState<ProductModel[]>([]);
+  const [size, setSize] = useState<string>("");
 
-  const { addToCart } = useContext(CartContext)
+  const { addToCart } = useContext(CartContext);
   
   useEffect( () => {
-    const dataBase = getFirestore()
-    const queryCollection = query(collection(dataBase, 'products'), where('category', '==', product.category))
+    const dataBase = getFirestore();
+    const queryCollection = query(collection(dataBase, 'products'), where('category', '==', product.category));
   
     getDocs(queryCollection)
     .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()} as ProductModel))))
     .catch(err => console.log(err))
-  }, [])
-
-
+  }, []);
 
   return (
     <section className='productDetail'>

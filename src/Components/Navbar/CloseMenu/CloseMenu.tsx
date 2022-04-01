@@ -1,14 +1,14 @@
-import React from 'react'
-import './CloseMenu.scss'
+import React from 'react';
+import './CloseMenu.scss';
 
 interface CloseMenuProps{
-    handleCloseMenu: any
+    handleCloseMenu: () => void;
 }
 
-const CloseMenu = ({handleCloseMenu}:CloseMenuProps) => {
+const CloseMenu = ({handleCloseMenu}: CloseMenuProps) => {
   return (
     <div className='closeMenu'><div onClick={handleCloseMenu}/></div>
-  )
+  );
 }
 
-export default CloseMenu
+export default CloseMenu;

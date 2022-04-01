@@ -5,7 +5,7 @@ import './Socials.scss';
 const Socials = () => {
   return (
     <div className='socials'>
-        <Logo/>
+        <Logo />
         <p className='socials_p'>Viamonte 174A, Ciudad Autónoma de Buenos Aires.</p>
         <p className='socials_p'><a className='socials_p_a' href='mailto:ventas@freres.ar' target='_blank'>ventas@freres.ar</a></p>
         <div className='socials_div'>

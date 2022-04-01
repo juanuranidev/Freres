@@ -6,12 +6,12 @@ import ProductList from '../../ProductList/ProductList';
 import './Shop.scss';
 
 const Shop = () => {
-  const [data, setData] = useState<any>([])
-  const [loader, setLoader] = useState<boolean>(true)
-  const {idCategory} = useParams()
+  const [data, setData] = useState<any>([]);
+  const [loader, setLoader] = useState<boolean>(true);
+  const {idCategory} = useParams();
   
   useEffect(() => {
-    const dataBase = getFirestore()
+    const dataBase = getFirestore();
     
     let queryCollection
     

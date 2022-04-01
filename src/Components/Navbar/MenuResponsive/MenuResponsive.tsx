@@ -4,8 +4,8 @@ import CloseMenu from '../CloseMenu/CloseMenu';
 import './MenuResponsive.scss';
 
 interface MenuResponsiveProps{
-    handleCloseMenu: any,
-    openMenu: any
+    handleCloseMenu: () => void;
+    openMenu: boolean;
 }
 
 const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {

@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../Context/CartContext';
 import './Overlay.scss';
 
 interface OverlayProps {
-    openCart: boolean,
     openMenu: boolean
 }
 
-const Overlay = ({openCart, openMenu}: OverlayProps) => {
+const Overlay = ({openMenu}: OverlayProps) => {
+  const { openCart } = useContext(CartContext)
+
   return (
     <div className={openCart===true || openMenu===true ?'overlay visible' :'overlay'}/>
   );

@@ -2,12 +2,8 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
 import './Cart.scss';
 
-interface CartProps {
-  handleOpenCart: () => void;
-}
-
-const Cart = ({handleOpenCart}: CartProps) => {
-  const { cartList } = useContext(CartContext)
+const Cart = () => {
+  const { cartList, handleOpenCart } = useContext(CartContext)
 
   return (
   <>

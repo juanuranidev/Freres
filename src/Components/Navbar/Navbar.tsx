@@ -11,11 +11,7 @@ import Overlay from './Overlay/Overlay';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(false)
-  const [openCart, setOpenCart] = useState(false);
-
-  const handleOpenCart = () => setOpenCart(true);
-  const handleCloseCart = () => setOpenCart(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false)
   
   const handleOpenMenu = () => setOpenMenu(true);
   const handleCloseMenu = () => setOpenMenu(false);
@@ -30,9 +26,9 @@ const Navbar = () => {
         <Link to='/about'><li>NOSOTROS</li></Link>
       </ul>
       <Logo/>
-      <Cart handleOpenCart={handleOpenCart} />
-      <CartContent handleCloseCart={handleCloseCart} openCart={openCart} />
-      <Overlay openCart={openCart} openMenu={openMenu} />
+      <Cart />
+      <CartContent />
+      <Overlay openMenu={openMenu} />
     </nav>
   );
 }

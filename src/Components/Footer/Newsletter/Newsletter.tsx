@@ -31,7 +31,13 @@ const Newsletter = () => {
         </div>
       : <div className='newsletter_div'>
           <form className='newsletter_div_form' onSubmit={(e) => handleSubmit(e)}>
-            <input type='email' placeholder='Email' name='email' value={userEmail.email} className='newsletter_div_form_input' onChange={(e) => handleSetUserEmail(e)} />    
+            <input 
+            name='email' 
+            type='email' 
+            placeholder='Email' 
+            value={userEmail.email} 
+            className='newsletter_div_form_input' 
+            onChange={(e) => handleSetUserEmail(e)} />    
             {userEmail.email
             ?<button type='submit' className='newsletter_div_form_button'>UNIRME</button>
             :<button type='submit' className='newsletter_div_form_button' disabled>UNIRME</button>}

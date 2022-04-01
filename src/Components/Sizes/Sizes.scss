@@ -1,0 +1,32 @@
+.sizes{
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    .sizes_button{
+        font-size: 0.8rem;
+        width: 2rem;
+        height: 2rem;
+        background-color: none;
+        transition: all 0.1s linear;
+        border: 1px solid #000000;
+        box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
+        margin: 0rem 0.5rem;
+        cursor: pointer;
+    }
+    .sizes_button:active{
+        transform: scale(.95);
+    }
+    .sizes_buttonAddToCart{
+        font-size: 0.8rem;
+        background-color: none;
+        border: 1px solid #000000;
+        box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
+        transition: all 0.1s linear; 
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+    .sizesv_buttonAddToCart:active{
+        transform: scale(.95);
+    }
+}

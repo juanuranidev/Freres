@@ -5,9 +5,9 @@ import Loader from '../../Loader/Loader';
 import ProductDetail from './ProductDetail/ProductDetail';
 
 const ProductFinder = () => {
-    const [product, setProduct] = useState<any>({})
-    const [loader, setLoader] = useState<boolean>(true)
-    const {idProduct}:any = useParams()
+    const [product, setProduct] = useState<any>({});
+    const [loader, setLoader] = useState<boolean>(true);
+    const {idProduct}:any = useParams();
 
     useEffect( () => {
         const dataBase = getFirestore()
@@ -16,7 +16,7 @@ const ProductFinder = () => {
         .then(resp => setProduct({id: resp.id, ...resp.data()}))
         .catch(err => console.log(err))
         .finally(() => setLoader(false))
-      }, [idProduct])
+      }, [idProduct]);
 
       return (
         <div>

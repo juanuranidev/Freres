@@ -7,9 +7,9 @@ import ProductList from '../../ProductList/ProductList';
 import './EssentialOutfitDetail.scss';
 
 const EssentialOutfitDetail = () => {
-    const [products, setProducts] = useState<any>([])
-    const [loader, setLoader] = useState<boolean>(true)
-    const { idOutfit } = useParams()
+    const [products, setProducts] = useState<any>([]);
+    const [loader, setLoader] = useState<boolean>(true);
+    const { idOutfit } = useParams();
 
     useEffect(() => {
     const dataBase = getFirestore()
@@ -27,10 +27,10 @@ const EssentialOutfitDetail = () => {
           {loader
           ? <Loader/>
           : <motion.div
-              initial={{  x:-100, opacity: 0  }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ ease: "linear", duration: 0.25 }}
               exit={{opacity: 0}}
+              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: -100, opacity: 0 }}
+              transition={{ ease: "linear", duration: 0.25 }}
               className='essentialOutfitDetail_content'>
               <h1 className='essentialOutfitDetail_content_h1'>{idOutfit}</h1>
               <img src={products[0].essential_outfit_image} className='essentialOutfitDetail_content_img'/>
