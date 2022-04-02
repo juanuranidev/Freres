@@ -4,15 +4,17 @@ import ProductList from '../../../ProductList/ProductList';
 import './SimilarProducts.scss';
 
 interface SimilarProductsProps {
-  products: ProductModel[]
-}
+  products: ProductModel[];
+  setSize: (value: string) => void;
+} 
 
-const SimilarProducts = ({products}: SimilarProductsProps) => {
+const SimilarProducts = ({products, setSize}: SimilarProductsProps) => {
+  console.log("actualizado")
   return (
     <div className='similarProducts'>
         <h2 className='similarProducts_h2'>TAMBIÉN TE PUEDE GUSTAR</h2>
-        <div className='similarProducts_div'>
-            <ProductList products={products}/>
+        <div className='similarProducts_div' onClick={() => setSize("")} >
+            <ProductList products={products} />
         </div>
     </div>
   );

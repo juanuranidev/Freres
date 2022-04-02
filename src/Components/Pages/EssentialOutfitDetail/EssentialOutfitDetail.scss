@@ -1,25 +1,33 @@
 .essentialOutfitDetail{
     padding: 8rem 0rem 0rem 0rem;
-    background-color: #ffffff;
+    background-color: #eeeeee;
     text-align: center;
     .essentialOutfitDetail_content_h1{
         text-transform: uppercase;
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-bottom: 5rem;
     }
     .essentialOutfitDetail_content_img{
-        width: 30%;
-        height: 30%;
+        width: 40rem;
+        height: 40rem;
         margin-bottom: 5rem;
         border: 1px solid lightgray;
         box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
+        @media(max-width: 992px){
+            width: 30rem;
+            height: 30rem;
+        }
+        @media(max-width: 576px){
+            width: 90%;
+            height: 100%;
+        }
+
     }
     .essentialOutfitDetail_content_div{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         border-top: 0.12rem solid #ffffff;
-        
         padding-bottom: 5rem;
         .product{
             width: 33.33%;

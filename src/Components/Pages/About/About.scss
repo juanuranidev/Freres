@@ -24,17 +24,16 @@
             .about_content_p{
                 width: 80%;
                 line-height: 1.4rem;
-                margin: auto;
                 font-size: 1rem;
-                margin-bottom: 1rem;
+                margin: auto;
             }
         }
     }
     .about_p{
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin-bottom: 5rem;
         text-align: center;
-
+        font-style: italic;
         @media(max-width: 768px){
            margin: 0rem 1rem 5rem 1rem;
         }

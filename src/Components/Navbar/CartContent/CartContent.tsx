@@ -25,7 +25,7 @@ const CartContent = () => {
             <p className='cart_subtotal_p'><b>SUBTOTAL:</b> ${cartTotal}</p>
           </div>
           <div className='cart_checkout'>
-            <button>Finalizar Compra</button>
+            <button className='cart_checkout_button'>Finalizar Compra</button>
           </div>
         </>
       : <div className='cart_empty'>

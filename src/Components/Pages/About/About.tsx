@@ -19,7 +19,7 @@ const About = () => {
             <p className='about_content_p'>Buscamos convertirnos en la primera elección de aquellos que quieren vestirse bien y sentirse cómodos con sus prendas.</p>
           </div>
         </div>
-        <p className='about_p'>De pies a cabeza, queremos que tengas diferentes alternativas para que te encuentres vestido siempre acorde a la ocasión</p>
+        <p className='about_p'>De pies a cabeza, queremos que tengas diferentes alternativas para que te encuentres vestido siempre acorde a la ocasión.</p>
         <img className='about_img' src={'https://freres.ar/wp-content/uploads/2021/08/IMG_1647-scaled-uai-1440x960.jpg'}/>
       </motion.div>
     </section>

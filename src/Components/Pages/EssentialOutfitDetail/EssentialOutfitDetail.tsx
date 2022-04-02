@@ -37,9 +37,6 @@ const EssentialOutfitDetail = () => {
               <div className='essentialOutfitDetail_content_div'>
                 <ProductList products={products}/>
               </div>
-              <video loop autoPlay={true} muted>
-                <source src='https://drive.google.com/file/d/1RFgARb88gq3xOfIc1ZToU5Z4wXyMKOfh/view?usp=sharing' type="video/mp4" />
-              </video>
             </motion.div>}
       </section>
   );

@@ -9,21 +9,19 @@ interface ProductSizesProps{
 }
 
 const ProductSizes = ({sizeType, size, setSize}:ProductSizesProps) => {
-  
-    const handleSelectSize = (size:string) => setSize(size)
 
     if(sizeType==='number'){
         return (
             <div className='productSizes'>
                 <div className='productSizes_buttons'>
-                    <ProductSizeButton productSize="38" size={size} handleSelectSize={handleSelectSize} />
-                    <ProductSizeButton productSize="40" size={size} handleSelectSize={handleSelectSize} />
-                    <ProductSizeButton productSize="42" size={size} handleSelectSize={handleSelectSize} />
-                    <ProductSizeButton productSize="44" size={size} handleSelectSize={handleSelectSize} />
+                    <ProductSizeButton productSize="38" size={size} setSize={setSize} />
+                    <ProductSizeButton productSize="40" size={size} setSize={setSize} />
+                    <ProductSizeButton productSize="42" size={size} setSize={setSize} />
+                    <ProductSizeButton productSize="44" size={size} setSize={setSize} />
                 </div>
                 {size
                 &&  <div className='productSizes_clear'>
-                        <p className='productSizes_clear_p' onClick={() => handleSelectSize("")}>LIMPIAR</p>
+                        <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
                     </div>}
             </div>
         )
@@ -33,15 +31,15 @@ const ProductSizes = ({sizeType, size, setSize}:ProductSizesProps) => {
         return (
             <div className='productSizes'>
                 <div className='productSizes_buttons'>
-                    <ProductSizeButton productSize="XS" size={size} handleSelectSize={handleSelectSize} />
-                    <ProductSizeButton productSize="S" size={size} handleSelectSize={handleSelectSize} />
-                    <ProductSizeButton productSize="M" size={size} handleSelectSize={handleSelectSize} />
-                    <ProductSizeButton productSize="L" size={size} handleSelectSize={handleSelectSize} />
-                    <ProductSizeButton productSize="XL" size={size} handleSelectSize={handleSelectSize} />
+                    <ProductSizeButton productSize="XS" size={size} setSize={setSize} />
+                    <ProductSizeButton productSize="S" size={size} setSize={setSize} />
+                    <ProductSizeButton productSize="M" size={size} setSize={setSize} />
+                    <ProductSizeButton productSize="L" size={size} setSize={setSize} />
+                    <ProductSizeButton productSize="XL" size={size} setSize={setSize} />
                 </div>
                 {size
                 &&  <div className='productSizes_clear'>
-                        <p className='productSizes_clear_p' onClick={() => handleSelectSize("")}>LIMPIAR</p>
+                        <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
                     </div>}
             </div>
         )
@@ -50,10 +48,10 @@ const ProductSizes = ({sizeType, size, setSize}:ProductSizesProps) => {
     if(sizeType==='none'){
         return (
             <div className='productSizes unique'>
-                <ProductSizeButton productSize="Talle único" size={size} handleSelectSize={handleSelectSize} />
+                <ProductSizeButton productSize="Talle único" size={size} setSize={setSize} />
                 {size
                 &&  <div className='productSizes_clear'>
-                        <p className='productSizes_clear_p' onClick={() => handleSelectSize("")}>LIMPIAR</p>
+                        <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
                     </div>}
             </div>
         )
