@@ -11,8 +11,8 @@ const Overlay = ({openMenu, handleCloseMenu}: OverlayProps) => {
   const { openCart, handleCloseCart } = useContext(CartContext)
 
   const handleClickOutside = () => {
-    handleCloseCart
-    handleCloseMenu
+    handleCloseCart?.()
+    handleCloseMenu?.()
   }
 
   return (
