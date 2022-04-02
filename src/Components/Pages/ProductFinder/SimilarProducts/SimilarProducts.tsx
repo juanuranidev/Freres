@@ -1,8 +1,13 @@
-import React from 'react'
-import ProductList from '../../../ProductList/ProductList'
-import './SimilarProducts.scss'
+import React from 'react';
+import { ProductModel } from '../../../Context/CartContext';
+import ProductList from '../../../ProductList/ProductList';
+import './SimilarProducts.scss';
 
-const SimilarProducts = ({products}: any) => {
+interface SimilarProductsProps {
+  products: ProductModel[]
+}
+
+const SimilarProducts = ({products}: SimilarProductsProps) => {
   return (
     <div className='similarProducts'>
         <h2 className='similarProducts_h2'>TAMBIÉN TE PUEDE GUSTAR</h2>
@@ -10,7 +15,7 @@ const SimilarProducts = ({products}: any) => {
             <ProductList products={products}/>
         </div>
     </div>
-  )
+  );
 }
 
-export default SimilarProducts
+export default SimilarProducts;

@@ -35,7 +35,7 @@ const ProductDetail = (product:ProductModel) => {
           <ProductImages images={product.images}/>
           <div className='productDetail_content'>
             <ProductTextContent name={product.name} price={product.price} description={product.description} />
-            <ProductSizes productSize={product.format_of_size_chart} size={size} setSize={setSize} />
+            <ProductSizes sizeType={product.format_of_size_chart} size={size} setSize={setSize} />
             <AddToCart product={product} stock={product.stock} size={size} addToCart={addToCart} />
             <ProductPanel title='DETALLES' text='lorem lorem lorem lorem'/>
             <ProductPanel title='ENVÍOS' text='Los envíos son realizados por Correo Argentino y moto mensajería. También podes retirar tu pedido gratis por nuestra oficina en CABA.'/>

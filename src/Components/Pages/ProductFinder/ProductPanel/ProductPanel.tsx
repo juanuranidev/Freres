@@ -1,22 +1,21 @@
-import { motion } from 'framer-motion'
-import React, { useState } from 'react'
-import './ProductPanel.scss'
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import './ProductPanel.scss';
 
 interface ProductPanelProps{
-    title: string,
-    text: string
+    title: string;
+    text: string;
 }
 
 const ProductPanel = ({title, text}: ProductPanelProps) => {
-    const [showText, setShowText] = useState<boolean>(false)
+    const [showText, setShowText] = useState<boolean>(false);
 
-    const handleShowtext = () => setShowText(!showText)
+    const handleShowtext = () => setShowText(!showText);
 
     const variants = {
         open: { opacity: 1, x: 0 },
         closed: { opacity: 0, x: "-5%" },
     }
-
 
     return (
       <div className='productPanel'>
@@ -32,7 +31,7 @@ const ProductPanel = ({title, text}: ProductPanelProps) => {
             </div>
           </motion.div>
       </div>
-    )
+    );
 }
 
-export default ProductPanel
+export default ProductPanel;

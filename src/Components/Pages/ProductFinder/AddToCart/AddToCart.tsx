@@ -22,7 +22,10 @@ const AddToCart = ({product, stock, size, addToCart }:AddToCartProps) => {
             <p className='addToCart_div_p'>{amount}</p>
             <span className='fa fa-plus addToCart_div_span' onClick={handleIncrement}/>   
         </div>
-        <button className='addToCart_button' onClick={() => addToCart?.(product, amount, size)}>AGREGAR AL CARRITO</button>
+        {size===""
+        ? <button className='addToCart_button disabled' disabled>AGREGAR AL CARRITO</button>
+        : <button className='addToCart_button' onClick={() => addToCart?.(product, amount, size)}>AGREGAR AL CARRITO</button>}
+        
     </div>
   );
 }

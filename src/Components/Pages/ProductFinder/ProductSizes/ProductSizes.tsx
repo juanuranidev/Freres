@@ -3,16 +3,16 @@ import ProductSizeButton from './ProductSizeButton/ProductSizeButton';
 import './ProductSizes.scss';
 
 interface ProductSizesProps{
-    productSize: string,
+    sizeType: string,
     size: string,
-    setSize: any
+    setSize: (size:string) => void
 }
 
-const ProductSizes = ({productSize, size, setSize}:ProductSizesProps) => {
+const ProductSizes = ({sizeType, size, setSize}:ProductSizesProps) => {
   
     const handleSelectSize = (size:string) => setSize(size)
 
-    if(productSize==='number'){
+    if(sizeType==='number'){
         return (
             <div className='productSizes'>
                 <div className='productSizes_buttons'>
@@ -23,13 +23,13 @@ const ProductSizes = ({productSize, size, setSize}:ProductSizesProps) => {
                 </div>
                 {size
                 &&  <div className='productSizes_clear'>
-                        <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
+                        <p className='productSizes_clear_p' onClick={() => handleSelectSize("")}>LIMPIAR</p>
                     </div>}
             </div>
         )
     }    
 
-    if(productSize==='letter'){
+    if(sizeType==='letter'){
         return (
             <div className='productSizes'>
                 <div className='productSizes_buttons'>
@@ -41,16 +41,20 @@ const ProductSizes = ({productSize, size, setSize}:ProductSizesProps) => {
                 </div>
                 {size
                 &&  <div className='productSizes_clear'>
-                        <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
+                        <p className='productSizes_clear_p' onClick={() => handleSelectSize("")}>LIMPIAR</p>
                     </div>}
             </div>
         )
     }    
     
-    if(productSize==='none'){
+    if(sizeType==='none'){
         return (
-            <div className='productSizes'>
-                <p className='productSizes_p'>TALLE ÚNICO</p>
+            <div className='productSizes unique'>
+                <ProductSizeButton productSize="Talle único" size={size} handleSelectSize={handleSelectSize} />
+                {size
+                &&  <div className='productSizes_clear'>
+                        <p className='productSizes_clear_p' onClick={() => handleSelectSize("")}>LIMPIAR</p>
+                    </div>}
             </div>
         )
     }    

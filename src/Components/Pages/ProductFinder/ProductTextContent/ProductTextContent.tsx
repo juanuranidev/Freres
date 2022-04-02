@@ -1,6 +1,6 @@
-import React from 'react'
-import Shipping from '../Img/Shipping.png'
-import './ProductTextContent.scss'
+import React from 'react';
+import Shipping from '../Img/Shipping.png';
+import './ProductTextContent.scss';
 
 interface ProductTextContentProps{
     name: string,
@@ -10,9 +10,9 @@ interface ProductTextContentProps{
 
 const ProductTextContent = ({name, price, description}:ProductTextContentProps) => {
   
-  let productDescription = description.split(".")
-  productDescription.pop()
-  
+  let productDescription: string[] = description.split(".");
+  productDescription.pop();
+
   return (
     <>
       <h1 className='productDetail_content_h1'>{name}</h1>
@@ -21,11 +21,11 @@ const ProductTextContent = ({name, price, description}:ProductTextContentProps) 
         {productDescription.map((sentence:string, index:number) => <p className='productDetail_content_description_p' key={index} >{sentence}.</p>)}
       </div>
       <div className='productDetail_content_shipping'>
-        <img className='productDetail_content_shipping_img'src={Shipping}/>
+        <img className='productDetail_content_shipping_img' src={Shipping}/>
         <p className='productDetail_content_shipping_p'>Envío gratis en compras mayores a $12.000 y express (sólo CABA) en menos de 48hs hábiles</p>
       </div>
     </>
-  )
+  );
 }
 
-export default ProductTextContent
+export default ProductTextContent;

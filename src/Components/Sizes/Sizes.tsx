@@ -37,7 +37,7 @@ const Sizes = ({sizeType, product}: SizesProps) => {
     if(sizeType==="none"){
         return(
             <div className='sizes'>
-                <button className='sizes_buttonAddToCart' onClick={() => addToCart?.(product, 1, "No aplica")}>AGREGAR AL CARRITO</button>
+                <button className='sizes_buttonAddToCart' onClick={() => addToCart?.(product, 1, "Talle único")}>AGREGAR AL CARRITO</button>
             </div>
         );
     } 

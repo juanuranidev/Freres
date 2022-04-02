@@ -7,10 +7,10 @@ interface OverlayProps {
 }
 
 const Overlay = ({openMenu}: OverlayProps) => {
-  const { openCart } = useContext(CartContext)
+  const { openCart, handleCloseCart } = useContext(CartContext)
 
   return (
-    <div className={openCart===true || openMenu===true ?'overlay visible' :'overlay'}/>
+    <div className={openCart===true || openMenu===true ?'overlay visible' :'overlay'} onClick={handleCloseCart} />
   );
 }
 
