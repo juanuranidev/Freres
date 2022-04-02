@@ -28,7 +28,7 @@ const Navbar = () => {
       <Logo/>
       <Cart />
       <CartContent />
-      <Overlay openMenu={openMenu} />
+      <Overlay openMenu={openMenu} handleCloseMenu={handleCloseMenu} />
     </nav>
   );
 }

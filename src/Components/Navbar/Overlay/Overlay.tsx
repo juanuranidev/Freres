@@ -4,13 +4,19 @@ import './Overlay.scss';
 
 interface OverlayProps {
     openMenu: boolean
+    handleCloseMenu: () => void
 }
 
-const Overlay = ({openMenu}: OverlayProps) => {
+const Overlay = ({openMenu, handleCloseMenu}: OverlayProps) => {
   const { openCart, handleCloseCart } = useContext(CartContext)
 
+  const handleClickOutside = () => {
+    handleCloseCart
+    handleCloseMenu
+  }
+
   return (
-    <div className={openCart===true || openMenu===true ?'overlay visible' :'overlay'} onClick={handleCloseCart} />
+    <div className={openCart===true || openMenu===true ?'overlay visible' :'overlay'} onClick={handleClickOutside} />
   );
 }
 
