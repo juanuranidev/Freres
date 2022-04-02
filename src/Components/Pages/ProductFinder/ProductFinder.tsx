@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getFirestore, doc, getDoc} from 'firebase/firestore';
+import { ProductModel } from '../../Context/CartContext';
 import { useParams } from 'react-router-dom';
 import Loader from '../../Loader/Loader';
 import ProductDetail from './ProductDetail/ProductDetail';
