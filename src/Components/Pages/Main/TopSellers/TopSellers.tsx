@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
+import { ProductModel } from '../../../Context/CartContext';
 import { Link } from 'react-router-dom';
 import Loader from '../../../Loader/Loader';
 import ProductList from '../../../ProductList/ProductList';
 import './TopSellers.scss';
 
 const TopSellers = () => {
-  const [data, setData] = useState<any>([])
+  const [products, setProducts] = useState<ProductModel[]>([])
   const [loader, setLoader] = useState<boolean>(true)
 
   useEffect(() => {
     const dataBase = getFirestore()
     const queryCollection = query(collection(dataBase, 'products'), where('top_seller', '==', true))
     getDocs(queryCollection)
-        .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+        .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
         .catch(err => console.log(err))
         .finally(() => setLoader(false))
       }, []);
@@ -24,7 +25,7 @@ const TopSellers = () => {
       <div className='topSellers_div'>
         {loader===true
         ? <Loader/>
-        : <ProductList products={data}/>}
+        : <ProductList products={products}/>}
       </div>
       <div className='topSellers_button'>
       <Link to='/shop/all'>

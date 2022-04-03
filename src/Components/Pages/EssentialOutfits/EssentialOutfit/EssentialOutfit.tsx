@@ -1,14 +1,15 @@
 import React from 'react';
+import { ProductModel } from '../../../Context/CartContext';
 import { Link } from 'react-router-dom';
 import ProductList from '../../../ProductList/ProductList';
 import './EssentialOutfit.scss';
 
 interface EssentialOutfitProps {
-    name: string
-    products: any
-    image: string
-    link:string
-    imageDirection: string
+    name: string;
+    products: ProductModel[];
+    image: string;
+    link: string;
+    imageDirection: string;
 }
 
 const EssentialOutfit = ({name, products, link, image, imageDirection}: EssentialOutfitProps) => {
@@ -25,7 +26,7 @@ const EssentialOutfit = ({name, products, link, image, imageDirection}: Essentia
             </div>
         </div>
         <div className='essentialOutfit_image'>
-            <img src={image}/>
+            <img src={image} alt="Imagen de outfit"/>
         </div>
     </div>
   );

@@ -23,7 +23,7 @@ const ProductDetail = (product:ProductModel) => {
     getDocs(queryCollection)
     .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()} as ProductModel))))
     .catch(err => console.log(err))
-  }, []);
+  }, [product.category]);
 
   return (
     <section className='productDetail'>

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
 import CartItem from './CartItem/CartItem';
 import './CartContent.scss';
+import { Link } from 'react-router-dom';
 
 const CartContent = () => {  
   const { cartList, openCart, handleCloseCart, cartTotal } = useContext(CartContext)
@@ -25,7 +26,9 @@ const CartContent = () => {
             <p className='cart_subtotal_p'><b>SUBTOTAL:</b> ${cartTotal}</p>
           </div>
           <div className='cart_checkout'>
+          <Link to="/checkout" onClick={handleCloseCart}>
             <button className='cart_checkout_button'>Finalizar Compra</button>
+          </Link>
           </div>
         </>
       : <div className='cart_empty'>
