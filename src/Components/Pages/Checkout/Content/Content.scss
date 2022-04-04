@@ -1,3 +1,82 @@
 .content{
+    padding: 8rem 1.5rem 5rem 1.5rem;
     width: 50%;
+    background-color: #eeeeee;
+    .content_products{
+        height: 30rem;
+        overflow-y: hidden;
+        // padding-bottom: 1rem;
+        border-top: 1px solid #ffffff;
+        border-bottom: 1px solid #ffffff;
+        .content_products_div{
+            display: flex;
+            position: absolute;
+            background-color: white;
+            border-radius: 1rem;
+            padding: 0.5rem;
+            margin: 27rem 0rem 0rem 12rem;
+            opacity: 0;
+            transition: all 0.2s linear;
+            .content_products_div_p{
+                font-size: 0.8rem;
+                font-weight: 700;
+                margin-right: 0.5rem;
+            }
+            .content_products_div_img{
+                width: 1rem;
+            }
+        }
+    }
+    .content_products:hover{
+        overflow-y: scroll;
+    }
+    .content_products:hover > .content_products_div{
+        opacity: 0.6;
+        transition: all 0.2s linear;
+    }
+    .content_coupon{
+        padding: 1rem 0rem;
+        border-bottom: 1px solid #ffffff;
+        form{
+            input{
+                width: 20rem;
+                border: none;
+                border-radius: 0.25rem;
+                padding: 0.8rem 0.5rem;
+                margin-right: 1.5rem;
+            }
+            button{
+                font-weight: 700;
+                padding: 0.8rem 1.5rem;
+                justify-content: center;
+                font-size: 0.8rem;
+                background-color: #eeeeee;
+                border: 1px solid #000000;
+                border-radius: 0.25rem;
+                transition: all 0.1s linear;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: black;
+                color: #ffffff;
+            }
+            button:active{
+                transform: scale(.95);
+            }
+        }
+    }
+    .content_subTotal{
+        padding: 1rem 0rem;
+        border-bottom: 1px solid #ffffff;
+        .content_subTotal_p{
+            margin-bottom: 0.5rem;
+        }
+        .content_subTotal_p:last-child{
+            margin-bottom: 0rem;
+        }
+    }
+    .content_total{
+        padding: 1rem 0rem;
+        font-weight: 700;
+    }
 }

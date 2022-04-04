@@ -1,7 +1,7 @@
 import React from 'react'
+import Form from './Form/Form'
 import Content from './Content/Content'
 import './Checkout.scss'
-import Form from './Form/Form'
 
 const Checkout = () => {
   return (
