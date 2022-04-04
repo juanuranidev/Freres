@@ -2,12 +2,18 @@
     padding: 8rem 1.5rem 5rem 1.5rem;
     width: 50%;
     background-color: #eeeeee;
+    @media(max-width: 992px){
+        width: 100%;
+    }
     .content_products{
         height: 30rem;
         overflow-y: hidden;
         // padding-bottom: 1rem;
         border-top: 1px solid #ffffff;
         border-bottom: 1px solid #ffffff;
+        @media(max-width: 992px){
+            overflow-y: scroll;
+        }
         .content_products_div{
             display: flex;
             position: absolute;
@@ -17,6 +23,9 @@
             margin: 27rem 0rem 0rem 12rem;
             opacity: 0;
             transition: all 0.2s linear;
+            @media(max-width: 992px){
+                opacity: 0.5;
+            }
             .content_products_div_p{
                 font-size: 0.8rem;
                 font-weight: 700;
@@ -31,7 +40,7 @@
         overflow-y: scroll;
     }
     .content_products:hover > .content_products_div{
-        opacity: 0.6;
+        opacity: 0.5;
         transition: all 0.2s linear;
     }
     .content_coupon{
