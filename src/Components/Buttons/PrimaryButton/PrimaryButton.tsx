@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './PrimaryButton.scss';
 
-const PrimaryButton = () => {
-  return (
-    <div>PrimaryButton</div>
-  )
+interface PrimaryButtonProps {
+  link: string;
+  text: string;
 }
 
-export default PrimaryButton
+const PrimaryButton = ({link, text}: PrimaryButtonProps) => {
+  return (
+    <Link to={link}>
+      <button className='primaryButton'>{text}</button>
+    </Link>
+  );
+}
+
+export default PrimaryButton;

@@ -27,27 +27,18 @@
         }
     }
     .addToCart_button{
-        justify-content: center;
         font-size: 0.8rem;
-        background-color: #000000;
+        font-weight: 700;
+        padding: 0.5rem 1rem;
         border: none;
-        padding: 1rem;
-        transition: all 0.2s linear; 
         color: #eeeeee;
+        background-color: #000000;
+        transition: all 0.2s linear; 
         cursor: pointer;
     }
-    .addToCart_button:hover{
-        transform: scale(1.05);
-        @media(max-width: 992px){
-            transform: scale(1);
-        }
-    }
     .addToCart_button:active{
-        transform: scale(.995);
-        transition: all 0.1s linear; 
-        @media(max-width: 992px){
-            transform: scale(.95);
-        }
+        transform: scale(.95);
+        transition: all 0.2s linear; 
     }
     .disabled{
         opacity: 0.5;

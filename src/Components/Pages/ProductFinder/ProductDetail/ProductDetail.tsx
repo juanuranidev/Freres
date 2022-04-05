@@ -42,7 +42,7 @@ const ProductDetail = (product:ProductModel) => {
             <ProductPanel title='POLÍTICA DE CAMBIOS' text='Podrás realizar un cambio hasta 10 días después de haber recibido tu compra. Los productos deberán encontrarse en el mismo estado en que fueron remitidos. Podes hacerlo acercándote a nuestras oficinas en CABA o bien abonando el envío hacia nuestra oficina, nosotros abonamos el envío a tu casa.'/>
           </div>
       </motion.div>
-          <SimilarProducts products={[...products].sort(() => 0.5 - Math.random()).splice(1, 4)} setSize={setSize} />
+          <SimilarProducts product={product} products={products} setSize={setSize} />
     </section>
   );
 }

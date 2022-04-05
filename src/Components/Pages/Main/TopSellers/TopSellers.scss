@@ -18,28 +18,5 @@
         display: flex;
         justify-content: center;
         margin-top: 5rem;
-        button{
-            justify-content: center;
-            font-size: 0.8rem;
-            background-color: none;
-            border: 1px solid #000000;
-            box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
-            padding: 0.5rem 1rem;
-            transition: all 0.2s linear; 
-            cursor: pointer;
-        }
-        button:hover{
-            transform: scale(1.05);
-            @media(max-width: 992px){
-                transform: scale(1);
-            }
-        }
-        button:active{
-            transform: scale(.995);
-            transition: all 0.1s linear; 
-            @media(max-width: 992px){
-                transform: scale(.95);
-            }
-        }
     }   
 }

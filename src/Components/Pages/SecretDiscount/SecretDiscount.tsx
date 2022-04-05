@@ -10,7 +10,7 @@ const SecretDiscount = () => {
       <p className='secretDiscount_p'>Como recompensa ganaste un código por un 20% de descuento: FRERESSECRET2022</p>
       <div className='secretDiscount_div'>
         <h2 className='secretDiscount_div_h2'>FRÈRES</h2>
-        <img  className='secretDiscount_div_img'src={Waves}/>
+        <img className='secretDiscount_div_img'src={Waves} alt="waves"/>
       </div>
     </section>
   );

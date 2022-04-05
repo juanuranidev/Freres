@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ProductModel } from '../../../Context/CartContext';
 import ProductList from '../../../ProductList/ProductList';
 import './SimilarProducts.scss';
 
 interface SimilarProductsProps {
+  product: ProductModel;
   products: ProductModel[];
   setSize: (value: string) => void;
 } 
 
-const SimilarProducts = ({products, setSize}: SimilarProductsProps) => {
-  console.log("actualizado")
+const SimilarProducts = ({product, products, setSize}: SimilarProductsProps) => {
+  const [similarProducts, setSimilarProducts] = useState<ProductModel[]>([])
+
+  useEffect(() => {
+    setSimilarProducts([...products].sort(() => 0.5 - Math.random()).splice(1, 4))
+  }, [products, product])
+
   return (
     <div className='similarProducts'>
         <h2 className='similarProducts_h2'>TAMBIÉN TE PUEDE GUSTAR</h2>
         <div className='similarProducts_div' onClick={() => setSize("")} >
-            <ProductList products={products} />
+            <ProductList products={similarProducts} />
         </div>
     </div>
   );

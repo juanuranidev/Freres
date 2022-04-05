@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import { ProductModel } from '../../../Context/CartContext';
-import { Link } from 'react-router-dom';
 import Loader from '../../../Loader/Loader';
 import ProductList from '../../../ProductList/ProductList';
+import PrimaryButton from '../../../Buttons/PrimaryButton/PrimaryButton';
 import './Masterpieces.scss';
 
 const Masterpieces = () => {
@@ -28,9 +28,7 @@ const Masterpieces = () => {
         : <ProductList products={products}/>}
       </div>
       <div className='masterpieces_button'>
-        <Link to='/shop/all'>
-          <button>VER TODOS LOS PRODUCTOS</button>
-        </Link>
+        <PrimaryButton link="/shop/all" text="TODOS LOS PRODUCTOS"/>
       </div>
     </section>
   );
