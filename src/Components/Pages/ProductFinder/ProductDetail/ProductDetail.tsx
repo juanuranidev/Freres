@@ -13,6 +13,7 @@ import './ProductDetail.scss';
 const ProductDetail = (product:ProductModel) => {
   const [products, setProducts] = useState<ProductModel[]>([]);
   const [size, setSize] = useState<string>("");
+  const [amount, setAmount] = useState<number>(1) 
 
   const { addToCart } = useContext(CartContext);
   
@@ -25,6 +26,13 @@ const ProductDetail = (product:ProductModel) => {
     .catch(err => console.log(err))
   }, [product.category]);
 
+
+  const handleAddToCart = () => {
+    addToCart?.(product, amount, size)
+    setAmount(1);
+    setSize("");
+  }
+
   return (
     <section className='productDetail'>
       <motion.div 
@@ -36,13 +44,13 @@ const ProductDetail = (product:ProductModel) => {
           <div className='productDetail_content'>
             <ProductTextContent name={product.name} price={product.price} description={product.description} />
             <ProductSizes sizeType={product.format_of_size_chart} size={size} setSize={setSize} />
-            <AddToCart product={product} stock={product.stock} size={size} setSize={setSize} addToCart={addToCart} />
+            <AddToCart stock={product.stock} size={size} amount={amount} setAmount={setAmount} handleAddToCart={handleAddToCart} />
             <ProductPanel title='DETALLES' text='lorem lorem lorem lorem'/>
             <ProductPanel title='ENVÍOS' text='Los envíos son realizados por Correo Argentino y moto mensajería. También podes retirar tu pedido gratis por nuestra oficina en CABA.'/>
             <ProductPanel title='POLÍTICA DE CAMBIOS' text='Podrás realizar un cambio hasta 10 días después de haber recibido tu compra. Los productos deberán encontrarse en el mismo estado en que fueron remitidos. Podes hacerlo acercándote a nuestras oficinas en CABA o bien abonando el envío hacia nuestra oficina, nosotros abonamos el envío a tu casa.'/>
           </div>
       </motion.div>
-          <SimilarProducts product={product} products={products} setSize={setSize} />
+          <SimilarProducts product={product} products={products} setSize={setSize} setAmount={setAmount} />
     </section>
   );
 }

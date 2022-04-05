@@ -23,13 +23,13 @@ const Coupon = ({priceDiscount, setPriceDiscount}:CouponProps) => {
         setTimeout(() =>{
           setPriceDiscount(cartTotal - (cartTotal * 0.2))
           setLoader(false)
-        }, 5000);
+        }, 4000);
         
       } else {
         setTimeout(() =>{
           alert("cupón inválido")
           setLoader(false)
-        }, 5000);
+        }, 4000);
       }
   }
 
