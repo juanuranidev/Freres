@@ -83,6 +83,12 @@
         .content_subTotal_p:last-child{
             margin-bottom: 0rem;
         }
+        .content_subTotal_withDiscount{
+            text-decoration: line-through;
+        }
+        .content_subTotal_discount{
+            padding-bottom: 1.5rem;
+        }
     }
     .content_total{
         padding: 1rem 0rem;

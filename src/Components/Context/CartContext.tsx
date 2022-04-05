@@ -16,7 +16,7 @@ type CartContextType = {
     handleOpenCart?: () => void;
     handleCloseCart?: () => void;
     cartTotal: number;
-    setCartTotal?: () => void;
+    setCartTotal?: (number: number) => void;
 }
 
 export type ProductModel = {
@@ -92,7 +92,8 @@ export const CartContextProvider = ({children}:any) => {
             setOpenCart, 
             handleOpenCart,
             handleCloseCart,
-            cartTotal}}>
+            cartTotal,
+            setCartTotal}}>
             {children}
         </CartContext.Provider>
     )

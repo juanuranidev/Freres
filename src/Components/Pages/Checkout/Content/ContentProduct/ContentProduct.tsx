@@ -13,7 +13,7 @@ const ContentProduct = (product: ProductModel) => {
         <h2 className='contentProduct_div_h2'>{product.name}</h2>
         <p className='contentProduct_div_p'>{product.size}</p>
       </div>
-      <p className='contentProduct_p'>${product.price}</p>
+      <p className='contentProduct_p'>${(product.quantity * product.price).toLocaleString("ar")}</p>
     </div>
   );
 }
