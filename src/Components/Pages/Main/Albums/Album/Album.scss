@@ -10,7 +10,7 @@
         width: 100%;
         flex-direction: column;
     }   
-    img{
+    .album_img{
         width: 9rem;
         margin-right: 1rem;
         box-shadow: 0 4px 10px -10px rgb(0 0 0 / 60%);
@@ -18,7 +18,7 @@
             margin: 0rem 0rem 1rem 0rem;
         }
     }
-    div{
+    .album_div{
         display: flex;
         flex-direction: column;
         text-align: left;
@@ -26,7 +26,7 @@
             width: 100%;
             align-items: center;
         }
-        h3{
+        .album_div_h3{
             font-size: 0.8rem;
             color: #eeeeee;
             margin-bottom: 1rem;
@@ -37,10 +37,11 @@
                 text-align: center;
             }
         }
-        a{
+        .album_div_a{
             width: 4rem;
-            button{
+            .album_div_a_button{
                 color: #eeeeee; 
+                font-size: 0.8rem;
                 font-weight: 700;
                 padding: 0.5rem 1rem;
                 background-color: #1db954;
@@ -48,7 +49,7 @@
                 border: none;
                 cursor: pointer;
             }
-            button:active{
+            .album_div_a_button:active{
                 transform: scale(.95);
                 transition: all 0.1s linear; 
             }

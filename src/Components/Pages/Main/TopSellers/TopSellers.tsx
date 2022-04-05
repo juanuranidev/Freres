@@ -28,9 +28,9 @@ const TopSellers = () => {
         : <ProductList products={products}/>}
       </div>
       <div className='topSellers_button'>
-      <Link to='/shop/all'>
-        <button>VER TODOS LOS PRODUCTOS</button>
-      </Link>
+        <Link to='/shop/all'>
+          <button>VER TODOS LOS PRODUCTOS</button>
+        </Link>
       </div>
     </section>
   );

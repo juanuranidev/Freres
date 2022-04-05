@@ -4,14 +4,13 @@ import IMAGE2 from './img/IMAGE2.jpg';
 import './MainImages.scss';
 
 const MainImages = () => {
-    
   return (
     <div className='mainImages'>
-        <h1>Frères</h1>
-        <img src={IMAGE1} />
-        <div className='left'/>
-        <img src={IMAGE2} />
-        <div className='right'/>
+      <h1 className='mainImages_h1'>Frères</h1>
+      <img className='mainImages_img' src={IMAGE1} />
+      <img className='mainImages_img' src={IMAGE2} />
+      <div className='left' />
+      <div className='right' />
     </div>
   );
 }

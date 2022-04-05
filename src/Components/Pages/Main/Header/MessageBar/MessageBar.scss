@@ -4,7 +4,7 @@
     box-shadow: 0 4px 10px -10px rgb(0 0 0 / 60%);
     padding: 0.5rem;
     padding: 5rem 0.5rem 1rem 0.5rem;
-    p{
+    .messageBar_p{
         font-size: 0.9rem;
         color: #ffffff;
     }
@@ -16,7 +16,7 @@
     .hide{
         opacity: 0;
         z-index: 0;
-        position: fixed;
+        position: absolute;
         top: -100%;
         transition: opacity 1s ease-in-out;
     }

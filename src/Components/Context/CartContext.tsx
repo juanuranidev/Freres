@@ -46,7 +46,7 @@ export const CartContextProvider = ({children}:any) => {
     const addToCart = (product:ProductModel, quantity:number, size: string) => {
         const isInCart = cartList.find(((x) => x.id === product.id))
         if(isInCart){
-            const oldCart = cartList.map((x) => {
+            const newCart = cartList.map((x) => {
                 if (x.id === product.id) {
                     if(x.size === size){
                         return { ...product, quantity: quantity + x.quantity, size: size }
@@ -55,7 +55,7 @@ export const CartContextProvider = ({children}:any) => {
                 }
                 return x
             })
-            setCartList(oldCart)
+            setCartList(newCart)
         } else {
             setCartList([...cartList, {...product, quantity, size}])
         }

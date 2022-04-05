@@ -15,7 +15,6 @@ const Shop = () => {
     const dataBase = getFirestore();
     
     let queryCollection
-    
     idCategory==="all"
     ? queryCollection = query(collection(dataBase, 'products'))
     : queryCollection = query(collection(dataBase, 'products'), where('category', '==', idCategory))

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { CartContext } from '../../../../Context/CartContext';
+import ImageLoader from '../../../../Navbar/Logo/Img/freres.jpg'
 import './Coupon.scss';
 
 interface CouponProps {
@@ -9,22 +10,36 @@ interface CouponProps {
 
 const Coupon = ({priceDiscount, setPriceDiscount}:CouponProps) => {
   const [coupon, setCoupon] = useState<string>("");
-  const { cartTotal, setCartTotal } = useContext(CartContext);
+  const [loader, setLoader] = useState<boolean>(false)
+  const { cartTotal } = useContext(CartContext);
   
   const handleChange = (e:React.FormEvent<HTMLInputElement>) => setCoupon(e.currentTarget.value);
 
   const handleSubmit = (e:React.SyntheticEvent) => {
       e.preventDefault()
       setCoupon("")
-
+      setLoader(true)
       if(coupon==="1"){
-        setTimeout(() => alert("cupón válido"), 5000);
-        setPriceDiscount(cartTotal - (cartTotal * 0.2))
+        setTimeout(() =>{
+          setPriceDiscount(cartTotal - (cartTotal * 0.2))
+          setLoader(false)
+        }, 5000);
+        
       } else {
-        alert("cupón inválido")
+        setTimeout(() =>{
+          alert("cupón inválido")
+          setLoader(false)
+        }, 5000);
       }
   }
 
+  if(loader){
+    return(
+      <div className='formLoader'>
+        <img className='formLoader_img' src={ImageLoader}/>
+      </div>
+    )
+  }
   return (
     <>   
     {priceDiscount > 0

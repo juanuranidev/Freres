@@ -3,14 +3,14 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    a{
+    .shortcutsGallery_a{
         width: 33%;
         @media(max-width: 576px){     
             width: 99%;
             margin-bottom: 1%;
         }
     }
-    a:last-child{
+    .shortcutsGallery_a:last-child{
         @media(max-width: 576px){
             margin-bottom: 5rem;
         }

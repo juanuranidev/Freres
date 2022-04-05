@@ -1,3 +1,19 @@
 .coupon{
     font-weight: 500;
 }
+.formLoader{
+    background-color: #ffffff;
+    text-align: center;
+    width: 8rem;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0rem;
+    animation: fadeinout 4s infinite; 
+    .formLoader_img{
+        width: 6rem;
+    }
+}
+@keyframes fadeinout{
+    0%{opacity:0;}
+    50%{opacity:1;}
+    100%{opacity:0;}
+}
