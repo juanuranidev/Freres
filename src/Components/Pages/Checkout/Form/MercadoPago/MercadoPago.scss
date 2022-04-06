@@ -1,0 +1,56 @@
+.mercadoPago{
+    background-color: #eeeeee;
+    padding: 1rem;
+    .cards{
+        margin-bottom: 2rem;
+        .cards_h3{
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .cards_div{
+            display: flex;
+            align-items: center;
+            .cards_div_img{
+                width: 3rem;
+                padding: 0.5rem;
+                margin-left: 0.2rem
+            }
+        }
+    }
+    .otherTypeOfCards{
+        display: flex;
+        margin-bottom: 2rem;
+        div{
+            width: 70%;
+            h3{
+                font-size: 1rem;
+                font-weight: 500;
+            }
+            div{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                img{
+                    width: 3rem;
+                    padding: 0.5rem;
+                    margin-left: 0.2rem
+                }
+                .cabal{
+                    width: 8rem;
+                }
+            }
+        }
+        // div:last-child{
+        //     width: 30%;
+        // }
+    }
+    .payment{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h3{
+            margin-top: 1rem;
+        }
+    }
+}

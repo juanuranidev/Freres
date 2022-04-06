@@ -6,9 +6,8 @@
         width: 100%;
     }
     .content_products{
-        height: 30rem;
+        max-height: 33rem;
         overflow-y: hidden;
-        // padding-bottom: 1rem;
         border-top: 1px solid #ffffff;
         border-bottom: 1px solid #ffffff;
         @media(max-width: 992px){
@@ -20,7 +19,7 @@
             background-color: white;
             border-radius: 1rem;
             padding: 0.5rem;
-            margin: 27rem 0rem 0rem 12rem;
+            margin: 30rem 0rem 0rem 12rem;
             opacity: 0;
             transition: all 0.2s linear;
             @media(max-width: 992px){
