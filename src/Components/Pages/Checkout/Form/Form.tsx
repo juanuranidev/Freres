@@ -83,7 +83,9 @@ const Form = () => {
       <Link className="form_a" to="/">
         <p className="form_a_p">VOLVER AL INICIO</p>
       </Link>
-      <MercadoPago/>
+      <div className="form_mercadoPago">
+        <MercadoPago/>
+      </div>
     </div>
   );
 }

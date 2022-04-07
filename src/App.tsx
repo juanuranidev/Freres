@@ -40,5 +40,3 @@ function App() {
 }
 
 export default App;
-// Falta terminar
-// Payment

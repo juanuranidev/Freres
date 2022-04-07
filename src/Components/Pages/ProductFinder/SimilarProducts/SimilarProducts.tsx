@@ -19,7 +19,7 @@ const SimilarProducts = ({product, products, setSize, setAmount}: SimilarProduct
 
   const handleResetProduct = () => {
     setSize("")
-    setAmount(0)
+    setAmount(1)
   }
 
   return (

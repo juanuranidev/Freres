@@ -1,5 +1,6 @@
 .content{
     padding: 8rem 1.5rem 5rem 1.5rem;
+    height: 100%;
     width: 50%;
     background-color: #eeeeee;
     @media(max-width: 992px){
@@ -8,8 +9,8 @@
     .content_products{
         max-height: 33rem;
         overflow-y: hidden;
-        border-top: 1px solid #ffffff;
-        border-bottom: 1px solid #ffffff;
+        border-top: 0.1rem solid #ffffff;
+        border-bottom: 0.1rem solid #ffffff;
         @media(max-width: 992px){
             overflow-y: scroll;
         }
@@ -92,5 +93,6 @@
     .content_total{
         padding: 1rem 0rem;
         font-weight: 700;
+        border-bottom: 1px solid #ffffff;
     }
 }

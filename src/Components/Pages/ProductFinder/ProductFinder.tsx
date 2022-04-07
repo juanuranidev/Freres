@@ -21,9 +21,9 @@ const ProductFinder = () => {
 
       return (
         <div>
-            {loader
-            ? <Loader/>
-            : <ProductDetail {...product}/>}
+          {loader
+          ? <Loader/>
+          : <ProductDetail {...product}/>}
         </div>
   );
 }
