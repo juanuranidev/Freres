@@ -12,6 +12,8 @@
         margin: auto;
         display: flex;
         align-items: flex-start;
+        border-bottom: 1px solid black;
+        padding-bottom: 2rem;
         div{
             width: 50%;
             display: flex;
@@ -61,15 +63,16 @@
         }
     }
     .form_a{
+        display: flex;
+        justify-content: center;
         text-decoration: none;
         color: #000000;
+        width: 7rem;
+        margin: 2rem auto;
         .form_a_p{
             font-size: 0.8rem;
             opacity: 0.5;
-            margin: 2rem auto;
             text-align: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid black;
         }
     }
     .form_mercadoPago{
