@@ -44,14 +44,15 @@ const Coupon = ({priceDiscount, setPriceDiscount}:CouponProps) => {
     <>   
     {priceDiscount > 0
     ? <p className='coupon'>CUPÓN DE DESCUENTO APLICADO</p>
-    : <form onSubmit={(e) => handleSubmit(e)}>
+    : <form className='coupon_form' onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"
+          className='coupon_form_input'
           placeholder='Cupón de descuento'
-          name="coupon"
+          name="coupon_input"
           onChange={(e) => handleChange(e)}
           value={coupon}/>
-        <button>Aplicar</button>
+        <button className='coupon_form_button'>Aplicar</button>
       </form>}
     </>
   );

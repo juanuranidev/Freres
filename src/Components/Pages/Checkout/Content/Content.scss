@@ -5,14 +5,20 @@
     background-color: #eeeeee;
     @media(max-width: 992px){
         width: 100%;
+        padding: 5rem 1.5rem 5rem 1.5rem;
+        height: 100%;
     }
     .content_products{
+        height: 100%;
         max-height: 33rem;
+        min-height: 36rem;
         overflow-y: hidden;
         border-top: 0.1rem solid #ffffff;
         border-bottom: 0.1rem solid #ffffff;
         @media(max-width: 992px){
             overflow-y: scroll;
+            min-height: 1rem;
+            padding: 1rem 0rem;
         }
         .content_products_div{
             display: flex;
@@ -25,6 +31,7 @@
             transition: all 0.2s linear;
             @media(max-width: 992px){
                 opacity: 0.5;
+                margin: 28rem 0rem 0rem 5rem;
             }
             .content_products_div_p{
                 font-size: 0.8rem;
@@ -46,37 +53,16 @@
     .content_coupon{
         padding: 1rem 0rem;
         border-bottom: 1px solid #ffffff;
-        form{
-            input{
-                width: 20rem;
-                border: none;
-                border-radius: 0.25rem;
-                padding: 0.8rem 0.5rem;
-                margin-right: 1.5rem;
-            }
-            button{
-                font-weight: 700;
-                padding: 0.8rem 1.5rem;
-                justify-content: center;
-                font-size: 0.8rem;
-                background-color: #eeeeee;
-                border: 1px solid #000000;
-                border-radius: 0.25rem;
-                transition: all 0.1s linear;
-                cursor: pointer;
-            }
-            button:hover{
-                background-color: black;
-                color: #ffffff;
-            }
-            button:active{
-                transform: scale(.95);
-            }
+        @media(max-width: 992px){
+            padding: 2rem 0rem;
         }
     }
     .content_subTotal{
         padding: 1rem 0rem;
         border-bottom: 1px solid #ffffff;
+        @media(max-width: 992px){
+            padding: 2rem 0rem;
+        }
         .content_subTotal_p{
             margin-bottom: 0.5rem;
         }
@@ -94,5 +80,8 @@
         padding: 1rem 0rem;
         font-weight: 700;
         border-bottom: 1px solid #ffffff;
+        @media(max-width: 992px){
+            padding: 2rem 0rem;
+        }
     }
 }

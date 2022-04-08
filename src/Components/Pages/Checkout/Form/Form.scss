@@ -1,11 +1,16 @@
 .form{
     padding: 8rem 1.5rem 5rem 1.5rem;
     width: 50%;
+    @media(max-width: 992px){
+        width: 100%;
+    }
     .form_h2{
         border-top: 1px solid black;
-        padding-left: 1rem;
-        padding-top: 2.5rem;
-        text-transform: uppercase;
+        padding: 2.5rem 0rem 0rem 1rem;
+        @media(max-width: 992px){
+            text-align: center;
+            padding: 2.5rem 0rem 0rem 0rem;
+        }
     }
     form{
         width: 100%;
@@ -14,15 +19,28 @@
         align-items: flex-start;
         border-bottom: 1px solid black;
         padding-bottom: 2rem;
+        @media(max-width: 992px){
+            border: none;
+        }
+        @media(max-width: 576px){
+            flex-direction: column;
+            border: none;
+        }
         div{
             width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            @media(max-width: 576px){
+                width: 100%;
+            }
             label{
                 width: 90%;
                 margin-top: 2rem;
+                @media(max-width: 576px){
+                    width: 100%;
+                }
                 input{
                     width: 100%;
                     height: 2rem;
@@ -43,6 +61,9 @@
             .button{
                 width: 8rem;
                 margin-top: 3rem;
+                @media(max-width: 576px){
+                    margin-top: 2rem;
+                }
                 button{
                     width: 100%;
                     height: 2rem;
@@ -69,6 +90,9 @@
         color: #000000;
         width: 7rem;
         margin: 2rem auto;
+        @media(max-width: 992px){
+            margin: 1rem auto 2rem auto;
+        }
         .form_a_p{
             font-size: 0.8rem;
             opacity: 0.5;
