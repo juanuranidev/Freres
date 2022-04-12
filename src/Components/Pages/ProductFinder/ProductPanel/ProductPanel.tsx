@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './ProductPanel.scss';
 
@@ -12,6 +12,10 @@ const ProductPanel = ({title, text}: ProductPanelProps) => {
 
     const handleShowtext = () => setShowText(!showText);
 
+    useEffect(() => {
+        setShowText(false)
+    }, [text])
+
     const variants = {
         open: { opacity: 1, x: 0 },
         closed: { opacity: 0, x: "-5%" },
@@ -21,12 +25,12 @@ const ProductPanel = ({title, text}: ProductPanelProps) => {
       <div className='productPanel'>
           <div className='productPanel_principal' onClick={handleShowtext}>
               <h4 className='productPanel_principal_h4'>{title}</h4>
-              <span className={showText ?'fa fa-chevron-up productPanel_principal_button' :'fa fa-plus productPanel_principal_button'} />
+              <span className={`productPanel_principal_button ${showText ? 'fa fa-chevron-up' : 'fa fa-plus'}`} />
           </div>
           <motion.div
             animate={showText ? "open" : "closed"}
             variants={variants}>
-            <div className={showText===true ?'productPanel_secondary show' :'productPanel_secondary'}>
+            <div className={`productPanel_secondary ${showText===true && 'show'}`}>
                 <p className='productPanel_secondary_p'>{text}</p>
             </div>
           </motion.div>

@@ -8,9 +8,10 @@ interface SimilarProductsProps {
   products: ProductModel[];
   setSize: (value: string) => void;
   setAmount: (value: number) => void;
+  setLoader: (value:boolean) => void;
 } 
 
-const SimilarProducts = ({product, products, setSize, setAmount}: SimilarProductsProps) => {
+const SimilarProducts = ({product, products, setSize, setAmount, setLoader}: SimilarProductsProps) => {
   const [similarProducts, setSimilarProducts] = useState<ProductModel[]>([])
 
   useEffect(() => {
@@ -20,6 +21,7 @@ const SimilarProducts = ({product, products, setSize, setAmount}: SimilarProduct
   const handleResetProduct = () => {
     setSize("")
     setAmount(1)
+    setLoader(true)
   }
 
   return (

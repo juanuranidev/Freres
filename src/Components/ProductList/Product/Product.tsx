@@ -9,11 +9,11 @@ const Product = (product: ProductModel) => {
 
 return (
     <motion.div
-    transition={{ ease: "linear", duration: 0.25 }}
-      initial={{  x:-100, opacity: 0  }}
-      animate={{ x: 0, opacity: 1 }}
+      className='product'
       exit={{opacity: 0}}
-      className='product'>
+      animate={{x: 0, opacity: 1}}
+      initial={{x: -100, opacity: 0}}
+      transition={{ ease: "linear", duration: 0.25 }}>
       <Link to={`/product/${product.id}`}>
         <img src={product.images[0]} className='product_img'/>
       </Link>
@@ -23,7 +23,7 @@ return (
       </div>
       <div className='product_sizes'>      
         <p className='product_sizes_p'>AGREGADO RÁPIDO</p>
-          <Sizes sizeType={product.format_of_size_chart} product={product}/>
+        <Sizes sizeType={product.format_of_size_chart} product={product}/>
       </div>
     </motion.div>
   );

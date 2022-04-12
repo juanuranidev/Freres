@@ -31,10 +31,9 @@
         }
     }
     .product_sizes{
-        height: 2rem;
         display: none;
+        height: 2rem;
         height: 4rem;
-        transition: all 0.1s linear; 
         margin-top: -1rem;
         .product_sizes_p{
             display: flex;
@@ -50,8 +49,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 1;
-    transition: all 0.1s linear; 
     @media(max-width: 992px){
         display: none;
     }
@@ -59,9 +56,7 @@
 
 .product:hover > .product_div{
     display: none;
-    opacity: 0;
     @media(max-width: 992px){
         display: flex;
-        opacity: 1;
     }
 }

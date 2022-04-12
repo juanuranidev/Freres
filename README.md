@@ -48,6 +48,10 @@ https://firebase.google.com/docs/web/setup?hl=es
 npm install framer-motion<br>
 https://www.framer.com/motion/
 
+**React Hook Form for the purchase form 7.29.0**<br>
+npm install react-hook-form<br>
+https://react-hook-form.com/
+
 # Data
 Products stolen from: <a href="https://freres.ar/" target="_blank">Freres</a> ❤️
 

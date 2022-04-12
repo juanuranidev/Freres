@@ -4,7 +4,7 @@
     padding: 0.5rem 1rem;
     border: 0.1rem solid #000000;
     box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
-    transition: all 0.2s linear; 
+    transition: all 0.1s linear; 
     cursor: pointer;
 }
 .primaryButton:hover{
@@ -17,5 +17,5 @@
 }
 .primaryButton:active{
     transform: scale(.95);
-    transition: all 0.2s linear; 
+    transition: all 0.1s linear; 
 } 

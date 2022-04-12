@@ -26,17 +26,14 @@
         }
         .footer_brand_p_span:hover{
             animation: heartbeat 1.25s infinite;
-            @media(max-width: 992px){
-                animation: none;
-            }
         }
         @keyframes heartbeat{
-            0%{transform: scale(.75);}
-            20%{transform: scale(1);}
-            40%{transform: scale(.75);}
-            60%{transform: scale(1);}
-            80%{transform: scale(.75);}
-            100%{transform: scale(.75);}
+            0%{transform: scale(1);}
+            20%{transform: scale(.75);}
+            40%{transform: scale(1);}
+            60%{transform: scale(.75);}
+            80%{transform: scale(1);}
+            100%{transform: scale(1);}
         }
         .footer_brand_p_a{
             color: #eeeeee;
