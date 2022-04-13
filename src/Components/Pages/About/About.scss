@@ -31,12 +31,9 @@
     }
     .about_p{
         font-size: 1.5rem;
-        margin-bottom: 5rem;
+        margin: 0rem 1rem 5rem 1rem;
         text-align: center;
         font-style: italic;
-        @media(max-width: 768px){
-           margin: 0rem 1rem 5rem 1rem;
-        }
     }
     .about_img{
         width: 100%;

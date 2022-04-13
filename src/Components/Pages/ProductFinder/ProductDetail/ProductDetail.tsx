@@ -20,14 +20,18 @@ const ProductDetail = (product:ProductModel) => {
   const { addToCart } = useContext(CartContext);
   
   useEffect( () => {
+    setLoader(true)
+    setSize("") 
+    setAmount(1)
+
     const dataBase = getFirestore();
     const queryCollection = query(collection(dataBase, 'products'), where('category', '==', product.category));
   
     getDocs(queryCollection)
     .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()} as ProductModel))))
     .catch(err => console.log(err))
-    .finally(() => setLoader(false))   
-  }, [loader]);
+    .finally(() => setLoader(false))  
+  }, [product]);
 
 
   const handleAddToCart = () => {
@@ -51,12 +55,12 @@ const ProductDetail = (product:ProductModel) => {
                 <ProductTextContent name={product.name} price={product.price} description={product.description} />
                 <ProductSizes sizeType={product.format_of_size_chart} size={size} setSize={setSize} />
                 <AddToCart stock={product.stock} size={size} amount={amount} setAmount={setAmount} handleAddToCart={handleAddToCart} />
-                <ProductPanel title='DETALLES' text={product.name} />
-                <ProductPanel title='ENVÍOS' text='Los envíos son realizados por Correo Argentino y moto mensajería. También podes retirar tu pedido gratis por nuestra oficina en CABA.'/>
-                <ProductPanel title='POLÍTICA DE CAMBIOS' text='Podrás realizar un cambio hasta 10 días después de haber recibido tu compra. Los productos deberán encontrarse en el mismo estado en que fueron remitidos. Podes hacerlo acercándote a nuestras oficinas en CABA o bien abonando el envío hacia nuestra oficina, nosotros abonamos el envío a tu casa.'/>
+                <ProductPanel title='DETALLES' text={product.name} product={product} />
+                <ProductPanel title='ENVÍOS' text='Los envíos son realizados por Correo Argentino y moto mensajería. También podes retirar tu pedido gratis por nuestra oficina en CABA.' product={product}/>
+                <ProductPanel title='POLÍTICA DE CAMBIOS' text='Podrás realizar un cambio hasta 10 días después de haber recibido tu compra. Los productos deberán encontrarse en el mismo estado en que fueron remitidos. Podes hacerlo acercándote a nuestras oficinas en CABA o bien abonando el envío hacia nuestra oficina, nosotros abonamos el envío a tu casa.' product={product}/>
               </div>
           </motion.div>
-          <SimilarProducts product={product} products={products} setSize={setSize} setAmount={setAmount} setLoader={setLoader} />
+          <SimilarProducts product={product} products={products} />
         </>}
     </section>
   );

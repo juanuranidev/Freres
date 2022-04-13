@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { ProductModel } from '../../../Context/CartContext';
 import { motion } from 'framer-motion';
 import './ProductPanel.scss';
 
 interface ProductPanelProps{
     title: string;
     text: string;
+    product: ProductModel;
 }
 
-const ProductPanel = ({title, text}: ProductPanelProps) => {
+const ProductPanel = ({title, text, product}: ProductPanelProps) => {
     const [showText, setShowText] = useState<boolean>(false);
 
     const handleShowtext = () => setShowText(!showText);
 
     useEffect(() => {
         setShowText(false)
-    }, [text])
+    }, [product])
 
     const variants = {
         open: { opacity: 1, x: 0 },
