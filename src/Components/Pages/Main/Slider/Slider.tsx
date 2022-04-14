@@ -8,7 +8,7 @@ const Slider = () => {
   const carousel:any = useRef();
 
   useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth + 10);
   }, []);
 
   return (

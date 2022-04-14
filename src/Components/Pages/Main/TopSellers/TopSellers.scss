@@ -1,7 +1,6 @@
 .topSellers{
     padding: 5rem 0rem;
-    background-color: #eeeeee;
-    border-left: 0.12rem solid white;
+    background: #eeeeee;
     .topSellers_h2{
         text-align: center;
         font-size: 1.5rem;
@@ -12,6 +11,8 @@
         justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
+        background: #eeeeee;
+        border-left: 0.12rem solid white;
         border-top: 0.12rem solid white;
     }
     .topSellers_button{

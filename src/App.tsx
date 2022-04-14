@@ -8,7 +8,7 @@ import Main from './Components/Pages/Main/Main';
 import Shop from './Components/Pages/Shop/Shop';
 import EssentialOutfits from './Components/Pages/EssentialOutfits/EssentialOutfits';
 import About from './Components/Pages/About/About';
-import ProductFinder from './Components/Pages/ProductFinder/ProductFinder';
+import ProductFinder from './Components/Pages/ProductDetail/ProductFinder';
 import Footer from './Components/Footer/Footer';
 import EssentialOutfitDetail from './Components/Pages/EssentialOutfitDetail/EssentialOutfitDetail';
 import Checkout from './Components/Pages/Checkout/Checkout';

@@ -21,9 +21,10 @@
     .cart_close{
         display: flex;
         justify-content: flex-end;
+        align-items: flex-start;
         border-bottom: 1px solid #eeeeee;
-        padding: 0rem 2rem 1rem 0rem;
-        height: 5%;
+        padding-right: 2rem;
+        height: 4%;
         p{
             font-size: 0.8rem;
             cursor: pointer;
@@ -37,7 +38,8 @@
     }
     .cart_shipping{
         display: flex;
-        padding: 1rem 2rem 1rem 1rem;
+        align-items: center;
+        padding: 0rem 2rem 0rem 1rem;
         border-bottom: 1px solid #eeeeee;
         height: 5%;
         p{
@@ -45,40 +47,48 @@
         }
     }
     .cart_products{
-        height: 75%;
+        height: 76%;
         overflow: auto;
     }
     .cart_subtotal{
+        display: flex;
+        align-items: center;
         height: 5%;
         border-bottom: 0.12rem solid #eeeeee;
         border-top: 0.12rem solid #eeeeee;
-        padding: 1rem 2rem 1rem 1rem;
+        padding: 0rem 2rem 0rem 1rem;
         margin-top: 1rem;
         .cart_subtotal_p{
             font-size: 0.8rem;
         }
     }
     .cart_checkout{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 10%;
-        padding: 1rem 2rem 1rem 1rem;
-        .cart_checkout_button{
-            justify-content: center;
-            font-size: 0.8rem;
-            background-color: #000000;
-            border: none;
-            padding: 1rem 0rem;
+        padding: 0rem 2rem 0rem 1rem;
+        a{
             width: 100%;
-            transition: all 0.2s linear;
-            color: #ffffff;
-            font-weight: bold;
-            box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
-            cursor: pointer;
-        }
-        .cart_checkout_button:active{
-            transform: scale(.95);
-            transition: all 0.1s linear; 
-            @media(max-width: 992px){
+            .cart_checkout_button{
+                justify-content: center;
+                font-size: 0.8rem;
+                background-color: #000000;
+                border: none;
+                padding: 1rem;
+                width: 100%;
+                transition: all 0.2s linear;
+                color: #ffffff;
+                font-weight: bold;
+                box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
+                cursor: pointer;
+            }
+            .cart_checkout_button:active{
                 transform: scale(.95);
+                transition: all 0.1s linear; 
+                @media(max-width: 992px){
+                    transform: scale(.95);
+                }
             }
         }
     }

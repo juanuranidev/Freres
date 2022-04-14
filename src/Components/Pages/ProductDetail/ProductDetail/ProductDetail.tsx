@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import { CartContext, ProductModel } from '../../../Context/CartContext'
 import { motion } from 'framer-motion';
+import Loader from '../../../Loader/Loader';
 import ProductSizes from '../ProductSizes/ProductSizes';
 import AddToCart from '../AddToCart/AddToCart';
 import ProductImages from '../ProductImages/ProductImages';
@@ -9,10 +10,13 @@ import ProductTextContent from '../ProductTextContent/ProductTextContent';
 import ProductPanel from '../ProductPanel/ProductPanel';
 import SimilarProducts from '../SimilarProducts/SimilarProducts';
 import './ProductDetail.scss';
-import Loader from '../../../Loader/Loader';
 
-const ProductDetail = (product:ProductModel) => {
-  const [loader, setLoader] = useState<boolean>(false)
+interface ProductDetailProps {
+  product: ProductModel;
+}
+
+const ProductDetail = ({product}:ProductDetailProps) => {
+  const [loader, setLoader] = useState<boolean>(true);
   const [products, setProducts] = useState<ProductModel[]>([]);
   const [size, setSize] = useState<string>("");
   const [amount, setAmount] = useState<number>(1) 
@@ -32,7 +36,6 @@ const ProductDetail = (product:ProductModel) => {
     .catch(err => console.log(err))
     .finally(() => setLoader(false))  
   }, [product]);
-
 
   const handleAddToCart = () => {
     addToCart?.(product, amount, size)

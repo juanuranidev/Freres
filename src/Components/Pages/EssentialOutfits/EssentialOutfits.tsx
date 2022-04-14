@@ -23,7 +23,8 @@ const EssentialOutfits = () => {
     <div className='essentialOutfits'>
     {loader
     ? <Loader/>
-    : <motion.div className='essentialOutfits_div' 
+    : <motion.div
+        className='essentialOutfits_div' 
         animate={{ x: 0, opacity: 1 }} 
         initial={{  x:-100, opacity: 0  }} 
         transition={{ ease: "linear", duration: 0.25 }}>
