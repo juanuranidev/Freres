@@ -10,8 +10,10 @@ const ProductFinder = () => {
   const [loader, setLoader] = useState<boolean>(true);
   
   const { idProduct }:any = useParams();
+  
+  useEffect(() => {
+    setLoader(true)
 
-  useEffect( () => {
     const dataBase = getFirestore()
     const queryProd = doc (dataBase, 'products', idProduct)
 

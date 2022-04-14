@@ -35,6 +35,9 @@
         background-color: #000000;
         transition: all 0.2s linear; 
         cursor: pointer;
+        @media(max-width: 576px){
+            padding: 1rem;
+        }
     }
     .addToCart_button:active{
         transform: scale(.95);

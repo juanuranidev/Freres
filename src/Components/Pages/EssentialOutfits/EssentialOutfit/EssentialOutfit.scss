@@ -54,7 +54,13 @@
     }
     .essentialOutfit_button{
         display: flex; 
-        margin-top: 5rem;        
+        margin-top: 5rem;     
+        button{
+            background-color: #ffffff;
+        }   
+        button:hover{
+            background-color: #000000;
+        }
     }
     .essentialOutfit_image{
         width: 50%;

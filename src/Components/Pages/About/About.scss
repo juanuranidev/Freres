@@ -20,12 +20,18 @@
             .about_content_h2{
                 font-size: 1.5rem;
                 margin-bottom: 2.5rem;
+                @media(max-width: 992px){
+                    font-size: 1.3rem;
+                }
             }
             .about_content_p{
                 width: 80%;
                 line-height: 1.4rem;
                 font-size: 1rem;
                 margin: auto;
+                @media(max-width: 576px){
+                    font-size: 0.9rem;
+                }
             }
         }
     }
@@ -34,6 +40,9 @@
         margin: 0rem 1rem 5rem 1rem;
         text-align: center;
         font-style: italic;
+        @media(max-width: 576px){
+            font-size: 1.2rem;
+        }
     }
     .about_img{
         width: 100%;
