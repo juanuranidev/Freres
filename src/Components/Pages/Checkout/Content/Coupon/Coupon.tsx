@@ -19,7 +19,7 @@ const Coupon = ({priceDiscount, setPriceDiscount}:CouponProps) => {
       e.preventDefault()
       setCoupon("")
       setLoader(true)
-      if(coupon==="1"){
+      if(coupon==="FRERESSECRET2022"){
         setTimeout(() =>{
           setPriceDiscount(cartTotal - (cartTotal * 0.2))
           setLoader(false)
@@ -52,7 +52,7 @@ const Coupon = ({priceDiscount, setPriceDiscount}:CouponProps) => {
           name="coupon_input"
           onChange={(e) => handleChange(e)}
           value={coupon}/>
-        <button className='coupon_form_button'>Aplicar</button>
+        <button className='coupon_form_button' disabled={coupon===""} >Aplicar</button>
       </form>}
     </>
   );
