@@ -59,7 +59,7 @@
                 }
             }
             .button{
-                width: 8rem;
+                margin: auto;
                 margin-top: 3rem;
                 @media(max-width: 576px){
                     margin-top: 2rem;
@@ -79,6 +79,11 @@
                 button:active{
                     transform: scale(.95);
                     transition: all 0.2s linear; 
+                }
+                .disabled{
+                    text-align: center;
+                    opacity: 0.5;
+                    width: 100%;
                 }
             }
         }

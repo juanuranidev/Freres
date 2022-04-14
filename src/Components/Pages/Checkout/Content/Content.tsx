@@ -12,11 +12,6 @@ const Content = () => {
   return (
     <div className='content'>
       <div className='content_products'>
-        {cartList.length >= 4 && 
-        <div className='content_products_div'>
-          <p className='content_products_div_p'>Más productos</p>
-          <img className='content_products_div_img' src={ArrowDown} />
-        </div>}
         {cartList.map((product: ProductModel) => <ContentProduct {...product} key={product.id} />)}
       </div>
       <div className='content_coupon'>

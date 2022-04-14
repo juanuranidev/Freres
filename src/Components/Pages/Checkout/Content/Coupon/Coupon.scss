@@ -8,6 +8,9 @@
     border-radius: 0.25rem;
     padding: 0.25rem 0rem;
     animation: fadeinout 4s infinite; 
+    @media(max-width: 576px){
+        margin: auto;
+    }
     .formLoader_img{
         width: 6rem;
     }
@@ -51,5 +54,17 @@
     }
     .coupon_form_button:active{
         transform: scale(.95);
+    }
+    .coupon_form_buttonDisabled{
+        font-weight: 700;
+        padding: 0.8rem 1.5rem;
+        justify-content: center;
+        font-size: 0.8rem;
+        background-color: #eeeeee;
+        border: 1px solid #000000;
+        border-radius: 0.25rem;
+        transition: all 0.1s linear;
+        cursor: pointer;
+        opacity: 0.5;
     }
 }

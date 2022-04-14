@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm, SubmitHandler  } from 'react-hook-form';
+import { CartContext } from '../../../Context/CartContext';
 import { Link } from 'react-router-dom';
 import MercadoPago from './MercadoPago/MercadoPago';
 import './Form.scss';
@@ -19,6 +20,9 @@ interface IFormInputs {
 
 const Form = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
+
+  const { cartList } = useContext(CartContext)
+
   const onSubmit: SubmitHandler<IFormInputs> = data => {
     console.log(data)
     alert("datos enviados")
@@ -76,7 +80,9 @@ const Form = () => {
             {errors.Nombre?.type === 'required' && <p className='required'>Campo requerido</p>}
           </label>
           <label className='button'>
-            <button type="submit">REALIZAR PEDIDO</button>
+            {cartList.length === 0
+            ? <p className='disabled'>CARRITO VACÍO</p>
+            : <button type="submit">REALIZAR PEDIDO</button>}
           </label>
         </div>   
       </form>    

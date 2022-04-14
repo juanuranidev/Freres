@@ -36,25 +36,31 @@ const Coupon = ({priceDiscount, setPriceDiscount}:CouponProps) => {
   if(loader){
     return(
       <div className='formLoader'>
-        <img className='formLoader_img' src={ImageLoader}/>
+        <img className='formLoader_img' src={ImageLoader} alt="logo Freres"/>
       </div>
     )
   }
+
+  if(priceDiscount > 0){
+    return(
+      <p className='coupon'>CUPÓN DE DESCUENTO APLICADO</p>
+    )
+  }
+
+
   return (
-    <>   
-    {priceDiscount > 0
-    ? <p className='coupon'>CUPÓN DE DESCUENTO APLICADO</p>
-    : <form className='coupon_form' onSubmit={(e) => handleSubmit(e)}>
-        <input
-          type="text"
-          className='coupon_form_input'
-          placeholder='Cupón de descuento'
-          name="coupon_input"
-          onChange={(e) => handleChange(e)}
-          value={coupon}/>
-        <button className='coupon_form_button' disabled={coupon===""} >Aplicar</button>
-      </form>}
-    </>
+    <form className='coupon_form' onSubmit={(e) => handleSubmit(e)}>
+      <input
+        type="text"
+        className='coupon_form_input'
+        placeholder='Cupón de descuento'
+        name="coupon_input"
+        onChange={(e) => handleChange(e)}
+        value={coupon}/>
+        {coupon===""
+        ? <button className='coupon_form_buttonDisabled' disabled>Aplicar</button>
+        : <button className='coupon_form_button'>Aplicar</button>}
+    </form>
   );
 }
 
