@@ -12,6 +12,8 @@ const Shop = () => {
   const {idCategory} = useParams();
   
   useEffect(() => {
+    setLoader(true)
+    
     const dataBase = getFirestore();
     
     let queryCollection

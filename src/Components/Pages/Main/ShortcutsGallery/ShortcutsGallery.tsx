@@ -9,9 +9,9 @@ import './ShortcutsGallery.scss';
 const ShortcutsGallery = () => {
   return (
     <section className='shortcutsGallery'>
-        <Link className="shortcutsGallery_a" to='/essential_outfits'><GaleryImage p='OUTFITS' img={SHORTCUTSGALLERYIMAGE1} /></Link>
-        <Link className="shortcutsGallery_a" to='/shop/camperasybuzos'><GaleryImage p='CAMPERAS Y BUZOS' img={SHORTCUTSGALLERYIMAGE2} /></Link>
-        <Link className="shortcutsGallery_a" to='/shop/all'><GaleryImage p='TODOS LOS PRODUCTOS' img={SHORTCUTSGALLERYIMAGE3} /></Link>
+      <Link className="shortcutsGallery_a" to='/essential_outfits'><GaleryImage p='OUTFITS' img={SHORTCUTSGALLERYIMAGE1} /></Link>
+      <Link className="shortcutsGallery_a" to='/shop/camperasybuzos'><GaleryImage p='CAMPERAS Y BUZOS' img={SHORTCUTSGALLERYIMAGE2} /></Link>
+      <Link className="shortcutsGallery_a" to='/shop/all'><GaleryImage p='TODOS LOS PRODUCTOS' img={SHORTCUTSGALLERYIMAGE3} /></Link>
     </section>
   );
 }

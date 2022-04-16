@@ -23,7 +23,7 @@ const TopSellers = () => {
     <section className='topSellers'>
       <h2 className='topSellers_h2'>TOP SELLERS</h2>
       <div className='topSellers_div'>
-        {loader===true
+        {loader
         ? <Loader/>
         : <ProductList products={products}/>}
       </div>

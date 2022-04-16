@@ -39,8 +39,8 @@ const Newsletter = () => {
             className='newsletter_div_form_input' 
             onChange={(e) => handleSetUserEmail(e)} />    
             {userEmail.email
-            ?<button type='submit' className='newsletter_div_form_button'>UNIRME</button>
-            :<button type='submit' className='newsletter_div_form_button' disabled>UNIRME</button>}
+            ? <button type='submit' className='newsletter_div_form_button'>UNIRME</button>
+            : <button type='submit' className='newsletter_div_form_button' disabled>UNIRME</button>}
           </form>            
         </div>}
     </div>
@@ -48,3 +48,7 @@ const Newsletter = () => {
 }
 
 export default Newsletter;
+
+
+// .then(res => setEmails(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+// .catch(err => console.log(err))

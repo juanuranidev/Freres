@@ -13,6 +13,8 @@ const EssentialOutfitDetail = () => {
     const { idOutfit } = useParams();
 
     useEffect(() => {
+    setLoader(true)
+    
     const dataBase = getFirestore()
     const queryCollection = query(collection(dataBase, 'products'), where('essential_outfit', '==', idOutfit))
   
@@ -25,20 +27,20 @@ const EssentialOutfitDetail = () => {
 
     return (
       <section className='essentialOutfitDetail'>
-          {loader
-          ? <Loader/>
-          : <motion.div
-              exit={{opacity: 0}}
-              animate={{ x: 0, opacity: 1 }}
-              initial={{ x: -100, opacity: 0 }}
-              transition={{ ease: "linear", duration: 0.25 }}
-              className='essentialOutfitDetail_content'>
-              <h1 className='essentialOutfitDetail_content_h1'>{idOutfit}</h1>
-              <img src={products[0].essential_outfit_image} className='essentialOutfitDetail_content_img' alt="Imagen de producto"/>
-              <div className='essentialOutfitDetail_content_div'>
-                <ProductList products={products}/>
-              </div>
-            </motion.div>}
+        {loader
+        ? <Loader/>
+        : <motion.div
+            exit={{opacity: 0}}
+            animate={{ x: 0, opacity: 1 }}
+            initial={{ x: -100, opacity: 0 }}
+            transition={{ ease: "linear", duration: 0.25 }}
+            className='essentialOutfitDetail_content'>
+            <h1 className='essentialOutfitDetail_content_h1'>{idOutfit}</h1>
+            <img src={products[0].essential_outfit_image} className='essentialOutfitDetail_content_img' alt="Imagen de producto"/>
+            <div className='essentialOutfitDetail_content_div'>
+              <ProductList products={products}/>
+            </div>
+          </motion.div>}
       </section>
   );
 }

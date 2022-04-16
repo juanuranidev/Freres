@@ -13,11 +13,13 @@ const EssentialOutfits = () => {
   useEffect(() => {
     const dataBase = getFirestore()
     const queryCollection = query(collection(dataBase, 'products'), where('is_an_essential_outfit', '==', true))
+
     getDocs(queryCollection)
-        .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
-        .catch(err => console.log(err))
-        .finally(() => setLoader(false))
-      }, []);
+      .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
+      .catch(err => console.log(err))
+      .finally(() => setLoader(false))
+
+  }, []);
 
   return (
     <div className='essentialOutfits'>
