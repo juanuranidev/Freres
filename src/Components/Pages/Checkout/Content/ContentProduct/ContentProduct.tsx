@@ -6,7 +6,7 @@ const ContentProduct = (product: ProductModel) => {
   return (
     <div className='contentProduct'>
       <div className='contentProduct_div_image'>
-        <img className='contentProduct_div_img' src={product.images[0]}/>
+        <img className='contentProduct_div_img' src={product.images[0]} alt="Imágen del producto del carrito"/>
         <span className='contentProduct_div_span'>{product.quantity}</span>
       </div>
       <div className='contentProduct_div_text'>

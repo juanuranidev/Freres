@@ -10,7 +10,7 @@ const GaleryImage = ({p, img}: GaleryImageProps) => {
   return (
     <div className='galeryImage'>
       <div className='galeryImage_div'/>
-      <img src={img} className='galeryImage_img' />
+      <img src={img} className='galeryImage_img' alt="Imágen de galería"/>
       <p className='galeryImage_p'>{p}</p>
     </div>
   );

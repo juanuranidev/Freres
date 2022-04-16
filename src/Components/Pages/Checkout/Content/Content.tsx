@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { CartContext, ProductModel } from '../../../Context/CartContext';
-import ArrowDown from './Img/ArrowDown.png';
 import ContentProduct from './ContentProduct/ContentProduct';
 import Coupon from './Coupon/Coupon';
 import './Content.scss';

@@ -21,7 +21,7 @@ const ProductTextContent = ({name, price, description}:ProductTextContentProps) 
         {productDescription.map((sentence:string, index:number) => <p className='productDetail_content_description_p' key={index} >{sentence}.</p>)}
       </div>
       <div className='productDetail_content_shipping'>
-        <img className='productDetail_content_shipping_img' src={Shipping}/>
+        <img className='productDetail_content_shipping_img' src={Shipping} alt="Imágen de un camión de envío"/>
         <p className='productDetail_content_shipping_p'>Envío gratis en compras mayores a $12.000 y express (sólo CABA) en menos de 48hs hábiles</p>
       </div>
     </>

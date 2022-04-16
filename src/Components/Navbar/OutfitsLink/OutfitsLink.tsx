@@ -10,22 +10,22 @@ const OutfitsLink = () => {
         <div className='outfitsLink_content'>
           <div>
             <Link to='/outfit/elegant'>
-              <img src={'https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg'}/>
+              <img src={'https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg'} alt="Outfit imágen"/>
             </Link>
           </div>
           <div>
             <Link to='/outfit/relaxed'>
-              <img src={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-4-scaled-uai-720x720.jpg'}/>
+              <img src={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-4-scaled-uai-720x720.jpg'} alt="Outfit imágen"/>
             </Link>
           </div>
           <div>
             <Link to='/outfit/casual'>
-              <img src={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-6-scaled-uai-720x720.jpg'}/>
+              <img src={'https://freres.ar/wp-content/uploads/2021/08/OUTFIT-6-scaled-uai-720x720.jpg'} alt="Outfit imágen"/>
             </Link>
           </div>
           <div>
             <Link to='/outfit/street'>
-              <img src={'https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg'}/>
+              <img src={'https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg'} alt="Outfit imágen"/>
             </Link>
           </div>
         </div>
