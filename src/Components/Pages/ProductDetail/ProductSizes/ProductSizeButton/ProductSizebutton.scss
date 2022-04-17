@@ -1,5 +1,6 @@
 .productSizes_button{
     font-size: 0.8rem;
+    font-weight: 600;
     width: 2.5rem;
     height: 2.5rem;
     background-color: #ffffff;
@@ -10,6 +11,10 @@
 }
 .productSizes_button:last-child{
     margin-right: 0rem;
+}
+.productSizes_button:hover{
+    background-color: #000000;
+    color: #ffffff;
 }
 .productSizes_button:active{
     transform: scale(.95);

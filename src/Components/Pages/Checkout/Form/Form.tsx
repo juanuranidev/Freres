@@ -21,10 +21,10 @@ interface IFormInputs {
 const Form = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
 
-  const { cartList } = useContext(CartContext)
+  const { cartList, cartTotal } = useContext(CartContext)
 
   const onSubmit: SubmitHandler<IFormInputs> = data => {
-    console.log(data)
+    console.log(data, cartTotal)
     alert("datos enviados")
   }
 
@@ -35,48 +35,75 @@ const Form = () => {
         <div>  
           <label>
             <p>Nombre</p>
-            <input type="text" placeholder="Nombre" {...register("Nombre", {required: true, maxLength: 20})} />
+            <input 
+            type="text" 
+            placeholder="Nombre" 
+            {...register("Nombre", {required: true, maxLength: 20, pattern: /^[A-Za-z]+$/i})} />
             {errors.Nombre?.type === 'required' && <p className='required'>Campo requerido</p>}
           </label>
           <label>
             <p>Apellido</p>
-            <input type="text" placeholder="Apellido" {...register("Apellido", {required: true, maxLength: 100})} />
+            <input 
+            type="text" 
+            placeholder="Apellido" 
+            {...register("Apellido", {required: true, maxLength: 100})} />
             {errors.Nombre?.type === 'required' && <p className='required'>Campo requerido</p>}
           </label>
           <label>
             <p>Email</p>
-            <input type="text" placeholder="Email" {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} />
+            <input 
+            type="text" 
+            placeholder="Email" 
+            {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} />
             {errors.Nombre?.type === 'required' && <p className='required'>Campo requerido</p>}
           </label>
           <label>
             <p>Dirección</p>
-            <input type="text" placeholder="Dirección" {...register("Dirección", {required: true})} />
+            <input 
+            type="text" 
+            placeholder="Dirección" 
+            {...register("Dirección", {required: true})} />
             {errors.Nombre?.type === 'required' && <p className='required'>Campo requerido</p>}
           </label>
           <label>
             <p>Apartamento, habitación, etc. (opcional)</p>
-            <input type="text" placeholder="Apartamento, habitación, etc. (opcional)" {...register("Apartamento/habitación", {required: false})} />
+            <input 
+            type="text" 
+            placeholder="Apartamento, habitación, etc. (opcional)" 
+            {...register("Apartamento/habitación", {required: false})} />
           </label>
         </div>
         <div>
           <label>
             <p>Localidad/Ciudad</p>
-            <input type="text" placeholder="Localidad/Ciudad" {...register("Localidad/Ciudad", {required: true})} />
+            <input 
+            type="text" 
+            placeholder="Localidad/Ciudad" 
+            {...register("Localidad/Ciudad", {required: true})} />
             {errors.Nombre?.type === 'required' && <p className='required'>Campo requerido</p>}
           </label>
           <label>
           <p>Provincia</p>
-            <input type="text" placeholder="Provincia" {...register("Provincia", {required: true})} /> 
+            <input 
+            type="text" 
+            placeholder="Provincia" 
+            {...register("Provincia", {required: true})} /> 
             {errors.Nombre?.type === 'required' && <p className='required'>Campo requerido</p>}
           </label>
           <label>
             <p>Código Postal </p>
-            <input type="number" placeholder="Código Postal" {...register("Código Postal", {required: true, min: 1, maxLength: 10})} />
+            <input 
+            type="number" 
+            placeholder="Código Postal" 
+            {...register("Código Postal", { required: true, min: 1, maxLength: 8 })} />
             {errors.Nombre?.type === 'required' && <p className='required'>Campo requerido</p>}
           </label>
           <label>
             <p>Teléfono</p>
-            <input type="number" placeholder="Teléfono" {...register("Teléfono", {required: true, min: 1, maxLength: 20})} />
+            <input 
+            type="number" 
+            placeholder="Teléfono" 
+            {...register("Teléfono", { required: true, min: 1, maxLength: 15 })} />
             {errors.Nombre?.type === 'required' && <p className='required'>Campo requerido</p>}
           </label>
           <label className='button'>

@@ -10,7 +10,7 @@ interface SizesProps {
 const Sizes = ({sizeType, product}: SizesProps) => {
     const { addToCart } = useContext(CartContext)
 
-    if(sizeType==="letter"){
+    if(sizeType === "letter"){
         return(
             <div className='sizes'>
                 <button className='sizes_button' onClick={() => addToCart?.(product, 1, "XS")}>XS</button>
@@ -22,7 +22,7 @@ const Sizes = ({sizeType, product}: SizesProps) => {
         );
     } 
 
-    if(sizeType==="number"){
+    if(sizeType === "number"){
         return(
             <div className='sizes'>
                 <button className='sizes_button' onClick={() => addToCart?.(product, 1, "38")}>38</button>
@@ -34,7 +34,7 @@ const Sizes = ({sizeType, product}: SizesProps) => {
         );
     } 
 
-    if(sizeType==="none"){
+    if(sizeType === "none"){
         return(
             <div className='sizes'>
                 <button className='sizes_buttonAddToCart' onClick={() => addToCart?.(product, 1, "Talle único")}>AGREGAR AL CARRITO</button>

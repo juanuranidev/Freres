@@ -11,4 +11,4 @@ import slider10 from './img/Slider10.jpg';
 import slider11 from './img/Slider11.jpg';
 import slider12 from './img/Slider12.jpg';
 
-export default [slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8, slider9, slider10, slider11, slider12]
+export const images = [slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8, slider9, slider10, slider11, slider12]

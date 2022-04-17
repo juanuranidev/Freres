@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import images from './ImportImages';
+import { images } from './ImportImages';
 import './Slider.scss';
 
 const Slider = () => {

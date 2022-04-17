@@ -5,6 +5,7 @@
     justify-content: center;
     .sizes_button{
         font-size: 0.8rem;
+        font-weight: 600;
         width: 2rem;
         height: 2rem;
         background-color: none;
@@ -14,11 +15,16 @@
         margin: 0rem 0.5rem;
         cursor: pointer;
     }
+    .sizes_button:hover{
+        color: #ffffff;
+        background-color: #000000;
+    }
     .sizes_button:active{
         transform: scale(.95);
     }
     .sizes_buttonAddToCart{
         font-size: 0.8rem;
+        font-weight: 600;
         background-color: none;
         border: 1px solid #000000;
         box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
@@ -26,7 +32,12 @@
         padding: 0.5rem 1rem;
         cursor: pointer;
     }
-    .sizesv_buttonAddToCart:active{
+    .sizes_buttonAddToCart:hover{
+        color: #ffffff;
+        background-color: #000000;
+    }
+    .sizes_buttonAddToCart:active{
+        transition: all 0.1s linear; 
         transform: scale(.95);
     }
 }
