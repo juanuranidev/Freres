@@ -42,6 +42,10 @@
                 @media(max-width: 576px){
                     width: 100%;
                 }
+                p{
+                    font-size: 0.8rem;
+                    margin-bottom: 0.2rem;
+                }
                 input{
                     width: 100%;
                     height: 3rem;
@@ -50,13 +54,11 @@
                     border: none;
                     background-color: #eeeeee;
                 }
-                p{
-                    font-size: 0.8rem;
-                }
                 .required{
                     position: absolute;
                     font-size: 0.8rem;
-                    color: red;
+                    color: #ff0000;
+                    margin-top: 0.2rem;
                 }
             }
             .button{

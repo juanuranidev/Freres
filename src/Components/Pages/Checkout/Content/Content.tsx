@@ -1,11 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { CartContext, ProductModel } from '../../../Context/CartContext';
 import ContentProduct from './ContentProduct/ContentProduct';
 import Coupon from './Coupon/Coupon';
 import './Content.scss';
 
-const Content = () => {
-  const [priceDiscount, setPriceDiscount] = useState<number>(0);
+interface ContentProps {
+  priceDiscount: number;
+  setPriceDiscount: (value:number) => void;
+}
+
+const Content = ({priceDiscount, setPriceDiscount}: ContentProps) => {
   const { cartList, cartTotal } = useContext(CartContext);
   
   return (
@@ -20,14 +24,14 @@ const Content = () => {
         {priceDiscount > 0
         ? <p className='content_subTotal_withDiscount'>Subtotal: ${(cartTotal).toLocaleString("ar")}</p>
         : <p className='content_subTotal_p'>Subtotal: ${(cartTotal).toLocaleString("ar")}</p>}
-        {priceDiscount > 0 && <p className='content_subTotal_discount'>Subtotal: ${(priceDiscount).toLocaleString("ar")}</p>}
-        {cartTotal > 12000
+        {priceDiscount > 0 && priceDiscount >= 12000 && <p className='content_subTotal_discount'>Subtotal: ${(priceDiscount).toLocaleString("ar")}</p>}
+        {priceDiscount > 0 && priceDiscount < 12000 && <p className='content_subTotal_discount'>Subtotal: ${(priceDiscount - 750).toLocaleString("ar")}</p>}        
+        {cartTotal >= 12000
         ? <p className='content_subTotal_p'>¡Envío gratis!</p>
         : <p className='content_subTotal_p'>Envío: $750</p>}
       </div>
       <div className='content_total'>
-        {priceDiscount > 0 && priceDiscount < 12000 && <p>Total: ${(priceDiscount + 750).toLocaleString("ar")}</p>}
-        {priceDiscount > 0 && priceDiscount > 12000 && <p>Total: ${(priceDiscount).toLocaleString("ar")}</p>}
+        {priceDiscount > 0 && <p>Total: ${(priceDiscount).toLocaleString("ar")}</p>}
         {cartTotal < 12000 && priceDiscount === 0 && <p>Total: ${(cartTotal + 750).toLocaleString("ar")}</p>}
         {cartTotal >= 12000 && priceDiscount === 0 && <p>Total: ${(cartTotal).toLocaleString("ar")}</p>}
       </div>

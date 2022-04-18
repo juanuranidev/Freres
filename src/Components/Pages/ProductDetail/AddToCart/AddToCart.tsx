@@ -21,8 +21,8 @@ const AddToCart = ({stock, size, amount, setAmount, handleAddToCart }:AddToCartP
             <p className='addToCart_div_p'>{amount}</p>
             <span className='fa fa-plus addToCart_div_span' onClick={handleIncrement}/>   
         </div>
-        {size===""
-        ? <button className='addToCart_button disabled' disabled>AGREGAR AL CARRITO</button>
+        {size === ""
+        ? <button className='addToCart_buttonDisabled' disabled>AGREGAR AL CARRITO</button>
         : <button className='addToCart_button' onClick={handleAddToCart}>AGREGAR AL CARRITO</button>}
         
     </div>

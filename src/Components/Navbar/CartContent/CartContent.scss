@@ -25,6 +25,12 @@
         border-bottom: 1px solid #eeeeee;
         padding-right: 2rem;
         height: 4%;
+        @media(max-height: 768px){
+            height: 6%;
+        }
+        @media(max-height: 576px){
+            height: 8%;
+        }
         p{
             font-size: 0.8rem;
             cursor: pointer;
@@ -42,6 +48,12 @@
         padding: 0rem 2rem 0rem 1rem;
         border-bottom: 1px solid #eeeeee;
         height: 5%;
+        @media(max-height: 768px){
+            height: 7%;
+        }
+        @media(max-height: 576px){
+            height: 9%;
+        }
         p{
             font-size: 0.8rem
         }
@@ -49,6 +61,12 @@
     .cart_products{
         height: 76%;
         overflow: auto;
+        @media(max-height: 768px){
+            height: 68%;
+        }
+        @media(max-height: 576px){
+            height: 60%;
+        }
     }
     .cart_subtotal{
         display: flex;
@@ -58,6 +76,12 @@
         border-top: 0.12rem solid #eeeeee;
         padding: 0rem 2rem 0rem 1rem;
         margin-top: 1rem;
+        @media(max-height: 768px){
+            height: 7%;
+        }
+        @media(max-height: 576px){
+            height: 9%;
+        }
         .cart_subtotal_p{
             font-size: 0.8rem;
         }
@@ -68,6 +92,12 @@
         align-items: center;
         height: 10%;
         padding: 0rem 2rem 0rem 1rem;
+        @media(max-height: 768px){
+            height: 12%;
+        }
+        @media(max-height: 576px){
+            height: 14%;
+        }
         a{
             width: 100%;
             .cart_checkout_button{

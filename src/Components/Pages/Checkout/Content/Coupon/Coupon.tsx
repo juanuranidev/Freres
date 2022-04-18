@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { CartContext } from '../../../../Context/CartContext';
-import ImageLoader from '../../../../Navbar/Logo/Img/freres.jpg'
+import ImageLoader from '../../../../Navbar/Logo/Img/freres.jpg';
 import './Coupon.scss';
 
 interface CouponProps {
@@ -16,21 +16,23 @@ const Coupon = ({priceDiscount, setPriceDiscount}:CouponProps) => {
   const handleChange = (e:React.FormEvent<HTMLInputElement>) => setCoupon(e.currentTarget.value);
 
   const handleSubmit = (e:React.SyntheticEvent) => {
-      e.preventDefault()
-      setCoupon("")
-      setLoader(true)
-      if(coupon==="FRERESSECRET2022"){
-        setTimeout(() =>{
-          setPriceDiscount(cartTotal - (cartTotal * 0.2))
-          setLoader(false)
-        }, 4000);
-        
-      } else {
-        setTimeout(() =>{
-          alert("cupón inválido")
-          setLoader(false)
-        }, 4000);
-      }
+    e.preventDefault()
+    setCoupon("")
+    setLoader(true)
+    if(coupon==="FRERESSECRET2022"){
+      setTimeout(() =>{
+        cartTotal - (cartTotal * 0.2) <= 12000
+        ? setPriceDiscount(cartTotal - (cartTotal * 0.2) + 750)
+        : setPriceDiscount(cartTotal - (cartTotal * 0.2))
+        setLoader(false)
+      }, 4000);
+      
+    } else {
+      setTimeout(() =>{
+        alert("cupón inválido")
+        setLoader(false)
+      }, 4000);
+    }
   }
 
   if(loader){
@@ -57,7 +59,7 @@ const Coupon = ({priceDiscount, setPriceDiscount}:CouponProps) => {
         name="coupon_input"
         onChange={(e) => handleChange(e)}
         value={coupon}/>
-        {coupon===""
+        {coupon === ""
         ? <button className='coupon_form_buttonDisabled' disabled>Aplicar</button>
         : <button className='coupon_form_button'>Aplicar</button>}
     </form>
