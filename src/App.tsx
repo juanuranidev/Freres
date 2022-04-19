@@ -13,6 +13,7 @@ import Footer from './Components/Footer/Footer';
 import EssentialOutfitDetail from './Components/Pages/EssentialOutfitDetail/EssentialOutfitDetail';
 import Checkout from './Components/Pages/Checkout/Checkout';
 import SecretDiscount from './Components/Pages/SecretDiscount/SecretDiscount';
+import OrderInfo from './Components/Pages/OrderInfo/OrderInfo';
 import './App.scss';
 
 getFirestoreApp()
@@ -66,6 +67,12 @@ function App() {
             </React.Fragment>}>
           </Route>
           <Route path='/checkout' element={<Checkout/>}/>
+          <Route path='/orderInfo/:id' element={
+            <React.Fragment>
+              <Navbar/>
+              <OrderInfo/>
+            </React.Fragment>}>
+          </Route>
         </Routes>
         <Footer/>
       </BrowserRouter>

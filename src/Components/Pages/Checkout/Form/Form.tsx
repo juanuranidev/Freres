@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import { collection, getDocs, getFirestore, query, addDoc, writeBatch, where, documentId } from 'firebase/firestore';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from '../../../Context/CartContext';
-import { Link } from 'react-router-dom';
 import MercadoPago from './MercadoPago/MercadoPago';
 import './Form.scss';
 
@@ -15,7 +16,7 @@ interface IFormInputs {
   "Provincia": string;
   "Código_Postal": number;
   "Teléfono": number;
-  "SuscribirseAlNewsletter": string;
+  "OrderId": number;
 }
 
 interface FormProps {
@@ -24,16 +25,79 @@ interface FormProps {
 }
 
 const Form = ({priceDiscount, setPriceDiscount}:FormProps) => {
-  const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormInputs>();
 
   const { cartList, cartTotal } = useContext(CartContext)
 
-  const onSubmit: SubmitHandler<IFormInputs> = data => {
-    console.log(data)
-    console.log(cartTotal)
-    console.log(cartList)
-    console.log(priceDiscount)
+  const navigate = useNavigate();
+
+  const onSubmit: SubmitHandler<IFormInputs> = async data => {
+    
+    let order:any = {}
+    
+    order.comprador = {
+      Nombre: data.Nombre,
+      Apellido: data.Apellido,
+      Email: data.Email,
+      Direccion: data.Direccion,
+      Localidad_Ciudad: data.Localidad_Ciudad,
+      Apartamento_Habitación: data.Apartamento_Habitación,
+      Provincia: data.Provincia,
+      Código_Postal: data.Código_Postal,
+      Teléfono: data.Teléfono,
+    }
+
+    order.productos = cartList.map(cartItem => {
+      const id = cartItem.id;
+      const name = cartItem.name;
+      const price = cartItem.price * cartItem.quantity;
+      const quantity = cartItem.quantity;
+      return {id, name, price, quantity}
+    })
+
+    if(priceDiscount > 0){
+      order.total = priceDiscount
+    } else if(priceDiscount === 0 && cartTotal >= 12000){
+      order.total = cartTotal
+    } else if(priceDiscount === 0 && cartTotal < 12000){
+      order.total = cartTotal + 750
+    }
+    
+    order.id = Math.floor(Math.random() * Math.floor(Math.random() * Date.now()))
+
     alert("datos enviados")
+    console.log(order)
+    // navigate(`/orderInfo/${orderInfo}`, { replace: true })   
+
+    // Send order
+    const dataBase = getFirestore()
+    const orderCollection = collection(dataBase, 'orders') 
+    await addDoc(orderCollection, order)
+        // .then(resp => {order.id= resp.id})
+        // .catch(err => console.log(err))
+
+
+
+        
+        // .finally (() => reset())
+        // .then(resp => setInputs({...inputs, orderId: resp.id}))
+      // // Update stock
+      // const queryCollection = collection(dataBase, 'items')
+      // const queryUpdateStock = query(queryCollection, where(documentId(), 'in', cartList.map(it => it.id)))
+      // const batch = writeBatch(dataBase)    
+      // await getDocs (queryUpdateStock)
+      //     .then(resp => resp.docs.forEach(res => batch.update(res.ref, {stock: res.data().stock - cartList.find(item => item.id === res.id).quantity})))
+      //     .catch(err => console.log(err))
+      //     .finally(() => {
+      //     setPaymentFinished(true);
+      //     const successfulPurchase = () => toast.success('Compra realizada con éxito');
+      //     successfulPurchase()
+      //     })
+      // batch.commit()
+
+
+
+
 
   }
 
