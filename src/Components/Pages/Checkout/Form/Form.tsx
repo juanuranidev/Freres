@@ -62,21 +62,21 @@ const Form = ({priceDiscount, setPriceDiscount}:FormProps) => {
     } else if(priceDiscount === 0 && cartTotal < 12000){
       order.total = cartTotal + 750
     }
-    
-    order.id = Math.floor(Math.random() * Math.floor(Math.random() * Date.now()))
 
     alert("datos enviados")
     console.log(order)
-    // navigate(`/orderInfo/${orderInfo}`, { replace: true })   
 
     // Send order
     const dataBase = getFirestore()
     const orderCollection = collection(dataBase, 'orders') 
-    await addDoc(orderCollection, order)
-        // .then(resp => {order.id= resp.id})
-        // .catch(err => console.log(err))
-
-
+    addDoc(orderCollection, order)
+        .then(resp => {order.id= resp.id})
+        .catch(err => console.log(err))
+        .finally (() =>{
+          // navigate(`/orderInfo/${order.id}`, { replace: true });
+          reset()
+        })
+        // NO NAVEGAR A OTRA PÁGINA, MOSTRAR UN DIV ARRIBA DE TODO 
 
         
         // .finally (() => reset())
