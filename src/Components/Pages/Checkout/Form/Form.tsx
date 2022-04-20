@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-import { collection, getDocs, getFirestore, query, addDoc, writeBatch, where, documentId } from 'firebase/firestore';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../../Context/CartContext';
 import MercadoPago from './MercadoPago/MercadoPago';
 import './Form.scss';
@@ -21,84 +20,18 @@ interface IFormInputs {
 
 interface FormProps {
   priceDiscount: number;
-  setPriceDiscount: (value:number) => void;
+  setPayment: (value: boolean) => void;
 }
 
-const Form = ({priceDiscount, setPriceDiscount}:FormProps) => {
+const Form = ({priceDiscount, setPayment}:FormProps) => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormInputs>();
 
-  const { cartList, cartTotal } = useContext(CartContext)
-
-  const navigate = useNavigate();
+  const { cartList, cartTotal, handlePurchase } = useContext(CartContext)
 
   const onSubmit: SubmitHandler<IFormInputs> = async data => {
-    
-    let order:any = {}
-    
-    order.comprador = {
-      Nombre: data.Nombre,
-      Apellido: data.Apellido,
-      Email: data.Email,
-      Direccion: data.Direccion,
-      Localidad_Ciudad: data.Localidad_Ciudad,
-      Apartamento_Habitación: data.Apartamento_Habitación,
-      Provincia: data.Provincia,
-      Código_Postal: data.Código_Postal,
-      Teléfono: data.Teléfono,
-    }
-
-    order.productos = cartList.map(cartItem => {
-      const id = cartItem.id;
-      const name = cartItem.name;
-      const price = cartItem.price * cartItem.quantity;
-      const quantity = cartItem.quantity;
-      return {id, name, price, quantity}
-    })
-
-    if(priceDiscount > 0){
-      order.total = priceDiscount
-    } else if(priceDiscount === 0 && cartTotal >= 12000){
-      order.total = cartTotal
-    } else if(priceDiscount === 0 && cartTotal < 12000){
-      order.total = cartTotal + 750
-    }
-
-    alert("datos enviados")
-    console.log(order)
-
-    // Send order
-    const dataBase = getFirestore()
-    const orderCollection = collection(dataBase, 'orders') 
-    addDoc(orderCollection, order)
-        .then(resp => {order.id= resp.id})
-        .catch(err => console.log(err))
-        .finally (() =>{
-          // navigate(`/orderInfo/${order.id}`, { replace: true });
-          reset()
-        })
-        // NO NAVEGAR A OTRA PÁGINA, MOSTRAR UN DIV ARRIBA DE TODO 
-
-        
-        // .finally (() => reset())
-        // .then(resp => setInputs({...inputs, orderId: resp.id}))
-      // // Update stock
-      // const queryCollection = collection(dataBase, 'items')
-      // const queryUpdateStock = query(queryCollection, where(documentId(), 'in', cartList.map(it => it.id)))
-      // const batch = writeBatch(dataBase)    
-      // await getDocs (queryUpdateStock)
-      //     .then(resp => resp.docs.forEach(res => batch.update(res.ref, {stock: res.data().stock - cartList.find(item => item.id === res.id).quantity})))
-      //     .catch(err => console.log(err))
-      //     .finally(() => {
-      //     setPaymentFinished(true);
-      //     const successfulPurchase = () => toast.success('Compra realizada con éxito');
-      //     successfulPurchase()
-      //     })
-      // batch.commit()
-
-
-
-
-
+    handlePurchase?.(data, cartList, cartTotal, priceDiscount)
+    setPayment(true)
+    reset()
   }
 
   return (

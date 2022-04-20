@@ -1,9 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react';
+import { collection, getDocs, getFirestore, query, addDoc, writeBatch, where, documentId } from 'firebase/firestore';
 
 const initialValue = {
     cartList: [],
     openCart: false,
-    cartTotal: 0
+    cartTotal: 0,
+    orderData: {}
 }
 
 type CartContextType = {
@@ -16,7 +18,10 @@ type CartContextType = {
     handleOpenCart?: () => void;
     handleCloseCart?: () => void;
     cartTotal: number;
-    setCartTotal?: (number: number) => void;
+    setCartTotal?: (number:number) => void;
+    orderData?: {};
+    setOrderData?: (order:any) => void;
+    handlePurchase?: (data:any, cartList:ProductModel[], cartTotal: number, priceDiscount: number) => void;
 }
 
 export type ProductModel = {
@@ -42,6 +47,7 @@ export const CartContextProvider = ({children}:any) => {
     const [cartList, setCartList] = useState<ProductModel[]>([])
     const [openCart, setOpenCart] = useState<boolean>(false);
     const [cartTotal, setCartTotal] = useState<number>(0);
+    const [orderData, setOrderData] = useState<any>({})
 
     const addToCart = (product:ProductModel, quantity:number, size: string) => {
         const isInCart = cartList.find(((x) => x.id === product.id))
@@ -72,6 +78,67 @@ export const CartContextProvider = ({children}:any) => {
     const handleOpenCart = () => setOpenCart(true);
     const handleCloseCart = () => setOpenCart(false);
 
+
+    const handlePurchase = (data:any, cartList:ProductModel[], cartTotal: number, priceDiscount: number) => {
+        let order:any = {}
+    
+        order.comprador = {
+          Nombre: data.Nombre,
+          Apellido: data.Apellido,
+          Email: data.Email,
+          Direccion: data.Direccion,
+          Localidad_Ciudad: data.Localidad_Ciudad,
+          Apartamento_Habitación: data.Apartamento_Habitación,
+          Provincia: data.Provincia,
+          Código_Postal: data.Código_Postal,
+          Teléfono: data.Teléfono,
+        }
+    
+        order.productos = cartList.map(cartItem => {
+          const id = cartItem.id;
+          const name = cartItem.name;
+          const price = cartItem.price * cartItem.quantity;
+          const quantity = cartItem.quantity;
+          return {id, name, price, quantity}
+        })
+    
+        if(priceDiscount > 0){
+          order.total = priceDiscount
+        } else if(priceDiscount === 0 && cartTotal >= 12000){
+          order.total = cartTotal
+        } else if(priceDiscount === 0 && cartTotal < 12000){
+          order.total = cartTotal + 750
+        }
+    
+        alert("datos enviados")
+        order.IdOrden = ((Math.floor(Math.random() * 123)) * Date.now() * (Math.floor((123 + Math.random()) * 123))).toString()
+    
+        const dataBase = getFirestore()
+        const orderCollection = collection(dataBase, 'orders') 
+        addDoc(orderCollection, order)
+            .catch(err => console.log(err))
+            .finally (() =>{
+              console.log(order)
+              setOrderData(order)
+            })
+
+                 // .finally (() => reset())
+        // .then(resp => setInputs({...inputs, orderId: resp.id}))
+      // // Update stock
+      // const queryCollection = collection(dataBase, 'items')
+      // const queryUpdateStock = query(queryCollection, where(documentId(), 'in', cartList.map(it => it.id)))
+      // const batch = writeBatch(dataBase)    
+      // await getDocs (queryUpdateStock)
+      //     .then(resp => resp.docs.forEach(res => batch.update(res.ref, {stock: res.data().stock - cartList.find(item => item.id === res.id).quantity})))
+      //     .catch(err => console.log(err))
+      //     .finally(() => {
+      //     setPaymentFinished(true);
+      //     const successfulPurchase = () => toast.success('Compra realizada con éxito');
+      //     successfulPurchase()
+      //     })
+      // batch.commit()
+    }
+
     useEffect(() => {
         let cartTotal:number = 0
         let productTotal:number = 0
@@ -93,7 +160,10 @@ export const CartContextProvider = ({children}:any) => {
             handleOpenCart,
             handleCloseCart,
             cartTotal,
-            setCartTotal}}>
+            setCartTotal,
+            orderData,
+            setOrderData,
+            handlePurchase}}>
             {children}
         </CartContext.Provider>
     )
