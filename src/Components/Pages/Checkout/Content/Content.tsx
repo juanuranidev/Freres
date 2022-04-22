@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext, ProductModel } from '../../../Context/CartContext';
 import ContentProduct from './ContentProduct/ContentProduct';
+import MercadoPago from './MercadoPago/MercadoPago';
 import Coupon from './Coupon/Coupon';
 import './Content.scss';
 
@@ -35,6 +36,7 @@ const Content = ({priceDiscount, setPriceDiscount}: ContentProps) => {
         {cartTotal < 12000 && priceDiscount === 0 && <p>Total: ${(cartTotal + 750).toLocaleString("ar")}</p>}
         {cartTotal >= 12000 && priceDiscount === 0 && <p>Total: ${(cartTotal).toLocaleString("ar")}</p>}
       </div>
+      <MercadoPago/>
     </div>
   );
 }

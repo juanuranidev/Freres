@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../../Context/CartContext';
-import MercadoPago from './MercadoPago/MercadoPago';
 import './Form.scss';
 
 interface IFormInputs {
@@ -137,9 +136,7 @@ const Form = ({priceDiscount, setPayment}:FormProps) => {
       <Link className="form_a" to="/">
         <p className="form_a_p">VOLVER AL INICIO</p>
       </Link>
-      <div className="form_mercadoPago">
-        <MercadoPago/>
-      </div>
+      <div className="form_border"/>
     </div>
   );
 }
