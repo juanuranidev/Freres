@@ -1,12 +1,13 @@
 .overlay{
-    position: absolute;
-    left: 0rem;
-    height: 200vh;
-    width: 200vh;
-    z-index: 2;
-    visibility: hidden;
-    opacity: 0;
     background: #363636;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    z-index: 2;
     transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
 }
 
