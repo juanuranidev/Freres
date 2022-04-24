@@ -19,9 +19,16 @@ type CartContextType = {
     handleCloseCart?: () => void;
     cartTotal: number;
     setCartTotal?: (number:number) => void;
-    orderData?: {};
+    orderData?: OrderDataModel;
     setOrderData?: (order:any) => void;
     handlePurchase?: (data:any, cartList:ProductModel[], cartTotal: number, priceDiscount: number) => void;
+}
+
+export type OrderDataModel = {
+  idOrden?: string;
+  comprador?: any;
+  productos?: ProductModel[];
+  total?: number;
 }
 
 export type ProductModel = {
@@ -111,7 +118,7 @@ export const CartContextProvider = ({children}:any) => {
         }
     
         alert("datos enviados")
-        order.IdOrden = ((Math.floor(Math.random() * 123)) * Date.now() * (Math.floor((123 + Math.random()) * 123))).toString()
+        order.idOrden = ((Math.floor(Math.random() * 123)) * Date.now() * (Math.floor((123 + Math.random()) * 123))).toString()
     
         const dataBase = getFirestore()
         const orderCollection = collection(dataBase, 'orders') 
