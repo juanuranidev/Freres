@@ -11,6 +11,7 @@ interface ContentProps {
 }
 
 const Content = ({priceDiscount, setPriceDiscount}: ContentProps) => {
+  
   const { cartList, cartTotal } = useContext(CartContext);
   
   return (

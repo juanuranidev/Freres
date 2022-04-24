@@ -1,7 +1,7 @@
 import React from 'react';
-import { getFirestoreApp } from './Components/Firebase/DbConfig';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartContextProvider } from './Components/Context/CartContext';
+import { getFirestoreApp } from './Components/Firebase/DbConfig';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import Navbar from './Components/Navbar/Navbar';
 import Main from './Components/Pages/Main/Main';

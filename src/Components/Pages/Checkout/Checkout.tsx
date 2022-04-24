@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../../Context/CartContext';
-import OrderInfo from './OrderInfo/OrderInfo';
+import OrderStatus from './OrderStatus/OrderStatus';
 import Form from './Form/Form';
 import Content from './Content/Content';
 import './Checkout.scss';
+import OrderInfo from './OrderInfo/OrderInfo';
 
 const Checkout = () => {
+  const [loader, setLoader] = useState<boolean>(false)
   const [payment, setPayment] = useState<boolean>(false)
   const [priceDiscount, setPriceDiscount] = useState<number>(0);
 
@@ -16,11 +18,13 @@ const Checkout = () => {
   return (
     <div className='checkout'>
       {payment && orderData
-      ? <OrderInfo />
-      : <Form priceDiscount={priceDiscount} setPayment={setPayment} />
+      ? <OrderStatus />
+      : <Form priceDiscount={priceDiscount} setPayment={setPayment} />}
+      {payment && orderData
+      ? <OrderInfo/>
+      : <Content priceDiscount={priceDiscount} setPriceDiscount={setPriceDiscount} />}
 
-      }
-      <Content priceDiscount={priceDiscount} setPriceDiscount={setPriceDiscount} />
+      
     </div>
   );
 }

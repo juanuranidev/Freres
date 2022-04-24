@@ -8,9 +8,9 @@ interface ProductListProps {
 
 const ProductList = ({products}:ProductListProps) => {
   return (
-    <>
+    <React.Fragment>
       {products.map((product:ProductModel) => <Product {...product} key={product.id} />)}
-    </>
+    </React.Fragment>
   );
 }
 
