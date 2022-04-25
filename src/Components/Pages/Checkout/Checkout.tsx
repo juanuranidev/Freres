@@ -21,10 +21,8 @@ const Checkout = () => {
       ? <OrderStatus />
       : <Form priceDiscount={priceDiscount} setPayment={setPayment} />}
       {payment && orderData
-      ? <OrderInfo/>
-      : <Content priceDiscount={priceDiscount} setPriceDiscount={setPriceDiscount} />}
-
-      
+      ? <OrderInfo />
+      : <Content priceDiscount={priceDiscount} setPriceDiscount={setPriceDiscount} />}      
     </div>
   );
 }

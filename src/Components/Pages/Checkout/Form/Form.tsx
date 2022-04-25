@@ -46,9 +46,9 @@ const Form = ({priceDiscount, setPayment}:FormProps) => {
               {errors.Nombre?.type === 'pattern' && <p className='required'>Ingresa sólo letras</p>}
             </div>
             <input 
-            type="text" 
-            placeholder="Nombre" 
-            {...register("Nombre", { required: true, maxLength: 50, pattern: /^[A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s]+$/i })} />
+              type="text" 
+              placeholder="Nombre" 
+              {...register("Nombre", { required: true, maxLength: 50, pattern: /^[A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s]+$/i })} />
           </label>
           <label>
             <div>
@@ -58,9 +58,9 @@ const Form = ({priceDiscount, setPayment}:FormProps) => {
               {errors.Apellido?.type === 'pattern' && <p className='required'>Ingresa sólo letras</p>}
             </div>
             <input 
-            type="text" 
-            placeholder="Apellido" 
-            {...register("Apellido", { required: true, maxLength: 50, pattern: /^[A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s]+$/i} )} />
+              type="text" 
+              placeholder="Apellido" 
+              {...register("Apellido", { required: true, maxLength: 50, pattern: /^[A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s]+$/i})} />
           </label>
           <label>
             <div>
@@ -69,9 +69,9 @@ const Form = ({priceDiscount, setPayment}:FormProps) => {
               {errors.Email?.type === 'maxLength' && <p className='required'>Ingresa hasta 50 letras</p>}
             </div>
             <input 
-            type="email" 
-            placeholder="Email" 
-            {...register("Email", { required: true, maxLength: 50 })} />
+              type="email" 
+              placeholder="Email" 
+              {...register("Email", { required: true, maxLength: 50 })} />
           </label>
           <label>
             <div>
@@ -81,9 +81,9 @@ const Form = ({priceDiscount, setPayment}:FormProps) => {
               {errors.Direccion?.type === 'pattern' && <p className='required'>Ingrese un formato válido</p>}
             </div>
             <input 
-            type="text" 
-            placeholder="Dirección" 
-            {...register("Direccion", { required: true, maxLength: 100, pattern: /^[0-9-A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s-/-*.,-]+$/i })} />
+              type="text" 
+              placeholder="Dirección" 
+              {...register("Direccion", { required: true, maxLength: 100, pattern: /^[0-9-A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s-/-*.,-]+$/i })} />
           </label>
           <label>
             <div>
@@ -92,9 +92,9 @@ const Form = ({priceDiscount, setPayment}:FormProps) => {
               {errors.Apartamento_Habitación?.type === 'pattern' && <p className='required'>Ingrese un formato válido</p>}
             </div>
             <input 
-            type="text" 
-            placeholder="Apartamento, habitación, etc. (opcional)" 
-            {...register("Apartamento_Habitación", { required: false, maxLength: 50, pattern: /^[0-9-A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s-/-*.,-]+$/i })} />
+              type="text" 
+              placeholder="Apartamento, habitación, etc. (opcional)" 
+              {...register("Apartamento_Habitación", { required: false, maxLength: 50, pattern: /^[0-9-A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s-/-*.,-]+$/i })} />
           </label>
         </div>
         <div>
@@ -106,9 +106,9 @@ const Form = ({priceDiscount, setPayment}:FormProps) => {
               {errors.Localidad_Ciudad?.type === 'pattern' && <p className='required'>Ingrese un formato válido</p>}
             </div>
             <input 
-            type="text" 
-            placeholder="Localidad/Ciudad" 
-            {...register("Localidad_Ciudad", { required: true,  maxLength: 50, pattern: /^[0-9-A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s-/-*.,-]+$/i })} />
+              type="text" 
+              placeholder="Localidad/Ciudad" 
+              {...register("Localidad_Ciudad", { required: true,  maxLength: 50, pattern: /^[0-9-A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s-/-*.,-]+$/i })} />
           </label>
           <label>
             <div>
@@ -118,9 +118,9 @@ const Form = ({priceDiscount, setPayment}:FormProps) => {
               {errors.Provincia?.type === 'pattern' && <p className='required'>Ingrese un formato válido</p>}
             </div>
             <input 
-            type="text" 
-            placeholder="Provincia" 
-            {...register("Provincia", { required: true, maxLength: 50, pattern: /^[0-9-A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s-/-*.,-]+$/i })} /> 
+              type="text" 
+              placeholder="Provincia" 
+              {...register("Provincia", { required: true, maxLength: 50, pattern: /^[0-9-A-Za-z-ZñÑáéíóúÁÉÍÓÚ\s-/-*.,-]+$/i })} /> 
           </label>
           <label>
             <div>
@@ -129,9 +129,9 @@ const Form = ({priceDiscount, setPayment}:FormProps) => {
               {errors.Código_Postal?.type === 'maxLength' && <p className='required'>Ingresa hasta 20 números</p>}
             </div>
             <input 
-            type="number" 
-            placeholder="Código Postal" 
-            {...register("Código_Postal", { required: true, maxLength: 20 })} />
+              type="number" 
+              placeholder="Código Postal" 
+              {...register("Código_Postal", { required: true, maxLength: 20 })} />
           </label>
           <label>
             <div>
@@ -140,9 +140,9 @@ const Form = ({priceDiscount, setPayment}:FormProps) => {
               {errors.Teléfono?.type === 'maxLength' && <p className='required'>Ingresa hasta 20 números</p>}
             </div>
             <input 
-            type="number" 
-            placeholder="Teléfono" 
-            {...register("Teléfono", { required: true, maxLength: 20 })} />
+              type="number" 
+              placeholder="Teléfono" 
+              {...register("Teléfono", { required: true, maxLength: 20 })} />
           </label>
           <label className='button'>
             {cartList.length === 0

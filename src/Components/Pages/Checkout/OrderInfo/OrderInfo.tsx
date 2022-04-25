@@ -5,8 +5,9 @@ import './OrderInfo.scss';
 
 const OrderInfo = () => {
 
-    const { cartList, cartTotal } = useContext(CartContext);
-
+    const { cartList, orderData } = useContext(CartContext);
+    console.log(orderData)
+    console.log(orderData?.productos)
     return (
       <div className='orderInfo'>
         <div className='orderInfo_products'>
@@ -14,7 +15,9 @@ const OrderInfo = () => {
             {cartList.map((product: ProductModel) => <ContentProduct {...product} key={product.id} />)}
         </div>
         <div className='orderInfo_total'>
-            <p>Total: ${cartTotal}</p>
+            <p className='orderInfo_total_p'>Revisa tu casilla de correo: {orderData?.comprador.Email}</p>
+            <p className='orderInfo_total_p'>Id de la órden: {orderData?.idOrden}</p>
+            <p className='orderInfo_total_p'>Total del pedido: ${orderData?.total}</p>
         </div>
       </div>
     );

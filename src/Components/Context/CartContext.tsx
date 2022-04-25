@@ -104,9 +104,11 @@ export const CartContextProvider = ({children}:any) => {
         order.productos = cartList.map(cartItem => {
           const id = cartItem.id;
           const name = cartItem.name;
+          const size = cartItem.size;
+          const images = cartItem.images
           const price = cartItem.price * cartItem.quantity;
           const quantity = cartItem.quantity;
-          return {id, name, price, quantity}
+          return {id, name, size, images, price, quantity}
         })
     
         if(priceDiscount > 0){
@@ -127,6 +129,8 @@ export const CartContextProvider = ({children}:any) => {
             .finally (() =>{
               console.log(order)
               setOrderData(order)
+              setCartList([])
+              setCartTotal(0)
             })
 
                  // .finally (() => reset())
