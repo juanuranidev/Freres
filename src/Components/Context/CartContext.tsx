@@ -2,26 +2,29 @@ import React, { createContext, useEffect, useState } from 'react';
 import { collection, getDocs, getFirestore, query, addDoc, writeBatch, where, documentId } from 'firebase/firestore';
 
 const initialValue = {
-    cartList: [],
-    openCart: false,
-    cartTotal: 0,
-    orderData: {}
+  cartList: [],
+  openCart: false,
+  cartTotal: 0,
+  orderData: {},
+  payment: false,
 }
 
 type CartContextType = {
-    cartList: ProductModel[];
-    setCartList?: (value:ProductModel) => void;
-    addToCart?: (product:ProductModel, quantity:number, size: string) => void;
-    deleteFromCart?: (product:ProductModel) => void;
-    openCart: boolean;
-    setOpenCart?: (value:boolean) => void;
-    handleOpenCart?: () => void;
-    handleCloseCart?: () => void;
-    cartTotal: number;
-    setCartTotal?: (number:number) => void;
-    orderData?: OrderDataModel;
-    setOrderData?: (order:any) => void;
-    handlePurchase?: (data:any, cartList:ProductModel[], cartTotal: number, priceDiscount: number) => void;
+  cartList: ProductModel[];
+  setCartList?: (value:ProductModel) => void;
+  addToCart?: (product:ProductModel, quantity:number, size: string) => void;
+  deleteFromCart?: (product:ProductModel) => void;
+  openCart: boolean;
+  setOpenCart?: (value:boolean) => void;
+  payment: boolean;
+  setPayment?: (value:boolean) => void;
+  handleOpenCart?: () => void;
+  handleCloseCart?: () => void;
+  cartTotal: number;
+  setCartTotal?: (number:number) => void;
+  orderData?: OrderDataModel;
+  setOrderData?: (order:any) => void;
+  handlePurchase?: (data:any, cartList:ProductModel[], cartTotal: number, priceDiscount: number) => void;
 }
 
 export type OrderDataModel = {
@@ -51,35 +54,36 @@ export type ProductModel = {
 export const CartContext = createContext<CartContextType>(initialValue)
 
 export const CartContextProvider = ({children}:any) => {
-    const [cartList, setCartList] = useState<ProductModel[]>([])
-    const [openCart, setOpenCart] = useState<boolean>(false);
-    const [cartTotal, setCartTotal] = useState<number>(0);
-    const [orderData, setOrderData] = useState<any>({})
-
+  const [cartList, setCartList] = useState<ProductModel[]>([])
+  const [openCart, setOpenCart] = useState<boolean>(false);
+  const [cartTotal, setCartTotal] = useState<number>(0);
+  const [orderData, setOrderData] = useState<any>({})
+  const [payment, setPayment] = useState<boolean>(false)
+  
     const addToCart = (product:ProductModel, quantity:number, size: string) => {
-        const isInCart = cartList.find(((x) => x.id === product.id))
-        if(isInCart){
-            const newCart = cartList.map((x) => {
-                if (x.id === product.id) {
-                    if(x.size === size){
-                        return { ...product, quantity: quantity + x.quantity, size: size }
-                    }
-                    return { ...product, quantity: quantity, size: size }
-                }
-                return x
-            })
-            setCartList(newCart)
-        } else {
-            setCartList([...cartList, {...product, quantity, size}])
-        }
-        handleOpenCart()
+      const isInCart = cartList.find(((x) => x.id === product.id))
+      if(isInCart){
+          const newCart = cartList.map((x) => {
+              if (x.id === product.id) {
+                  if(x.size === size){
+                      return { ...product, quantity: quantity + x.quantity, size: size }
+                  }
+                  return { ...product, quantity: quantity, size: size }
+              }
+              return x
+          })
+          setCartList(newCart)
+      } else {
+          setCartList([...cartList, {...product, quantity, size}])
+      }
+      handleOpenCart()
     }
 
     const deleteFromCart = (product:ProductModel) => {
-        const target:any = cartList.find((x => x.id === product.id))
-        target.quantity === 1
-        ? setCartList(cartList.filter((x) => x.id !== product.id))
-        : setCartList(cartList.map((x) => x.id === product.id ? { ...product, quantity: product.quantity - 1 }: x))
+      const target:any = cartList.find((x => x.id === product.id))
+      target.quantity === 1
+      ? setCartList(cartList.filter((x) => x.id !== product.id))
+      : setCartList(cartList.map((x) => x.id === product.id ? { ...product, quantity: product.quantity - 1 }: x))
     }
 
     const handleOpenCart = () => setOpenCart(true);
@@ -87,51 +91,52 @@ export const CartContextProvider = ({children}:any) => {
 
 
     const handlePurchase = (data:any, cartList:ProductModel[], cartTotal: number, priceDiscount: number) => {
-        let order:any = {}
-    
-        order.comprador = {
-          Nombre: data.Nombre,
-          Apellido: data.Apellido,
-          Email: data.Email,
-          Direccion: data.Direccion,
-          Localidad_Ciudad: data.Localidad_Ciudad,
-          Apartamento_Habitación: data.Apartamento_Habitación,
-          Provincia: data.Provincia,
-          Código_Postal: data.Código_Postal,
-          Teléfono: data.Teléfono,
-        }
-    
-        order.productos = cartList.map(cartItem => {
-          const id = cartItem.id;
-          const name = cartItem.name;
-          const size = cartItem.size;
-          const images = cartItem.images
-          const price = cartItem.price * cartItem.quantity;
-          const quantity = cartItem.quantity;
-          return {id, name, size, images, price, quantity}
-        })
-    
-        if(priceDiscount > 0){
-          order.total = priceDiscount
-        } else if(priceDiscount === 0 && cartTotal >= 12000){
-          order.total = cartTotal
-        } else if(priceDiscount === 0 && cartTotal < 12000){
-          order.total = cartTotal + 750
-        }
-    
-        alert("datos enviados")
-        order.idOrden = ((Math.floor(Math.random() * 123)) * Date.now() * (Math.floor((123 + Math.random()) * 123))).toString()
-    
-        const dataBase = getFirestore()
-        const orderCollection = collection(dataBase, 'orders') 
-        addDoc(orderCollection, order)
-            .catch(err => console.log(err))
-            .finally (() =>{
-              console.log(order)
-              setOrderData(order)
-              setCartList([])
-              setCartTotal(0)
-            })
+      let order:any = {}
+  
+      order.comprador = {
+        Nombre: data.Nombre,
+        Apellido: data.Apellido,
+        Email: data.Email,
+        Direccion: data.Direccion,
+        Localidad_Ciudad: data.Localidad_Ciudad,
+        Apartamento_Habitación: data.Apartamento_Habitación,
+        Provincia: data.Provincia,
+        Código_Postal: data.Código_Postal,
+        Teléfono: data.Teléfono,
+      }
+  
+      order.productos = cartList.map(cartItem => {
+        const id = cartItem.id;
+        const name = cartItem.name;
+        const size = cartItem.size;
+        const images = cartItem.images
+        const price = cartItem.price * cartItem.quantity;
+        const quantity = cartItem.quantity;
+        return {id, name, size, images, price, quantity}
+      })
+  
+      if(priceDiscount > 0){
+        order.total = priceDiscount
+      } else if(priceDiscount === 0 && cartTotal >= 12000){
+        order.total = cartTotal
+      } else if(priceDiscount === 0 && cartTotal < 12000){
+        order.total = cartTotal + 750
+      }
+  
+      order.idOrden = ((Math.floor(Math.random() * 123)) * Date.now() * (Math.floor((123 + Math.random()) * 123))).toString()
+  
+      const dataBase = getFirestore()
+      const orderCollection = collection(dataBase, 'orders') 
+      addDoc(orderCollection, order)
+          .catch(err => console.log(err))
+          .finally (() =>{
+            console.log(order)
+            setOrderData(order)
+            setCartList([])
+            setCartTotal(0)
+            setPayment(true)
+            setTimeout(() => setPayment(false), 10000);
+          })
 
                  // .finally (() => reset())
         // .then(resp => setInputs({...inputs, orderId: resp.id}))
@@ -151,31 +156,33 @@ export const CartContextProvider = ({children}:any) => {
     }
 
     useEffect(() => {
-        let cartTotal:number = 0
-        let productTotal:number = 0
-        cartList.forEach(product => {
-            productTotal = product.quantity * product.price
-            cartTotal += productTotal
-        })
-        setCartTotal(cartTotal)
+      let cartTotal:number = 0
+      let productTotal:number = 0
+      cartList.forEach(product => {
+          productTotal = product.quantity * product.price
+          cartTotal += productTotal
+      })
+      setCartTotal(cartTotal)
     }, [cartList])
 
 
     return(
-        <CartContext.Provider value={{ 
-            cartList, 
-            addToCart, 
-            deleteFromCart, 
-            openCart, 
-            setOpenCart, 
-            handleOpenCart,
-            handleCloseCart,
-            cartTotal,
-            setCartTotal,
-            orderData,
-            setOrderData,
-            handlePurchase}}>
-            {children}
-        </CartContext.Provider>
+      <CartContext.Provider value={{ 
+          cartList, 
+          addToCart, 
+          deleteFromCart, 
+          openCart, 
+          setOpenCart, 
+          payment,
+          setPayment,
+          handleOpenCart,
+          handleCloseCart,
+          cartTotal,
+          setCartTotal,
+          orderData,
+          setOrderData,
+          handlePurchase}}>
+          {children}
+      </CartContext.Provider>
     )
 }

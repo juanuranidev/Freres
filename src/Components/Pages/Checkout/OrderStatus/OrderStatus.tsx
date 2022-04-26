@@ -12,7 +12,7 @@ const OrderStatus = () => {
         <div className='orderStatus_div'>
           <h2 className='orderStatus_div_h2'>¡GRACIAS {orderData?.comprador.Nombre}!</h2>
           <p className='orderStatus_div_p'>TU PEDIDO HA SIDO RECIBIDO.</p>
-          <SecondaryButton text="Volver al inicio" link="/"/>
+          <SecondaryButton text="Volver al inicio" link="/" />
         </div>
       </div>
     )

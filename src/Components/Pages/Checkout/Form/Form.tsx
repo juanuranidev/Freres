@@ -19,17 +19,17 @@ interface IFormInputs {
 
 interface FormProps {
   priceDiscount: number;
-  setPayment: (value: boolean) => void;
+  setLoader: (value: boolean) => void;
 }
 
-const Form = ({priceDiscount, setPayment}:FormProps) => {
+const Form = ({priceDiscount, setLoader}:FormProps) => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormInputs>();
 
   const { cartList, cartTotal, handlePurchase } = useContext(CartContext)
 
   const onSubmit: SubmitHandler<IFormInputs> = async data => {
     handlePurchase?.(data, cartList, cartTotal, priceDiscount)
-    setPayment(true)
+    setLoader(true)
     reset()
   }
 
