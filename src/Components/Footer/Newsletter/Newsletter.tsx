@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getFirestore, collection, addDoc, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import './Newsletter.scss';
 
 const Newsletter = () => {
@@ -8,30 +8,17 @@ const Newsletter = () => {
 
   const handleSetUserEmail = (e:any) => setUserEmail({...userEmail,[e.target.name] : e.target.value})
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = async(e:any) => {
     e.preventDefault()
     let email:any = {}
     email.email = userEmail.email
 
     const dataBase = getFirestore()
-    const queryProd = doc (dataBase, 'newsletter', userEmail.email)
-    // const emailCollection = collection(dataBase, 'newsletter') 
-    // const emailCollection = collection(dataBase, 'products'), where('category', '==', ${userEmail.email})
-    // db.collection('books').where('id', '==', 'fK3ddutEpD2qQqRMXNW5').get()
-    getDoc(queryProd)
-    .then((res) => console.log(res.data()))
-      .catch(err => console.log(err))
-      // .finally (() => {setIsUserSuscribed(true)})
-      // .finally((res) => console.log(res.data()))
+    const emailCollection = collection(dataBase, 'newsletter') 
 
-
-    // const dataBase = getFirestore()
-    // const queryProd = doc (dataBase, 'products', idProduct)
-
-    // getDoc(queryProd)
-    // .then(resp => setProduct({id: resp.id, ...resp.data()} as ProductModel))
-    // .catch(err => console.log(err))
-    // .finally(() => setLoader(false))
+    addDoc(emailCollection, email)
+    .catch(err => console.log(err))
+    .finally (() => setIsUserSuscribed(true))
 
   }
 
@@ -62,7 +49,3 @@ const Newsletter = () => {
 }
 
 export default Newsletter;
-
-
-// .then(res => setEmails(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
-// .catch(err => console.log(err))
