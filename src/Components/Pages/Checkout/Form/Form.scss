@@ -22,7 +22,7 @@
         margin: auto;
         display: flex;
         align-items: flex-start;
-        padding-bottom: 2rem;
+        padding-bottom: 2.5rem;
         @media(max-width: 992px){
             border: none;
         }
@@ -124,7 +124,7 @@
         }
     }
     .form_border{
-        padding-bottom: 2rem;
+        padding-bottom: 2.5rem;
         border-bottom: 0.1rem solid #eeeeee;
         @media(max-width: 992px){
             border: none;

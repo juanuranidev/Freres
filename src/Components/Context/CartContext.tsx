@@ -130,12 +130,10 @@ export const CartContextProvider = ({children}:any) => {
       addDoc(orderCollection, order)
           .catch(err => console.log(err))
           .finally (() =>{
-            console.log(order)
             setOrderData(order)
             setCartList([])
             setCartTotal(0)
             setPayment(true)
-            setTimeout(() => setPayment(false), 10000);
           })
 
                  // .finally (() => reset())

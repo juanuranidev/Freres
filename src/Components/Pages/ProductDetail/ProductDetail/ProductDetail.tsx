@@ -21,7 +21,7 @@ const ProductDetail = ({product}:ProductDetailProps) => {
   const [size, setSize] = useState<string>("");
   const [amount, setAmount] = useState<number>(1) 
 
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, setPayment } = useContext(CartContext);
   
   useEffect( () => {
     setLoader(true)
@@ -41,6 +41,7 @@ const ProductDetail = ({product}:ProductDetailProps) => {
     addToCart?.(product, amount, size)
     setAmount(1);
     setSize("");
+    setPayment?.(false)
   }
 
   return (

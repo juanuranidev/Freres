@@ -5,12 +5,13 @@ import './SecondaryButton.scss';
 interface SecondaryButtonProps {
   link: string;
   text: string;
+  onClick: () => void;
 }
 
-const SecondaryButton = ({link, text}: SecondaryButtonProps) => {
+const SecondaryButton = ({link, text, onClick}: SecondaryButtonProps) => {
   return (
     <Link to={link}>
-      <button className='secondaryButton'>{text}</button>
+      <button className='secondaryButton' onClick={onClick}>{text}</button>
     </Link>
   );
 }

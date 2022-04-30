@@ -5,7 +5,7 @@ import SecondaryButton from '../../Buttons/SecondaryButton/SecondaryButton';
 import './CartContent.scss';
 
 const CartContent = () => {  
-  const { cartList, openCart, handleCloseCart, cartTotal } = useContext(CartContext)
+  const { cartList, openCart, handleCloseCart, cartTotal, setPayment } = useContext(CartContext)
 
     return (
     <div className={openCart===true ? 'cartOpen' : 'cartClose'}>
@@ -26,7 +26,7 @@ const CartContent = () => {
             <p className='cart_subtotal_p'><b>SUBTOTAL:</b> ${cartTotal}</p>
           </div>
           <div className='cart_checkout' onClick={handleCloseCart}>
-            <SecondaryButton link="/checkout" text="FINALIZAR COMPRA"/>
+            <SecondaryButton link="/checkout" text="FINALIZAR COMPRA" onClick={() => setPayment?.(false)}/>
           </div>
         </>
       : <div className='cart_empty'>

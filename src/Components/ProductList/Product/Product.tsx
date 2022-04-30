@@ -1,13 +1,12 @@
-import React from 'react';
-import { ProductModel } from '../../Context/CartContext';
+import React, { useContext } from 'react';
+import { CartContext, ProductModel } from '../../Context/CartContext';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Sizes from '../../Sizes/Sizes';
 import './Product.scss';
 
 const Product = (product: ProductModel) => {
-
-return (
+  return (
     <motion.div
       className='product'
       exit={{opacity: 0}}

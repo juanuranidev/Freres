@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { Link } from 'react-router-dom';
 import { CartContext } from '../../../Context/CartContext';
+import { Link } from 'react-router-dom';
 import './Form.scss';
 
 interface IFormInputs {

@@ -9,7 +9,7 @@ interface AddToCartProps{
     handleAddToCart: () => void;
 }
 
-const AddToCart = ({stock, size, amount, setAmount, handleAddToCart }:AddToCartProps) => {
+const AddToCart = ({ stock, size, amount, setAmount, handleAddToCart }:AddToCartProps) => {
 
     const handleIncrement = () => stock > amount && setAmount(amount + 1)
     const handleDecrement = () => amount > 1 && setAmount(amount - 1)   
