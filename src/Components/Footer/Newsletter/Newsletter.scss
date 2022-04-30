@@ -51,3 +51,18 @@
         font-size: 0.8rem;
     }
 }
+
+.newsletterLoader{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    .newsletterLoader_img{
+        width: 6rem;
+        animation: fadeinout 4s infinite; 
+    }
+    @keyframes fadeinout{
+        0%{opacity:0;}
+        50%{opacity:1;}
+        100%{opacity:0;}
+    }
+}
