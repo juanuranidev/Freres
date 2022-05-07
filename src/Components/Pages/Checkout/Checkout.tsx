@@ -18,7 +18,6 @@ const Checkout = () => {
     setLoader(false)
   },[payment])
 
-
   if(loader){
     return(
       <Loader/>
