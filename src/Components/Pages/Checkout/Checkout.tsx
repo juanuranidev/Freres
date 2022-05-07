@@ -19,9 +19,7 @@ const Checkout = () => {
   },[payment])
 
   if(loader){
-    return(
-      <Loader/>
-    )
+    return <Loader/>
   }
 
   return (
