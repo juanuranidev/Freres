@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
-import Loader from '../../Loader/Loader';
 import OrderStatus from './OrderStatus/OrderStatus';
-import Form from './Form/Form';
 import OrderInfo from './OrderInfo/OrderInfo';
 import Content from './Content/Content';
+import Loader from '../../Loader/Loader';
+import Form from './Form/Form';
 import './Checkout.scss';
 
 const Checkout = () => {
