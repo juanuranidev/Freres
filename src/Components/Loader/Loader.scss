@@ -9,9 +9,9 @@
   z-index: 10;
   background-color: #ffffff;
   img{
-      animation: fadeinout 4s infinite; 
-      box-shadow: none;
-      border: none; 
+    animation: fadeinout 4s infinite; 
+    box-shadow: none;
+    border: none; 
   }
   @keyframes fadeinout{
     0%{opacity:0;}

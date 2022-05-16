@@ -135,9 +135,9 @@ export const CartContextProvider = ({children}:any) => {
             setCartTotal(0)
             setPayment(true)
           })
-
-                 // .finally (() => reset())
-        // .then(resp => setInputs({...inputs, orderId: resp.id}))
+      
+      // .finally (() => reset())
+      // .then(resp => setInputs({...inputs, orderId: resp.id}))
       // // Update stock
       // const queryCollection = collection(dataBase, 'items')
       // const queryUpdateStock = query(queryCollection, where(documentId(), 'in', cartList.map(it => it.id)))
@@ -162,7 +162,6 @@ export const CartContextProvider = ({children}:any) => {
       })
       setCartTotal(cartTotal)
     }, [cartList])
-
 
     return(
       <CartContext.Provider value={{ 
