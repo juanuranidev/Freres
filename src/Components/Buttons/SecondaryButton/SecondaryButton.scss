@@ -7,10 +7,10 @@
     color: #eeeeee;
     background-color: #000000;
     box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
-    transition: all 0.1s linear;
+    transition: all .15s linear;
     cursor: pointer;
-}
-.secondaryButton:active{
-    transform: scale(.95);
-    transition: all 0.1s linear; 
+    &:active{
+        transform: scale(.95);
+        transition: all .1s linear;
+    }
 }

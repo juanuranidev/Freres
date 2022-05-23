@@ -35,19 +35,19 @@
         height: 85%;
         background-color: black;
         opacity: 0.6;
-        transition: opacity 0.4s linear;
+        transition: opacity .25s ease-in-out;
         @media(max-width: 992px){
             height: 65vh;
         }
         @media(max-width: 576px){
             height: 40vh;
         }
-    }
-    .right:hover{
-        opacity: 0;
-        transition: opacity 0.4s linear;
-        @media(max-width: 576px){
-            opacity: 0.6;
+        &:hover{
+            opacity: 0;
+            transition: opacity .25s ease-in-out;
+            @media(max-width: 576px){
+                opacity: 0.6;
+            }
         }
     }
     .left{
@@ -57,19 +57,19 @@
         height: 85%;
         background-color: black;
         opacity: 0.6;
-        transition: opacity 0.4s linear;
+        transition: opacity .25s ease-in-out;
         @media(max-width: 992px){
             height: 65vh;
         }
         @media(max-width: 576px){
             height: 40vh;
         }
-    }
-    .left:hover{
-        opacity: 0;
-        transition: opacity 0.4s linear;
-        @media(max-width: 576px){
-            opacity: 0.6;
+        &:hover{
+            opacity: 0;
+            transition: opacity .25s ease-in-out; 
+            @media(max-width: 576px){
+                opacity: 0.6;
+            }
         }
     }
 }

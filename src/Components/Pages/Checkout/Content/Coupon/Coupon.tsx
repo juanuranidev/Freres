@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { CartContext } from '../../../../Context/CartContext';
-import ImageLoader from '../../../../Navbar/Logo/Img/freres.jpg';
+import FreresLogo from '../../../../Assets/Logo/FreresLogo.jpg';
 import './Coupon.scss';
 
 interface CouponProps {
@@ -38,7 +38,7 @@ const Coupon = ({priceDiscount, setPriceDiscount}:CouponProps) => {
   if(loader){
     return(
       <div className='formLoader'>
-        <img className='formLoader_img' src={ImageLoader} alt="logo Freres"/>
+        <img className='formLoader_img' src={FreresLogo} alt="logo Freres"/>
       </div>
     )
   }

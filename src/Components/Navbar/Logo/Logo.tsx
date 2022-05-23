@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logotype from './Img/freres.jpg';
+import FreresLogo from '../../Assets/Logo/FreresLogo.jpg';
 import './Logo.scss';
 
 const Logo = () => {
   return (
-    <Link to='/'><img src={Logotype} className="logo" alt='logo'/></Link>
+    <Link to='/'><img src={FreresLogo} className="logo" alt='logo'/></Link>
   );
 }
 

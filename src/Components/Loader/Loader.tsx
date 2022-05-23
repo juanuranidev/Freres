@@ -1,11 +1,11 @@
 import React from 'react';
-import Logo from '../Navbar/Logo/Logo';
+import FreresLogo from '../Assets/Logo/FreresLogo.jpg';
 import './Loader.scss';
 
 const Loader = () => {
   return (
     <div className='loader'>
-      <Logo/>
+      <img className='loader_img' src={FreresLogo}/>
     </div>
   );
 }

@@ -21,9 +21,9 @@
             cursor: pointer;
             transition: all 0.1s linear; 
             margin: 1rem 2rem;
-        }
-        .addToCart_div_span:active{
-            transform: scale(.8);
+            &:active{
+                transform: scale(.8);
+            }
         }
     }
     .addToCart_button{
@@ -33,15 +33,15 @@
         border: none;
         color: #eeeeee;
         background-color: #000000;
-        transition: all 0.2s linear; 
+        transition: all .15s linear;  
         cursor: pointer;
         @media(max-width: 576px){
             padding: 1rem;
         }
-    }
-    .addToCart_button:active{
-        transform: scale(.95);
-        transition: all 0.2s linear; 
+        &:active{
+            transform: scale(.95);
+            transition: all .1s linear;
+        }
     }
     .addToCart_buttonDisabled{
         opacity: 0.5;
@@ -51,7 +51,6 @@
         border: none;
         color: #eeeeee;
         background-color: #000000;
-        transition: all 0.2s linear; 
         cursor: pointer;
         @media(max-width: 576px){
             padding: 1rem;

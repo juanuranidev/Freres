@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
-import ImageLoader from '../../Navbar/Logo/Img/freres.jpg';
+import FreresLogo from '../../Assets/Logo/FreresLogo.jpg';
 import './Newsletter.scss';
 
 const Newsletter = () => {
@@ -31,7 +31,7 @@ const Newsletter = () => {
   if(loader){
     return(
       <div className='newsletterLoader'>
-        <img className='newsletterLoader_img' src={ImageLoader} alt="loader"/>
+        <img className='newsletterLoader_img' src={FreresLogo} alt="loader"/>
       </div>
     )
   }

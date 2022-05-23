@@ -4,19 +4,19 @@
     padding: 0.5rem 1rem;
     border: 0.1rem solid #000000;
     box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
-    transition: all 0.1s ease-in-out; 
+    transition: all .15s linear; 
     cursor: pointer;
-}
-.primaryButton:hover{
-    background-color: #000000;
-    color: white;
-    transition: all 0.1s ease-in-out; 
-    @media(max-width: 992px){
-        background-color: #eeeeee;
-        color: #000000;
+    &:hover{
+        background-color: #000000;
+        color: white;
+        transition: all .15s linear; 
+        @media(max-width: 992px){
+            background-color: #eeeeee;
+            color: #000000;
+        }
+    }
+    &:active{
+        transform: scale(.95);
+        transition: all .1s linear;
     }
 }
-.primaryButton:active{
-    transform: scale(.95);
-    transition: all 0.1s ease-in-out; 
-} 
