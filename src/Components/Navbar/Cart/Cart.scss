@@ -8,8 +8,11 @@
         font-size: 0.8rem;
         padding: 1.5rem 1rem;
         cursor: pointer;
-    }
-    .cartNavbar_p:hover{
-        text-decoration: underline;
+        @media(max-width: 992px){
+            padding: 1.5rem 0rem;
+        }
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
