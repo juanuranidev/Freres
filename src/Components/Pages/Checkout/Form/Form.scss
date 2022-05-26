@@ -93,19 +93,23 @@
                     box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
                     transition: all 0.1s linear;
                     cursor: pointer;
-                }
-                button:active{
-                    transform: scale(.95);
-                    transition: all 0.1s linear; 
+                    @media(max-width: 575px){
+                        background-color: #ffffff;
+                        color: #000000;
+                    }
+                    &:active{
+                        transform: scale(.95);
+                        transition: all 0.1s linear; 
+                    }
                 }
                 .disabled{
                     text-align: center;
                     font-weight: 700;
                     width: 100%;
                     opacity: 0.6;
-                }
-                .disabled:active{
-                    transform: scale(1);
+                    &:active{
+                        transform: scale(1);
+                    }
                 }
             }
         }

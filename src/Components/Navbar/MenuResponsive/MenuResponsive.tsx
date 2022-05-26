@@ -11,8 +11,8 @@ interface MenuResponsiveProps{
 }
 
 const variants = {
-    open: { opacity: 1, x: 0, display: "flex" },
-    closed: { opacity: 0, x: "-10%", display: "none" },
+    open: { opacity: 1, y: 0, display: "flex" },
+    closed: { opacity: 0, y: "-10%", display: "none" },
 }
 
 const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
@@ -44,8 +44,8 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
             <ul className='menuResponsive_ul'>
                 <li className='menuResponsive_ul_li'>
                     <Link  className='menuResponsive_ul_li_a' to='/shop/all'>SHOP</Link>
-                    {!showShop && <span className="fas fa-angle-down menuResponsive_ul_li_span" onClick={handleShop} />}
-                    {showShop && <span className="fas fa-minus menuResponsive_ul_li_span" onClick={handleShop} />}
+                    {!showShop && <span className="fas fa-angle-right menuResponsive_ul_li_span" onClick={handleShop} />}
+                    {showShop && <span className="fas fa-angle-down menuResponsive_ul_li_span" onClick={handleShop} />}
                 </li>
                 <motion.div
                     animate={showShop ? "open" : "closed"}
@@ -96,8 +96,8 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                 </motion.div>
                 <li className='menuResponsive_ul_li'>
                     <Link  className='menuResponsive_ul_li_a' to='/shop/essential_outfits'>ESSENTIAL OUTFITS</Link>
-                    {!showOutfits && <span className="fas fa-angle-down menuResponsive_ul_li_span" onClick={handleOutfits} />}
-                    {showOutfits && <span className="fas fa-minus menuResponsive_ul_li_span" onClick={handleOutfits} />}
+                    {!showOutfits && <span className="fas fa-angle-right menuResponsive_ul_li_span" onClick={handleOutfits} />}
+                    {showOutfits && <span className="fas fa-angle-down menuResponsive_ul_li_span" onClick={handleOutfits} />}
                 </li>
                 <motion.div
                     animate={showOutfits ? "open" : "closed"}
@@ -118,8 +118,8 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                         </Link>
                     </div>
                 </motion.div>
-                <li className='menuResponsive_ul_li' onClick={handleCloseMenu}>
-                    <Link className='menuResponsive_ul_li_a' to='/shop/about'>NOSOTROS</Link>
+                <li className='menuResponsive_ul_li'>
+                    <Link className='menuResponsive_ul_li_a' to='/about' onClick={handleCloseMenu}>NOSOTROS</Link>
                 </li>
             </ul>
         </div>
