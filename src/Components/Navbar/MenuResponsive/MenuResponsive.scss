@@ -3,6 +3,7 @@
     @media(max-width: 992px){   
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         position: fixed;
         background-color: #eeeeee;
         width: 50%;
@@ -14,6 +15,7 @@
         padding: 1rem;
         transition: left 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
         box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
+        overflow: auto;
         .menuResponsive_close{
             display: flex;
             justify-content: flex-end;
@@ -24,18 +26,80 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            a{
-                text-decoration: none;
-                color: #000000;
-                li{
+            .menuResponsive_ul_li{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .menuResponsive_ul_li_a{
                     font-size: 1rem;
-
+                    padding: 1rem;
+                    font-weight: 700;
+                }   
+                .menuResponsive_ul_li_span{
+                    font-size: 1.5rem;
+                    padding: 1rem;
+                    cursor: pointer;
+                }
+            }
+            .animated_div{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: 1rem;
+                user-select: none; 
+                -ms-user-select: none;      
+                -moz-user-select: none;     
+                -khtml-user-select: none;   
+                -webkit-user-select: none;  
+                -webkit-touch-callout: none;
+                .animated_div_a{
+                    display: flex;
+                    align-items: center;
+                    .animated_div_a_img{
+                        width: 4rem;
+                        margin-left: 1rem;
+                    }
+                    .animated_div_a_p{
+                        font-size: 1rem;
+                        padding: 0rem 1rem;
+                        font-weight: 700;
+                    }
+                }
+                .animated_div_div{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    padding-left: 1rem;
+                    .animated_div_div_a{
+                        margin-bottom: 1rem;
+                        .animated_div_div_img{
+                            width: 5rem;
+                            box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
+                        }
+                        &:last-child{
+                            margin-bottom: 0rem;
+                        }
+                    }
                 }
             }
         }
+        .menuResponsive_images{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .menuResponsive_images_img{
+                width: 4rem;
+                margin: 0.25rem;
+            }
+        }
+    }
+    @media(max-width: 772px){
+        width: 60%;
     }
     @media(max-width: 576px){
-        width: 80%;
+        width: 100%;
     }
 }
 
