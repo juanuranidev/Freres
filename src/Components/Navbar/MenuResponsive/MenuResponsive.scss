@@ -52,37 +52,6 @@
                 -khtml-user-select: none;   
                 -webkit-user-select: none;  
                 -webkit-touch-callout: none;
-                .animated_div_a{
-                    display: flex;
-                    align-items: center;
-                    .animated_div_a_img{
-                        width: 4rem;
-                        margin-left: 1rem;
-                    }
-                    .animated_div_a_p{
-                        font-size: 1rem;
-                        padding: 0rem 1rem;
-                        font-weight: 700;
-                    }
-                }
-                .animated_div_div{
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    flex-wrap: wrap;
-                    width: 100%;
-                    padding-left: 1rem;
-                    .animated_div_div_a{
-                        margin-bottom: 1rem;
-                        .animated_div_div_img{
-                            width: 5rem;
-                            box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
-                        }
-                        &:last-child{
-                            margin-bottom: 0rem;
-                        }
-                    }
-                }
             }
         }
         .menuResponsive_images{
@@ -102,7 +71,6 @@
         width: 100%;
     }
 }
-
 .menuClose{
     @extend .menuResponsive;
     left: -100%;

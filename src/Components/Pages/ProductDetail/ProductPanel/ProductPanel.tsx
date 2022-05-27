@@ -19,8 +19,8 @@ const ProductPanel = ({title, text, product}: ProductPanelProps) => {
     }, [product])
 
     const variants = {
-        open: { opacity: 1, x: 0 },
-        closed: { opacity: 0, x: "-5%" },
+        open: { opacity: 1, y: 0 },
+        closed: { opacity: 0, y: "-5%" },
     }
 
     return (
@@ -32,7 +32,7 @@ const ProductPanel = ({title, text, product}: ProductPanelProps) => {
           <motion.div
             animate={showText ? "open" : "closed"}
             variants={variants}>
-            <div className={`productPanel_secondary ${showText===true && 'show'}`}>
+            <div className={`productPanel_secondary ${showText && 'show'}`}>
                 <p className='productPanel_secondary_p'>{text}</p>
             </div>
           </motion.div>

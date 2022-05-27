@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { collection, getDocs, getFirestore, query, addDoc, writeBatch, where, documentId } from 'firebase/firestore';
+import { collection, getFirestore, addDoc } from 'firebase/firestore';
 
 const initialValue = {
   cartList: [],

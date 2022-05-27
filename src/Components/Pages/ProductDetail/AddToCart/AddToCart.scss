@@ -19,7 +19,7 @@
         .addToCart_div_span{
             font-size: 1rem;
             cursor: pointer;
-            transition: all 0.1s linear; 
+            transition: all .15s linear; 
             margin: 1rem 2rem;
             &:active{
                 transform: scale(.8);
