@@ -49,6 +49,7 @@ export type ProductModel = {
   essential_outfit?: string;
   essential_outfit_image?: string;
   size: string;
+  key?: string;
 }
 
 export const CartContext = createContext<CartContextType>(initialValue)
@@ -61,20 +62,17 @@ export const CartContextProvider = ({children}:any) => {
   const [payment, setPayment] = useState<boolean>(false)
   
     const addToCart = (product:ProductModel, quantity:number, size: string) => {
-      const isInCart = cartList.find(((x) => x.id === product.id))
+      const isInCart = cartList.find(((x) => x.id === product.id && x.size === size))
       if(isInCart){
           const newCart = cartList.map((x) => {
-              if (x.id === product.id) {
-                  if(x.size === size){
-                      return { ...product, quantity: quantity + x.quantity, size: size }
-                  }
-                  return { ...product, quantity: quantity, size: size }
+              if (x.id === product.id && x.size === size) {
+                 return { ...x, quantity: quantity + x.quantity }
               }
               return x
           })
           setCartList(newCart)
       } else {
-          setCartList([...cartList, {...product, quantity, size}])
+          setCartList([...cartList, {...product, quantity, size, key: `${size} - ${product.id}`}])
       }
       handleOpenCart()
     }

@@ -7,7 +7,7 @@ const CartItem = ({products}:any) => {
   return (
     <>
       {products.map((product:ProductModel) =>
-      <div className='cartItem' key={product.id}>
+      <div className='cartItem' key={product.key}>
         <div className='cartItem_image'>
           <img className='cartItem_image_img' src={product.images[0]} alt="Imágen del producto del carrito"/>
         </div>
