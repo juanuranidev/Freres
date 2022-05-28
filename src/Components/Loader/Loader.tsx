@@ -1,5 +1,5 @@
 import React from 'react';
-import FreresLogo from '../Assets/Logo/FreresLogo.jpg';
+import FreresLogo from '../../Assets/Logo/FreresLogo.jpg';
 import './Loader.scss';
 
 const Loader = () => {

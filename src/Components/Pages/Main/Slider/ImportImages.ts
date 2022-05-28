@@ -1,14 +1,27 @@
-import slider1 from './img/Slider1.jpg';
-import slider2 from './img/Slider2.jpg';
-import slider3 from './img/Slider3.jpg';
-import slider4 from './img/Slider4.jpg';
-import slider5 from './img/Slider5.jpg';
-import slider6 from './img/Slider6.jpg';
-import slider7 from './img/Slider7.jpg';
-import slider8 from './img/Slider8.jpg';
-import slider9 from './img/Slider9.jpg';
-import slider10 from './img/Slider10.jpg';
-import slider11 from './img/Slider11.jpg';
-import slider12 from './img/Slider12.jpg';
+import Slider1 from "../../../../Assets/Slider/Slider1.jpg";
+import Slider2 from "../../../../Assets/Slider/Slider2.jpg";
+import Slider3 from "../../../../Assets/Slider/Slider3.jpg";
+import Slider4 from "../../../../Assets/Slider/Slider4.jpg";
+import Slider5 from "../../../../Assets/Slider/Slider5.jpg";
+import Slider6 from "../../../../Assets/Slider/Slider6.jpg";
+import Slider7 from "../../../../Assets/Slider/Slider7.jpg";
+import Slider8 from "../../../../Assets/Slider/Slider8.jpg";
+import Slider9 from "../../../../Assets/Slider/Slider9.jpg";
+import Slider10 from "../../../../Assets/Slider/Slider10.jpg";
+import Slider11 from "../../../../Assets/Slider/Slider11.jpg";
+import Slider12 from "../../../../Assets/Slider/Slider12.jpg";
 
-export const images = [slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8, slider9, slider10, slider11, slider12]
+export const Images = [
+  Slider1,
+  Slider2,
+  Slider3,
+  Slider4,
+  Slider5,
+  Slider6,
+  Slider7,
+  Slider8,
+  Slider9,
+  Slider10,
+  Slider11,
+  Slider12,
+];

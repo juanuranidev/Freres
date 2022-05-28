@@ -13,7 +13,7 @@ import Footer from './Components/Footer/Footer';
 import EssentialOutfitDetail from './Components/Pages/EssentialOutfitDetail/EssentialOutfitDetail';
 import Checkout from './Components/Pages/Checkout/Checkout';
 import SecretDiscount from './Components/Pages/SecretDiscount/SecretDiscount';
-import './App.scss';
+import './Styles/Base.scss';
 
 getFirestoreApp()
 

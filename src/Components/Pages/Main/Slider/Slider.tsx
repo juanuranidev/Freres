@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { images } from './ImportImages';
+import { Images } from './ImportImages';
 import './Slider.scss';
 
 const Slider = () => {
@@ -19,7 +19,7 @@ const Slider = () => {
         ref={carousel} 
         whileTap={{cursor: "grabbing"}}
         dragConstraints={{right: 0, left: -width}}> 
-          {images.map((image:any, index:number) => 
+          {Images.map((image:any, index:number) => 
             <motion.div className='slider_container_div' key={index}>
               <img src={image} className='slider_container_div_img' alt="Imágen de modelo Freres"/>
             </motion.div>)}

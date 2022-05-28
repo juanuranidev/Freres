@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { addDoc, getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
-import FreresLogo from '../../Assets/Logo/FreresLogo.jpg';
+import FreresLogo from '../../../Assets/Logo/FreresLogo.jpg';
 import './Newsletter.scss';
 
 const Newsletter = () => {
