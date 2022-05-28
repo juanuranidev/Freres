@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { addDoc, getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
-import FreresLogo from '../../../Assets/Logo/FreresLogo.jpg';
+import FreresLogo from '../../../Assets/Logos/FreresLogo.jpg';
 import './Newsletter.scss';
 
 const Newsletter = () => {
@@ -63,7 +63,7 @@ const Newsletter = () => {
               onChange={(e) => handleSetUserEmail(e)} />    
               {userEmail.email
               ? <button type='submit' className='newsletter_div_form_button'>UNIRME</button>
-              : <button type='submit' className='newsletter_div_form_button' disabled>UNIRME</button>}
+              : <button type='submit' className='newsletter_div_form_button disabled' disabled>UNIRME</button>}
           </form>            
         </div>}
     </div>

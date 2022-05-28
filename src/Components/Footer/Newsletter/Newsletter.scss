@@ -34,10 +34,13 @@
                 padding: 0.5rem;
                 font-weight: 500;
                 cursor: pointer;
+                &:active{
+                    transform: scale(.95);
+                    transition: all 0.1s linear; 
+                }
             }
-            .newsletter_div_form_button:active{
-                transform: scale(.95);
-                transition: all 0.1s linear; 
+            .disabled:active{
+                transform: scale(1);
             }
         }
     }

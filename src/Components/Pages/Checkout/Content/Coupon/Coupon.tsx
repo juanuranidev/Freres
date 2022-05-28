@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { CartContext } from '../../../../Context/CartContext';
-import FreresLogo from '../../../../../Assets/Logo/FreresLogo.jpg';
+import FreresLogo from '../../../../../Assets/Logos/FreresLogo.jpg';
 import './Coupon.scss';
 
 interface CouponProps {

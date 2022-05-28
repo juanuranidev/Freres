@@ -5,7 +5,6 @@ import './SecretDiscount.scss';
 const SecretDiscount = () => {
   return (
     <section className='secretDiscount'>
-      <h2 className='secretDiscount_h2'>¡FELICIDADES!</h2>
       <p className='secretDiscount_p'>Encontraste nuestro lugar secreto.</p>
       <p className='secretDiscount_p'>Como recompensa ganaste un código por un 20% de descuento: FRERESSECRET2022</p>
       <div className='secretDiscount_div'>

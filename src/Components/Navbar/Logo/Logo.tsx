@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FreresLogo from '../../../Assets/Logo/FreresLogo.jpg';
+import FreresLogo from '../../../Assets/Logos/FreresLogo.jpg';
 import './Logo.scss';
 
 const Logo = () => {
