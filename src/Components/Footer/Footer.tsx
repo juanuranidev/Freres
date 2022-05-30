@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Socials from './Socials/Socials';
-import Newsletter from './Newsletter/Newsletter';
+import Info from './Info/Info';
+import Newsletter from '../Newsletter/Newsletter';
 import './Footer.scss';
 
 const Footer = () => {
   return (
     <footer className='footer'>
       <div className='footer_div'>
-        <Socials/>
+        <Info/>
         <Newsletter/>
       </div>
       <div className='footer_brand'>

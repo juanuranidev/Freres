@@ -7,7 +7,7 @@ import OutfitsLink from './OutfitsLink/OutfitsLink';
 import Logo from './Logo/Logo';
 import Cart from './Cart/Cart';
 import CartContent from './CartContent/CartContent';
-import Overlay from './Overlay/Overlay';
+import Overlay from '../Overlay/Overlay';
 import './Navbar.scss';
 
 const Navbar = () => {

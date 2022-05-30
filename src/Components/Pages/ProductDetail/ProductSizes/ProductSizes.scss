@@ -4,18 +4,18 @@
     justify-content: flex-start;
     transition: all 0.1s linear; 
     margin-bottom: 1rem;
-    @media(max-width: 576px){
+    @media(max-width: 992px){
         margin-bottom: 0rem;
     }
     .productSizes_buttons{
         display: flex;
-        @media(max-width: 576px){
+        @media(max-width: 992px){
             justify-content: center;
         } 
     }
     .productSizes_clear{
         display: flex;
-        @media(max-width: 576px){
+        @media(max-width: 992px){
             justify-content: center;
         } 
         .productSizes_clear_p{

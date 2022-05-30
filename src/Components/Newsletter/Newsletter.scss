@@ -14,8 +14,9 @@
         margin-bottom: 0.5rem;
     }
     .newsletter_p{
+        text-align: center;
         font-size: 0.8rem;
-        margin-bottom: 1rem;
+        margin: 0rem 1rem 1rem 1rem;
     }
     .newsletter_div{
         .newsletter_div_form{
@@ -25,6 +26,7 @@
                 background-color: #eeeeee;
                 border-radius: 0.25rem;
                 margin-right: 0.5rem;
+                width: 10rem;
             }
             .newsletter_div_form_button{
                 background-color: #ffffff;
@@ -60,9 +62,9 @@
     justify-content: center;
     .newsletterLoader_img{
         width: 6rem;
-        animation: fadeinout 4s infinite; 
+        animation: FadeInOut 4s infinite; 
     }
-    @keyframes fadeinout{
+    @keyframes FadeInOut{
         0%{opacity:0;}
         50%{opacity:1;}
         100%{opacity:0;}

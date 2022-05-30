@@ -5,13 +5,14 @@
     width: 33%;
     @media(max-width: 992px){
         margin-bottom: 5rem;
+        width: 100%;
     }
     @media(max-width: 576px){
         width: 100%;
         flex-direction: column;
     }   
     .album_img{
-        width: 9rem;
+        width: 11rem;
         margin-right: 1rem;
         box-shadow: 0 4px 10px -10px rgb(0 0 0 / 60%);
         @media(max-width: 576px){
@@ -30,7 +31,10 @@
             font-size: 0.8rem;
             color: #eeeeee;
             margin-bottom: 1rem;
-            width: 10rem;
+            width: 7rem;
+            @media(max-width: 992px){
+                width: 12rem;
+            }
             @media(max-width: 576px){
                 font-size: 1rem;
                 width: 100%;
@@ -48,10 +52,10 @@
                 border-radius: 0.5rem;
                 border: none;
                 cursor: pointer;
-            }
-            .album_div_a_button:active{
-                transform: scale(.95);
-                transition: all 0.1s linear; 
+                &:active{
+                    transform: scale(.95);
+                    transition: all 0.1s linear; 
+                }
             }
         }
     }

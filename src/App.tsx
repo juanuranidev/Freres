@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { NewsletterContext, NewsletterContextProvider } from './Components/Context/NewsletterContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartContextProvider } from './Components/Context/CartContext';
 import { getFirestoreApp } from './Components/Firebase/DbConfig';
@@ -14,61 +15,64 @@ import EssentialOutfitDetail from './Components/Pages/EssentialOutfitDetail/Esse
 import Checkout from './Components/Pages/Checkout/Checkout';
 import SecretDiscount from './Components/Pages/SecretDiscount/SecretDiscount';
 import './Styles/Base.scss';
+import NewsletterPopup from './Components/Pages/Main/NewsletterPopup/NewsletterPopup';
 
 getFirestoreApp()
 
 function App() {
   return (
     <CartContextProvider>
-      <BrowserRouter>
-        <ScrollToTop/>
-        <Routes>
-          <Route path='/' element={
-            <React.Fragment>
-              <Navbar/>
-              <Main/>
-            </React.Fragment>}>
-          </Route>
-          <Route path='/shop/:idCategory' element={
-            <React.Fragment>
-              <Navbar/>
-              <Shop/>
-            </React.Fragment>}>
-          </Route>
-          <Route path='/essential_outfits' element={
-            <React.Fragment>
-              <Navbar/>
-              <EssentialOutfits/>
-            </React.Fragment>}>
-          </Route>
-          <Route path='/about' element={
-            <React.Fragment>
-              <Navbar/>
-              <About/>
-            </React.Fragment>}>
-          </Route>
-          <Route path='/product/:idProduct' element={
-            <React.Fragment>
-              <Navbar/>
-              <ProductFinder/>
-            </React.Fragment>}>
-          </Route>
-          <Route path='/outfit/:idOutfit' element={
-            <React.Fragment>
-              <Navbar/>
-              <EssentialOutfitDetail/>
-            </React.Fragment>}>
-          </Route>
-          <Route path='/secret' element={
-            <React.Fragment>
-              <Navbar/>
-              <SecretDiscount/>
-            </React.Fragment>}>
-          </Route>
-          <Route path='/checkout' element={<Checkout/>}/>
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
+      <NewsletterContextProvider>
+        <BrowserRouter>
+          <ScrollToTop/>
+          <Routes>
+            <Route path='/' element={
+              <React.Fragment>
+                <Navbar/>
+                <Main/>
+              </React.Fragment>}>
+            </Route>
+            <Route path='/shop/:idCategory' element={
+              <React.Fragment>
+                <Navbar/>
+                <Shop/>
+              </React.Fragment>}>
+            </Route>
+            <Route path='/essential_outfits' element={
+              <React.Fragment>
+                <Navbar/>
+                <EssentialOutfits/>
+              </React.Fragment>}>
+            </Route>
+            <Route path='/about' element={
+              <React.Fragment>
+                <Navbar/>
+                <About/>
+              </React.Fragment>}>
+            </Route>
+            <Route path='/product/:idProduct' element={
+              <React.Fragment>
+                <Navbar/>
+                <ProductFinder/>
+              </React.Fragment>}>
+            </Route>
+            <Route path='/outfit/:idOutfit' element={
+              <React.Fragment>
+                <Navbar/>
+                <EssentialOutfitDetail/>
+              </React.Fragment>}>
+            </Route>
+            <Route path='/secret' element={
+              <React.Fragment>
+                <Navbar/>
+                <SecretDiscount/>
+              </React.Fragment>}>
+            </Route>
+            <Route path='/checkout' element={<Checkout/>}/>
+          </Routes>
+          <Footer/>
+        </BrowserRouter>
+      </NewsletterContextProvider>
     </CartContextProvider>
   );
 }

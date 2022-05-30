@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
+import { NewsletterContext } from '../../Context/NewsletterContext';
 import Header from './Header/Header';
 import TopSellers from './TopSellers/TopSellers';
 import ShortcutsGallery from './ShortcutsGallery/ShortcutsGallery';
@@ -8,6 +9,19 @@ import Slider from './Slider/Slider';
 import NewsletterPopup from './NewsletterPopup/NewsletterPopup';
 
 const Main = () => {
+  const { activePopup, setActivePopup } = useContext(NewsletterContext)
+
+  useEffect(() => {
+    let active:any
+    let confirmation = localStorage.getItem('alreadySuscribed');
+    
+    if(!confirmation){
+      active = setTimeout(() => setActivePopup?.(true), 20000);
+    }
+
+    return () => clearInterval(active)
+  }, [])
+
   return (
     <React.Fragment>
       <Header/>
@@ -16,7 +30,7 @@ const Main = () => {
       <Masterpieces/>
       <Albums/>
       <Slider/>
-      {/* <NewsletterPopup/> */}
+      {activePopup && <NewsletterPopup/>}
     </React.Fragment>
   );
 }
