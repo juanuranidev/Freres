@@ -15,7 +15,7 @@ function CustomLink({ children, to }: LinkProps) {
     <Link
       to={to}
       className='shop_categories_a'
-      style={{ fontWeight : match ? '700' : '400' }}>
+      style={{ opacity : match ? '0.6' : '1' }}>
       {children}
     </Link>
   );
@@ -46,15 +46,10 @@ const Shop = () => {
     <section className='shop'>
       <div className='shop_categories'>
         <CustomLink to="/shop/camperasybuzos">CAMPERAS Y BUZOS</CustomLink>
-        <p className='shop_categories_p'>/</p>
         <CustomLink to="/shop/remeras">REMERAS</CustomLink>
-        <p className='shop_categories_p'>/</p>
         <CustomLink to="/shop/pantalones">PANTALONES Y SHORTS</CustomLink>
-        <p className='shop_categories_p'>/</p>
         <CustomLink to="/shop/calzado">CALZADO</CustomLink>
-        <p className='shop_categories_p'>/</p>
         <CustomLink to="/shop/accesorios">ACCESORIOS</CustomLink>
-        <p className='shop_categories_p'>/</p>
         <CustomLink to="/shop/all">TODOS LOS PRODUCTOS</CustomLink>
       </div>
     {loader===true

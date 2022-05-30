@@ -1,21 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { NewsletterContext, NewsletterContextProvider } from './Components/Context/NewsletterContext';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { NewsletterContextProvider } from './Components/Context/NewsletterContext';
 import { CartContextProvider } from './Components/Context/CartContext';
 import { getFirestoreApp } from './Components/Firebase/DbConfig';
-import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
-import Navbar from './Components/Navbar/Navbar';
 import Main from './Components/Pages/Main/Main';
 import Shop from './Components/Pages/Shop/Shop';
-import EssentialOutfits from './Components/Pages/EssentialOutfits/EssentialOutfits';
 import About from './Components/Pages/About/About';
-import ProductFinder from './Components/Pages/ProductDetail/ProductFinder';
 import Footer from './Components/Footer/Footer';
-import EssentialOutfitDetail from './Components/Pages/EssentialOutfitDetail/EssentialOutfitDetail';
+import Navbar from './Components/Navbar/Navbar';
 import Checkout from './Components/Pages/Checkout/Checkout';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
+import ProductFinder from './Components/Pages/ProductDetail/ProductFinder';
 import SecretDiscount from './Components/Pages/SecretDiscount/SecretDiscount';
+import BuildYourOutfit from './Components/Pages/BuildYourOutfit/BuildYourOutfit';
+import EssentialOutfits from './Components/Pages/EssentialOutfits/EssentialOutfits';
+import EssentialOutfitDetail from './Components/Pages/EssentialOutfitDetail/EssentialOutfitDetail';
 import './Styles/Base.scss';
-import NewsletterPopup from './Components/Pages/Main/NewsletterPopup/NewsletterPopup';
 
 getFirestoreApp()
 
@@ -60,6 +60,12 @@ function App() {
               <React.Fragment>
                 <Navbar/>
                 <EssentialOutfitDetail/>
+              </React.Fragment>}>
+            </Route>
+            <Route path='/build-your-outfit' element={
+              <React.Fragment>
+                <Navbar/>
+                <BuildYourOutfit/>
               </React.Fragment>}>
             </Route>
             <Route path='/secret' element={
