@@ -14,25 +14,29 @@ const BuildYourOutfit = () => {
   const [ products, setProducts ] = useState<ProductModel[]>([])
   const [ showItems, setShowItems ] = useState<boolean>(false)
 
-  const handleShowItems = async (categorySelected:string) => {
+  const handleShowItems = (categorySelected:string) => {
+    setLoader(true)
+    setCategory(categorySelected)
+    handleGetItems(categorySelected)
     if(!showItems){
-      setLoader(true)
       setShowItems(!showItems)
-      setCategory(categorySelected)
-      const dataBase = getFirestore();
-      let queryCollection = query(collection(dataBase, 'products'), where('category', '==', categorySelected))
-    
-      await getDocs(queryCollection)
-        .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
-        .catch(err => console.log(err))
-        .finally(() => {
-          setShowItems(true)
-          setLoader(false)
-      })
     } else {
-      setShowItems(false)
-      setCategory("")
+      setLoader(true)
+      setProducts([])
     }
+  }
+
+  const handleGetItems = async (categorySelected:string) => {
+    const dataBase = getFirestore();
+    let queryCollection = query(collection(dataBase, 'products'), where('category', '==', categorySelected))
+  
+    await getDocs(queryCollection)
+      .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
+      .catch(err => console.log(err))
+      .finally(() => {
+        setShowItems(true)
+        setLoader(false)
+    })
   }
 
   const handleSetItem = (product: ProductModel) => {
@@ -55,15 +59,15 @@ const BuildYourOutfit = () => {
         <div className='products_div'>
           <button className={`products_div_button ${category === "camperasybuzos" && 'selected'}`} onClick={() => handleShowItems("camperasybuzos")}>Camperas y Buzos</button>
           <button className={`products_div_button ${category === "remeras" && 'selected'}`} onClick={() => handleShowItems("remeras")}>Remeras</button>
-          <button className={`products_div_button ${category === "calzado" && 'selected'}`} onClick={() => handleShowItems("calzado")}>Calzado</button>
           <button className={`products_div_button ${category === "pantalones" && 'selected'}`} onClick={() => handleShowItems("pantalones")}>Pantalones y Shorts</button>
+          <button className={`products_div_button ${category === "calzado" && 'selected'}`} onClick={() => handleShowItems("calzado")}>Calzado</button>
         </div>
         <OutfitProducts showItems={showItems} products={products} loader={loader} handleSetItem={handleSetItem} />
       </div>
       <div className='outfit'>
-        <img className='outfit_img' src={shoes} />
-        <img className='outfit_img pants' src={pants} />
-        <img className='outfit_img' src={shirt} />
+        <img className='outfit_img' src={shoes} alt="Remera/Capera" />
+        <img className='outfit_img pants' src={pants} alt="Pantalón" />
+        <img className='outfit_img' src={shirt} alt="Calzado" />
       </div>
     </motion.div>
   );

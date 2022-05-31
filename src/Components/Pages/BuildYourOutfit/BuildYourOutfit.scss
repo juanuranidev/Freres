@@ -15,6 +15,9 @@
         margin-bottom: 1rem;
         @media(max-width: 768px){
             width: 100%;   
+            margin-bottom: 0rem;
+            padding-bottom: 1rem;
+            border-bottom: 0.1rem solid #ffffff;   
         }
         .products_div{
             display: flex;
@@ -40,15 +43,6 @@
                     color: #ffffff;
                     transition: all .15s linear; 
                     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-                    @media(max-width: 992px){
-                        background-color: #eeeeee;
-                        color: #000000;
-                        box-shadow: none;
-                    }
-                    @media(max-width: 576px){
-                        background-color: #eeeeee;
-                        color: #000000;
-                    }
                 }
                 &:active{
                     transform: scale(.95);
