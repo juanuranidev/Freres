@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { ProductModel } from '../../Context/CartContext'; 
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
+import { ProductModel } from '../../Context/CartContext'; 
+import { motion } from 'framer-motion';
 import OutfitProducts from './OutfitProducts/OutfitProducts';
 import './BuildYourOutfit.scss';
 
 const BuildYourOutfit = () => {
-  const [ shoes, setShoes ] = useState("")
-  const [ shirt, setShirt ] = useState("")
-  const [ pants, setPants ] = useState("")
+  const [ shirt, setShirt ] = useState("https://freres.ar/wp-content/uploads/2021/07/10-1-scaled.jpg")
+  const [ pants, setPants ] = useState("https://freres.ar/wp-content/uploads/2021/09/Pantalones-4-scaled.jpg")
+  const [ shoes, setShoes ] = useState("https://freres.ar/wp-content/uploads/2021/12/productos-noviembre-3-scaled.jpeg")
   const [ loader, setLoader ] = useState<boolean>(false)
   const [ category, setCategory ] = useState<string>("")
   const [ products, setProducts ] = useState<ProductModel[]>([])
@@ -46,21 +47,25 @@ const BuildYourOutfit = () => {
 
   return (
     <section className='build_your_outfit'>
-      <div className='products'>
-      <div className='products_div'>
-        <button className={`products_div_button ${category === "camperasybuzos" && 'selected'}`} onClick={() => handleShowItems("camperasybuzos")}>Camperas y Buzos</button>
-        <button className={`products_div_button ${category === "remeras" && 'selected'}`} onClick={() => handleShowItems("remeras")}>Remeras</button>
-        <button className={`products_div_button ${category === "pantalones" && 'selected'}`} onClick={() => handleShowItems("pantalones")}>Pantalones y Shorts</button>
-        <button className={`products_div_button ${category === "calzado" && 'selected'}`} onClick={() => handleShowItems("calzado")}>Calzado</button>
-      </div>
-        <OutfitProducts showItems={showItems} products={products} loader={loader} handleSetItem={handleSetItem} />
-      </div>
-      <div className='outfit'>
-        <img className='outfit_img' src={shoes} />
-        <img className='outfit_img pants' src={pants} />
-        <img className='outfit_img' src={shirt} />
-      </div>
-
+      <motion.div
+        initial={{  x:-100, opacity: 0  }} 
+        animate={{ x: 0, opacity: 1 }} 
+        transition={{ ease: "linear", duration: 0.25 }}>
+        <div className='products'>
+          <div className='products_div'>
+            <button className={`products_div_button ${category === "camperasybuzos" && 'selected'}`} onClick={() => handleShowItems("camperasybuzos")}>Camperas y Buzos</button>
+            <button className={`products_div_button ${category === "remeras" && 'selected'}`} onClick={() => handleShowItems("remeras")}>Remeras</button>
+            <button className={`products_div_button ${category === "calzado" && 'selected'}`} onClick={() => handleShowItems("calzado")}>Calzado</button>
+            <button className={`products_div_button ${category === "pantalones" && 'selected'}`} onClick={() => handleShowItems("pantalones")}>Pantalones y Shorts</button>
+          </div>
+          <OutfitProducts showItems={showItems} products={products} loader={loader} handleSetItem={handleSetItem} />
+        </div>
+        <div className='outfit'>
+          <img className='outfit_img' src={shoes} />
+          <img className='outfit_img pants' src={pants} />
+          <img className='outfit_img' src={shirt} />
+        </div>
+      </motion.div>
     </section>
   );
 }

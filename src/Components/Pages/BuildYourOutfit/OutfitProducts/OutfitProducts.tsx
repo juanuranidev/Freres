@@ -39,9 +39,10 @@ const OutfitProducts = ({showItems, products, loader, handleSetItem}: OutfitProd
                             className='outfit_products_div_img'
                             onClick={() => handleSetItem(product)}
                         />
-                    )}                       
+                    )}              
                 </motion.div>
             )}
+            {!showItems && <h2 className='outfit_products_h2'>SELECCIONA UNA CATEGORIA</h2>}   
         </AnimatePresence>
     </div>
   )

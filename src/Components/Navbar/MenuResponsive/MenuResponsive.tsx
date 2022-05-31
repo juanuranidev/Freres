@@ -156,6 +156,9 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                 <li className='menuResponsive_ul_li'>
                     <Link className='menuResponsive_ul_li_a' to='/about' onClick={handleCloseMenu}>NOSOTROS</Link>
                 </li>
+                <li className='menuResponsive_ul_li'>
+                    <Link className='menuResponsive_ul_li_a' to='/build-your-outfit' onClick={handleCloseMenu}>ARMA TU OUTFIT</Link>
+                </li>
             </ul>
         </div>
         <div className='menuResponsive_images'>

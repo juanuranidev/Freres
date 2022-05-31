@@ -15,4 +15,17 @@
             text-decoration: underline;
         }
     }
+    .cartNavbar_a{
+        font-size: 0.8rem;
+        padding:  1.5rem 1rem;
+        text-decoration: none;
+        color: #000000;
+        cursor: pointer;
+        @media(max-width: 992px){
+            display: none;
+        }
+        &:hover{
+            text-decoration: underline;
+        }
+    }
 }
