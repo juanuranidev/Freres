@@ -46,27 +46,26 @@ const BuildYourOutfit = () => {
   }
 
   return (
-    <section className='build_your_outfit'>
-      <motion.div
-        initial={{  x:-100, opacity: 0  }} 
-        animate={{ x: 0, opacity: 1 }} 
-        transition={{ ease: "linear", duration: 0.25 }}>
-        <div className='products'>
-          <div className='products_div'>
-            <button className={`products_div_button ${category === "camperasybuzos" && 'selected'}`} onClick={() => handleShowItems("camperasybuzos")}>Camperas y Buzos</button>
-            <button className={`products_div_button ${category === "remeras" && 'selected'}`} onClick={() => handleShowItems("remeras")}>Remeras</button>
-            <button className={`products_div_button ${category === "calzado" && 'selected'}`} onClick={() => handleShowItems("calzado")}>Calzado</button>
-            <button className={`products_div_button ${category === "pantalones" && 'selected'}`} onClick={() => handleShowItems("pantalones")}>Pantalones y Shorts</button>
-          </div>
-          <OutfitProducts showItems={showItems} products={products} loader={loader} handleSetItem={handleSetItem} />
+    <motion.div
+      initial={{  x:-100, opacity: 0  }} 
+      animate={{ x: 0, opacity: 1 }} 
+      transition={{ ease: "linear", duration: 0.25 }}
+      className="build_your_outfit">
+      <div className='products'>
+        <div className='products_div'>
+          <button className={`products_div_button ${category === "camperasybuzos" && 'selected'}`} onClick={() => handleShowItems("camperasybuzos")}>Camperas y Buzos</button>
+          <button className={`products_div_button ${category === "remeras" && 'selected'}`} onClick={() => handleShowItems("remeras")}>Remeras</button>
+          <button className={`products_div_button ${category === "calzado" && 'selected'}`} onClick={() => handleShowItems("calzado")}>Calzado</button>
+          <button className={`products_div_button ${category === "pantalones" && 'selected'}`} onClick={() => handleShowItems("pantalones")}>Pantalones y Shorts</button>
         </div>
-        <div className='outfit'>
-          <img className='outfit_img' src={shoes} />
-          <img className='outfit_img pants' src={pants} />
-          <img className='outfit_img' src={shirt} />
-        </div>
-      </motion.div>
-    </section>
+        <OutfitProducts showItems={showItems} products={products} loader={loader} handleSetItem={handleSetItem} />
+      </div>
+      <div className='outfit'>
+        <img className='outfit_img' src={shoes} />
+        <img className='outfit_img pants' src={pants} />
+        <img className='outfit_img' src={shirt} />
+      </div>
+    </motion.div>
   );
 }
 
