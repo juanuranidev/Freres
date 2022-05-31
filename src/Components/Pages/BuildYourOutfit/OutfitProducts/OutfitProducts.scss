@@ -1,0 +1,23 @@
+.outfit_products{
+    width: 100%;
+    .outfit_products_div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .outfit_products_div_img{
+            width: 10rem;
+            margin: 0rem 0.5rem;
+            cursor: pointer;
+        }
+    }
+}
+.outfit_products_loading{
+    padding: 2.5rem 0rem 3rem 0rem;
+    background-color: #ffffff;
+    .outfit_products_loading_img{
+        width: 10rem;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+}

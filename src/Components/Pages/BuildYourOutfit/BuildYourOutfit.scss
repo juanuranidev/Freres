@@ -1,4 +1,59 @@
 .build_your_outfit{
-    padding: 5rem 0rem;
+    display: flex;
+    align-items: flex-start;
+    padding: 8rem 0rem 5rem 0rem;
     background-color: #eeeeee;
+    .products{
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 1rem;
+        .products_div{
+            display: flex;
+            justify-content: center;
+            .products_div_button{
+                font-size: 0.8rem;
+                font-weight: 700;
+                padding: 0.5rem 1rem;
+                border: 0.1rem solid #000000;
+                transition: all .15s linear; 
+                margin: 0rem 0.5rem 1.5rem 0.5rem;
+                cursor: pointer;
+                &:hover{
+                    background-color: #000000;
+                    color: white;
+                    transition: all .15s linear; 
+                    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+                    @media(max-width: 992px){
+                        background-color: #eeeeee;
+                        color: #000000;
+                    }
+                }
+                &:active{
+                    transform: scale(.95);
+                    transition: all .1s linear;
+                }
+            }
+            .selected{
+                background-color: #000000;
+                color: #ffffff;
+            }
+        }
+    }
+    .outfit{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        .outfit_img{
+            width: 15rem;
+            height: 15rem;
+            margin-bottom: -2.8rem;
+        }
+        .pants{
+            z-index: 1;
+        }
+    }
 }
