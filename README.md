@@ -17,7 +17,8 @@ https://freres.netlify.app/
 **Design**<br>
 Beautiful and clean design<br>
 Responsive for all devices<br>
-Quality animations
+Quality animations<br>
+Build your own outfit page
 
 **Database**<br>
 Display products from the database<br>
