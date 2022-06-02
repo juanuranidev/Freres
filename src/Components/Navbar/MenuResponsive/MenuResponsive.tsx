@@ -13,22 +13,10 @@ interface MenuResponsiveProps{
 
 const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
     const [showShop, setShowShop] = useState<boolean>(false);
-    const [showOutfits, setShowOutfits] = useState<boolean>(false)
 
     useEffect(() => {
         setShowShop(false)
-        setShowOutfits(false)
     }, [openMenu])
-
-    const handleShop = () => {
-        setShowShop(!showShop)
-        setShowOutfits(false)
-    }
-
-    const handleOutfits = () => {
-        setShowOutfits(!showOutfits)
-        setShowShop(false)
-    }
 
     return (
     <div className={openMenu ? 'menuResponsive' : 'menuResponsive menuClose'}>
@@ -39,7 +27,7 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
             <ul className='menuResponsive_ul'>
                 <li className='menuResponsive_ul_li'>
                     <Link className='menuResponsive_ul_li_a' to='/shop/all' onClick={handleCloseMenu}>SHOP</Link>
-                    <span className={`fas fa-angle-${showShop ? 'down' : 'right'} menuResponsive_ul_li_span`} onClick={handleShop} />
+                    <span className={`fas fa-angle-${showShop ? 'down' : 'right'} menuResponsive_ul_li_span`} onClick={() => setShowShop(!showShop)} />
                 </li>
                 <AnimatePresence>
                     {showShop && (
@@ -109,50 +97,7 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                 </AnimatePresence>
                 <li className='menuResponsive_ul_li'>
                     <Link className='menuResponsive_ul_li_a' to='/essential_outfits' onClick={handleCloseMenu}>ESSENTIAL OUTFITS</Link>
-                    <span className={`fas fa-angle-${showOutfits ? 'down' : 'right'} menuResponsive_ul_li_span`} onClick={handleOutfits} />
                 </li>
-                <AnimatePresence>
-                    {showOutfits && (
-                        <motion.div
-                            initial={{ opacity: 0, y: "-5%"}}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: "-5%" }}
-                            transition={{ type: "linear", stiffness: 100 }}
-                            className='animated_div'>
-                                <MenuResponsiveSublink
-                                    link="/outfit/elegant/"
-                                    onClick={handleCloseMenu}
-                                    src="https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg"
-                                    alt="Outfit imágen"
-                                    boxShadow={true}
-                                    text=""
-                                />
-                                <MenuResponsiveSublink
-                                    link="/outfit/relaxed/"
-                                    onClick={handleCloseMenu}
-                                    src="https://freres.ar/wp-content/uploads/2021/08/OUTFIT-4-scaled-uai-720x720.jpg"
-                                    alt="Outfit imágen"
-                                    boxShadow={true}
-                                    text=""
-                                />
-                                <MenuResponsiveSublink
-                                    link="/outfit/casual/"
-                                    onClick={handleCloseMenu}
-                                    src="https://freres.ar/wp-content/uploads/2021/08/OUTFIT-6-scaled-uai-720x720.jpg"
-                                    alt="Outfit imágen"
-                                    boxShadow={true}
-                                    text=""
-                                />
-                                <MenuResponsiveSublink
-                                    link="/outfit/street/"
-                                    onClick={handleCloseMenu}
-                                    src="https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg"
-                                    alt="Outfit imágen"
-                                    boxShadow={true}
-                                    text=""
-                                />
-                        </motion.div>)}
-                </AnimatePresence>
                 <li className='menuResponsive_ul_li'>
                     <Link className='menuResponsive_ul_li_a' to='/about' onClick={handleCloseMenu}>NOSOTROS</Link>
                 </li>
