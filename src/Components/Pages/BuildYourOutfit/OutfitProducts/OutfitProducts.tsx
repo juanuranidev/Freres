@@ -16,7 +16,7 @@ const OutfitProducts = ({showItems, products, loader, handleSetItem}: OutfitProd
     if(loader) {
         return (
         <div className='outfit_products_loading'>
-            <img src={FreresLogo} className="outfit_products_loading_img" />
+            <img src={FreresLogo} className="outfit_products_loading_img" alt="Freres logo" />
         </div>
         )
     }
@@ -38,11 +38,12 @@ const OutfitProducts = ({showItems, products, loader, handleSetItem}: OutfitProd
                             src={product.images[0]}
                             className='outfit_products_div_img'
                             onClick={() => handleSetItem(product)}
+                            alt={product.name}
                         />
                     )}              
                 </motion.div>
             )}
-            {!showItems && <h2 className='outfit_products_h2'>SELECCIONA UNA CATEGORIA</h2>}   
+            {!showItems && <h2 className='outfit_products_h2'>SELECCIONA UNA CATEGORIA PARA MODIFICAR TU OUTFIT</h2>}   
         </AnimatePresence>
     </div>
   )
