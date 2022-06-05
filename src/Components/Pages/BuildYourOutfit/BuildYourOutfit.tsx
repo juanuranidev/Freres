@@ -47,6 +47,7 @@ const BuildYourOutfit = () => {
     } else if(category === "pantalones") {
       setPants(product.images[0])
     }
+    window.scrollTo(0, 0);
   }
 
   return (
@@ -65,9 +66,9 @@ const BuildYourOutfit = () => {
         <OutfitProducts showItems={showItems} products={products} loader={loader} handleSetItem={handleSetItem} />
       </div>
       <div className='outfit'>
-        <img className='outfit_img' src={shoes} alt="Remera/Capera" />
-        <img className='outfit_img pants' src={pants} alt="Pantalón" />
-        <img className='outfit_img' src={shirt} alt="Calzado" />
+        <img className='outfit_img upper' src={shoes} alt="Remera/Capera" />
+        <img className='outfit_img middle' src={pants} alt="Pantalón" />
+        <img className='outfit_img bottom' src={shirt} alt="Calzado" />
       </div>
     </motion.div>
   );

@@ -70,11 +70,18 @@
         }
         .outfit_img{
             width: 15rem;
-            height: 15rem;
             margin-bottom: -2.8rem;
         }
-        .pants{
+        .upper{
+            z-index: 3;
+        }
+        .middle{
+            z-index: 2;
+            margin-bottom: -3.6rem;
+        }
+        .bottom{
             z-index: 1;
+            margin-bottom: 0rem;
         }
     }
 }
