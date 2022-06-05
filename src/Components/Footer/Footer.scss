@@ -23,9 +23,9 @@
         }
         .footer_brand_p_span{
             color: #b6332b;
-        }
-        .footer_brand_p_span:hover{
-            animation: heartbeat 1.25s infinite;
+            &:hover{
+                animation: heartbeat 1.25s infinite;
+            }
         }
         @keyframes heartbeat{
             0%{transform: scale(1);}

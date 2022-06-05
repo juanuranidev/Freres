@@ -2,7 +2,7 @@ import React from 'react';
 import './CloseMenu.scss';
 
 interface CloseMenuProps{
-    handleCloseMenu: () => void;
+  handleCloseMenu: () => void;
 }
 
 const CloseMenu = ({handleCloseMenu}: CloseMenuProps) => {

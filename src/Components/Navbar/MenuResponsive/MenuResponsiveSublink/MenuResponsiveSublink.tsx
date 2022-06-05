@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import './MenuResponsiveSublink.scss';
 
 interface MenuResponsiveLinkProps{
-    link: string;
-    onClick: () => void;
-    src: string; 
-    alt: string;
-    boxShadow: boolean;
-    text: string;
+  link: string;
+  onClick: () => void;
+  src: string; 
+  alt: string;
+  boxShadow: boolean;
+  text: string;
 }
 
 const MenuResponsiveLink = ({link, onClick, src, alt, boxShadow, text}:MenuResponsiveLinkProps) => {

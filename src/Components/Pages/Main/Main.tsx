@@ -16,7 +16,7 @@ const Main = () => {
     let confirmation = localStorage.getItem('alreadySuscribed');
     
     if(!confirmation){
-      active = setTimeout(() => setActivePopup?.(true), 20000);
+      active = setTimeout(() => setActivePopup?.(true), 15000);
     }
 
     return () => clearInterval(active)

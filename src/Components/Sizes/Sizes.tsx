@@ -8,7 +8,6 @@ interface SizesProps {
 }
 
 const Sizes = ({sizeType, product}: SizesProps) => {
-
     const { addToCart, setPayment } = useContext(CartContext)
 
     const handleAddToCart = (product: ProductModel, quantity: number, size: string) => {

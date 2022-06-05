@@ -1,62 +1,56 @@
 .shopLink{
     height: 100%;
-    div{
-        li{
-            font-size: 0.8rem;
-            cursor: pointer;
-            padding:  1.5rem 1rem;
-            height: 100%;
-        }
-        li:hover{
-            text-decoration: underline;
-            @media(max-width: 992px){
-                text-decoration: none;
-            }
-        }
-        .shopLink_content{
-            z-index: 2;
-            display: none;
-            opacity: 0;
-            justify-content: center;
-            position: fixed;
-            visibility: hidden;
-            width: 100%;
-            left: 0rem;
-            border-bottom-left-radius: 0.5rem;
-            border-bottom-right-radius: 0.5rem;
-            background-color: #EEEEEE;
-            box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-            a{
-                text-decoration: none;  
-                color: #000000;    
-                transition: all 0.2s linear; 
-                div{
-                    text-align: center;
-                    margin: 1rem 0rem;
-                    img{
-                        width: 10rem;
-                        height: 10rem;
-                    }
-                    p{
-                        font-size: 0.8rem;
-                        font-weight: 700;
-                    }
-                } 
-            }  
-            a:hover{
-                transform: scale(1.05);
-                transition: all 0.2s linear;
-            }   
-            a:active{
-                transform: scale(.995);
-            } 
-        }
-        
-    }
-
-    div:hover > .shopLink_content{
+    &:hover > .shopLink_content{
         display: flex;
         opacity: 1;
         visibility: visible;
+    }
+    li{
+        font-size: 0.8rem;
+        cursor: pointer;
+        padding:  1.5rem 1rem;
+        height: 100%;
+    }
+    &:hover{
+        text-decoration: underline;
+        @media(max-width: 992px){
+            text-decoration: none;
+        }
+    }
+    .shopLink_content{
+        z-index: 2;
+        display: none;
+        opacity: 0;
+        justify-content: center;
+        position: fixed;
+        visibility: hidden;
+        width: 100%;
+        left: 0rem;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        background-color: #EEEEEE;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+        .shopLink_link{
+            text-decoration: none;  
+            color: #000000;    
+            transition: all 0.2s linear; 
+            text-align: center;
+            margin: 1rem 0rem;
+            &:hover{
+                transform: scale(1.05);
+                transition: all 0.2s linear;
+            }   
+            &:active{
+                transform: scale(.995);
+            } 
+            .shopLink_link_img{
+                width: 10rem;
+                height: 10rem;
+            }
+            .shopLink_link_p{
+                font-size: 0.8rem;
+                font-weight: 700;
+            }
+        }  
     }
 }

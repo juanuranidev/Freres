@@ -8,7 +8,7 @@ const Socials = () => {
       <a className='socials_a' href='https://www.instagram.com/freres/' target='_blank' rel="noreferrer"><span className='socials_a_span fab fa-instagram fa-3x' /></a>
       <a className='socials_a' href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank' rel="noreferrer"><span className='socials_a_span fab fa-youtube fa-3x' /></a>
     </div>
-  )
+  );
 }
 
 export default Socials;
