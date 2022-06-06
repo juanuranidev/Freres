@@ -1,4 +1,4 @@
-nav{
+.nav{
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -11,23 +11,23 @@ nav{
     @media(max-width: 992px){
         padding: 0rem 1rem;
     }
-    ul{
+    .nav_ul{
         width: 35%;
         list-style-type: none;
         display: flex;
         @media(max-width: 992px){
             display: none;
         }
-        a{
+        .nav_ul_a{
             color: #000000;
             text-decoration: none;
-            li{
+            .nav_ul_a_li{
                 font-size: 0.8rem;
                 padding:  1.5rem 1rem;
                 cursor: pointer;
-            }
-            li:hover{
-                text-decoration: underline;
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }      
     }

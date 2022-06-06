@@ -17,13 +17,13 @@ const Navbar = () => {
   const handleCloseMenu = () => setOpenMenu(false);
 
   return (
-    <nav>
+    <nav className='nav'>
       <OpenMenu handleOpenMenu={handleOpenMenu} />
       <MenuResponsive handleCloseMenu={handleCloseMenu} openMenu={openMenu} />
-      <ul>
+      <ul className='nav_ul'>
         <ShopLink/>
         <OutfitsLink/>
-        <Link to='/about'><li>NOSOTROS</li></Link>
+        <Link to='/about' className='nav_ul_a'><li className='nav_ul_a_li'>NOSOTROS</li></Link>
       </ul>
       <Logo/>
       <Cart />
