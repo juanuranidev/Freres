@@ -18,11 +18,13 @@ https://freres.netlify.app/
 Beautiful and clean design<br>
 Responsive for all devices<br>
 Quality animations<br>
-Build your own outfit page
+Build your own outfit page<br>
+Secret page
 
 **Database**<br>
 Display products from the database<br>
 Subscribe to the newsletter<br>
+Upload your order to the database
 
 # Libraries
 **React for creating a modern web app 17.0.2**<br>
