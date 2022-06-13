@@ -42,21 +42,26 @@ const Shop = () => {
       .finally(() => setLoader(false))
   }, [idCategory]);
 
+
+  if(loader){
+    return <Loader/>
+  }
+
   return (
     <section className='shop'>
       <div className='shop_categories'>
-        <CustomLink to="/shop/camperasybuzos">CAMPERAS Y BUZOS</CustomLink>
-        <CustomLink to="/shop/remeras">REMERAS</CustomLink>
-        <CustomLink to="/shop/pantalones">PANTALONES Y SHORTS</CustomLink>
-        <CustomLink to="/shop/calzado">CALZADO</CustomLink>
-        <CustomLink to="/shop/accesorios">ACCESORIOS</CustomLink>
-        <CustomLink to="/shop/all">TODOS LOS PRODUCTOS</CustomLink>
+      <CustomLink to="/shop/all">TODOS LOS PRODUCTOS</CustomLink>
+        <div className='shop_categories_div'>
+          <CustomLink to="/shop/camperasybuzos">CAMPERAS Y BUZOS</CustomLink>
+          <CustomLink to="/shop/remeras">REMERAS</CustomLink>
+          <CustomLink to="/shop/pantalones">PANTALONES Y SHORTS</CustomLink>
+          <CustomLink to="/shop/calzado">CALZADO</CustomLink>
+          <CustomLink to="/shop/accesorios">ACCESORIOS</CustomLink>
+        </div>
       </div>
-    {loader===true
-    ? <Loader/>
-    : <div className='shop_div'>
+      <div className='shop_div'>
         <ProductList products={data}/>
-      </div>}
+      </div>
     </section>
   );
 }
