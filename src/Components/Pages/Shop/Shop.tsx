@@ -35,7 +35,7 @@ const Shop = () => {
     idCategory==="all"
     ? queryCollection = query(collection(dataBase, 'products'))
     : queryCollection = query(collection(dataBase, 'products'), where('category', '==', idCategory))
-
+    
     getDocs(queryCollection)
       .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
       .catch(err => console.log(err))
