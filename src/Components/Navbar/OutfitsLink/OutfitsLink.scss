@@ -1,59 +1,57 @@
 .outfitsLink{
     height: 100%;
-    .outfitsLink_div{
-        a{
-            text-decoration: none;
-            color: #000000;
-            li{
-                font-size: 0.8rem;
-                cursor: pointer;
-                padding:  1.5rem 1rem;
-                height: 100%;
+    &:hover > .outfitsLink_content{
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+    .outfitsLink_a{
+        text-decoration: none;
+        color: #000000;
+        .outfitsLink_a_li{
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding:  1.5rem 1rem;
+            height: 100%;
+        }
+        &:hover{
+            text-decoration: underline;
+            @media(max-width: 992px){
+                text-decoration: none;
             }
+        }
+    }
+    .outfitsLink_content{
+        display: none;
+        opacity: 0;
+        z-index: 2;
+        justify-content: center;
+        position: fixed;
+        visibility: hidden;
+        width: 100%;
+        left: 0rem;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        background-color: #EEEEEE;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+        .outfitsLink_content_a{
+            text-align: center;
+            margin: 1rem 0rem;
             &:hover{
-                text-decoration: underline;
-                @media(max-width: 992px){
-                    text-decoration: none;
-                }
+                transform: scale(1.05);
+                transition: all 0.2s linear;
+                cursor: pointer;
             }
-        }
-        &:hover > .outfitsLink_content{
-            display: flex;
-            opacity: 1;
-            visibility: visible;
-        }
-        .outfitsLink_content{
-            display: none;
-            opacity: 0;
-            z-index: 2;
-            justify-content: center;
-            position: fixed;
-            visibility: hidden;
-            width: 100%;
-            left: 0rem;
-            border-bottom-left-radius: 0.5rem;
-            border-bottom-right-radius: 0.5rem;
-            background-color: #EEEEEE;
-            box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-            .outfitsLink_link{
-                text-align: center;
-                margin: 1rem 0rem;
-                &:hover{
-                    transform: scale(1.05);
-                    transition: all 0.2s linear; 
-                    cursor: pointer;
-                }
-                &:active{
-                    transform: scale(.995);
-                    transition: all 0.2s linear; 
-                }
-                .outfitsLink_link_img{
-                    margin: 0rem 0.5rem;
-                    width: 14rem;
-                    transition: all 0.2s linear; 
-                    border: 1px solid lightgray;
-                    box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
-                }
+            &:active{
+                transform: scale(.995);
+                transition: all 0.2s linear; 
+            }
+            .outfitsLink_content_img{
+                margin: 0rem 0.5rem;
+                width: 14rem;
+                transition: all 0.2s linear; 
+                border: 1px solid lightgray;
+                box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
             }
         }
     }

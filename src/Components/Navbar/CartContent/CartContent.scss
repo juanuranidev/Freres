@@ -32,7 +32,7 @@
         @media(max-height: 576px){
             height: 8%;
         }
-        p{
+        .cart_close_p{
             font-size: 0.8rem;
             cursor: pointer;
             &:hover{
@@ -55,7 +55,7 @@
         @media(max-height: 576px){
             height: 9%;
         }
-        p{
+        .cart_shipping_p{
             font-size: 0.8rem
         }
     }
@@ -98,6 +98,9 @@
         }
         @media(max-height: 576px){
             height: 14%;
+        }
+        @media(max-width: 576px){
+            padding: 0rem 1rem 0rem 1rem; 
         }
         a{
             width: 100%;

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Images } from './ImportImages'
 import { Link } from 'react-router-dom';
-import CloseMenu from '../CloseMenu/CloseMenu';
 import MenuResponsiveSublink from './MenuResponsiveSublink/MenuResponsiveSublink';
 import './MenuResponsive.scss';
 
@@ -22,7 +21,7 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
     <div className={openMenu ? 'menuResponsive' : 'menuResponsive menuClose'}>
         <div>
             <div className='menuResponsive_close'>
-                <CloseMenu handleCloseMenu={handleCloseMenu} />
+                <div className='menuResponsive_close_div'><div onClick={handleCloseMenu}/></div>
             </div>
             <ul className='menuResponsive_ul'>
                 <li className='menuResponsive_ul_li'>

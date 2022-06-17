@@ -4,8 +4,9 @@ import './CartItem.scss';
 
 const CartItem = ({products}:any) => {
   const { deleteFromCart } = useContext(CartContext)
+  
   return (
-    <>
+    <React.Fragment>
       {products.map((product:ProductModel) =>
       <div className='cartItem' key={product.key}>
         <div className='cartItem_image'>
@@ -22,7 +23,7 @@ const CartItem = ({products}:any) => {
           </div>
         </div>
       </div>)}
-    </>
+    </React.Fragment>
   );
 }
 

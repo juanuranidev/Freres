@@ -5,10 +5,10 @@
         opacity: 1;
         visibility: visible;
     }
-    a{
+    .shopLink_a{
         text-decoration: none;
         color: #000000;
-        li{
+        .shopLink_a_li{
             font-size: 0.8rem;
             cursor: pointer;
             padding:  1.5rem 1rem;
@@ -34,10 +34,7 @@
         border-bottom-right-radius: 0.5rem;
         background-color: #EEEEEE;
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-        a{
-            text-decoration: none;
-        }
-        .shopLink_link{
+        .shopLink_content_a{
             text-decoration: none;
             color: #000000;    
             transition: all 0.2s linear; 
@@ -49,12 +46,13 @@
             }   
             &:active{
                 transform: scale(.995);
+                transition: all 0.2s linear; 
             } 
-            .shopLink_link_img{
+            .shopLink_content_a_img{
                 width: 10rem;
                 height: 10rem;
             }
-            .shopLink_link_p{
+            .shopLink_content_a_p{
                 font-size: 0.8rem;
                 font-weight: 700;
             }

@@ -3,12 +3,13 @@ import { getFirestore, query, collection, where, getDocs } from 'firebase/firest
 import { ProductModel } from '../../Context/CartContext'; 
 import { motion } from 'framer-motion';
 import OutfitProducts from './OutfitProducts/OutfitProducts';
+import Sizes from '../../Sizes/Sizes';
 import './BuildYourOutfit.scss';
 
 const BuildYourOutfit = () => {
-  const [ shirt, setShirt ] = useState("https://freres.ar/wp-content/uploads/2021/07/10-1-scaled.jpg")
-  const [ pants, setPants ] = useState("https://freres.ar/wp-content/uploads/2021/09/Pantalones-4-scaled.jpg")
-  const [ shoes, setShoes ] = useState("https://freres.ar/wp-content/uploads/2021/12/productos-noviembre-3-scaled.jpeg")
+  const [ shirt, setShirt ] = useState<ProductModel>()
+  const [ pants, setPants ] = useState<ProductModel>()
+  const [ shoes, setShoes ] = useState<ProductModel>()
   const [ loader, setLoader ] = useState<boolean>(false)
   const [ category, setCategory ] = useState<string>("")
   const [ products, setProducts ] = useState<ProductModel[]>([])
@@ -41,18 +42,18 @@ const BuildYourOutfit = () => {
 
   const handleSetItem = (product: ProductModel) => {
     if(category === "remeras" || category === "camperasybuzos") {
-      setShoes(product.images[0])
+      setShoes(product)
     } else if(category === "calzado") {
-      setShirt(product.images[0])
+      setShirt(product)
     } else if(category === "pantalones") {
-      setPants(product.images[0])
+      setPants(product)
     }
     window.scrollTo(0, 0);
   }
 
   return (
     <motion.div
-      initial={{  x:-100, opacity: 0  }} 
+      initial={{ x:-100, opacity: 0 }} 
       animate={{ x: 0, opacity: 1 }} 
       transition={{ ease: "linear", duration: 0.25 }}
       className="build_your_outfit">
@@ -66,9 +67,12 @@ const BuildYourOutfit = () => {
         <OutfitProducts showItems={showItems} products={products} loader={loader} handleSetItem={handleSetItem} />
       </div>
       <div className='outfit'>
-        <img className='outfit_img upper' src={shoes} alt="Remera/Capera" />
-        <img className='outfit_img middle' src={pants} alt="Pantalón" />
-        <img className='outfit_img bottom' src={shirt} alt="Calzado" />
+        {shoes && <img className='outfit_img bottom' src={shoes?.images[0]} alt="Calzado" />}
+        {shoes && <Sizes product={shoes} sizeType={shoes.format_of_size_chart}/>}
+        {pants && <img className='outfit_img middle' src={pants?.images[0]} alt="Pantalón" />}
+        {pants && <Sizes product={pants} sizeType={pants.format_of_size_chart}/>}
+        {shirt && <img className='outfit_img upper' src={shirt?.images[0]} alt="Remera/Capera" />}
+        {shirt && <Sizes product={shirt} sizeType={shirt.format_of_size_chart}/>}
       </div>
     </motion.div>
   );

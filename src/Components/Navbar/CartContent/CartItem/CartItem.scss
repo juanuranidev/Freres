@@ -3,6 +3,9 @@
     margin-top: 1.5rem;
     padding: 0rem 2rem 1.5rem 0rem;
     border-bottom: 0.12rem solid #eeeeee;
+    &:last-child{
+        border: none;
+    }
     @media(max-width: 576px){
         padding: 0rem 1.5rem 1.5rem 0rem;
     }
@@ -44,8 +47,5 @@
                 }
             }
         }
-    }
-    &:last-child{
-        border: none;
     }
 }

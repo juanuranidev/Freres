@@ -21,6 +21,14 @@
             justify-content: flex-end;
             border-bottom: 1px solid #eeeeee;
             width: 100%;
+            .menuResponsive_close_div{
+                div:after{
+                    display: inline-block;
+                    font-size: 3rem;
+                    content: "\00d7";
+                    cursor: pointer;
+                  }
+            }
         }
         .menuResponsive_ul{
             display: flex;
