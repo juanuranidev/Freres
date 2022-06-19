@@ -30,19 +30,19 @@
         padding-bottom: 5rem;
         .product{
             width: 33.33%;
+            &:first-child{
+                border-left: 0.12rem solid #ffffff;
+            }
+            &:last-child{
+                @media(max-width: 992px){
+                    border-left: 0.12rem solid #ffffff;
+                }
+            }
             @media(max-width: 992px){
                 width: 50%;
             }
             @media(max-width: 576px){
                 width: 100%;
-                border-left: 0.12rem solid #ffffff;
-            }
-        }
-        .product:first-child{
-            border-left: 0.12rem solid #ffffff;
-        }
-        .product:last-child{
-            @media(max-width: 992px){
                 border-left: 0.12rem solid #ffffff;
             }
         }
