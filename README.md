@@ -19,7 +19,8 @@ Beautiful and clean design<br>
 Responsive for all devices<br>
 Quality animations<br>
 Build your own outfit page<br>
-Secret page
+Secret page<br>
+Scalable app
 
 **Database**<br>
 Display products from the database<br>
