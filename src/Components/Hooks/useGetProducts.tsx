@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import { ProductModel } from '../Context/CartContext';
 
-const useGetProducts = (parameter1:string, parameter2:any, parameter3:any ) => {
+const useGetProducts = (parameter1?:any, parameter2?:any, parameter3?:any ) => {
   const [loader, setLoader] = useState<boolean>(true);
   const [products, setProducts] = useState<ProductModel[]>([]);
 

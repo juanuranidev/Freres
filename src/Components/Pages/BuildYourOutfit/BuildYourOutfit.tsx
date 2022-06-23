@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import { ProductModel } from '../../Context/CartContext'; 
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import OutfitProducts from './OutfitProducts/OutfitProducts';
-import Sizes from '../../Sizes/Sizes';
 import './BuildYourOutfit.scss';
 
 const BuildYourOutfit = () => {
@@ -14,6 +14,10 @@ const BuildYourOutfit = () => {
   const [ category, setCategory ] = useState<string>("")
   const [ products, setProducts ] = useState<ProductModel[]>([])
   const [ showItems, setShowItems ] = useState<boolean>(false)
+
+  useEffect(() => {
+    handleGetInitialItems()
+  }, [])
 
   const handleShowItems = (categorySelected:string) => {
     setLoader(true)
@@ -26,6 +30,20 @@ const BuildYourOutfit = () => {
       setProducts([])
     }
   }
+
+  const handleGetInitialItems = async () => {
+      const database = getFirestore()
+      let queryCollection = query(collection(database, 'products'), where('is_an_essential_outfit', '==', true))
+      await getDocs(queryCollection)
+      .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
+      .catch(err => console.log(err))
+      .finally(() => {
+        setShirt(products.find((product: ProductModel) => product.category === 'remeras'))
+        setPants(products.find((product: ProductModel) => product.category === 'pantalones'))
+        setShoes(products.find((product: ProductModel) => product.category === 'calzado'));
+        console.log(products)
+      })
+    }
 
   const handleGetItems = async (categorySelected:string) => {
     const dataBase = getFirestore();
@@ -42,9 +60,9 @@ const BuildYourOutfit = () => {
 
   const handleSetItem = (product: ProductModel) => {
     if(category === "remeras" || category === "camperasybuzos") {
-      setShoes(product)
-    } else if(category === "calzado") {
       setShirt(product)
+    } else if(category === "calzado") {
+      setShoes(product)
     } else if(category === "pantalones") {
       setPants(product)
     }
@@ -67,12 +85,18 @@ const BuildYourOutfit = () => {
         <OutfitProducts showItems={showItems} products={products} loader={loader} handleSetItem={handleSetItem} />
       </div>
       <div className='outfit'>
-        {shoes && <img className='outfit_img bottom' src={shoes?.images[0]} alt="Calzado" />}
-        {shoes && <Sizes product={shoes} sizeType={shoes.format_of_size_chart}/>}
-        {pants && <img className='outfit_img middle' src={pants?.images[0]} alt="Pantalón" />}
-        {pants && <Sizes product={pants} sizeType={pants.format_of_size_chart}/>}
-        {shirt && <img className='outfit_img upper' src={shirt?.images[0]} alt="Remera/Capera" />}
-        {shirt && <Sizes product={shirt} sizeType={shirt.format_of_size_chart}/>}
+        {shirt && (
+          <Link to={`/product/${shirt.id}`}>
+            <img className='outfit_img upper' src={shirt.images[0]} alt="Remera/Capera" />
+          </Link>)}
+        {pants && (
+          <Link to={`/product/${pants.id}`}>
+            <img className='outfit_img middle' src={pants.images[0]} alt="Pantalón" />
+          </Link>)}
+        {shoes && (
+        <Link to={`/products/${shoes.id}`}>
+          <img className='outfit_img bottom' src={shoes?.images[0]} alt="Calzado" />
+        </Link>)}
       </div>
     </motion.div>
   );
