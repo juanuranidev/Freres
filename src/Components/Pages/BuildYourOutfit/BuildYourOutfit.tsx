@@ -14,10 +14,19 @@ const BuildYourOutfit = () => {
   const [ category, setCategory ] = useState<string>("")
   const [ products, setProducts ] = useState<ProductModel[]>([])
   const [ showItems, setShowItems ] = useState<boolean>(false)
+  const [ initialItems, setInitialItems] = useState<boolean>(false)
 
   useEffect(() => {
     handleGetInitialItems()
   }, [])
+
+  useEffect(() => {
+    if (initialItems) {
+      setShirt(products.find((product: ProductModel) => product.category === 'remeras'))
+      setPants(products.find((product: ProductModel) => product.category === 'pantalones'))
+      setShoes(products.find((product: ProductModel) => product.category === 'calzado'));
+    }
+  }, [initialItems])
 
   const handleShowItems = (categorySelected:string) => {
     setLoader(true)
@@ -37,12 +46,7 @@ const BuildYourOutfit = () => {
       await getDocs(queryCollection)
       .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
       .catch(err => console.log(err))
-      .finally(() => {
-        setShirt(products.find((product: ProductModel) => product.category === 'remeras'))
-        setPants(products.find((product: ProductModel) => product.category === 'pantalones'))
-        setShoes(products.find((product: ProductModel) => product.category === 'calzado'));
-        console.log(products)
-      })
+      .finally(() => setInitialItems(true))
     }
 
   const handleGetItems = async (categorySelected:string) => {
@@ -67,6 +71,7 @@ const BuildYourOutfit = () => {
       setPants(product)
     }
     window.scrollTo(0, 0);
+    setInitialItems(false)
   }
 
   return (
@@ -85,6 +90,15 @@ const BuildYourOutfit = () => {
         <OutfitProducts showItems={showItems} products={products} loader={loader} handleSetItem={handleSetItem} />
       </div>
       <div className='outfit'>
+        {initialItems && (
+          products.map((item: ProductModel) => {
+            <Link to={`/product/${item.id}`}>
+              <img className='outfit_img upper' src={item.images[0]} alt="Remera/Capera" />
+            </Link>
+          })
+        )
+
+        }
         {shirt && (
           <Link to={`/product/${shirt.id}`}>
             <img className='outfit_img upper' src={shirt.images[0]} alt="Remera/Capera" />
