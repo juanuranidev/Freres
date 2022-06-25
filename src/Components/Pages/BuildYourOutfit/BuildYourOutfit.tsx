@@ -47,7 +47,7 @@ const BuildYourOutfit = () => {
       .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
       .catch(err => console.log(err))
       .finally(() => setInitialItems(true))
-    }
+  }
 
   const handleGetItems = async (categorySelected:string) => {
     const dataBase = getFirestore();

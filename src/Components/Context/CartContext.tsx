@@ -78,15 +78,14 @@ export const CartContextProvider = ({children}:any) => {
     }
 
     const deleteFromCart = (product:ProductModel) => {
-      const target:any = cartList.find((x => x.id === product.id))
-      target.quantity === 1
-      ? setCartList(cartList.filter((x) => x.id !== product.id))
-      : setCartList(cartList.map((x) => x.id === product.id ? { ...product, quantity: product.quantity - 1 }: x))
+      const productToDelete = cartList.find(((x) => x.key === product.key))
+      productToDelete?.quantity === 1
+        ? setCartList(cartList.filter((x) => x.key !== product.key))
+        : setCartList(cartList.map((x) => x.key === product.key ? { ...product, quantity: product.quantity - 1 }: x))
     }
 
     const handleOpenCart = () => setOpenCart(true);
     const handleCloseCart = () => setOpenCart(false);
-
 
     const handlePurchase = (data:any, cartList:ProductModel[], cartTotal: number, priceDiscount: number) => {
       let order:any = {}
