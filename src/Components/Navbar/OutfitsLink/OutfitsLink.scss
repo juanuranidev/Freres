@@ -34,25 +34,5 @@
         border-bottom-right-radius: 0.5rem;
         background-color: #EEEEEE;
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-        .outfitsLink_content_a{
-            text-align: center;
-            margin: 1rem 0rem;
-            &:hover{
-                transform: scale(1.05);
-                transition: all 0.2s linear;
-                cursor: pointer;
-            }
-            &:active{
-                transform: scale(.995);
-                transition: all 0.2s linear; 
-            }
-            .outfitsLink_content_img{
-                margin: 0rem 0.5rem;
-                width: 14rem;
-                transition: all 0.2s linear; 
-                border: 1px solid lightgray;
-                box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
-            }
-        }
     }
 }

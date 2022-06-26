@@ -162,21 +162,21 @@ export const CartContextProvider = ({children}:any) => {
 
     return(
       <CartContext.Provider value={{ 
-          cartList, 
-          addToCart, 
-          deleteFromCart, 
-          openCart, 
-          setOpenCart, 
-          payment,
-          setPayment,
-          handleOpenCart,
-          handleCloseCart,
-          cartTotal,
-          setCartTotal,
-          orderData,
-          setOrderData,
-          handlePurchase}}>
-          {children}
+        cartList, 
+        addToCart, 
+        deleteFromCart, 
+        openCart, 
+        setOpenCart, 
+        payment,
+        setPayment,
+        handleOpenCart,
+        handleCloseCart,
+        cartTotal,
+        setCartTotal,
+        orderData,
+        setOrderData,
+        handlePurchase}}>
+        {children}
       </CartContext.Provider>
     )
 }
