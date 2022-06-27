@@ -13,6 +13,8 @@
         height: 100%;
         border-top: 0.1rem solid #ffffff;
         border-bottom: 0.1rem solid #ffffff;
+        max-height: 25rem;
+        overflow-y: scroll;
     }
     .content_coupon{
         padding: 2rem 0rem;
