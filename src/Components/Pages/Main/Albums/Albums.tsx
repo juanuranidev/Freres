@@ -1,9 +1,9 @@
 import React from 'react';
 import Album from './Album/Album';
 import SpotifyLogo from '../../../../Assets/Logos/SpotifyLogo.png';
-import AlbumImage1 from '../../../../Assets/Albums/AlbumImage1.png';
-import AlbumImage2 from '../../../../Assets/Albums/AlbumImage2.png';
-import AlbumImage3 from '../../../../Assets/Albums/AlbumImage3.png';
+import AlbumImage1 from '../../../../Assets/Albums/Album1.png';
+import AlbumImage2 from '../../../../Assets/Albums/Album2.png';
+import AlbumImage3 from '../../../../Assets/Albums/Album3.png';
 import './Albums.scss';
 
 const Albums = () => {

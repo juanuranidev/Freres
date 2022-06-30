@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { NewsletterContext } from '../../../Context/NewsletterContext';
-import NewsletterPopupImage from '../../../../Assets/NewsletterPopup/NewsletterPopupImage.png';
+import NewsletterPopupImage from '../../../../Assets/NewsletterPopup/NewsletterPopup.png';
 import Newsletter from '../../../Newsletter/Newsletter';
 import Overlay from '../../../Overlay/Overlay';
 import Socials from '../../../Socials/Socials';
