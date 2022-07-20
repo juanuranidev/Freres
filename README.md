@@ -20,7 +20,8 @@ Responsive for all devices<br>
 Quality animations<br>
 Build your own outfit page<br>
 Secret page<br>
-Scalable app
+Scalable app<br>
+Secret page :)
 
 **Database**<br>
 Display products from the database<br>
