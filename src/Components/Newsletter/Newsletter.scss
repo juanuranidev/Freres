@@ -18,6 +18,15 @@
         font-size: 0.8rem;
         margin: 0rem 1rem 1rem 1rem;
     }
+    .newsletter_suscribed{
+        background: #d2e4c4;
+        color: #307a07;
+        padding: 1rem;
+        border-radius: 0.25rem;
+        .newsletter_suscribed_p{
+            font-size: 0.8rem;
+        }
+    }
     .newsletter_div{
         .newsletter_div_form{
             .newsletter_div_form_input{
@@ -46,14 +55,10 @@
             }
         }
     }
-    .newsletter_suscribed{
-        background: #d2e4c4;
-        color: #307a07;
-        padding: 1rem;
-        border-radius: 0.25rem;
-    }
-    .newsletter_suscribed_p{
-        font-size: 0.8rem;
+    .newsletter_error{
+        font-size: 0.7rem;
+        margin-top: 0.5rem;
+        color: #ff0000;
     }
 }
 .newsletterLoader{

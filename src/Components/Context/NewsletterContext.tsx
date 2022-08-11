@@ -4,6 +4,7 @@ import { addDoc, getFirestore, query, collection, where, getDocs } from 'firebas
 const initialValue = {
   alreadySuscribed: false,
   activePopup: false,
+  errorMessage: false,
 }
 
 type NewsletterContextType = {
@@ -11,6 +12,8 @@ type NewsletterContextType = {
   setAlreadySuscribed?: (value:boolean) => void;
   activePopup: boolean;
   setActivePopup?: (value:boolean) => void;
+  errorMessage: boolean;
+  setErrorMessage?: (value:boolean) => void;
   handleSubmit?: (e:any, setLoader: (value: boolean) => void, userEmail: any, setIsUserSuscribed: (value: boolean) => void) => void;
 }
 
@@ -19,7 +22,8 @@ export const NewsletterContext = createContext<NewsletterContextType>(initialVal
 export const NewsletterContextProvider = ({children}:any) => {
   const [alreadySuscribed, setAlreadySuscribed] = useState<boolean>(false)
   const [activePopup, setActivePopup] = useState<boolean>(false)
-  
+  const [errorMessage, setErrorMessage] = useState<boolean>(false)
+
   const handleSubmit = async(e:any, setLoader: (value: boolean) => void, userEmail: any, setIsSuscribed: (value: boolean) => void) => {
     setLoader(true)
     e.preventDefault()
@@ -35,11 +39,12 @@ export const NewsletterContextProvider = ({children}:any) => {
     try{
       const data = await getDocs(queryCollection)
       if(data.docs.length){
-        alert("Ya existe")
+        setErrorMessage(true)
       } else {
         await addDoc(emailCollection, emailObject)
         setIsSuscribed(true)
         localStorage.setItem('alreadySuscribed', JSON.stringify(true));
+        setErrorMessage(false)
       }
       setLoader(false)
     } catch(error) {
@@ -53,6 +58,8 @@ export const NewsletterContextProvider = ({children}:any) => {
       setAlreadySuscribed,
       activePopup,
       setActivePopup,
+      errorMessage,
+      setErrorMessage,
       handleSubmit
     }}>
       {children}

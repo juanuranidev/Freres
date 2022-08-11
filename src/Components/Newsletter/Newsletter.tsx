@@ -10,7 +10,7 @@ const Newsletter = () => {
 
   const handleSetUserEmail = (e:any) => setUserEmail({...userEmail, [e.target.name] : e.target.value})
 
-  const { handleSubmit } = useContext(NewsletterContext)
+  const { handleSubmit, errorMessage } = useContext(NewsletterContext)
   
   if(loader){
     return(
@@ -39,7 +39,8 @@ const Newsletter = () => {
               onChange={(e) => handleSetUserEmail(e)}
             />    
             <button type='submit' className={`newsletter_div_form_button ${!userEmail.email && 'disabled'}`} disabled={!userEmail.email}>UNIRME</button>
-          </form>            
+          </form>       
+          {errorMessage && <p className='newsletter_error'>YA TE ENCUENTRAS SUSCRITO.</p>}     
         </div>}
     </div>
   );
