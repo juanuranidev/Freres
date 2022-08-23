@@ -6,6 +6,7 @@ import { ProductModel } from '../../Context/CartContext';
 import ProductList from '../../ProductList/ProductList';
 import Loader from '../../Loader/Loader';
 import './Shop.scss';
+import ButtonCategories from './ButtonCategories/ButtonCategories';
 
 function CustomLink({ children, to }: LinkProps) {
   let resolved = useResolvedPath(to);
@@ -50,7 +51,8 @@ const Shop = () => {
   return (
     <section className='shop'>
       <div className='shop_categories'>
-      <CustomLink to="/shop/all">TODOS LOS PRODUCTOS</CustomLink>
+        <ButtonCategories />
+        <CustomLink to="/shop/all">TODOS LOS PRODUCTOS</CustomLink>
         <div className='shop_categories_div'>
           <CustomLink to="/shop/camperasybuzos">CAMPERAS Y BUZOS</CustomLink>
           <CustomLink to="/shop/remeras">REMERAS</CustomLink>
