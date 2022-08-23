@@ -3,10 +3,10 @@ import { getFirestore, query, collection, where, getDocs } from 'firebase/firest
 import { Link, useParams, useMatch, useResolvedPath } from 'react-router-dom';
 import type { LinkProps } from "react-router-dom";
 import { ProductModel } from '../../Context/CartContext';
+import ButtonCategories from './ButtonCategories/ButtonCategories';
 import ProductList from '../../ProductList/ProductList';
 import Loader from '../../Loader/Loader';
 import './Shop.scss';
-import ButtonCategories from './ButtonCategories/ButtonCategories';
 
 function CustomLink({ children, to }: LinkProps) {
   let resolved = useResolvedPath(to);
