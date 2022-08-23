@@ -19,7 +19,7 @@ function CustomLink({ children, to }: LinkProps) {
 const ButtonCategories = () => {
 
   return (
-    <div>
+    <div style={{display: "none"}}>
       <CustomLink to="/shop/all">TODOS LOS PRODUCTOS</CustomLink>
       <CustomLink to="/shop/camperasybuzos">CAMPERAS Y BUZOS</CustomLink>
       <CustomLink to="/shop/remeras">REMERAS</CustomLink>
