@@ -52,8 +52,8 @@ const Shop = () => {
     <section className='shop'>
       <div className='shop_categories'>
         <ButtonCategories />
-        {/* <CustomLink to="/shop/all">TODOS LOS PRODUCTOS</CustomLink> */}
-        <div className='shop_categories_div' style={{display: "none"}}>
+        <CustomLink to="/shop/all">TODOS LOS PRODUCTOS</CustomLink>
+        <div className='shop_categories_div'>
           <CustomLink to="/shop/camperasybuzos">CAMPERAS Y BUZOS</CustomLink>
           <CustomLink to="/shop/remeras">REMERAS</CustomLink>
           <CustomLink to="/shop/pantalones">PANTALONES Y SHORTS</CustomLink>

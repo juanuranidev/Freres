@@ -25,6 +25,9 @@
             @media(max-width: 992px){
                 margin-bottom: 1rem;
             }
+            @media(max-width: 768px){
+                display: none;
+            }
         }
     }
     .shop_div{
