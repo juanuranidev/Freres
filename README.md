@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/96846723/186324308-8836a80d-4c44-4867-8f24-4d30a4d6763a.png)
+
 # Freres
 <a href="https://freres.ar/" target="_blank">Frères</a> is an online store that sells clothes which I always liked, however after a while of browsing their site I thought it could have a better design so I set out to create it. Welcome to the new Frères.
 
