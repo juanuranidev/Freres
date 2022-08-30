@@ -8,7 +8,7 @@ interface ProductSizesProps{
     setSize: (size:string) => void
 }
 
-const ProductSizes = ({sizeType, size, setSize}:ProductSizesProps) => {
+const ProductSizes = ({sizeType, size, setSize}: ProductSizesProps) => {
 
     if(sizeType==='number'){
         return (

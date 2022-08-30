@@ -9,4 +9,71 @@
     transform: translate(-50%, -50%);
     box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 10%);
     z-index: 10;
+    padding: 1rem;
+    width: 25rem;
+    .modalSelectSizes_p{
+        font-size: 0.8rem;
+        text-decoration: underline;
+        padding-bottom: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+        width: 100%;
+    }
+    .modalSelectSizes_h2{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        &:first-child{
+            text-transform: none;
+            margin-bottom: 0.5rem;
+        }
+        &:last-child{
+            font-size: 10rem;
+        }
+    }
+    .modalSelectSizes_img{
+        width: 100%;
+    }
+    .modalSelectSizes_div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+        .modalSelectSizes_div_actions{
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            .modalSelectSizes_div_actions_p{
+                width: 50%;
+                text-align: center;
+                font-size: 0.8rem;
+                text-decoration: underline;
+                user-select: none; 
+                -ms-user-select: none;      
+                -moz-user-select: none;     
+                -khtml-user-select: none;   
+                -webkit-user-select: none;  
+                -webkit-touch-callout: none;
+                cursor: pointer;
+            }
+        }
+        .first{
+            justify-content: flex-end;
+        }
+        .modalSelectSizes_div_p{
+            font-size: 0.8rem;
+            text-decoration: underline;
+            user-select: none; 
+            -ms-user-select: none;      
+            -moz-user-select: none;     
+            -khtml-user-select: none;   
+            -webkit-user-select: none;  
+            -webkit-touch-callout: none;
+            cursor: pointer;
+        }
+    }
+    .spacing_top{
+        margin-top: 4.5rem;
+    }
 }

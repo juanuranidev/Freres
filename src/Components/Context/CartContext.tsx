@@ -14,6 +14,7 @@ type CartContextType = {
   setCartList?: (value:ProductModel) => void;
   addToCart?: (product:ProductModel, quantity:number, size: string) => void;
   deleteFromCart?: (product:ProductModel) => void;
+  deleteFromCartByName?: (product:ProductModel) =>  void;
   openCart: boolean;
   setOpenCart?: (value:boolean) => void;
   payment: boolean;
@@ -79,9 +80,18 @@ export const CartContextProvider = ({children}:any) => {
 
     const deleteFromCart = (product:ProductModel) => {
       const productToDelete = cartList.find(((x) => x.key === product.key))
+
       productToDelete?.quantity === 1
         ? setCartList(cartList.filter((x) => x.key !== product.key))
         : setCartList(cartList.map((x) => x.key === product.key ? { ...product, quantity: product.quantity - 1 }: x))
+    }
+
+    const deleteFromCartByName = (product:ProductModel) => {
+      const productToDelete = cartList.find(((x) => x.name === product.name))
+
+      productToDelete?.quantity === 1
+        ? setCartList(cartList.filter((x) => x.name !== product.name))
+        : setCartList(cartList.map((x) => x.name === product.name ? { ...product, quantity: product.quantity - 1 }: x))
     }
 
     const handleOpenCart = () => setOpenCart(true);
@@ -165,6 +175,7 @@ export const CartContextProvider = ({children}:any) => {
         cartList, 
         addToCart, 
         deleteFromCart, 
+        deleteFromCartByName,
         openCart, 
         setOpenCart, 
         payment,
