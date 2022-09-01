@@ -1,14 +1,17 @@
 import React, { useEffect, useState, useContext } from 'react';
-import TertiaryButton from '../Buttons/TertiaryButton/TertiaryButton';
-import { CartContext, ProductModel } from '../Context/CartContext';
-import ProductSizes from '../Pages/ProductDetail/ProductSizes/ProductSizes';
+import { CartContext, ProductModel } from '../../Context/CartContext';
+import ProductSizes from '../../Pages/ProductDetail/ProductSizes/ProductSizes';
+import TertiaryButton from '../../Buttons/TertiaryButton/TertiaryButton';
+import QuaternaryButton from '../../Buttons/QuaternaryButton/QuaternaryButton';
 import './ModalSelectSizes.scss';
 
 interface ModalSelectSizesProps {
-  modalProducts: ProductModel[],
+  open: boolean;
+  close: () => void;
+  modalProducts: ProductModel[];
 }
 
-const ModalSelectSizes = ({modalProducts}: ModalSelectSizesProps) => {
+const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) => {
   const [size, setSize] = useState<string>("")
   const [modalProduct, setModalProduct] = useState<number>(0)
   const [isInCartList, setIsInCartList] = useState<boolean>(false)
@@ -42,17 +45,26 @@ const ModalSelectSizes = ({modalProducts}: ModalSelectSizesProps) => {
   
   const handleDeleteFromCart = (product:ProductModel) => {
     setSize("")
-    deleteFromCartByName?.(product)
     handleIsInCartList();
+    deleteFromCartByName?.(product)
   }
+
+  // const handleSetSize = () => {
+  //   let test:any = cartList.find((item: ProductModel) => item.name === modalProducts[modalProduct].name)
+  //   console.log(cartList.find((item: ProductModel) => item.name === modalProducts[modalProduct].name))
+  //   if(!isInCartList){
+  //     setSize(test.size)
+  //   }
+  //   // console.log(test[0].size)
+  // }
 
   useEffect(() => {
     handleIsInCartList();
   }, [modalProduct, handleAddToCart, handleDeleteFromCart])
 
   return (
-    <div className='modalSelectSizes'>
-      <p className='modalSelectSizes_p'>CERRAR</p>
+    <div className={`modalSelectSizes ${open && 'modalSelectSizes_visible'} `}>
+      <p className='modalSelectSizes_p' onClick={close}>CERRAR</p>
       <h2 className='modalSelectSizes_h2'>Selecciona el talle para</h2>
       <h2 className='modalSelectSizes_h2'>{modalProducts[modalProduct].name}</h2>
       <img src={modalProducts[modalProduct].images[0]} className='modalSelectSizes_img' />
@@ -64,7 +76,7 @@ const ModalSelectSizes = ({modalProducts}: ModalSelectSizesProps) => {
       </div>
         {!isInCartList
           ? <TertiaryButton text='AGREGAR AL CARRITO' onClick={() => handleAddToCart(modalProducts[modalProduct], size)} disabled={size === ""} />
-          : <TertiaryButton text="ELIMINAR DEL CARRITO"  onClick={() => handleDeleteFromCart(modalProducts[modalProduct])} />
+          : <QuaternaryButton text="ELIMINAR DEL CARRITO"  onClick={() => handleDeleteFromCart(modalProducts[modalProduct])} />
         }
       </div>
     </div>

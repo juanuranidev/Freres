@@ -3,6 +3,8 @@
     flex-direction: column;
     align-items: center;
     position: fixed;
+    opacity: 0;
+    visibility: hidden;
     background-color: #eeeeee;
     top: 50%;
     left: 50%;
@@ -10,15 +12,18 @@
     box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 10%);
     z-index: 10;
     padding: 1rem;
-    width: 25rem;
+    width: 30rem;
+    transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
     .modalSelectSizes_p{
-        font-size: 0.8rem;
-        text-decoration: underline;
-        padding-bottom: 1rem;
         display: flex;
         justify-content: flex-end;
-        cursor: pointer;
+        font-size: 0.8rem;
+        padding-bottom: 1rem;
         width: 100%;
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
     }
     .modalSelectSizes_h2{
         font-size: 1.5rem;
@@ -76,4 +81,11 @@
     .spacing_top{
         margin-top: 4.5rem;
     }
+}
+
+.modalSelectSizes_visible{
+    @extend .modalSelectSizes;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
 }

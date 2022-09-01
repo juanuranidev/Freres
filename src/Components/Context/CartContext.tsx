@@ -56,11 +56,11 @@ export type ProductModel = {
 export const CartContext = createContext<CartContextType>(initialValue)
 
 export const CartContextProvider = ({children}:any) => {
-  const [cartList, setCartList] = useState<ProductModel[]>([])
-  const [openCart, setOpenCart] = useState<boolean>(false);
-  const [cartTotal, setCartTotal] = useState<number>(0);
   const [orderData, setOrderData] = useState<any>({})
+  const [cartTotal, setCartTotal] = useState<number>(0);
   const [payment, setPayment] = useState<boolean>(false)
+  const [openCart, setOpenCart] = useState<boolean>(false);
+  const [cartList, setCartList] = useState<ProductModel[]>([])
   
     const addToCart = (product:ProductModel, quantity:number, size: string) => {
       const isInCart = cartList.find(((x) => x.id === product.id && x.size === size))

@@ -2,6 +2,7 @@ import React from 'react';
 import { ProductModel } from '../../../Context/CartContext';
 import ProductList from '../../../ProductList/ProductList';
 import PrimaryButton from '../../../Buttons/PrimaryButton/PrimaryButton';
+import TertiaryButton from '../../../Buttons/TertiaryButton/TertiaryButton';
 import './EssentialOutfit.scss';
 
 interface EssentialOutfitProps {
@@ -23,7 +24,7 @@ const EssentialOutfit = ({name, products, link, image, imageDirection, handleOpe
             </div>
             <div className='essentialOutfit_button'>
                 <PrimaryButton link={link} text="VER CONJUNTO"/>
-                <button onClick={handleOpenModalSizes}>AGREGAR AL CARRITO</button>
+                <TertiaryButton text="AGREGAR AL CARRITO" onClick={handleOpenModalSizes}/>
             </div>
         </div>
         <div className='essentialOutfit_image'>

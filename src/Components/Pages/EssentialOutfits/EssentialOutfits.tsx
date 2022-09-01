@@ -4,17 +4,26 @@ import { motion } from 'framer-motion';
 import Loader from '../../Loader/Loader';
 import useGetProducts from '../../Hooks/useGetProducts';
 import EssentialOutfit from './EssentialOutfit/EssentialOutfit';
-import ModalSelectSizes from '../../ModalSelectSizes/ModalSelectSizes';
+import ModalBackground from '../../Modals/ModalBackground/ModalBackground';
+import ModalSelectSizes from '../../Modals/ModalSelectSizes/ModalSelectSizes';
 import './EssentialOutfits.scss';
 
 const EssentialOutfits = () => {
-  const [modalSelectSizes, setModalSelectSizes] = useState<boolean>(false)
   const [modalProducts, setModalProducts] = useState<ProductModel[]>([])
+  const [modalBackground, setModalBackground] = useState<boolean>(false)
+  const [modalSelectSizes, setModalSelectSizes] = useState<boolean>(false)
+
   const {loader, products} = useGetProducts('is_an_essential_outfit', '==', true)
 
   const handleOpenModalSizes = (productsForModal: ProductModel[]) => {
     setModalProducts(productsForModal)
     setModalSelectSizes(true)
+    setModalBackground(true)
+  }
+
+  const handleCloseModalSizes = () => {
+    setModalSelectSizes(false)
+    setModalBackground(false)
   }
   
   if(loader) return <Loader/>
@@ -58,8 +67,9 @@ const EssentialOutfits = () => {
           image={'https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg'}
           handleOpenModalSizes={() => handleOpenModalSizes(products.filter((product:any) => product.essential_outfit==="street"))}
         /> 
-      </motion.div>   
-      {modalSelectSizes && <ModalSelectSizes modalProducts={modalProducts} />}
+      </motion.div>
+      <ModalBackground open={modalBackground} close={handleCloseModalSizes} />   
+      {modalSelectSizes && <ModalSelectSizes open={modalSelectSizes} close={handleCloseModalSizes} modalProducts={modalProducts} />}
     </div>
   );
 }
