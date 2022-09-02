@@ -13,8 +13,8 @@ type CartContextType = {
   cartList: ProductModel[];
   setCartList?: (value:ProductModel) => void;
   addToCart?: (product:ProductModel, quantity:number, size: string) => void;
+  addMultipleToCart?: (products: ProductModel[], quantiy:number) => void;
   deleteFromCart?: (product:ProductModel) => void;
-  deleteFromCartByName?: (product:ProductModel) =>  void;
   openCart: boolean;
   setOpenCart?: (value:boolean) => void;
   payment: boolean;
@@ -78,20 +78,36 @@ export const CartContextProvider = ({children}:any) => {
       handleOpenCart()
     }
 
+    const addMultipleToCart = (products:ProductModel[], quantity:number) => {
+      products.forEach((item:ProductModel) => {
+        let size:string = item.size
+        const isInCart = cartList.find(((x) => x.id === item.id && x.size === size))
+        console.log(isInCart)
+        if(isInCart){
+          console.log("Lo modifica")
+          const newCart = cartList.map((x) => {
+            if (x.id === item.id && x.size === size) {
+              return { ...x, quantity: quantity + x.quantity }
+            }
+            return x
+          })
+          setCartList(newCart)
+        } else {
+          console.log("Lo agrega")
+          setCartList([...cartList, {...item, quantity, size, key: `${item.size} - ${item.id}`}])
+          console.log(cartList, item, quantity, size)
+      }
+    })
+    console.log(cartList)
+    // handleOpenCart()
+    }
+
     const deleteFromCart = (product:ProductModel) => {
       const productToDelete = cartList.find(((x) => x.key === product.key))
 
       productToDelete?.quantity === 1
         ? setCartList(cartList.filter((x) => x.key !== product.key))
         : setCartList(cartList.map((x) => x.key === product.key ? { ...product, quantity: product.quantity - 1 }: x))
-    }
-
-    const deleteFromCartByName = (product:ProductModel) => {
-      const productToDelete = cartList.find(((x) => x.name === product.name))
-
-      productToDelete?.quantity === 1
-        ? setCartList(cartList.filter((x) => x.name !== product.name))
-        : setCartList(cartList.map((x) => x.name === product.name ? { ...product, quantity: product.quantity - 1 }: x))
     }
 
     const handleOpenCart = () => setOpenCart(true);
@@ -174,8 +190,8 @@ export const CartContextProvider = ({children}:any) => {
       <CartContext.Provider value={{ 
         cartList, 
         addToCart, 
+        addMultipleToCart,
         deleteFromCart, 
-        deleteFromCartByName,
         openCart, 
         setOpenCart, 
         payment,
