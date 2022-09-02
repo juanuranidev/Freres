@@ -15,8 +15,21 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
   const [size, setSize] = useState<string>("")
   const [modalProduct, setModalProduct] = useState<number>(0)
   const [isInCartList, setIsInCartList] = useState<boolean>(false)
+  const [firstSize, setFirstSize] = useState<string>("")
+  const [secondSize, setSecondSize] = useState<string>("")
+  const [thirdSize, setThirdSize] = useState<string>("")
 
   const { addToCart, deleteFromCartByName, cartList } = useContext(CartContext)
+
+  useEffect(() => {
+    if(modalProduct === 0){
+      setSize(firstSize);
+     } else if(modalProduct === 1){
+      setSize(secondSize);
+     } else if(modalProduct === 2){
+      setSize(thirdSize);
+     }
+  }, [firstSize, secondSize, thirdSize])
 
   const handleIsInCartList = () => {
     let isInCart = cartList.find((product: ProductModel) => product.name === modalProducts[modalProduct].name)
@@ -29,12 +42,19 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
   }
 
   const handlePrevious = () => {
-    setSize("");
+    if(modalProduct === 0){
+      setSize(firstSize);
+     } else if(modalProduct === 1){
+      setSize(secondSize);
+     } else if(modalProduct === 2){
+      setSize(thirdSize);
+     }
+    // setSize("");
     setModalProduct(prev => prev - 1);
   }
   
   const handleNext = () => {
-    setSize("");
+    // setSize("");
     setModalProduct(prev => prev + 1);
   }
 
@@ -58,6 +78,18 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
   //   // console.log(test[0].size)
   // }
 
+  const handleSetSize = (size:string) => {
+   if(modalProduct === 0){
+    setFirstSize(size);
+   } else if(modalProduct === 1){
+    setSecondSize(size);
+   } else if(modalProduct === 2){
+    setThirdSize(size);
+   }
+   return size
+  }
+
+
   useEffect(() => {
     handleIsInCartList();
   }, [modalProduct, handleAddToCart, handleDeleteFromCart])
@@ -68,7 +100,7 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
       <h2 className='modalSelectSizes_h2'>Selecciona el talle para</h2>
       <h2 className='modalSelectSizes_h2'>{modalProducts[modalProduct].name}</h2>
       <img src={modalProducts[modalProduct].images[0]} className='modalSelectSizes_img' />
-        {!isInCartList && <ProductSizes sizeType={modalProducts[modalProduct].format_of_size_chart} size={size} setSize={setSize} />}
+        <ProductSizes sizeType={modalProducts[modalProduct].format_of_size_chart} size={size} setSize={handleSetSize} />
       <div className={`modalSelectSizes_div ${isInCartList && 'spacing_top'}`}>
       <div className={`modalSelectSizes_div_actions ${modalProduct === 0 && 'first'}`}>
         {modalProduct !== 0 && <p onClick={handlePrevious} className='modalSelectSizes_div_actions_p'>ANTERIOR</p>}
