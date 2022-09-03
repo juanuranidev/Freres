@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ProductModel } from '../../../Context/CartContext';
-import FreresLogo from '../../../../Assets/Logos/FreresLogo.jpg';
+import FreresLogoWithoutBackground from '../../../../Assets/Logos/FreresLogoWithoutBackground.png';
 import './OutfitProducts.scss';
 
 interface OutfitProductsProps {
@@ -16,7 +16,7 @@ const OutfitProducts = ({showItems, products, loader, handleSetItem}: OutfitProd
     if(loader) {
         return (
         <div className='outfit_products_loading'>
-            <img src={FreresLogo} className="outfit_products_loading_img" alt="Freres logo" />
+            <img src={FreresLogoWithoutBackground} className="outfit_products_loading_img" alt="Freres logo" />
         </div>
         )
     }

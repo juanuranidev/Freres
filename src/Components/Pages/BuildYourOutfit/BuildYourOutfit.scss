@@ -10,7 +10,7 @@
     }
     .products{
         display: flex;
-        width: 60%;
+        width: 50%;
         flex-direction: column;
         justify-content: center;
         margin-bottom: 1rem;
@@ -34,29 +34,25 @@
                 border: 0.1rem solid #000000;
                 transition: all .15s linear; 
                 margin: 0rem 0.5rem 1.5rem 0.5rem;
+                z-index: 2;
                 cursor: pointer;
                 @media(max-width: 576px){
                     width: 40%;
                     margin: 0rem 0rem 1.5rem 0rem;
                 }
-                &:hover{
-                    background-color: #000000;
-                    color: #ffffff;
-                    transition: all .15s linear; 
-                    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-                }
+                // &:hover{
+                //     background-color: #000000;
+                //     color: #ffffff;
+                //     transition: all .15s linear; 
+                //     box-shadow: 0px 15px 20px -3px rgba(0,0,0,0.1);
+                // }
                 &:active{
                     transform: scale(.95);
                     transition: all .1s linear;
                 }
             }
             .selected{
-                background-color: #000000;
-                color: #ffffff;
-                @media(max-width: 992px){
-                    background-color: #000000;
-                    color: #ffffff;
-                }
+                opacity: 0.5;
             }
         }
     }
@@ -65,13 +61,26 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 40%;
+        width: 50%;
         @media(max-width: 768px){
             width: 100%;
         }
         .outfit_img{
-            width: 15rem;
-            // margin-bottom: -2.8rem;
+            width: 14rem;
+            @media(max-width: 992px) and (min-width: 768px){
+                width: 12rem;
+            }
+        }
+        .outfit_div{
+            @media(max-width: 768px){
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            @media(max-width: 576px){
+                flex-direction: column-reverse;
+                align-items: center;
+            }
         }
     }
 }
