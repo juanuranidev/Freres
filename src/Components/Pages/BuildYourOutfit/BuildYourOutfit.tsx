@@ -41,17 +41,13 @@ const BuildYourOutfit = () => {
   }
 
   const handleGetItems = async (categorySelected:string) => {
-    setLoader(true)
     const dataBase = getFirestore();
     let queryCollection = query(collection(dataBase, 'products'), where('category', '==', categorySelected))
     
     await getDocs(queryCollection)
       .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
       .catch(err => console.log(err))
-      .finally(() => {
-        setShowItems(true)
-        setLoader(false)
-    })
+      .finally(() => setShowItems(true))
   }
 
   const handleShowItems = (categorySelected:string) => {
@@ -64,17 +60,14 @@ const BuildYourOutfit = () => {
       setLoader(true)
       setProducts([])
     }
+    setLoader(false)
   }
 
- 
-
-
-
   const handleSetItem = (product: ProductModel) => {
-    if(category === "camperasybuzos"){
-      setHoodies(product)
-    } else if(category === "remeras"){
+    if(category === "remeras"){
       setShirt(product)
+    } else if(category === "camperasybuzos"){
+      setHoodies(product)
     } else if(category === "pantalones"){
       setPants(product)
     } else if(category === "calzado"){
