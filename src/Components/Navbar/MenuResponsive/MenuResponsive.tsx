@@ -6,11 +6,11 @@ import MenuResponsiveSublink from './MenuResponsiveSublink/MenuResponsiveSublink
 import './MenuResponsive.scss';
 
 interface MenuResponsiveProps{
-    handleCloseMenu: () => void;
+    handleCloseMenuResponsive: () => void;
     openMenu: boolean;
 }
 
-const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
+const MenuResponsive = ({handleCloseMenuResponsive, openMenu}:MenuResponsiveProps) => {
     const [showShop, setShowShop] = useState<boolean>(false);
 
     useEffect(() => {
@@ -21,11 +21,11 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
     <div className={openMenu ? 'menuResponsive' : 'menuResponsive menuClose'}>
         <div>
             <div className='menuResponsive_close'>
-                <div className='menuResponsive_close_div'><div onClick={handleCloseMenu}/></div>
+                <div className='menuResponsive_close_div'><div onClick={handleCloseMenuResponsive}/></div>
             </div>
             <ul className='menuResponsive_ul'>
                 <li className='menuResponsive_ul_li'>
-                    <Link className='menuResponsive_ul_li_a' to='/shop/all' onClick={handleCloseMenu}>SHOP</Link>
+                    <Link className='menuResponsive_ul_li_a' to='/shop/all' onClick={handleCloseMenuResponsive}>SHOP</Link>
                     <span className={`fas fa-angle-${showShop ? 'down' : 'right'} menuResponsive_ul_li_span`} onClick={() => setShowShop(!showShop)} />
                 </li>
                 <AnimatePresence>
@@ -38,7 +38,7 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                             className='animated_div'>
                             <MenuResponsiveSublink
                                 link="/shop/camperasybuzos/"
-                                onClick={handleCloseMenu}
+                                onClick={handleCloseMenuResponsive}
                                 src="https://freres.ar/wp-content/uploads/2021/12/productos-noviembre-6-scaled.jpeg.webp"
                                 alt="CAMPERAS Y BUZOS"
                                 boxShadow={false}
@@ -46,7 +46,7 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                             />
                             <MenuResponsiveSublink
                                 link="/shop/remeras/"
-                                onClick={handleCloseMenu}
+                                onClick={handleCloseMenuResponsive}
                                 src="https://freres.ar/wp-content/uploads/2021/10/a.jpg.webp"
                                 alt="REMERAS"
                                 boxShadow={false}
@@ -54,7 +54,7 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                             />
                             <MenuResponsiveSublink
                                 link="/shop/pantalones/"
-                                onClick={handleCloseMenu}
+                                onClick={handleCloseMenuResponsive}
                                 src="https://freres.ar/wp-content/uploads/2021/09/Pantalones-4-scaled.jpg.webp"
                                 alt="PANTALONES Y SHORTS"
                                 boxShadow={false}
@@ -62,7 +62,7 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                             />
                             <MenuResponsiveSublink
                                 link="/shop/calzado/"
-                                onClick={handleCloseMenu}
+                                onClick={handleCloseMenuResponsive}
                                 src="https://freres.ar/wp-content/uploads/2021/07/10-scaled.jpg.webp"
                                 alt="CALZADO"
                                 boxShadow={false}
@@ -70,7 +70,7 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                             />
                             <MenuResponsiveSublink
                                 link="/shop/accesorios/"
-                                onClick={handleCloseMenu}
+                                onClick={handleCloseMenuResponsive}
                                 src="https://freres.ar/wp-content/uploads/2021/09/5-3-scaled.jpg.webp"
                                 alt="ACCESORIOS"
                                 boxShadow={false}
@@ -78,7 +78,7 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                             />
                             <MenuResponsiveSublink
                                 link="/shop/all/"
-                                onClick={handleCloseMenu}
+                                onClick={handleCloseMenuResponsive}
                                 src="https://freres.ar/wp-content/uploads/2021/08/Styling-50-scaled.jpg.webp"
                                 alt="TODOS LOS PRODUCTOS"
                                 boxShadow={false}
@@ -86,7 +86,7 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                             />
                             <MenuResponsiveSublink
                                 link="/shop/accesorios/"
-                                onClick={handleCloseMenu}
+                                onClick={handleCloseMenuResponsive}
                                 src="https://freres.ar/wp-content/uploads/2021/09/5-3-scaled.jpg.webp"
                                 alt="ACCESORIOS"
                                 boxShadow={false}
@@ -95,13 +95,13 @@ const MenuResponsive = ({handleCloseMenu, openMenu}:MenuResponsiveProps) => {
                     </motion.div>)}
                 </AnimatePresence>
                 <li className='menuResponsive_ul_li'>
-                    <Link className='menuResponsive_ul_li_a' to='/essential_outfits' onClick={handleCloseMenu}>ESSENTIAL OUTFITS</Link>
+                    <Link className='menuResponsive_ul_li_a' to='/essential_outfits' onClick={handleCloseMenuResponsive}>ESSENTIAL OUTFITS</Link>
                 </li>
                 <li className='menuResponsive_ul_li'>
-                    <Link className='menuResponsive_ul_li_a' to='/about' onClick={handleCloseMenu}>NOSOTROS</Link>
+                    <Link className='menuResponsive_ul_li_a' to='/about' onClick={handleCloseMenuResponsive}>NOSOTROS</Link>
                 </li>
                 <li className='menuResponsive_ul_li'>
-                    <Link className='menuResponsive_ul_li_a' to='/build-your-outfit' onClick={handleCloseMenu}>ARMA TU OUTFIT</Link>
+                    <Link className='menuResponsive_ul_li_a' to='/build-your-outfit' onClick={handleCloseMenuResponsive}>ARMA TU OUTFIT</Link>
                 </li>
             </ul>
         </div>

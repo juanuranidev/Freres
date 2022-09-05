@@ -7,20 +7,29 @@ import OutfitsLink from './OutfitsLink/OutfitsLink';
 import FreresLogo from '../../Assets/Logos/FreresLogo.jpg'
 import CartContent from './CartContent/CartContent';
 import Overlay from '../Overlay/Overlay';
+import ModalBackground from '../Modals/ModalBackground/ModalBackground';
 import './Navbar.scss';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false)
-  
+  const [modalBackground, setModalBackground] = useState<boolean>(false)
+
   const { cartList, handleOpenCart } = useContext(CartContext)
 
-  const handleOpenMenu = () => setOpenMenu(true);
-  const handleCloseMenu = () => setOpenMenu(false);
+  const handleOpenMenuResponsive = () => {
+    setOpenMenu(true);
+    setModalBackground(true)
+  } 
+
+  const handleCloseMenuResponsive = () => {
+    setOpenMenu(false);
+    setModalBackground(false)
+  }
 
   return (
     <nav className='nav'>
       <div className='nav_openMenu'>
-        <span className="fas fa-bars fa-2x nav_openMenu_span" onClick={handleOpenMenu}/>
+        <span className="fas fa-bars fa-2x nav_openMenu_span" onClick={handleOpenMenuResponsive}/>
       </div>
       <ul className='nav_ul'>
         <ShopLink/>
@@ -35,8 +44,9 @@ const Navbar = () => {
         <p onClick={handleOpenCart} className='nav_second_ul_p'>CARRITO ({cartList.length??0})</p>
       </ul>
       <CartContent />
-      <Overlay openMenu={openMenu} handleCloseMenu={handleCloseMenu} />
-      <MenuResponsive handleCloseMenu={handleCloseMenu} openMenu={openMenu} />
+      <Overlay openMenu={openMenu} handleCloseMenu={() => setOpenMenu(false)} />
+      <ModalBackground open={modalBackground} close={handleCloseMenuResponsive} />   
+      <MenuResponsive handleCloseMenuResponsive={handleCloseMenuResponsive} openMenu={openMenu} />
     </nav>
   );
 }
