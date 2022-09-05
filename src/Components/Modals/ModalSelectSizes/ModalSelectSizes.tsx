@@ -16,11 +16,11 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
   const [modalProduct, setModalProduct] = useState<number>(0)
   const [productsWithSizes, setProductWithSizes] = useState<ProductModel[]>([])
 
-  const { addMultipleToCart } = useContext(CartContext)
+  const { addMultipleToCart, addToCart, cartList } = useContext(CartContext)
 
   useEffect(() => {
     handleGetSize();
-  }, [modalProduct, productsWithSizes,size])
+  }, [modalProduct, productsWithSizes, size])
 
   const handlePrevious = () => {
     setSize("");
@@ -55,13 +55,9 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
   }
 
   const handleAddToCart = async (product:ProductModel, size:string) => {
-    console.log(productsWithSizes)
-    addMultipleToCart?.(productsWithSizes, 1)
-    // productsWithSizes.forEach((product:ProductModel) => addToCart?.(product, 1, product.size));
-    // 
-    // console.log(productsWithSizes)
-    // close();
-
+    productsWithSizes.forEach((product: ProductModel) => {
+      addToCart?.(product, 1, product.size)
+    })
   }
 
 
