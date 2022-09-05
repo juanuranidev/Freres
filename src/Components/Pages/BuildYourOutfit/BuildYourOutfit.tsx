@@ -117,7 +117,7 @@ const BuildYourOutfit = () => {
             <img className='outfit_img middle' src={pants.images[0]} alt="Pantalón" />
           </Link>)}
         {shoes && (
-        <Link to={`/products/${shoes.id}`}>
+        <Link to={`/product/${shoes.id}`}>
           <img className='outfit_img bottom' src={shoes?.images[0]} alt="Calzado" />
         </Link>)}
       </div>
