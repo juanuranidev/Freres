@@ -63,7 +63,9 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
 
   return (
     <div className={`modalSelectSizes ${open && 'modalSelectSizes_visible'} `}>
-      <p className='modalSelectSizes_p' onClick={close}>CERRAR</p>
+      <div className='modalSelectSizes_close'>
+        <p className='modalSelectSizes_close_p' onClick={close}>CERRAR</p>
+      </div>
       <h2 className='modalSelectSizes_h2'>Selecciona el talle para</h2>
       <h2 className='modalSelectSizes_h2'>{modalProducts[modalProduct].name}</h2>
       <img src={modalProducts[modalProduct].images[0]} className='modalSelectSizes_img' />

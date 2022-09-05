@@ -8,7 +8,7 @@ interface ModalBackgroundProps {
 
 const ModalBackground = ({open, close}: ModalBackgroundProps) => {
   return (
-    <div className={`${open ? 'overlay visible' : 'overlay'}`} onClick={close} />
+    <div className={`${open ? 'modalBackground visible' : 'modalBackground'}`} onClick={close} />
   );
 };
 
