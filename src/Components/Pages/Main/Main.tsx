@@ -1,12 +1,13 @@
 import React, { useEffect, useContext } from 'react';
 import { NewsletterContext } from '../../Context/NewsletterContext';
-import Header from './Header/Header';
-import TopSellers from './TopSellers/TopSellers';
-import ShortcutsGallery from './ShortcutsGallery/ShortcutsGallery';
-import Masterpieces from './Masterpieces/Masterpieces';
 import Albums from './Albums/Albums';
+import Header from './Header/Header';
 import Slider from './Slider/Slider';
+import TopSellers from './TopSellers/TopSellers';
+import Masterpieces from './Masterpieces/Masterpieces';
 import NewsletterPopup from './NewsletterPopup/NewsletterPopup';
+import ModalBackground from '../../Modals/ModalBackground/ModalBackground';
+import ShortcutsGallery from './ShortcutsGallery/ShortcutsGallery';
 
 const Main = () => {
   const { activePopup, setActivePopup } = useContext(NewsletterContext)
@@ -31,6 +32,7 @@ const Main = () => {
       <Albums/>
       <Slider/>
       {activePopup && <NewsletterPopup/>}
+      <ModalBackground open={activePopup} close={() => setActivePopup?.(false)}/>
     </React.Fragment>
   );
 }

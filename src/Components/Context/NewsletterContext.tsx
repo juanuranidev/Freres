@@ -20,9 +20,9 @@ type NewsletterContextType = {
 export const NewsletterContext = createContext<NewsletterContextType>(initialValue)
 
 export const NewsletterContextProvider = ({children}:any) => {
-  const [alreadySuscribed, setAlreadySuscribed] = useState<boolean>(false)
   const [activePopup, setActivePopup] = useState<boolean>(false)
   const [errorMessage, setErrorMessage] = useState<boolean>(false)
+  const [alreadySuscribed, setAlreadySuscribed] = useState<boolean>(false)
 
   const handleSubmit = async(e:any, setLoader: (value: boolean) => void, userEmail: any, setIsSuscribed: (value: boolean) => void) => {
     setLoader(true)

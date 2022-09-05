@@ -2,7 +2,6 @@ import React, { useEffect, useContext } from 'react';
 import { NewsletterContext } from '../../../Context/NewsletterContext';
 import NewsletterPopupImage from '../../../../Assets/NewsletterPopup/NewsletterPopup.png';
 import Newsletter from '../../../Newsletter/Newsletter';
-import Overlay from '../../../Overlay/Overlay';
 import Socials from '../../../Socials/Socials';
 import './NewsletterPopup.scss';
 
@@ -23,7 +22,6 @@ const NewsletterPopup = () => {
         </div>
         <img src={NewsletterPopupImage} alt="Newsletter" className='newsletterPopup_img'/>
       </div>
-      <Overlay />
     </React.Fragment>
   )
 }
