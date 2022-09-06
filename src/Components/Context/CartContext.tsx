@@ -62,58 +62,61 @@ export const CartContextProvider = ({children}:any) => {
   const [openCart, setOpenCart] = useState<boolean>(false);
   const [cartList, setCartList] = useState<ProductModel[]>([])
   
-    const addToCart = (product:ProductModel, quantity:number, size: string) => {
-      const isInCart = cartList.find(((x) => x.id === product.id && x.size === size))
-      if(isInCart){
-          const newCart = cartList.map((x) => {
-              if (x.id === product.id && x.size === size) {
-                 return { ...x, quantity: quantity + x.quantity }
-              }
-              return x
-          })
-          setCartList(newCart)
-      } else {
-          setCartList([...cartList, {...product, quantity, size, key: `${size} - ${product.id}`}])
-      }
-      handleOpenCart()
-    }
+  const handleOpenCart = () => setOpenCart(true);
+  const handleCloseCart = () => setOpenCart(false); 
 
-    const addMultipleToCart = (products:ProductModel[], quantity:number) => {
-      products.forEach((item:ProductModel) => {
-        let size:string = item.size
-        const isInCart = cartList.find(((x) => x.id === item.id && x.size === size))
-        console.log(isInCart)
-        if(isInCart){
-          console.log("Lo modifica")
-          const newCart = cartList.map((x) => {
-            if (x.id === item.id && x.size === size) {
-              return { ...x, quantity: quantity + x.quantity }
-            }
-            return x
-          })
-          setCartList(newCart)
-        } else {
-          console.log("Lo agrega")
-          setCartList([...cartList, {...item, quantity, size, key: `${item.size} - ${item.id}`}])
-          console.log(cartList, item, quantity, size)
-      }
-    })
-    console.log(cartList)
-    // handleOpenCart()
+  const addToCart = (product:ProductModel, quantity:number, size: string) => {
+    const isInCart = cartList.find(((x) => x.id === product.id && x.size === size))
+    if(isInCart){
+      setCartList((oldCart) => oldCart.map((x) => {
+        if (x.id === product.id && x.size === size) {
+          return { ...x, quantity: quantity + x.quantity }
+        }
+        return x
+      }))
+    } else {
+      setCartList((oldCart: ProductModel[]) => [...oldCart, {...product, quantity, size, key: `${size} - ${product.id}`}])
     }
+    handleOpenCart()
+  }
 
-    const deleteFromCart = (product:ProductModel) => {
+// Para agregar múltiples productos al carrito
+// Paso 1: Tener un array temporal dentro de la función
+// Paso 2: Realizar el setCartList 1 vez y ejecutarlo con el array temporal creado arriba
+  // const addMultipleToCart = (products:ProductModel[], quantity:number) => {
+  //     products.forEach((item:ProductModel) => {
+  //       let size:string = item.size
+  //       const isInCart = cartList.find(((x) => x.id === item.id && x.size === size))
+  //       console.log(isInCart)
+
+  //       if(isInCart){
+  //         console.log("Lo modifica")
+  //         const newCart = cartList.map((x) => {
+  //           if (x.id === item.id && x.size === size) {
+  //             return { ...x, quantity: quantity + x.quantity }
+  //           }
+  //           return x
+  //         })
+  //         setCartList(newCart)
+  //       } else {
+  //         console.log("Lo agrega")
+  //         setCartList([...cartList, {...item, quantity, size, key: `${item.size} - ${item.id}`}])
+  //       }
+  //       console.log(cartList)
+  //   })
+  //   // console.log(cartList.concat(...products))
+  //   // handleOpenCart()
+  // }
+
+  const deleteFromCart = (product:ProductModel) => {
       const productToDelete = cartList.find(((x) => x.key === product.key))
 
       productToDelete?.quantity === 1
         ? setCartList(cartList.filter((x) => x.key !== product.key))
         : setCartList(cartList.map((x) => x.key === product.key ? { ...product, quantity: product.quantity - 1 }: x))
-    }
+  }
 
-    const handleOpenCart = () => setOpenCart(true);
-    const handleCloseCart = () => setOpenCart(false);
-
-    const handlePurchase = (data:any, cartList:ProductModel[], cartTotal: number, priceDiscount: number) => {
+  const handlePurchase = (data:any, cartList:ProductModel[], cartTotal: number, priceDiscount: number) => {
       let order:any = {}
   
       order.comprador = {
@@ -174,9 +177,9 @@ export const CartContextProvider = ({children}:any) => {
       //     successfulPurchase()
       //     })
       // batch.commit()
-    }
+  }
 
-    useEffect(() => {
+  useEffect(() => {
       let cartTotal:number = 0
       let productTotal:number = 0
       cartList.forEach(product => {
@@ -184,26 +187,25 @@ export const CartContextProvider = ({children}:any) => {
           cartTotal += productTotal
       })
       setCartTotal(cartTotal)
-    }, [cartList])
+  }, [cartList])
 
-    return(
-      <CartContext.Provider value={{ 
-        cartList, 
-        addToCart, 
-        addMultipleToCart,
-        deleteFromCart, 
-        openCart, 
-        setOpenCart, 
-        payment,
-        setPayment,
-        handleOpenCart,
-        handleCloseCart,
-        cartTotal,
-        setCartTotal,
-        orderData,
-        setOrderData,
-        handlePurchase}}>
-        {children}
-      </CartContext.Provider>
-    )
+  return(
+    <CartContext.Provider value={{ 
+      cartList, 
+      addToCart, 
+      deleteFromCart, 
+      openCart, 
+      setOpenCart, 
+      payment,
+      setPayment,
+      handleOpenCart,
+      handleCloseCart,
+      cartTotal,
+      setCartTotal,
+      orderData,
+      setOrderData,
+      handlePurchase}}>
+      {children}
+    </CartContext.Provider>
+  )
 }
