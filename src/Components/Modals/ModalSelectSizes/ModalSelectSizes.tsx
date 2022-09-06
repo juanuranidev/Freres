@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from 'react';
 import { CartContext, ProductModel } from '../../Context/CartContext';
 import ProductSizes from '../../Pages/ProductDetail/ProductSizes/ProductSizes';
 import TertiaryButton from '../../Buttons/TertiaryButton/TertiaryButton';
-import QuaternaryButton from '../../Buttons/QuaternaryButton/QuaternaryButton';
 import './ModalSelectSizes.scss';
 
 interface ModalSelectSizesProps {
@@ -16,50 +15,41 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
   const [modalProduct, setModalProduct] = useState<number>(0)
   const [productsWithSizes, setProductWithSizes] = useState<ProductModel[]>([])
 
-  const { addMultipleToCart, addToCart, cartList } = useContext(CartContext)
+  const { addToCart } = useContext(CartContext)
 
   useEffect(() => {
     handleGetSize();
-  }, [modalProduct, productsWithSizes, size])
-
-  const handlePrevious = () => {
-    setSize("");
-    setModalProduct(prev => prev - 1);
-  }
+  }, [modalProduct, size])
   
-  const handleNext = () => {
-    setSize("");
-    setModalProduct(prev => prev + 1);
-  }
+  const handleNext = () => setModalProduct(prev => prev + 1);
+  const handlePrevious = () => setModalProduct(prev => prev - 1);
 
   const handleGetSize = () => {
-    const product = productsWithSizes.find((item:ProductModel) => item.id === modalProducts[modalProduct].id)
-    const size = product?.size
+    const exist = productsWithSizes.find((product:ProductModel) => product.id === modalProducts[modalProduct].id)
 
-    if(product && size !== "") {
-      setSize(product.size)
-    } else if(product && size === ""){
-      setProductWithSizes(productsWithSizes.filter((item:ProductModel) => item.id !== product.id))
-      setSize("")
+    if(exist?.size !== ""){
+      setSize(exist?.size || "");
+    } else{
+      setSize("");
+      setProductWithSizes(productsWithSizes.filter((product:ProductModel) => product.id !== modalProducts[modalProduct].id));
     }
   }
 
   const handleSetSize = (size:string) => {
-    const hasASize = productsWithSizes.find((product: ProductModel) => product.id === modalProducts[modalProduct].id)
+    const hasASize = productsWithSizes.some((product: ProductModel) => product.id === modalProducts[modalProduct].id);
+    setSize(size);
 
     if(hasASize){
-      return setProductWithSizes(productsWithSizes.map((product:ProductModel) => product.id === modalProducts[modalProduct].id ? { ...product, size: size } : product))
-    } else if(!hasASize) {
-      return setProductWithSizes([...productsWithSizes, {...modalProducts[modalProduct], size}])
+      return setProductWithSizes(productsWithSizes.map((product:ProductModel) => product.id === modalProducts[modalProduct].id ? { ...product, size: size } : product));
+    } else {
+      return setProductWithSizes([...productsWithSizes, {...modalProducts[modalProduct], size}]);
     }
   }
 
-  const handleAddToCart = async (product:ProductModel, size:string) => {
-    productsWithSizes.forEach((product: ProductModel) => {
-      addToCart?.(product, 1, product.size)
-    })
-  }
-
+  const handleAddToCart = () => {
+    productsWithSizes.forEach((product) => addToCart?.(product, 1, product.size));
+    close();
+  } 
 
   return (
     <div className={`modalSelectSizes ${open && 'modalSelectSizes_visible'} `}>
@@ -71,11 +61,11 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
       <img src={modalProducts[modalProduct].images[0]} className='modalSelectSizes_img' />
         <ProductSizes sizeType={modalProducts[modalProduct].format_of_size_chart} size={size} setSize={handleSetSize} />
       <div className='modalSelectSizes_div'>
-      <div className={`modalSelectSizes_div_actions ${modalProduct === 0 && 'first'}`}>
+      <div className={`modalSelectSizes_div_actions${modalProduct === 0 ? ' first' : ''}`}>
         {modalProduct !== 0 && <p onClick={handlePrevious} className='modalSelectSizes_div_actions_p'>ANTERIOR</p>}
         {modalProduct !== 2 && <p onClick={handleNext} className='modalSelectSizes_div_actions_p'>SIGUIENTE</p>}
       </div>
-        {modalProduct === 2 && <TertiaryButton text='AGREGAR AL CARRITO' onClick={() => handleAddToCart(modalProducts[modalProduct], size)} disabled={size === ""} />}
+        {modalProduct === 2 && <TertiaryButton text='AGREGAR AL CARRITO' onClick={handleAddToCart} disabled={!productsWithSizes.length} />}
       </div>
     </div>
   );

@@ -61,12 +61,6 @@
         @media(max-width: 992px){
             height: 4rem;
         }
-        @media(max-width: 576px){
-            height: 4.5rem;
-        }
-        @media(max-height: 700px){
-            height: 4.5rem;
-        }
     }
     .modalSelectSizes_div{
         display: flex;
@@ -87,11 +81,11 @@
             width: 50%;
             @media(max-width: 576px){
                 width: 100%;
-                margin: 1rem 0rem 1.5rem 0rem;
+                margin: 1rem 0rem 1rem 0rem;
             }
             @media(max-height: 700px){
                 width: 100%;
-                margin: 1rem 0rem 1.5rem 0rem;
+                margin: 1rem 0rem 1rem 0rem;
             }
             .modalSelectSizes_div_actions_p{
                 text-align: center;
