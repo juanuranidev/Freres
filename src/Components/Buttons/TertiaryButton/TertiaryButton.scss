@@ -21,3 +21,12 @@
         transition: all .1s linear;
     }
 }
+.tertiaryButton_disabled{
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    margin: 0rem 1rem;
+    border: 0.1rem solid #000000;
+    transition: all .15s linear; 
+    cursor: pointer;
+}

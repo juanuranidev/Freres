@@ -9,7 +9,7 @@ interface TertiaryButtonProps {
 
 const TertiaryButton = ({text, disabled, onClick}: TertiaryButtonProps) => {
   return (
-    <button onClick={onClick} className='tertiaryButton' disabled={disabled} >{text}</button>
+    <button onClick={onClick} className={`${disabled ? 'tertiaryButton_disabled' : 'tertiaryButton'}`} disabled={disabled} >{text}</button>
   );
 };
 
