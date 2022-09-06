@@ -114,6 +114,14 @@
                 margin: 0rem;
             }
         }
+        .tertiaryButton_disabled{
+            @media(max-width: 576px){
+                margin: 0rem;
+            }
+            @media(max-height: 700px){
+                margin: 0rem;
+            }
+        }
     }
 }
 

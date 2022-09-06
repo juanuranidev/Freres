@@ -14,7 +14,7 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
   const [size, setSize] = useState<string>("")
   const [modalProduct, setModalProduct] = useState<number>(0)
   const [productsWithSizes, setProductWithSizes] = useState<ProductModel[]>([])
-
+  console.log(modalProducts)
   const { addToCart } = useContext(CartContext)
 
   useEffect(() => {
@@ -63,9 +63,9 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
       <div className='modalSelectSizes_div'>
       <div className={`modalSelectSizes_div_actions${modalProduct === 0 ? ' first' : ''}`}>
         {modalProduct !== 0 && <p onClick={handlePrevious} className='modalSelectSizes_div_actions_p'>ANTERIOR</p>}
-        {modalProduct !== 2 && <p onClick={handleNext} className='modalSelectSizes_div_actions_p'>SIGUIENTE</p>}
+        {modalProduct !== modalProducts.length - 1 && <p onClick={handleNext} className='modalSelectSizes_div_actions_p'>SIGUIENTE</p>}
       </div>
-        {modalProduct === 2 && <TertiaryButton text='AGREGAR AL CARRITO' onClick={handleAddToCart} disabled={!productsWithSizes.length} />}
+        {modalProduct === modalProducts.length - 1 && <TertiaryButton text='AGREGAR AL CARRITO' onClick={handleAddToCart} disabled={!productsWithSizes.length} />}
       </div>
     </div>
   );
