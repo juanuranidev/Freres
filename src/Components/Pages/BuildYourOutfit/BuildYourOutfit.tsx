@@ -4,18 +4,24 @@ import { ProductModel } from '../../Context/CartContext';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import OutfitProducts from './OutfitProducts/OutfitProducts';
+import TertiaryButton from '../../Buttons/TertiaryButton/TertiaryButton';
+import ModalBackground from '../../Modals/ModalBackground/ModalBackground';
+import ModalSelectSizes from '../../Modals/ModalSelectSizes/ModalSelectSizes';
 import './BuildYourOutfit.scss';
 
 const BuildYourOutfit = () => {
-  const [ shirt, setShirt ] = useState<ProductModel>()
-  const [ hoodies, setHoodies ] = useState<ProductModel>()
-  const [ pants, setPants ] = useState<ProductModel>()
-  const [ shoes, setShoes ] = useState<ProductModel>()
-  const [ loader, setLoader ] = useState<boolean>(false)
-  const [ category, setCategory ] = useState<string>("")
-  const [ products, setProducts ] = useState<ProductModel[]>([])
-  const [ showItems, setShowItems ] = useState<boolean>(false)
-  const [ initialItems, setInitialItems] = useState<boolean>(false)
+  const [pants, setPants] = useState<ProductModel>()
+  const [shoes, setShoes] = useState<ProductModel>()
+  const [shirts, setShirts] = useState<ProductModel>()
+  const [loader, setLoader] = useState<boolean>(false)
+  const [hoodies, setHoodies] = useState<ProductModel>()
+  const [category, setCategory] = useState<string>("")
+  const [products, setProducts] = useState<ProductModel[]>([])
+  const [showItems, setShowItems] = useState<boolean>(false)
+  const [initialItems, setInitialItems] = useState<boolean>(false)
+  const [modalProducts, setModalProducts] = useState<any>([])
+  const [modalBackground, setModalBackground] = useState<boolean>(false)
+  const [modalSelectSizes, setModalSelectSizes] = useState<boolean>(false)
 
   useEffect(() => {
     handleGetInitialItems()
@@ -23,7 +29,7 @@ const BuildYourOutfit = () => {
 
   useEffect(() => {
     if (initialItems) {
-      setShirt(products.find((product: ProductModel) => product.category === 'remeras'))
+      setShirts(products.find((product: ProductModel) => product.category === 'remeras'))
       setPants(products.find((product: ProductModel) => product.category === 'pantalones'))
       setHoodies(products.find((product: ProductModel) => product.category === 'camperasybuzos'))
       setShoes(products.find((product: ProductModel) => product.category === 'calzado'));
@@ -65,7 +71,7 @@ const BuildYourOutfit = () => {
 
   const handleSetItem = (product: ProductModel) => {
     if(category === "remeras"){
-      setShirt(product)
+      setShirts(product)
     } else if(category === "camperasybuzos"){
       setHoodies(product)
     } else if(category === "pantalones"){
@@ -77,6 +83,18 @@ const BuildYourOutfit = () => {
     setInitialItems(false)
   }
 
+  const handleOpenModalSizes = () => {
+    setModalProducts([...modalProducts, hoodies, shirts, pants, shoes])
+    setModalSelectSizes(true)
+    setModalBackground(true)
+  }
+
+  const handleCloseModalSizes = () => {
+    setModalProducts([])
+    setModalSelectSizes(false)
+    setModalBackground(false)
+  }
+
   return (
     <motion.div
       initial={{ x:-100, opacity: 0 }} 
@@ -85,8 +103,8 @@ const BuildYourOutfit = () => {
       className="build_your_outfit">
       <div className='products'>
         <div className='products_div'>
-          <button className={`products_div_button ${category === "camperasybuzos" && 'selected'}`} onClick={() => handleShowItems("camperasybuzos")}>Camperas y Buzos</button>
           <button className={`products_div_button ${category === "remeras" && 'selected'}`} onClick={() => handleShowItems("remeras")}>Remeras</button>
+          <button className={`products_div_button ${category === "camperasybuzos" && 'selected'}`} onClick={() => handleShowItems("camperasybuzos")}>Camperas y Buzos</button>
           <button className={`products_div_button ${category === "pantalones" && 'selected'}`} onClick={() => handleShowItems("pantalones")}>Pantalones y Shorts</button>
           <button className={`products_div_button ${category === "calzado" && 'selected'}`} onClick={() => handleShowItems("calzado")}>Calzado</button>
         </div>
@@ -101,9 +119,9 @@ const BuildYourOutfit = () => {
           })
         )}
         <div className='outfit_div'>
-        {shirt && (
-          <Link to={`/product/${shirt.id}`}>
-            <img className='outfit_img upper' src={shirt.images[0]} alt="Remera" />
+        {shirts && (
+          <Link to={`/product/${shirts.id}`}>
+            <img className='outfit_img upper' src={shirts.images[0]} alt="Remera" />
           </Link>
         )}
         {hoodies && (
@@ -120,7 +138,10 @@ const BuildYourOutfit = () => {
         <Link to={`/product/${shoes.id}`}>
           <img className='outfit_img bottom' src={shoes?.images[0]} alt="Calzado" />
         </Link>)}
+        <TertiaryButton text="AGREGAR AL CARRITO" onClick={handleOpenModalSizes} />
       </div>
+      <ModalBackground open={modalBackground} close={handleCloseModalSizes} />
+      {modalSelectSizes && <ModalSelectSizes open={modalSelectSizes} close={handleCloseModalSizes} modalProducts={modalProducts} />}
     </motion.div>
   );
 }
