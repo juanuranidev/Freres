@@ -25,55 +25,16 @@ function App() {
       <NewsletterContextProvider>
         <BrowserRouter>
           <ScrollToTop/>
+          <Navbar/>
           <Routes>
-            <Route path='/' element={
-              <React.Fragment>
-                <Navbar/>
-                <Main/>
-              </React.Fragment>}>
-            </Route>
-            <Route path='/shop/:idCategory' element={
-              <React.Fragment>
-                <Navbar/>
-                <Shop/>
-              </React.Fragment>}>
-            </Route>
-            <Route path='/essential_outfits' element={
-              <React.Fragment>
-                <Navbar/>
-                <EssentialOutfits/>
-              </React.Fragment>}>
-            </Route>
-            <Route path='/about' element={
-              <React.Fragment>
-                <Navbar/>
-                <About/>
-              </React.Fragment>}>
-            </Route>
-            <Route path='/product/:idProduct' element={
-              <React.Fragment>
-                <Navbar/>
-                <ProductFinder/>
-              </React.Fragment>}>
-            </Route>
-            <Route path='/outfit/:idOutfit' element={
-              <React.Fragment>
-                <Navbar/>
-                <EssentialOutfitDetail/>
-              </React.Fragment>}>
-            </Route>
-            <Route path='/build-your-outfit' element={
-              <React.Fragment>
-                <Navbar/>
-                <BuildYourOutfit/>
-              </React.Fragment>}>
-            </Route>
-            <Route path='/secret' element={
-              <React.Fragment>
-                <Navbar/>
-                <SecretDiscount/>
-              </React.Fragment>}>
-            </Route>
+            <Route path='/' element={<Main/>}/>
+            <Route path='/shop/:idCategory' element={<Shop/>}/>
+            <Route path='/essential_outfits' element={<EssentialOutfits/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/product/:idProduct' element={<ProductFinder/>}/>
+            <Route path='/outfit/:idOutfit' element={<EssentialOutfitDetail/>}/>
+            <Route path='/build-your-outfit' element={<BuildYourOutfit/>}/>
+            <Route path='/secret' element={<SecretDiscount/>}/>
             <Route path='/checkout' element={<Checkout/>}/>
           </Routes>
           <Footer/>
