@@ -84,7 +84,7 @@ const BuildYourOutfit = () => {
   }
 
   const handleOpenModalSizes = () => {
-    setModalProducts([...modalProducts, hoodies, shirts, pants, shoes])
+    setModalProducts([...modalProducts, shirts, hoodies, pants, shoes])
     setModalSelectSizes(true)
     setModalBackground(true)
   }
