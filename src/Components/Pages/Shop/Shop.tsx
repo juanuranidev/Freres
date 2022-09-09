@@ -48,10 +48,8 @@ const Shop = () => {
     handleGetProducts();
   }, [idCategory]);
 
-  if(loader){
-    return <Loader/>
-  }
-
+  if(loader) return <Loader/>
+  
   return (
     <section className='shop'>
       <div className='shop_categories'>
