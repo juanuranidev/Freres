@@ -23,16 +23,20 @@ function CustomLink({ children, to }: LinkProps) {
 }
 
 const Shop = () => {
+  const {idCategory} = useParams();
   const [data, setData] = useState<ProductModel[]>([]);
   const [loader, setLoader] = useState<boolean>(true);
-  const {idCategory} = useParams();
 
   useEffect(() => {
+    handleGetProducts();
+  }, [idCategory]);
+
+  const handleGetProducts = () => {
     setLoader(true)
     
     const dataBase = getFirestore();
-    
     let queryCollection
+
     idCategory==="all"
     ? queryCollection = query(collection(dataBase, 'products'))
     : queryCollection = query(collection(dataBase, 'products'), where('category', '==', idCategory))
@@ -40,9 +44,9 @@ const Shop = () => {
     getDocs(queryCollection)
       .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
       .catch(err => console.log(err))
-      .finally(() => setLoader(false))
-  }, [idCategory]);
-
+    
+      setLoader(false)
+  }
 
   if(loader){
     return <Loader/>
