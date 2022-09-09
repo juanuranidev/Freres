@@ -27,11 +27,7 @@ const Shop = () => {
   const [data, setData] = useState<ProductModel[]>([]);
   const [loader, setLoader] = useState<boolean>(true);
 
-  useEffect(() => {
-    handleGetProducts();
-  }, [idCategory]);
-
-  const handleGetProducts = () => {
+  const handleGetProducts = async () => {
     setLoader(true)
     
     const dataBase = getFirestore();
@@ -41,12 +37,16 @@ const Shop = () => {
     ? queryCollection = query(collection(dataBase, 'products'))
     : queryCollection = query(collection(dataBase, 'products'), where('category', '==', idCategory))
     
-    getDocs(queryCollection)
+    await getDocs(queryCollection)
       .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
       .catch(err => console.log(err))
     
-      setLoader(false)
+    setLoader(false)
   }
+
+  useEffect(() => {
+    handleGetProducts();
+  }, [idCategory]);
 
   if(loader){
     return <Loader/>

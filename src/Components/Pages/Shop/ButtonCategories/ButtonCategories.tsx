@@ -47,6 +47,6 @@ const ButtonCategories = () => {
       </AnimatePresence>
     </div>
   );
-};
+}
 
 export default ButtonCategories;
