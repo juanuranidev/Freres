@@ -14,7 +14,7 @@ interface EssentialOutfitProps {
     handleOpenModalSizes: () => void;
 }
 
-const EssentialOutfit = ({name, products, link, image, imageDirection, handleOpenModalSizes}: EssentialOutfitProps) => {
+const EssentialOutfit = ({name, products, image, link, imageDirection, handleOpenModalSizes}: EssentialOutfitProps) => {
     return (
     <div className={`essentialOutfit ${imageDirection === "left" && 'left'}`}>
         <div className='essentialOutfit_products'>

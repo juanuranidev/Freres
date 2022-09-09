@@ -57,9 +57,9 @@
         margin-top: 5rem;     
         button{
             background-color: #ffffff;
-        }   
-        button:hover{
-            background-color: #000000;
+            &:hover{
+                background-color: #000000;
+            }
         }
     }
     .essentialOutfit_image{
@@ -76,14 +76,12 @@
         }
     }
 }
-
 .left{
     flex-direction: row-reverse;
     @media(max-width: 992px){
         flex-direction: column-reverse;
     }
-}
-
-.left:last-child{
-    margin: 0rem;
+    &:last-child{
+        margin: 0rem;
+    }
 }

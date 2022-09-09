@@ -22,6 +22,7 @@ const EssentialOutfits = () => {
   }
 
   const handleCloseModalSizes = () => {
+    setModalProducts([])
     setModalSelectSizes(false)
     setModalBackground(false)
   }
