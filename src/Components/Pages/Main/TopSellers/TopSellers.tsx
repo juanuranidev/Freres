@@ -10,6 +10,8 @@ const TopSellers = () => {
 
   if(loader) return <Loader/>
 
+  if(!products.length) return null
+
   return (
     <section className='topSellers'>
       <h2 className='topSellers_h2'>TOP SELLERS</h2>
