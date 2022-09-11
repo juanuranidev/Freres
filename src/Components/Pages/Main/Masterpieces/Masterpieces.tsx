@@ -10,6 +10,8 @@ const Masterpieces = () => {
 
   if(loader) return <Loader/>
 
+  if(!products.length) return null
+
   return (
     <section className='masterpieces'>
       <h2 className='masterpieces_h2'>MASTERPIECES</h2>
