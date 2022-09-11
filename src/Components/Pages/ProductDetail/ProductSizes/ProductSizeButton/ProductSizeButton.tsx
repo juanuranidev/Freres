@@ -10,7 +10,7 @@ interface ProductSizeButtonProps{
 const ProductSizeButton = ({productSize, size, setSize}: ProductSizeButtonProps) => {
     
   return (
-    <button onClick={() => setSize(productSize)} className={size===productSize ?'productSizes_button active' :'productSizes_button'}>{productSize}</button>
+    <button onClick={() => setSize(productSize)} className={size===productSize ? 'productSizes_button active' : 'productSizes_button'}>{productSize}</button>
   );
 }
 

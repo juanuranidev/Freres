@@ -19,10 +19,9 @@ const ProductSizes = ({sizeType, size, setSize}: ProductSizesProps) => {
                     <ProductSizeButton productSize="42" size={size} setSize={setSize} />
                     <ProductSizeButton productSize="44" size={size} setSize={setSize} />
                 </div>
-                {size
-                &&  <div className='productSizes_clear'>
-                        <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
-                    </div>}
+                {size   &&  <div className='productSizes_clear'>
+                                <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
+                            </div>}
             </div>
         )
     }    
@@ -37,10 +36,9 @@ const ProductSizes = ({sizeType, size, setSize}: ProductSizesProps) => {
                     <ProductSizeButton productSize="L" size={size} setSize={setSize} />
                     <ProductSizeButton productSize="XL" size={size} setSize={setSize} />
                 </div>
-                {size
-                &&  <div className='productSizes_clear'>
-                        <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
-                    </div>}
+                {size   &&  <div className='productSizes_clear'>
+                                <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
+                            </div>}
             </div>
         )
     }    
@@ -49,10 +47,9 @@ const ProductSizes = ({sizeType, size, setSize}: ProductSizesProps) => {
         return (
             <div className='productSizes unique'>
                 <ProductSizeButton productSize="Talle único" size={size} setSize={setSize} />
-                {size
-                &&  <div className='productSizes_clear'>
-                        <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
-                    </div>}
+                {size   &&  <div className='productSizes_clear'>
+                                <p className='productSizes_clear_p' onClick={() => setSize("")}>LIMPIAR</p>
+                            </div>}
             </div>
         )
     }    

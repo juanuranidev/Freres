@@ -14,7 +14,7 @@ const ProductTextContent = ({name, price, description}:ProductTextContentProps) 
   productDescription.pop();
 
   return (
-    <>
+    <React.Fragment>
       <h1 className='productDetail_content_h1'>{name}</h1>
       <p className='productDetail_content_p'>${price}</p>
       <div className='productDetail_content_description'>
@@ -24,7 +24,7 @@ const ProductTextContent = ({name, price, description}:ProductTextContentProps) 
         <img className='productDetail_content_shipping_img' src={Shipping} alt="Imágen de un camión de envío"/>
         <p className='productDetail_content_shipping_p'>Envío gratis en compras mayores a $12.000 y express (sólo CABA) en menos de 48hs hábiles</p>
       </div>
-    </>
+    </React.Fragment>
   );
 }
 

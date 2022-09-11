@@ -16,7 +16,7 @@ const SimilarProducts = ({product, products}: SimilarProductsProps) => {
   }, [product])
 
   return (
-    <>
+    <React.Fragment>
       {similarProducts && 
         <div className='similarProducts'>
           <h2 className='similarProducts_h2'>TAMBIÉN TE PUEDE GUSTAR</h2>
@@ -24,7 +24,7 @@ const SimilarProducts = ({product, products}: SimilarProductsProps) => {
             <ProductList products={similarProducts} />
           </div>
         </div>}
-    </>
+    </React.Fragment>
   );
 }
 

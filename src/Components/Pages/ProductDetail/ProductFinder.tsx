@@ -31,9 +31,11 @@ const ProductFinder = () => {
     });
   };
 
+  if (loader) return <Loader />;
+
   return (
     <React.Fragment>
-      {loader ? <Loader /> : <ProductDetail product={product!} />}
+      <ProductDetail product={product!} />
     </React.Fragment>
   );
 };
