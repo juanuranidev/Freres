@@ -17,15 +17,18 @@ const Albums = () => {
         <Album
           img={AlbumImage1}
           h3='DIGITAL DRUGLORD'
-          link='https://open.spotify.com/album/0a8WSH44kA5hR4MQ6LyFDB' />
+          link='https://open.spotify.com/album/0a8WSH44kA5hR4MQ6LyFDB'
+        />
         <Album
           img={AlbumImage2}
           h3='EVERYTHING MEANS NOTHING'
-          link='https://open.spotify.com/album/4UxlLk460BnmQlRV3WiORh' />
+          link='https://open.spotify.com/album/4UxlLk460BnmQlRV3WiORh'
+        />
         <Album
           img={AlbumImage3}
           h3='TICKETS TO MY DOWNFALL'
-          link='https://open.spotify.com/album/57lgFncHBYu5E3igZnuCJK' />
+          link='https://open.spotify.com/album/57lgFncHBYu5E3igZnuCJK'
+        />
       </div>
     </section>
   );
