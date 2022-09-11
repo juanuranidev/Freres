@@ -28,6 +28,7 @@ const EssentialOutfits = () => {
   }
   
   if(loader) return <Loader/>
+  // To do: Page for no products
 
   return (
     <div className='essentialOutfits'>
