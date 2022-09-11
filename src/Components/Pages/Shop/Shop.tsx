@@ -38,8 +38,8 @@ const Shop = () => {
     : queryCollection = query(collection(dataBase, 'products'), where('category', '==', idCategory))
     
     await getDocs(queryCollection)
-      .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
-      .catch(err => console.log(err))
+            .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}) as ProductModel)))
+            .catch(err => console.log(err))
     
     setLoader(false)
   }
@@ -49,7 +49,8 @@ const Shop = () => {
   }, [idCategory]);
 
   if(loader) return <Loader/>
-  
+  // To do: Page for no products
+
   return (
     <section className='shop'>
       <div className='shop_categories'>
