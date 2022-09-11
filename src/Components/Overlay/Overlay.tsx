@@ -9,17 +9,15 @@ interface OverlayProps {
 }
 
 const Overlay = ({openMenu, handleCloseMenu}: OverlayProps) => {
-  const { activePopup, setActivePopup } = useContext(NewsletterContext)
   const { openCart, handleCloseCart } = useContext(CartContext)
 
   const handleClickOutside = () => {
-    setActivePopup?.(false)
     handleCloseMenu?.()
     handleCloseCart?.()
   }
 
   return (
-    <div className={activePopup || openMenu || openCart ? 'overlay visible' : 'overlay'} onClick={handleClickOutside} />
+    <div className={openMenu || openCart ? 'overlay visible' : 'overlay'} onClick={handleClickOutside} />
   )
 }
 
