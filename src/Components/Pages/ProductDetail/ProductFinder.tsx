@@ -1,36 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import { getFirestore, doc, getDoc} from 'firebase/firestore';
-import { ProductModel } from '../../Context/CartContext';
-import { useParams } from 'react-router-dom';
-import Loader from '../../Loader/Loader';
-import ProductDetail from './ProductDetail/ProductDetail';
+import React, { useState, useEffect } from "react";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { ProductModel } from "../../Context/CartContext";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import Loader from "../../Loader/Loader";
+import ProductDetail from "./ProductDetail/ProductDetail";
 
 const ProductFinder = () => {
-  const [product, setProduct] = useState<ProductModel>();
   const [loader, setLoader] = useState<boolean>(true);
-  
-  const { idProduct }:any = useParams();
-  
+  const [product, setProduct] = useState<ProductModel>();
+
+  const navigate = useNavigate();
+  const { idProduct }: any = useParams();
+
   useEffect(() => {
-    setLoader(true)
-
-    const dataBase = getFirestore()
-    const queryProd = doc (dataBase, 'products', idProduct)
-
-    getDoc(queryProd)
-    .then(resp => setProduct({id: resp.id, ...resp.data()} as ProductModel))
-    .catch(err => console.log(err))
-    .finally(() => setLoader(false))
-
+    handleFindProduct();
   }, [idProduct]);
 
+  const handleFindProduct = async () => {
+    const dataBase = getFirestore();
+    const queryProd = doc(dataBase, "products", idProduct);
+
+    await getDoc(queryProd).then((resp) => {
+      if (resp.data()) {
+        setProduct({ id: resp.id, ...resp.data() } as ProductModel);
+        setLoader(false);
+      } else {
+        navigate("/");
+      }
+    });
+  };
+
   return (
-    <div>
-      {loader
-      ? <Loader/>
-      : <ProductDetail product={product!}/>}
-    </div>
+    <React.Fragment>
+      {loader ? <Loader /> : <ProductDetail product={product!} />}
+    </React.Fragment>
   );
-}
+};
 
 export default ProductFinder;
