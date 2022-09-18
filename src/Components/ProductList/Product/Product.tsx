@@ -14,7 +14,7 @@ const Product = (product: ProductModel) => {
       initial={{x: -100, opacity: 0}}
       transition={{ ease: "linear", duration: 0.25 }}>
       <Link to={`/product/${product.id}`}>
-        <img src={product.images[0]} className='product_img' alt="imágen de producto"/>
+        <img src={product.images[0]} className='product_img' alt="imágen de producto" loading="lazy"/>
       </Link>
       <div className='product_div'>
         <h2 className='product_div_h2'>{product.name}</h2>
