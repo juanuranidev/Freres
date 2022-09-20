@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './NotFound.scss';
 
 const NotFound = () => {
   return (
-    <section>
+    <section className='notFound'>
       
     </section>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;
