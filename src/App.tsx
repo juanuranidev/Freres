@@ -9,6 +9,7 @@ import About from './Components/Pages/About/About';
 import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar';
 import Checkout from './Components/Pages/Checkout/Checkout';
+import NotFound from './Components/Pages/NotFound/NotFound';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import ProductFinder from './Components/Pages/ProductDetail/ProductFinder';
 import SecretDiscount from './Components/Pages/SecretDiscount/SecretDiscount';
@@ -36,6 +37,7 @@ function App() {
             <Route path='/build-your-outfit' element={<BuildYourOutfit/>}/>
             <Route path='/secret' element={<SecretDiscount/>}/>
             <Route path='/checkout' element={<Checkout/>}/>
+            <Route path='*' element={<NotFound/>}/>
           </Routes>
           <Footer/>
         </BrowserRouter>
