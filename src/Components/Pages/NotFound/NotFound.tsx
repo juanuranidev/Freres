@@ -5,6 +5,7 @@ const NotFound = () => {
   return (
     <section className='notFound'>
       <h2>PAGINA NO ENCONTRADA</h2>
+      <button>Volver</button>
     </section>
   );
 };
