@@ -4,10 +4,8 @@ import ContentProduct from '../Content/ContentProduct/ContentProduct';
 import './OrderInfo.scss';
 
 const OrderInfo = () => {
+    const { orderData } = useContext(CartContext);
 
-    const { cartList, orderData } = useContext(CartContext);
-    console.log(orderData)
-    console.log(orderData?.productos)
     return (
       <div className='orderInfo'>
         <div className='orderInfo_products'>
