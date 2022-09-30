@@ -49,7 +49,6 @@ const Shop = () => {
   }, [idCategory]);
 
   if(loader) return <Loader/>
-  // To do: Page for no products
 
   return (
     <section className='shop'>
