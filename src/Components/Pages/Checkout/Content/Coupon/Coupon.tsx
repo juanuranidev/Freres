@@ -49,7 +49,6 @@ const Coupon = ({priceDiscount, setPriceDiscount}:CouponProps) => {
     )
   }
 
-
   return (
     <form className='coupon_form' onSubmit={(e) => handleSubmit(e)}>
       <input
