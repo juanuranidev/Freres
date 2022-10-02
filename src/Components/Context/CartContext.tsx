@@ -80,7 +80,7 @@ export const CartContextProvider = ({children}:any) => {
     handleOpenCart()
   }
 
-// Para agregar múltiples productos al carrito
+// Función para agregar múltiples productos al carrito
 // Paso 1: Tener un array temporal dentro de la función
 // Paso 2: Realizar el setCartList 1 vez y ejecutarlo con el array temporal creado arriba
   // const addMultipleToCart = (products:ProductModel[], quantity:number) => {
