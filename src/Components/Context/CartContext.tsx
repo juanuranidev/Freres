@@ -88,7 +88,7 @@ export const CartContextProvider = ({children}:any) => {
   //       let size:string = item.size
   //       const isInCart = cartList.find(((x) => x.id === item.id && x.size === size))
   //       console.log(isInCart)
-
+  // 
   //       if(isInCart){
   //         console.log("Lo modifica")
   //         const newCart = cartList.map((x) => {
