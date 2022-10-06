@@ -103,7 +103,6 @@ export const CartContextProvider = ({children}:any) => {
   //       }
   //       console.log(cartList)
   //   })
-  //   // console.log(cartList.concat(...products))
   //   // handleOpenCart()
 // }
 
