@@ -104,7 +104,7 @@ export const CartContextProvider = ({children}:any) => {
   //       console.log(cartList)
   //   })
   //   // handleOpenCart()
-// }
+  // }
 
   const deleteFromCart = (product:ProductModel) => {
       const productToDelete = cartList.find(((x) => x.key === product.key))
