@@ -1,16 +1,19 @@
 import React, { useContext } from 'react';
 import { CartContext, ProductModel } from '../../../Context/CartContext';
+import { Link } from 'react-router-dom';
 import './CartItem.scss';
 
 const CartItem = ({products}:any) => {
-  const { deleteFromCart } = useContext(CartContext)
+  const { deleteFromCart, handleCloseCart } = useContext(CartContext)
   
   return (
     <React.Fragment>
       {products.map((product:ProductModel) =>
       <div className='cartItem' key={product.key}>
         <div className='cartItem_image'>
+        <Link to={`/product/${product.id}`} onClick={handleCloseCart}>
           <img className='cartItem_image_img' src={product.images[0]} alt="Imágen del producto del carrito"/>
+        </Link>
         </div>
         <div className='cartItem_content'>
           <div className='cartItem_content_div'>
