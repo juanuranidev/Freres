@@ -19,7 +19,7 @@ const CartItem = ({products}:any) => {
           <div className='cartItem_content_div'>
             <h3 className='cartItem_content_div_h3'>{product.name}</h3>
             <p className='cartItem_content_div_p'>Talle: {product.size}</p>
-            <p className='cartItem_content_div_p'>{product.quantity} x ${product.price}</p>
+            <p className='cartItem_content_div_p'>{product.quantity} x ${(product.price).toLocaleString("ES-ar")}</p>
           </div>
           <div className='cartItem_content_delete'>
             <p className='cartItem_content_delete_p' onClick={() => deleteFromCart?.(product)}>Eliminar</p>

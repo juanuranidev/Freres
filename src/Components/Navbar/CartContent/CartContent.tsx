@@ -23,7 +23,7 @@ const CartContent = () => {
               <CartItem products={cartList}/>
             </div>
             <div className='cart_subtotal'>
-              <p className='cart_subtotal_p'><b>SUBTOTAL:</b> ${cartTotal}</p>
+              <p className='cart_subtotal_p'><b>SUBTOTAL:</b> ${(cartTotal).toLocaleString("ES-ar")}</p>
             </div>
             <div className='cart_checkout' onClick={handleCloseCart}>
               <SecondaryButton link="/checkout" text="FINALIZAR COMPRA" onClick={() => setPayment?.(false)}/>
