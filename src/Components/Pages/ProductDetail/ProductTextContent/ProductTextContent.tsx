@@ -16,7 +16,7 @@ const ProductTextContent = ({name, price, description}:ProductTextContentProps) 
   return (
     <React.Fragment>
       <h1 className='productDetail_content_h1'>{name}</h1>
-      <p className='productDetail_content_p'>${price}</p>
+      <p className='productDetail_content_p'>${(price).toLocaleString("ES-ar")}</p>
       <div className='productDetail_content_description'>
         {productDescription.map((sentence:string, index:number) => <p className='productDetail_content_description_p' key={index} >{sentence}.</p>)}
       </div>

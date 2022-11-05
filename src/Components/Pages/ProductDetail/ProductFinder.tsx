@@ -13,23 +13,25 @@ const ProductFinder = () => {
   const navigate = useNavigate();
   const { idProduct }: any = useParams();
 
-  useEffect(() => {
-    handleFindProduct();
-  }, [idProduct]);
-
   const handleFindProduct = async () => {
+    setLoader(true)
+
     const dataBase = getFirestore();
     const queryProd = doc(dataBase, "products", idProduct);
 
     await getDoc(queryProd).then((resp) => {
       if (resp.data()) {
         setProduct({ id: resp.id, ...resp.data() } as ProductModel);
-        setLoader(false);
       } else {
         navigate("/");
       }
     });
+    setLoader(false);
   };
+
+  useEffect(() => {
+    handleFindProduct();
+  }, [idProduct]);
 
   if (loader) return <Loader />;
 

@@ -18,7 +18,7 @@ const Product = (product: ProductModel) => {
       </Link>
       <div className='product_div'>
         <h2 className='product_div_h2'>{product.name}</h2>
-        <p className='product_div_p'>${product.price}</p>
+        <p className='product_div_p'>${(product.price).toLocaleString("ES-ar")}</p>
       </div>
       <div className='product_sizes'>      
         <p className='product_sizes_p'>AGREGADO RÁPIDO</p>
