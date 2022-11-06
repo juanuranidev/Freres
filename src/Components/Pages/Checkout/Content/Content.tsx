@@ -24,18 +24,18 @@ const Content = ({priceDiscount, setPriceDiscount}: ContentProps) => {
       </div>
       <div className='content_subTotal'>
         {priceDiscount > 0
-        ? <p className='content_subTotal_withDiscount'>Subtotal: ${(cartTotal).toLocaleString("ar")}</p>
-        : <p className='content_subTotal_p'>Subtotal: ${(cartTotal).toLocaleString("ar")}</p>}
-        {priceDiscount > 0 && priceDiscount >= 12000 && <p className='content_subTotal_discount'>Subtotal: ${(priceDiscount).toLocaleString("ar")}</p>}
-        {priceDiscount > 0 && priceDiscount < 12000 && <p className='content_subTotal_discount'>Subtotal: ${(priceDiscount - 750).toLocaleString("ar")}</p>}        
+        ? <p className='content_subTotal_withDiscount'>Subtotal: ${(cartTotal).toLocaleString("ES-ar")}</p>
+        : <p className='content_subTotal_p'>Subtotal: ${(cartTotal).toLocaleString("ES-ar")}</p>}
+        {priceDiscount > 0 && priceDiscount >= 12000 && <p className='content_subTotal_discount'>Subtotal: ${(priceDiscount).toLocaleString("ES-ar")}</p>}
+        {priceDiscount > 0 && priceDiscount < 12000 && <p className='content_subTotal_discount'>Subtotal: ${(priceDiscount - 750).toLocaleString("ES-ar")}</p>}        
         {cartTotal >= 12000
         ? <p className='content_subTotal_p'>¡Envío gratis!</p>
         : <p className='content_subTotal_p'>Envío: $750</p>}
       </div>
       <div className='content_total'>
         {priceDiscount > 0 && <p>Total: ${(priceDiscount).toLocaleString("ar")}</p>}
-        {cartTotal < 12000 && priceDiscount === 0 && <p>Total: ${(cartTotal + 750).toLocaleString("ar")}</p>}
-        {cartTotal >= 12000 && priceDiscount === 0 && <p>Total: ${(cartTotal).toLocaleString("ar")}</p>}
+        {cartTotal < 12000 && priceDiscount === 0 && <p>Total: ${(cartTotal + 750).toLocaleString("ES-ar")}</p>}
+        {cartTotal >= 12000 && priceDiscount === 0 && <p>Total: ${(cartTotal).toLocaleString("ES-ar")}</p>}
       </div>
       <MercadoPago/>
     </div>
