@@ -14,7 +14,7 @@ const CartContent = () => {
       </div>
       <div className='cart_shipping'>
         {(12000 - cartTotal) >= 0
-        ? <p className='cart_shipping_p'>${12000 - cartTotal} más para tener envío gratis</p>
+        ? <p className='cart_shipping_p'>${(12000 - cartTotal).toLocaleString("ES-ar")} más para tener envío gratis</p>
         : <p className='cart_shipping_p'>¡Tenés envío gratis!</p>}
       </div>
         {(cartList.length??0)>0
