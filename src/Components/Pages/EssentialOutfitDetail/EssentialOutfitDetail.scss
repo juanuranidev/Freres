@@ -1,84 +1,85 @@
-.essentialOutfitDetail{
-    padding: 8rem 0rem 0rem 0rem;
-    background-color: #eeeeee;
-    text-align: center;
-    // background-image: url('../../../Assets/EssentialOutfitDetail/EssentialOutfitDetail.png');
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    .essentialOutfitDetail_content{
-        display: flex;
-        // flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        margin: auto;
-        .essentialOutfitDetail_content_div{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex-wrap: wrap;
-            padding-bottom: 5rem;
-            width: 100%;
-            height: 100%;
-            .essentialOutfitDetail_content_h1{
-                opacity: 0.95;
-                text-transform: uppercase;
-                font-size: 2rem;
-                margin-bottom: -1rem;
-                z-index: 1;
-                background-color: #000000;
-                color: #ffffff;
-                padding: 1rem;
-            }
-            .essentialOutfitDetail_content_img{
-                opacity: 0.95;
-                width: 50rem;
-                height: 50rem;
-                box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-                @media(max-width: 992px){
-                    width: 30rem;
-                    height: 30rem;
-                }
-                @media(max-width: 576px){
-                    width: 90%;
-                    height: 100%;
-                }
-            }
-            
+.essentialOutfitDetail {
+  padding: 8rem 0rem 0rem 0rem;
+  background-color: #eeeeee;
+  text-align: center;
+  // background-image: url('../../../Assets/EssentialOutfitDetail/EssentialOutfitDetail.png');
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .essentialOutfitDetail_content {
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: auto;
+    .essentialOutfitDetail_content_div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-bottom: 5rem;
+      width: 70%;
+      height: 100%;
+      .essentialOutfitDetail_content_h1 {
+        opacity: 0.95;
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin-bottom: -1rem;
+        z-index: 1;
+        background-color: #000000;
+        color: #ffffff;
+        padding: 1rem;
+      }
+      .essentialOutfitDetail_content_img {
+        opacity: 0.95;
+        width: 90%;
+        // height: 70rem;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        @media (max-width: 992px) {
+          width: 30rem;
+          height: 30rem;
         }
+        @media (max-width: 576px) {
+          width: 90%;
+          height: 100%;
+        }
+      }
     }
-    .essentialOutfitDetail_content_products{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-        padding-bottom: 5rem;
-        .product{
-            // border-top: 0.12rem solid #ffffff;
-            width: 20rem;
-            border: 0.1rem solid #ffffff;
-            box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 10%);
-            padding: 0rem;
-            &:first-child{
-                // border-left: 0.12rem solid #ffffff;
-            }
-            &:last-child{
-                @media(max-width: 992px){
-                    // border-left: 0.12rem solid #ffffff;
-                }
-            }
-            @media(max-width: 992px){
-                width: 50%;
-            }
-            @media(max-width: 576px){
-                width: 100%;
-                // border-left: 0.12rem solid #ffffff;
-            }
+  }
+  .essentialOutfitDetail_content_products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 30%;
+    flex-wrap: wrap;
+    padding-bottom: 5rem;
+    .product {
+      // border-top: 0.12rem solid #ffffff;
+      width: 90%;
+      border: 0.1rem solid #ffffff;
+      box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 10%);
+      padding: 0rem;
+      &:first-child {
+        // border-left: 0.12rem solid #ffffff;
+      }
+      &:last-child {
+        @media (max-width: 992px) {
+          // border-left: 0.12rem solid #ffffff;
         }
-        .essentialOutfitDetail_content_img{
-            width: 24rem;
-        }
+      }
+      @media (max-width: 992px) {
+        width: 50%;
+      }
+      @media (max-width: 576px) {
+        width: 100%;
+        // border-left: 0.12rem solid #ffffff;
+      }
     }
+    .essentialOutfitDetail_content_img {
+      width: 24rem;
+    }
+  }
 }
