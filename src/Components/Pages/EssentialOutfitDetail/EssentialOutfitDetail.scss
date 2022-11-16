@@ -9,10 +9,13 @@
   background-size: cover;
   .essentialOutfitDetail_content {
     display: flex;
-    // flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     margin: auto;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      // border-left: 0.12rem solid #ffffff;
+    }
     .essentialOutfitDetail_content_div {
       display: flex;
       flex-direction: column;
@@ -25,7 +28,7 @@
         opacity: 0.95;
         text-transform: uppercase;
         font-size: 2rem;
-        margin-bottom: -1rem;
+        margin-bottom: 2.5rem;
         z-index: 1;
         background-color: #000000;
         color: #ffffff;
@@ -36,13 +39,17 @@
         width: 90%;
         // height: 70rem;
         box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-        @media (max-width: 992px) {
-          width: 30rem;
-          height: 30rem;
-        }
-        @media (max-width: 576px) {
-          width: 90%;
-          height: 100%;
+        // @media (max-width: 992px) {
+        //   width: 30rem;
+        //   height: 30rem;
+        // }
+        // @media (max-width: 576px) {
+        //   width: 90%;
+        //   height: 100%;
+        // }
+        @media (max-width: 768px) {
+          flex-direction: column;
+          // border-left: 0.12rem solid #ffffff;
         }
       }
     }
@@ -70,9 +77,9 @@
           // border-left: 0.12rem solid #ffffff;
         }
       }
-      @media (max-width: 992px) {
-        width: 50%;
-      }
+      // @media (max-width: 992px) {
+      //   width: 50%;
+      // }
       @media (max-width: 576px) {
         width: 100%;
         // border-left: 0.12rem solid #ffffff;

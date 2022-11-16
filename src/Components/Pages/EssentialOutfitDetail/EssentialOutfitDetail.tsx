@@ -22,7 +22,7 @@ const EssentialOutfitDetail = () => {
         className='essentialOutfitDetail_content'
       >
         <div className='essentialOutfitDetail_content_div'>
-          {/* <h1 className='essentialOutfitDetail_content_h1'>{idOutfit}</h1> */}
+          <h1 className='essentialOutfitDetail_content_h1'>{idOutfit}</h1>
           <img src={products[0].essential_outfit_image} className='essentialOutfitDetail_content_img' alt="Imagen de producto"/>
         </div>
         <div className='essentialOutfitDetail_content_products'>
