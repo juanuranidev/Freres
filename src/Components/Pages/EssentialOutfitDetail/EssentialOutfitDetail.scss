@@ -24,6 +24,10 @@
       padding-bottom: 5rem;
       width: 70%;
       height: 100%;
+      @media (max-width: 768px) {
+        width: 100%;
+        // border-left: 0.12rem solid #ffffff;
+      }
       .essentialOutfitDetail_content_h1 {
         opacity: 0.95;
         text-transform: uppercase;
@@ -47,10 +51,7 @@
         //   width: 90%;
         //   height: 100%;
         // }
-        @media (max-width: 768px) {
-          flex-direction: column;
-          // border-left: 0.12rem solid #ffffff;
-        }
+        
       }
     }
   }
@@ -63,6 +64,10 @@
     width: 30%;
     flex-wrap: wrap;
     padding-bottom: 5rem;
+    @media (max-width: 768px) {
+      width: 100%;
+      // border-left: 0.12rem solid #ffffff;
+    }
     .product {
       // border-top: 0.12rem solid #ffffff;
       width: 90%;
@@ -81,7 +86,7 @@
       //   width: 50%;
       // }
       @media (max-width: 576px) {
-        width: 100%;
+        width: 90%;
         // border-left: 0.12rem solid #ffffff;
       }
     }
