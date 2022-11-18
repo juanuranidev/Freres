@@ -2,7 +2,6 @@
   padding: 8rem 0rem 0rem 0rem;
   background-color: #eeeeee;
   text-align: center;
-  // background-image: url('../../../Assets/EssentialOutfitDetail/EssentialOutfitDetail.png');
   min-height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -14,7 +13,6 @@
     margin: auto;
     @media (max-width: 768px) {
       flex-direction: column;
-      // border-left: 0.12rem solid #ffffff;
     }
     .essentialOutfitDetail_content_div {
       display: flex;
@@ -26,7 +24,6 @@
       height: 100%;
       @media (max-width: 768px) {
         width: 100%;
-        // border-left: 0.12rem solid #ffffff;
       }
       .essentialOutfitDetail_content_h1 {
         opacity: 0.95;
@@ -41,17 +38,7 @@
       .essentialOutfitDetail_content_img {
         opacity: 0.95;
         width: 90%;
-        // height: 70rem;
         box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-        // @media (max-width: 992px) {
-        //   width: 30rem;
-        //   height: 30rem;
-        // }
-        // @media (max-width: 576px) {
-        //   width: 90%;
-        //   height: 100%;
-        // }
-        
       }
     }
   }
@@ -66,28 +53,14 @@
     padding-bottom: 5rem;
     @media (max-width: 768px) {
       width: 100%;
-      // border-left: 0.12rem solid #ffffff;
     }
     .product {
-      // border-top: 0.12rem solid #ffffff;
       width: 90%;
       border: 0.1rem solid #ffffff;
       box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 10%);
       padding: 0rem;
-      &:first-child {
-        // border-left: 0.12rem solid #ffffff;
-      }
-      &:last-child {
-        @media (max-width: 992px) {
-          // border-left: 0.12rem solid #ffffff;
-        }
-      }
-      // @media (max-width: 992px) {
-      //   width: 50%;
-      // }
       @media (max-width: 576px) {
         width: 90%;
-        // border-left: 0.12rem solid #ffffff;
       }
     }
     .essentialOutfitDetail_content_img {
