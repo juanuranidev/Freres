@@ -39,6 +39,7 @@
         opacity: 0.95;
         width: 90%;
         box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2.5rem;
       }
     }
   }
@@ -59,8 +60,12 @@
       border: 0.1rem solid #ffffff;
       box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 10%);
       padding: 0rem;
+      margin-bottom: 2.5rem;
       @media (max-width: 576px) {
         width: 90%;
+      }
+      &:last-child {
+        margin-bottom: 0rem;
       }
     }
     .essentialOutfitDetail_content_img {
