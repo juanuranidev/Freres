@@ -14,7 +14,7 @@ const ModalSelectSizes = ({open, close, modalProducts}: ModalSelectSizesProps) =
   const [size, setSize] = useState<string>("")
   const [modalProduct, setModalProduct] = useState<number>(0)
   const [productsWithSizes, setProductWithSizes] = useState<ProductModel[]>([])
-  console.log(modalProducts)
+
   const { addToCart } = useContext(CartContext)
 
   useEffect(() => {

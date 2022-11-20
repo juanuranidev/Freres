@@ -64,7 +64,7 @@ export const CartContextProvider = ({children}:any) => {
   
   const handleOpenCart = () => setOpenCart(true);
   const handleCloseCart = () => setOpenCart(false); 
-
+  console.log("trest")
   const addToCart = (product:ProductModel, quantity:number, size: string) => {
     const isInCart = cartList.find(((x) => x.id === product.id && x.size === size))
     if(isInCart){
