@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { NewsletterContextProvider } from './Components/Context/NewsletterContext';
 import { CartContextProvider } from './Components/Context/CartContext';
-import { getFirestoreApp } from './Components/Firebase/DbConfig';
+import { getFirestoreApp } from './Services/Firebase/DbConfig';
 import Main from './Components/Pages/Main/Main';
 import Shop from './Components/Pages/Shop/Shop';
 import About from './Components/Pages/About/About';
@@ -16,7 +16,7 @@ import SecretDiscount from './Components/Pages/SecretDiscount/SecretDiscount';
 import BuildYourOutfit from './Components/Pages/BuildYourOutfit/BuildYourOutfit';
 import EssentialOutfits from './Components/Pages/EssentialOutfits/EssentialOutfits';
 import EssentialOutfitDetail from './Components/Pages/EssentialOutfitDetail/EssentialOutfitDetail';
-import './Styles/Base.scss';
+import "./Assets/Styles/Base.scss"
 
 getFirestoreApp()
 
