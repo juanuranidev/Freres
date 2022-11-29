@@ -5,8 +5,8 @@ import { CartContextProvider } from "./Components/Context/CartContext";
 import { getFirestoreApp } from "./Services/Firebase/DbConfig";
 import "./Assets/Styles/Base.scss";
 import Loader from "./Components/Loader/Loader";
-
-const Main = React.lazy(() => import("./Components/Pages/Main/Main"));
+import Main from "./Components/Pages/Shop/Shop"
+// const Main = React.lazy(() => import("./Components/Pages/Main/Main"));
 const Shop = React.lazy(() => import("./Components/Pages/Shop/Shop"));
 const About = React.lazy(() => import("./Components/Pages/About/About"));
 const Footer = React.lazy(() => import("./Components/Footer/Footer"));
@@ -40,10 +40,9 @@ getFirestoreApp();
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading... </div>}>
-      <App />
     <CartContextProvider>
       <NewsletterContextProvider>
+        <App />
         <BrowserRouter>
           <ScrollToTop />
           <Navbar />
@@ -51,19 +50,19 @@ function App() {
             <Route
               path="/"
               element={
-                <React.Suspense fallback={<>Test</>}>
-                  <Main />{" "}
-                </React.Suspense>
+                // <React.Suspense fallback={<>Test</>}>
+                  <Main />
+                /* </React.Suspense> */
               }
-              />
-            <Route
+            />
+            {/* <Route
               path="/shop/:idCategory"
               element={
                 <React.Suspense fallback={<>Test</>}>
                   <Shop />
                 </React.Suspense>
               }
-              />
+            />
             <Route
               path="/essential_outfits"
               element={
@@ -71,7 +70,7 @@ function App() {
                   <EssentialOutfits />
                 </React.Suspense>
               }
-              />
+            />
             <Route
               path="/about"
               element={
@@ -79,7 +78,7 @@ function App() {
                   <About />
                 </React.Suspense>
               }
-              />
+            />
             <Route
               path="/product/:idProduct"
               element={
@@ -87,7 +86,7 @@ function App() {
                   <ProductFinder />
                 </React.Suspense>
               }
-              />
+            />
             <Route
               path="/outfit/:idOutfit"
               element={
@@ -95,7 +94,7 @@ function App() {
                   <EssentialOutfitDetail />
                 </React.Suspense>
               }
-              />
+            />
             <Route
               path="/build-your-outfit"
               element={
@@ -103,7 +102,7 @@ function App() {
                   <BuildYourOutfit />
                 </React.Suspense>
               }
-              />
+            />
             <Route
               path="/secret"
               element={
@@ -111,7 +110,7 @@ function App() {
                   <SecretDiscount />
                 </React.Suspense>
               }
-              />
+            />
             <Route
               path="/checkout"
               element={
@@ -119,7 +118,7 @@ function App() {
                   <Checkout />
                 </React.Suspense>
               }
-              />
+            />
             <Route
               path="*"
               element={
@@ -127,13 +126,12 @@ function App() {
                   <NotFound />
                 </React.Suspense>
               }
-              />
+            /> */}
           </Routes>
           <Footer />
         </BrowserRouter>
       </NewsletterContextProvider>
     </CartContextProvider>
-              </Suspense>
   );
 }
 
