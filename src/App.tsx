@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NewsletterContextProvider } from "./Components/Context/NewsletterContext";
 import { CartContextProvider } from "./Components/Context/CartContext";
-import { getFirestoreApp } from "./Services/Firebase/DbConfig";
+import { getFirestoreApp } from "./Config/Firebase/DbConfig";
 import "./Assets/Styles/Base.scss";
 
 const Main = React.lazy(() => import("./Components/Pages/Main/Main"));
