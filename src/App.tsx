@@ -23,7 +23,7 @@ getFirestoreApp();
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading... </div>}>
+    <Suspense fallback={null}>
       <CartContextProvider>
         <NewsletterContextProvider>
           <BrowserRouter>
