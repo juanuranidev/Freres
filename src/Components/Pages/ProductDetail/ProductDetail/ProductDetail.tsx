@@ -40,10 +40,10 @@ const ProductDetail = ({product}:ProductDetailProps) => {
     <section className='productDetail'>
       <React.Fragment> 
         <motion.div 
+          className='container'
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.25 }}
-          initial={{ x: -100, opacity: 0 }}
-          className='container'>
+          initial={{ x: -100, opacity: 0 }}>
           <ProductImages images={product.images}/>
           <div className='productDetail_content'>
             <ProductTextContent name={product.name} price={product.price} description={product.description} />
