@@ -1,31 +1,28 @@
 import React, { useState } from "react";
-import FreresLogo from "../../Assets/Logos/FreresLogo.jpg";
-import "./Newsletter.scss";
-import { verifyEmail, uploadEmail } from "../../Services/newsletter";
+import { verifyEmail, uploadEmail } from "../../../../Services/newsletter";
+import FreresLogo from "../../../../Assets/Logos/FreresLogo.jpg";
+import "./NewsletterContent.scss";
 
-const Newsletter = () => {
+const NewsletterContent = () => {
   const [loader, setLoader] = useState<boolean>(false);
   const [userEmail, setUserEmail] = useState<string>("");
   const [isSuscribed, setIsSuscribed] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<boolean>(false);
 
-  const handleSetUserEmail = (e: any) => {
-    setUserEmail(e.target.value);
-  };
-
   const handleSubmitUserEmail = async (e: any) => {
     try {
       e.preventDefault();
       setLoader(true);
+
       const isSuscribed: any = await verifyEmail(userEmail);
 
-      if (!isSuscribed.empty) {
+      if (!isSuscribed.docs.length) {
         const response = await uploadEmail(userEmail);
-
         localStorage.setItem("alreadySuscribed", JSON.stringify(true));
-        setIsSuscribed(false);
-      } else {
+
         setIsSuscribed(true);
+      } else {
+        setErrorMessage(true);
       }
     } catch (error) {
       console.log(error);
@@ -36,28 +33,32 @@ const Newsletter = () => {
 
   if (loader) {
     return (
-      <div className="newsletterLoader">
-        <img className="newsletterLoader_img" src={FreresLogo} alt="loader" />
+      <div className="newsletterContentLoader">
+        <img
+          className="newsletterContentLoader_img"
+          src={FreresLogo}
+          alt="loader"
+        />
       </div>
     );
   }
 
   return (
-    <div className="newsletter">
-      <h3 className="newsletter_h3">ÚNETE A NUESTRA TRIBU</h3>
-      <p className="newsletter_p">
+    <div className="newsletterContent">
+      <h3 className="newsletterContent_h3">ÚNETE A NUESTRA TRIBU</h3>
+      <p className="newsletterContent_p">
         SUSCRÍBETE PARA RECIBIR DESCUENTOS, NOVEDADES Y BENEFICIOS EXCLUSIVOS
       </p>
       {isSuscribed ? (
-        <div className="newsletter_suscribed">
-          <p className="newsletter_suscribed_p">
+        <div className="newsletterContent_suscribed">
+          <p className="newsletterContent_suscribed_p">
             HAS SIDO SUSCRITO A NUESTRO NEWSLETTER
           </p>
         </div>
       ) : (
-        <div className="newsletter_div">
+        <div className="newsletterContent_div">
           <form
-            className="newsletter_div_form"
+            className="newsletterContent_div_form"
             onSubmit={(e: any) => handleSubmitUserEmail(e)}
           >
             <input
@@ -65,12 +66,12 @@ const Newsletter = () => {
               type="email"
               placeholder="Email"
               value={userEmail}
-              className="newsletter_div_form_input"
-              onChange={(e) => handleSetUserEmail(e)}
+              className="newsletterContent_div_form_input"
+              onChange={(e: any) => setUserEmail(e.target.value)}
             />
             <button
               type="submit"
-              className={`newsletter_div_form_button ${
+              className={`newsletterContent_div_form_button ${
                 !userEmail && "disabled"
               }`}
               disabled={!userEmail}
@@ -78,8 +79,10 @@ const Newsletter = () => {
               UNIRME
             </button>
           </form>
-          {errorMessage && (
-            <p className="newsletter_error">YA TE ENCUENTRAS SUSCRITO.</p>
+          {errorMessage && !isSuscribed && (
+            <p className="newsletterContent_error">
+              YA TE ENCUENTRAS SUSCRITO.
+            </p>
           )}
         </div>
       )}
@@ -87,4 +90,4 @@ const Newsletter = () => {
   );
 };
 
-export default Newsletter;
+export default NewsletterContent;

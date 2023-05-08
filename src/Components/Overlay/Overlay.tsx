@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { NewsletterContext } from "../../Context/NewsletterContext";
 import { CartContext } from "../../Context/CartContext";
 import "./Overlay.scss";
 
