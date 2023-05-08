@@ -1,24 +1,27 @@
-import React, { useContext } from 'react';
-import { NewsletterContext } from '../Context/NewsletterContext';
-import { CartContext } from '../Context/CartContext';
-import './Overlay.scss';
+import React, { useContext } from "react";
+import { NewsletterContext } from "../../Context/NewsletterContext";
+import { CartContext } from "../../Context/CartContext";
+import "./Overlay.scss";
 
 interface OverlayProps {
-  openMenu?: boolean
-  handleCloseMenu?: () => void
+  openMenu?: boolean;
+  handleCloseMenu?: () => void;
 }
 
-const Overlay = ({openMenu, handleCloseMenu}: OverlayProps) => {
-  const { openCart, handleCloseCart } = useContext(CartContext)
+const Overlay = ({ openMenu, handleCloseMenu }: OverlayProps) => {
+  const { openCart, handleCloseCart } = useContext(CartContext);
 
   const handleClickOutside = () => {
-    handleCloseMenu?.()
-    handleCloseCart?.()
-  }
+    handleCloseMenu?.();
+    handleCloseCart?.();
+  };
 
   return (
-    <div className={openMenu || openCart ? 'overlay visible' : 'overlay'} onClick={handleClickOutside} />
-  )
-}
+    <div
+      className={openMenu || openCart ? "overlay visible" : "overlay"}
+      onClick={handleClickOutside}
+    />
+  );
+};
 
 export default Overlay;
