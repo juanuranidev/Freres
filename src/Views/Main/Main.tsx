@@ -1,23 +1,22 @@
-import React, { useEffect, useContext } from "react";
-import { NewsletterContext } from "../../Context/NewsletterContext";
+import React, { useEffect, useState } from "react";
 import Albums from "./Albums/Albums";
 import Header from "./Header/Header";
 import Slider from "./Slider/Slider";
 import TopSellers from "./TopSellers/TopSellers";
 import Masterpieces from "./Masterpieces/Masterpieces";
-import NewsletterPopup from "./NewsletterPopup/NewsletterPopup";
+import NewsletterPopup from "../../Components/Modals/ModalNewsletter/ModalNewsletter";
 import ModalBackground from "../../Components/Modals/ModalBackground/ModalBackground";
 import ShortcutsGallery from "./ShortcutsGallery/ShortcutsGallery";
 
 const Main = () => {
-  const { activePopup, setActivePopup } = useContext(NewsletterContext);
+  const [activeModal, setActiveModal] = useState(false);
 
   useEffect(() => {
     let active: any;
     let confirmation = localStorage.getItem("alreadySuscribed");
 
     if (!confirmation) {
-      active = setTimeout(() => setActivePopup?.(true), 15000);
+      active = setTimeout(() => setActiveModal(true), 15000);
     }
 
     return () => clearInterval(active);
@@ -31,11 +30,8 @@ const Main = () => {
       <Masterpieces />
       <Albums />
       <Slider />
-      {activePopup && <NewsletterPopup />}
-      <ModalBackground
-        open={activePopup}
-        close={() => setActivePopup?.(false)}
-      />
+      {activeModal && <NewsletterPopup setActiveModal={setActiveModal} />}
+      <ModalBackground open={activeModal} close={() => setActiveModal(false)} />
     </React.Fragment>
   );
 };
