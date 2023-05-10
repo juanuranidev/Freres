@@ -22,7 +22,7 @@ export const verifyEmail = async (userEmail) => {
     const response = await getDocs(queryCollection);
     return response;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
 
@@ -35,6 +35,6 @@ export const uploadEmail = async (userEmail) => {
     const response = await addDoc(emailCollection, emailObject);
     return response;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
