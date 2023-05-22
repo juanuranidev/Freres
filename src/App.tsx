@@ -7,8 +7,8 @@ import "./Assets/Styles/Base.scss";
 const Main = React.lazy(() => import("./Views/Main/Main"));
 const Shop = React.lazy(() => import("./Views/Shop/Shop"));
 const About = React.lazy(() => import("./Views/About/About"));
-const Footer = React.lazy(() => import("./Components/Footer/Footer"));
-const Navbar = React.lazy(() => import("./Components/Navbar/Navbar"));
+const Footer = React.lazy(() => import("./Layout/Footer/Footer"));
+const Navbar = React.lazy(() => import("./Layout/Navbar/Navbar"));
 const Checkout = React.lazy(() => import("./Views/Checkout/Checkout"));
 const NotFound = React.lazy(() => import("./Views/NotFound/NotFound"));
 const ScrollToTop = React.lazy(

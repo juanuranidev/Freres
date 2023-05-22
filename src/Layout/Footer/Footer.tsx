@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Info from "./Info/Info";
-import Newsletter from "../Modals/ModalNewsletter/NewsletterContent/NewsletterContent";
+import NewsletterContent from "../../Components/Modals/ModalNewsletter/NewsletterContent/NewsletterContent";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer_div">
         <Info />
-        <Newsletter />
+        <NewsletterContent />
       </div>
       <div className="footer_brand">
         <p className="footer_brand_p">

@@ -6,8 +6,8 @@ import ShopLink from "./ShopLink/ShopLink";
 import OutfitsLink from "./OutfitsLink/OutfitsLink";
 import FreresLogo from "../../Assets/Logos/FreresLogo.jpg";
 import CartContent from "./CartContent/CartContent";
-import Overlay from "../Overlay/Overlay";
-import ModalBackground from "../Modals/ModalBackground/ModalBackground";
+import Overlay from "../../Components/Overlay/Overlay";
+import ModalBackground from "../../Components/Modals/ModalBackground/ModalBackground";
 import "./Navbar.scss";
 
 const Navbar = () => {
