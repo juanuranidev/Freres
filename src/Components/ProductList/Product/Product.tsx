@@ -25,7 +25,7 @@ const Product = (product: ProductModel) => {
       <div className="product_div">
         <h2 className="product_div_h2">{product.name}</h2>
         <p className="product_div_p">
-          ${product.price.toLocaleString("ES-ar")}
+          ${Number(product.price).toLocaleString("ES-ar")}
         </p>
       </div>
       <div className="product_sizes">
