@@ -12,7 +12,7 @@ const ShopLink = () => {
       <div className="shopLink_content">
         <ImageLink
           link="/shop/camperasybuzos"
-          src="https://freres.ar/wp-content/uploads/2021/12/productos-noviembre-6-scaled.jpeg.webp"
+          src="https://res.cloudinary.com/dhodvztdx/image/upload/v1684813195/HOODIE_BRUN_CLAIR1_untmvb.webp"
           alt="CAMPERAS Y BUZOS"
           p="CAMPERAS Y BUZOS"
         />
@@ -25,12 +25,12 @@ const ShopLink = () => {
         <ImageLink
           link="/shop/pantalones"
           src="https://res.cloudinary.com/dhodvztdx/image/upload/v1682293947/Freres/Jean_Regular_Celeste_Con_Roturas1_o4i5sz.jpg"
-          alt="PANTALONES Y SHORTS"
-          p="PANTALONES Y SHORTS"
+          alt="PANTALONES"
+          p="PANTALONES"
         />
         <ImageLink
           link="/shop/calzado"
-          src="https://freres.ar/wp-content/uploads/2021/07/10-scaled.jpg.webp"
+          src="https://res.cloudinary.com/dhodvztdx/image/upload/v1684889419/BORCEGOS_NOIR2_bf9nwd.webp"
           alt="CALZADO"
           p="CALZADO"
         />

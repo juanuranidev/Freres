@@ -74,7 +74,7 @@ const Shop = () => {
         <div className="shop_categories_div">
           <CustomLink to="/shop/camperasybuzos">CAMPERAS Y BUZOS</CustomLink>
           <CustomLink to="/shop/remeras">REMERAS</CustomLink>
-          <CustomLink to="/shop/pantalones">PANTALONES Y SHORTS</CustomLink>
+          <CustomLink to="/shop/pantalones">PANTALONES</CustomLink>
           <CustomLink to="/shop/calzado">CALZADO</CustomLink>
           <CustomLink to="/shop/accesorios">ACCESORIOS</CustomLink>
         </div>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from "react";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import type { LinkProps } from "react-router-dom";
 import "./ButtonCategories.scss";
 
@@ -11,8 +11,8 @@ function CustomLink({ children, to }: LinkProps) {
   return (
     <Link
       to={to}
-      className='buttonCategories_links_a'
-      style={{ opacity : match ? '0.6' : '1' }}
+      className="buttonCategories_links_a"
+      style={{ opacity: match ? "0.6" : "1" }}
     >
       {children}
     </Link>
@@ -20,33 +20,37 @@ function CustomLink({ children, to }: LinkProps) {
 }
 
 const ButtonCategories = () => {
-  const [showCategories, setShowCategories] = useState(false)
+  const [showCategories, setShowCategories] = useState(false);
 
   return (
-    <div className='buttonCategories'>
-      <div className='buttonCategories_text' onClick={() => setShowCategories(!showCategories)}>
-      <p className='buttonCategories_text_p'>CATEGORÍAS</p>
-      <span className='fas fa-angle-down buttonCategories_text_span'/>
+    <div className="buttonCategories">
+      <div
+        className="buttonCategories_text"
+        onClick={() => setShowCategories(!showCategories)}
+      >
+        <p className="buttonCategories_text_p">CATEGORÍAS</p>
+        <span className="fas fa-angle-down buttonCategories_text_span" />
       </div>
       <AnimatePresence>
         {showCategories && (
           <motion.div
-            initial={{ opacity: 0, y: "-5%"}}
+            initial={{ opacity: 0, y: "-5%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-5%" }}
             transition={{ type: "linear", stiffness: 100 }}
             className="buttonCategories_links"
-            >
+          >
             <CustomLink to="/shop/all">TODOS LOS PRODUCTOS</CustomLink>
             <CustomLink to="/shop/camperasybuzos">CAMPERAS Y BUZOS</CustomLink>
             <CustomLink to="/shop/remeras">REMERAS</CustomLink>
-            <CustomLink to="/shop/pantalones">PANTALONES Y SHORTS</CustomLink>
+            <CustomLink to="/shop/pantalones">PANTALONES</CustomLink>
             <CustomLink to="/shop/calzado">CALZADO</CustomLink>
             <CustomLink to="/shop/accesorios">ACCESORIOS</CustomLink>
-          </motion.div>)}
+          </motion.div>
+        )}
       </AnimatePresence>
     </div>
   );
-}
+};
 
 export default ButtonCategories;
