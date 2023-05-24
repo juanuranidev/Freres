@@ -36,13 +36,13 @@ const ShopLink = () => {
         />
         <ImageLink
           link="/shop/accesorios"
-          src="https://freres.ar/wp-content/uploads/2021/09/5-3-scaled.jpg.webp"
+          src="https://res.cloudinary.com/dhodvztdx/image/upload/v1684899712/GORRA_NOIR1_t5bvxy.webp"
           alt="ACCESORIOS"
           p="ACCESORIOS"
         />
         <ImageLink
           link="/shop/all"
-          src="https://freres.ar/wp-content/uploads/2021/08/Styling-50-scaled.jpg.webp"
+          src="https://res.cloudinary.com/dhodvztdx/image/upload/v1684897143/SCENT_250_ML1_rs4tp9.webp"
           alt="TODOS LOS PRODUCTOS"
           p="TODOS LOS PRODUCTOS"
         />

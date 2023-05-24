@@ -56,7 +56,7 @@ const MenuResponsive = ({
                 <MenuResponsiveSublink
                   link="/shop/camperasybuzos/"
                   onClick={handleCloseMenuResponsive}
-                  src="https://freres.ar/wp-content/uploads/2021/12/productos-noviembre-6-scaled.jpeg.webp"
+                  src="https://res.cloudinary.com/dhodvztdx/image/upload/v1684813195/HOODIE_BRUN_CLAIR1_untmvb.webp"
                   alt="CAMPERAS Y BUZOS"
                   boxShadow={false}
                   text="CAMPERAS Y BUZOS"
@@ -64,7 +64,7 @@ const MenuResponsive = ({
                 <MenuResponsiveSublink
                   link="/shop/remeras/"
                   onClick={handleCloseMenuResponsive}
-                  src="https://freres.ar/wp-content/uploads/2021/10/a.jpg.webp"
+                  src="https://res.cloudinary.com/dhodvztdx/image/upload/v1684731827/Remera_Oversized_Brun1_iuid2l.webp"
                   alt="REMERAS"
                   boxShadow={false}
                   text="REMERAS"
@@ -72,7 +72,7 @@ const MenuResponsive = ({
                 <MenuResponsiveSublink
                   link="/shop/pantalones/"
                   onClick={handleCloseMenuResponsive}
-                  src="https://freres.ar/wp-content/uploads/2021/09/Pantalones-4-scaled.jpg.webp"
+                  src="https://res.cloudinary.com/dhodvztdx/image/upload/v1682293947/Freres/Jean_Regular_Celeste_Con_Roturas1_o4i5sz.jpg"
                   alt="PANTALONES"
                   boxShadow={false}
                   text="PANTALONES"
@@ -80,7 +80,7 @@ const MenuResponsive = ({
                 <MenuResponsiveSublink
                   link="/shop/calzado/"
                   onClick={handleCloseMenuResponsive}
-                  src="https://freres.ar/wp-content/uploads/2021/07/10-scaled.jpg.webp"
+                  src="https://res.cloudinary.com/dhodvztdx/image/upload/v1684889419/BORCEGOS_NOIR2_bf9nwd.webp"
                   alt="CALZADO"
                   boxShadow={false}
                   text="CALZADO"
@@ -88,7 +88,7 @@ const MenuResponsive = ({
                 <MenuResponsiveSublink
                   link="/shop/accesorios/"
                   onClick={handleCloseMenuResponsive}
-                  src="https://freres.ar/wp-content/uploads/2021/09/5-3-scaled.jpg.webp"
+                  src="https://res.cloudinary.com/dhodvztdx/image/upload/v1684899712/GORRA_NOIR1_t5bvxy.webp"
                   alt="ACCESORIOS"
                   boxShadow={false}
                   text="ACCESORIOS"
@@ -96,18 +96,10 @@ const MenuResponsive = ({
                 <MenuResponsiveSublink
                   link="/shop/all/"
                   onClick={handleCloseMenuResponsive}
-                  src="https://freres.ar/wp-content/uploads/2021/08/Styling-50-scaled.jpg.webp"
+                  src="https://res.cloudinary.com/dhodvztdx/image/upload/v1684897143/SCENT_250_ML1_rs4tp9.webp"
                   alt="TODOS LOS PRODUCTOS"
                   boxShadow={false}
                   text="TODOS LOS PRODUCTOS"
-                />
-                <MenuResponsiveSublink
-                  link="/shop/accesorios/"
-                  onClick={handleCloseMenuResponsive}
-                  src="https://freres.ar/wp-content/uploads/2021/09/5-3-scaled.jpg.webp"
-                  alt="ACCESORIOS"
-                  boxShadow={false}
-                  text="ACCESORIOS"
                 />
               </motion.div>
             )}
