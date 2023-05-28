@@ -4,7 +4,7 @@ import {
   handleGetProductsByCategory,
 } from "../../Services/products";
 import { formatProducts } from "../../Utils/products";
-import { ProductModel } from "../../Context/CartContext";
+import { ProductModel } from "../../Models/product.model";
 import { useParams } from "react-router-dom";
 import ButtonCategories from "./ButtonCategories/CategoryButtons";
 import ProductList from "../../Components/ProductList/ProductList";
