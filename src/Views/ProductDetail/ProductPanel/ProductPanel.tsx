@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ProductModel } from "../../../Context/CartContext";
+import { ProductModel } from "../../../Models/product.model";
 import "./ProductPanel.scss";
 
 interface ProductPanelProps {
@@ -12,18 +12,19 @@ interface ProductPanelProps {
 const ProductPanel = ({ title, text, product }: ProductPanelProps) => {
   const [showText, setShowText] = useState<boolean>(false);
 
-  const handleShowtext = () => setShowText(!showText);
-
   useEffect(() => {
     setShowText(false);
   }, [product]);
 
   return (
-    <div className="productPanel">
-      <div className="productPanel_principal" onClick={handleShowtext}>
-        <h4 className="productPanel_principal_h4">{title}</h4>
+    <div className="product_panel">
+      <div
+        className="product_panel_principal"
+        onClick={() => setShowText(!showText)}
+      >
+        <h4 className="product_panel_principal_h4">{title}</h4>
         <span
-          className={`productPanel_principal_button fas fa-angle-${
+          className={`product_panel_principal_button fas fa-angle-${
             showText ? "down" : "right"
           }`}
         />
@@ -31,13 +32,13 @@ const ProductPanel = ({ title, text, product }: ProductPanelProps) => {
       <AnimatePresence>
         {showText && (
           <motion.div
-            initial={{ opacity: 0, y: "-5%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-5%" }}
-            transition={{ type: "linear", stiffness: 100 }}
+            initial={{ opacity: 0, y: "-5%" }}
+            transition={{ type: "linear", stiffness: 100, duration: 0.5 }}
           >
-            <div className={`productPanel_secondary ${showText && "show"}`}>
-              <p className="productPanel_secondary_p">{text}</p>
+            <div className={`product_panel_secondary ${showText && "show"}`}>
+              <p className="product_panel_secondary_p">{text}</p>
             </div>
           </motion.div>
         )}

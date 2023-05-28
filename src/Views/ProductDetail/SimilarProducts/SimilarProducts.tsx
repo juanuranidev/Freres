@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ProductModel } from "../../../Context/CartContext";
+import { ProductModel } from "../../../Models/product.model";
 import ProductList from "../../../Components/ProductList/ProductList";
 import "./SimilarProducts.scss";
 
@@ -21,16 +21,14 @@ const SimilarProducts = ({ product, products }: SimilarProductsProps) => {
   }, [product]);
 
   return (
-    <React.Fragment>
-      {similarProducts && (
-        <div className="similarProducts">
-          <h2 className="similarProducts_h2">TAMBIÉN TE PUEDE GUSTAR</h2>
-          <div className="similarProducts_div">
-            <ProductList products={similarProducts} />
-          </div>
+    similarProducts && (
+      <div className="similar_products">
+        <h2 className="similar_products_h2">TAMBIÉN TE PUEDE GUSTAR</h2>
+        <div className="similar_products_div">
+          <ProductList products={similarProducts} />
         </div>
-      )}
-    </React.Fragment>
+      </div>
+    )
   );
 };
 
