@@ -8,14 +8,14 @@ import "./ShortcutsGallery.scss";
 
 const ShortcutsGallery = () => {
   return (
-    <section className="shortcutsGallery">
-      <Link className="shortcutsGallery_a" to="/essential_outfits">
+    <section className="shortcuts_gallery">
+      <Link className="shortcuts_gallery_a" to="/essential_outfits">
         <GaleryImage p="OUTFITS" img={ShorcutsGallery1} />
       </Link>
-      <Link className="shortcutsGallery_a" to="/shop/camperasybuzos">
+      <Link className="shortcuts_gallery_a" to="/shop/camperasybuzos">
         <GaleryImage p="CAMPERAS Y BUZOS" img={ShorcutsGallery2} />
       </Link>
-      <Link className="shortcutsGallery_a" to="/shop/all">
+      <Link className="shortcuts_gallery_a" to="/shop/all">
         <GaleryImage p="TODOS LOS PRODUCTOS" img={ShorcutsGallery3} />
       </Link>
     </section>
