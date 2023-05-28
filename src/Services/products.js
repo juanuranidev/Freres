@@ -59,3 +59,45 @@ export const handleGetTopSellerProducts = async () => {
     return error;
   }
 };
+
+export const handleGetMasterpieceProducts = async () => {
+  try {
+    const categoryCollection = query(
+      collection(dataBase, "products"),
+      where("masterpiece", "==", true)
+    );
+
+    const response = await getDocs(categoryCollection);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const handleGetEssentialOutfitProducts = async () => {
+  try {
+    const categoryCollection = query(
+      collection(dataBase, "products"),
+      where("is_essential_outfit", "==", true)
+    );
+
+    const response = await getDocs(categoryCollection);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const handleGetProductsByEssentialOutfit = async (idOutfit) => {
+  try {
+    const categoryCollection = query(
+      collection(dataBase, "products"),
+      where("essential_outfit", "==", idOutfit)
+    );
+
+    const response = await getDocs(categoryCollection);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
