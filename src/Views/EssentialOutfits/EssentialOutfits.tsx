@@ -1,23 +1,49 @@
-import React, { useState } from "react";
-import { ProductModel } from "../../Context/CartContext";
+import React, { useState, useEffect } from "react";
+import { handleGetEssentialOutfitProducts } from "../../Services/products";
+import { formatProducts } from "../../Utils/products";
+import { ProductModel } from "../../Models/product.model";
 import { motion } from "framer-motion";
 import Loader from "../../Components/Loader/Loader";
-import useGetCustomProducts from "../../Hooks/useGetCustomProducts";
+import StreetOutfit from "../../Assets/Images/StreetOutfit.jpg";
+import CasualOutfit from "../../Assets/Images/CasualOutfit.jpg";
 import EssentialOutfit from "./EssentialOutfit/EssentialOutfit";
 import ModalBackground from "../../Components/Modals/ModalBackground/ModalBackground";
 import ModalSelectSizes from "../../Components/Modals/ModalSelectSizes/ModalSelectSizes";
 import "./EssentialOutfits.scss";
 
 const EssentialOutfits = () => {
+  const [loader, setLoader] = useState<boolean>(true);
+  const [products, setProducts] = useState<ProductModel[]>([]);
+  const [casualOutfit, setCasualOutfit] = useState<ProductModel[]>([]);
+  const [streetOutfit, setStreetOutfit] = useState<ProductModel[]>([]);
   const [modalProducts, setModalProducts] = useState<ProductModel[]>([]);
   const [modalBackground, setModalBackground] = useState<boolean>(false);
   const [modalSelectSizes, setModalSelectSizes] = useState<boolean>(false);
 
-  const { loader, products } = useGetCustomProducts(
-    "is_an_essential_outfit",
-    "==",
-    true
-  );
+  const handleGetProducts = async () => {
+    setLoader(true);
+    try {
+      const response: any = await handleGetEssentialOutfitProducts();
+      setProducts(formatProducts(response.docs));
+    } catch (error) {
+      console.log(error);
+      setLoader(false);
+    }
+    setLoader(false);
+  };
+
+  const handleFilterProducts = () => {
+    setCasualOutfit(
+      products.filter(
+        (product: ProductModel) => product.essential_outfit === "casual"
+      )
+    );
+    setStreetOutfit(
+      products.filter(
+        (product: ProductModel) => product.essential_outfit === "street"
+      )
+    );
+  };
 
   const handleOpenModalSizes = (productsForModal: ProductModel[]) => {
     setModalProducts(productsForModal);
@@ -31,88 +57,41 @@ const EssentialOutfits = () => {
     setModalBackground(false);
   };
 
+  useEffect(() => {
+    handleGetProducts();
+  }, []);
+
+  useEffect(() => {
+    if (products.length) {
+      handleFilterProducts();
+    }
+  }, [products]);
+
   if (loader) return <Loader />;
-  // To do: Page for no products
 
   return (
-    <div className="essentialOutfits">
+    <div className="essential_outfits">
       <motion.div
-        className="essentialOutfits_div"
+        className="essential_outfits_div"
         animate={{ x: 0, opacity: 1 }}
         initial={{ x: -100, opacity: 0 }}
         transition={{ ease: "linear", duration: 0.25 }}
       >
         <EssentialOutfit
-          name={"ELEGANT"}
+          name={"STREET"}
           imageDirection={"right"}
-          link={"/outfit/elegant"}
-          products={products.filter(
-            (product: any) => product.essential_outfit === "elegant"
-          )}
-          image={
-            "https://freres.ar/wp-content/uploads/2021/08/IMG_0350-1-uai-1440x1440.jpg"
-          }
-          handleOpenModalSizes={() =>
-            handleOpenModalSizes(
-              products.filter(
-                (product: any) => product.essential_outfit === "elegant"
-              )
-            )
-          }
-        />
-        <EssentialOutfit
-          name={"RELAXED"}
-          imageDirection={"left"}
-          link={"/outfit/relaxed"}
-          products={products.filter(
-            (product: any) => product.essential_outfit === "relaxed"
-          )}
-          image={
-            "https://freres.ar/wp-content/uploads/2021/08/OUTFIT-4-scaled-uai-720x720.jpg"
-          }
-          handleOpenModalSizes={() =>
-            handleOpenModalSizes(
-              products.filter(
-                (product: any) => product.essential_outfit === "relaxed"
-              )
-            )
-          }
+          link={"/outfit/street"}
+          products={streetOutfit}
+          image={StreetOutfit}
+          handleOpenModalSizes={() => handleOpenModalSizes(streetOutfit)}
         />
         <EssentialOutfit
           name={"CASUAL"}
-          link={"/outfit/casual"}
-          imageDirection={"right"}
-          products={products.filter(
-            (product: any) => product.essential_outfit === "casual"
-          )}
-          image={
-            "https://freres.ar/wp-content/uploads/2021/08/OUTFIT-6-scaled-uai-720x720.jpg"
-          }
-          handleOpenModalSizes={() =>
-            handleOpenModalSizes(
-              products.filter(
-                (product: any) => product.essential_outfit === "casual"
-              )
-            )
-          }
-        />
-        <EssentialOutfit
-          name={"STREET"}
-          link={"/outfit/street"}
           imageDirection={"left"}
-          products={products.filter(
-            (product: any) => product.essential_outfit === "street"
-          )}
-          image={
-            "https://freres.ar/wp-content/uploads/2021/08/IMG_0341-1-uai-720x720.jpg"
-          }
-          handleOpenModalSizes={() =>
-            handleOpenModalSizes(
-              products.filter(
-                (product: any) => product.essential_outfit === "street"
-              )
-            )
-          }
+          link={"/outfit/casual"}
+          products={casualOutfit}
+          image={CasualOutfit}
+          handleOpenModalSizes={() => handleOpenModalSizes(casualOutfit)}
         />
       </motion.div>
       <ModalBackground open={modalBackground} close={handleCloseModalSizes} />

@@ -1,9 +1,9 @@
-.essentialOutfits{
+.essential_outfits {
+  display: flex;
+  padding: 8rem 0rem 0rem 0rem;
+  min-height: 100vh;
+  .essential_outfits_div {
     display: flex;
-    padding: 8rem 0rem 0rem 0rem;
-    min-height: 100vh;
-    .essentialOutfits_div{
-        display: flex;
-        flex-direction: column;
-    }
+    flex-direction: column;
+  }
 }
