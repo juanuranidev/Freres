@@ -1,21 +1,19 @@
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ProductModel } from "../../../Context/CartContext";
+import { motion } from "framer-motion";
+import { ProductModel } from "../../../Models/product.model";
 import FreresLogoWithoutBackground from "../../../Assets/Logos/FreresLogoWithoutBackground.png";
 import "./OutfitProducts.scss";
 
 interface OutfitProductsProps {
-  showItems: boolean;
-  products: ProductModel[];
   loader: boolean;
-  handleSetItem: (product: ProductModel) => void;
+  productsToShow: ProductModel[];
+  handleSetProduct: (product: ProductModel) => void;
 }
 
 const OutfitProducts = ({
-  showItems,
-  products,
   loader,
-  handleSetItem,
+  productsToShow,
+  handleSetProduct,
 }: OutfitProductsProps) => {
   if (loader) {
     return (
@@ -31,32 +29,23 @@ const OutfitProducts = ({
 
   return (
     <div className="outfit_products">
-      <AnimatePresence>
-        {showItems && (
+      {!loader &&
+        productsToShow.map((product: ProductModel, index: number) => (
           <motion.div
-            initial={{ opacity: 0, y: "-5%" }}
+            key={index}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-5%" }}
-            transition={{ type: "linear" }}
-            className="outfit_products_div"
+            initial={{ opacity: 0, y: "-5%" }}
+            transition={{ delay: index * 0.1 }}
           >
-            {products.map((product: ProductModel) => (
-              <img
-                key={product.id}
-                src={product.images[0]}
-                className="outfit_products_div_img"
-                onClick={() => handleSetItem(product)}
-                alt={product.name}
-              />
-            ))}
+            <img
+              key={product.id}
+              src={product.images[0]}
+              className="outfit_products_img"
+              onClick={() => handleSetProduct(product)}
+              alt={product.name}
+            />
           </motion.div>
-        )}
-        {!showItems && (
-          <h2 className="outfit_products_h2">
-            SELECCIONA UNA CATEGORIA PARA MODIFICAR TU OUTFIT
-          </h2>
-        )}
-      </AnimatePresence>
+        ))}
     </div>
   );
 };
