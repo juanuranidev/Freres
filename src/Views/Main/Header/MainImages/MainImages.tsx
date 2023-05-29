@@ -5,10 +5,10 @@ import "./MainImages.scss";
 
 const MainImages = () => {
   return (
-    <div className="mainImages">
-      <h1 className="mainImages_h1">Frères</h1>
-      <img className="mainImages_img" src={Header1} alt="Imágen principal" />
-      <img className="mainImages_img" src={Header2} alt="Imágen principal" />
+    <div className="main_images">
+      <h1 className="main_images_h1">Frères</h1>
+      <img className="main_images_img" src={Header1} alt="Imágen principal" />
+      <img className="main_images_img" src={Header2} alt="Imágen principal" />
       <div className="left" />
       <div className="right" />
     </div>
