@@ -1,19 +1,12 @@
 import React from "react";
-import { ProductModel } from "../../../Context/CartContext";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ProductModel } from "../../../Models/product.model";
 import Sizes from "../../Sizes/Sizes";
 import "./Product.scss";
 
 const Product = (product: ProductModel) => {
   return (
-    <motion.div
-      className="product"
-      exit={{ opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      initial={{ x: -100, opacity: 0 }}
-      transition={{ ease: "linear", duration: 0.25 }}
-    >
+    <div className="product">
       <Link to={`/product/${product.id}`}>
         <img
           src={product.images[0]}
@@ -32,7 +25,7 @@ const Product = (product: ProductModel) => {
         <p className="product_sizes_p">AGREGADO RÁPIDO</p>
         <Sizes sizeType={product.format_of_size_chart} product={product} />
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -1,60 +1,54 @@
-.product{
-    width: 25%;
-    text-align: center;
-    padding-bottom: 1rem;
-    background-color: #eeeeee;
-    border-right: 0.12rem solid #ffffff;
-    border-bottom: 0.12rem solid #ffffff;
-    @media(max-width: 992px){
-        width: 50%;
+.product {
+  width: 100%;
+  padding-bottom: 1rem;
+  .product_img {
+    width: 100%;
+  }
+  .product_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    .product_div_h2 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
     }
-    @media(max-width: 576px){
-        width: 100%;
+    .product_div_p {
+      font-size: 0.8rem;
     }
-    .product_img{
-        width: 100%;
+  }
+  .product_sizes {
+    display: none;
+    height: 4rem;
+    .product_sizes_p {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
     }
-    .product_div{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 4rem;
-        margin-top: -1rem;
-        .product_div_h2{
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-        .product_div_p{
-            font-size: 0.8rem;
-        }
+  }
+  &:hover {
+    padding-bottom: 0rem;
+    @media (max-width: 992px) {
+      padding-bottom: 1rem;
     }
-    .product_sizes{
-        display: none;
-        height: 2rem;
-        height: 4rem;
-        margin-top: -1rem;
-        .product_sizes_p{
-            display: flex;
-            margin-bottom: 0.5rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
+  }
+  &:hover > .product_sizes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 992px) {
+      display: none;
     }
-    &:hover > .product_sizes{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        @media(max-width: 992px){
-            display: none;
-        }
+  }
+  &:hover > .product_div {
+    display: none;
+    @media (max-width: 992px) {
+      display: flex;
     }
-    &:hover > .product_div{
-        display: none;
-        @media(max-width: 992px){
-            display: flex;
-        }
-    }
+  }
 }
