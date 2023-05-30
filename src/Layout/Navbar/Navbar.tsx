@@ -1,29 +1,23 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
-import MenuResponsive from "./MenuResponsive/MenuResponsive";
+import { Link } from "react-router-dom";
 import ShopLink from "./ShopLink/ShopLink";
-import OutfitsLink from "./OutfitsLink/OutfitsLink";
 import FreresLogo from "../../Assets/Logos/FreresLogo.jpg";
+import OutfitsLink from "./OutfitsLink/OutfitsLink";
 import CartContent from "./CartContent/CartContent";
-import Overlay from "../../Components/Overlay/Overlay";
+import MenuResponsive from "./MenuResponsive/MenuResponsive";
 import ModalBackground from "../../Components/Modals/ModalBackground/ModalBackground";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const { cartList, openCart, handleOpenCart, handleCloseCart } =
+    useContext(CartContext);
+
   const [openMenu, setOpenMenu] = useState<boolean>(false);
-  const [modalBackground, setModalBackground] = useState<boolean>(false);
-
-  const { cartList, handleOpenCart } = useContext(CartContext);
-
-  const handleOpenMenuResponsive = () => {
-    setOpenMenu(true);
-    setModalBackground(true);
-  };
 
   const handleCloseMenuResponsive = () => {
     setOpenMenu(false);
-    setModalBackground(false);
+    handleCloseCart!();
   };
 
   return (
@@ -31,7 +25,7 @@ const Navbar = () => {
       <div className="nav_openMenu">
         <span
           className="fas fa-bars fa-2x nav_openMenu_span"
-          onClick={handleOpenMenuResponsive}
+          onClick={() => setOpenMenu(true)}
         />
       </div>
       <ul className="nav_ul">
@@ -53,9 +47,8 @@ const Navbar = () => {
         </p>
       </ul>
       <CartContent />
-      <Overlay openMenu={openMenu} handleCloseMenu={() => setOpenMenu(false)} />
       <ModalBackground
-        open={modalBackground}
+        open={openMenu || openCart}
         close={handleCloseMenuResponsive}
       />
       <MenuResponsive
