@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductModel } from "../../../../Context/CartContext";
+import { ProductModel } from "../../../../Models/product.model";
 import "./ContentProduct.scss";
 
 const ContentProduct = (product: ProductModel) => {

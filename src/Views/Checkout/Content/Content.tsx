@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { CartContext, ProductModel } from "../../../Context/CartContext";
+import { ProductModel } from "../../../Models/product.model";
+import { CartContext } from "../../../Context/CartContext";
 import ContentProduct from "./ContentProduct/ContentProduct";
 import MercadoPago from "./MercadoPago/MercadoPago";
 import Coupon from "./Coupon/Coupon";

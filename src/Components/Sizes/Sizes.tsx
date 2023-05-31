@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { ProductModel, CartContext } from "../../Context/CartContext";
+import { ProductModel } from "../../Models/product.model";
+import { CartContext } from "../../Context/CartContext";
 import "./Sizes.scss";
 
 interface SizesProps {
