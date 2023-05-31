@@ -1,14 +1,17 @@
-import React from 'react';
-import './ModalBackground.scss';
+import React from "react";
+import "./ModalBackground.scss";
 
 interface ModalBackgroundProps {
   open: boolean;
   close: () => void;
 }
 
-const ModalBackground = ({open, close}: ModalBackgroundProps) => {
+const ModalBackground = ({ open, close }: ModalBackgroundProps) => {
   return (
-    <div className={`${open ? 'modalBackground visible' : 'modalBackground'}`} onClick={close} />
+    <div
+      className={`${open ? "modal_background visible" : "modal_background"}`}
+      onClick={close}
+    />
   );
 };
 
