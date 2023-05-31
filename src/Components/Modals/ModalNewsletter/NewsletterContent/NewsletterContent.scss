@@ -1,4 +1,4 @@
-.newsletterContent {
+.newsletter_content {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -7,13 +7,13 @@
   @media (max-width: 992px) {
     width: 100%;
   }
-  .newsletterContent_h3 {
+  .newsletter_content_h3 {
     font-weight: 700;
     font-size: 1rem;
     text-align: left;
     margin-bottom: 0.5rem;
   }
-  .newsletterContent_p {
+  .newsletter_content_p {
     text-align: left;
     font-size: 0.8rem;
     margin: 0rem 1rem 1rem 0rem;
@@ -22,18 +22,18 @@
       align-items: center;
     }
   }
-  .newsletterContent_suscribed {
+  .newsletter_content_suscribed {
     background: #d2e4c4;
     color: #307a07;
     padding: 1rem;
     border-radius: 0.25rem;
-    .newsletterContent_suscribed_p {
+    .newsletter_content_suscribed_p {
       font-size: 0.8rem;
     }
   }
-  .newsletterContent_div {
-    .newsletterContent_div_form {
-      .newsletterContent_div_form_input {
+  .newsletter_content_div {
+    .newsletter_content_div_form {
+      .newsletter_content_div_form_input {
         border: none;
         padding: 0.5rem;
         background-color: #eeeeee;
@@ -41,7 +41,7 @@
         margin-right: 0.5rem;
         width: 10rem;
       }
-      .newsletterContent_div_form_button {
+      .newsletter_content_div_form_button {
         background-color: #ffffff;
         border: 1px solid #000000;
         box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
@@ -59,17 +59,17 @@
       }
     }
   }
-  .newsletterContent_error {
+  .newsletter_content_error {
     font-size: 0.7rem;
     margin-top: 0.5rem;
     color: #ff0000;
   }
 }
-.newsletterContentLoader {
+.newsletter_content_loader {
   width: 50%;
   display: flex;
   justify-content: center;
-  .newsletterContentLoader_img {
+  .newsletter_content_loader_img {
     width: 6rem;
     animation: FadeInOut 4s infinite;
   }

@@ -1,4 +1,4 @@
-.modalNewsletter {
+.modal_newsletter {
   display: flex;
   align-items: center;
   position: fixed;
@@ -11,7 +11,7 @@
   @media (max-width: 768px) {
     flex-direction: column-reverse;
   }
-  .modalNewsletter_div {
+  .modal_newsletter_div {
     height: 30rem;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@
       height: 18rem;
       width: 18rem;
     }
-    .modalNewsletter_div_p {
+    .modal_newsletter_div_p {
       font-size: 0.8rem;
       user-select: none;
       -ms-user-select: none;
@@ -58,7 +58,7 @@
       }
     }
   }
-  .modalNewsletter_img {
+  .modal_newsletter_img {
     width: 30rem;
     height: 30rem;
     @media (max-width: 992px) {

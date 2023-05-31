@@ -10,10 +10,9 @@ const NewsletterContent = () => {
   const [errorMessage, setErrorMessage] = useState<boolean>(false);
 
   const handleSubmitUserEmail = async (e: any) => {
+    e.preventDefault();
+    setLoader(true);
     try {
-      e.preventDefault();
-      setLoader(true);
-
       const isSuscribed: any = await verifyEmail(userEmail);
 
       if (!isSuscribed.docs.length) {
@@ -33,9 +32,9 @@ const NewsletterContent = () => {
 
   if (loader) {
     return (
-      <div className="newsletterContentLoader">
+      <div className="newsletter_content_loader">
         <img
-          className="newsletterContentLoader_img"
+          className="newsletter_content_loader_img"
           src={FreresLogo}
           alt="loader"
         />
@@ -44,21 +43,21 @@ const NewsletterContent = () => {
   }
 
   return (
-    <div className="newsletterContent">
-      <h3 className="newsletterContent_h3">ÚNETE A NUESTRA TRIBU</h3>
-      <p className="newsletterContent_p">
+    <div className="newsletter_content">
+      <h3 className="newsletter_content_h3">ÚNETE A NUESTRA TRIBU</h3>
+      <p className="newsletter_content_p">
         SUSCRÍBETE PARA RECIBIR DESCUENTOS, NOVEDADES Y BENEFICIOS EXCLUSIVOS
       </p>
       {isSuscribed ? (
-        <div className="newsletterContent_suscribed">
-          <p className="newsletterContent_suscribed_p">
+        <div className="newsletter_content_suscribed">
+          <p className="newsletter_content_suscribed_p">
             HAS SIDO SUSCRITO A NUESTRO NEWSLETTER
           </p>
         </div>
       ) : (
-        <div className="newsletterContent_div">
+        <div className="newsletter_content_div">
           <form
-            className="newsletterContent_div_form"
+            className="newsletter_content_div_form"
             onSubmit={(e: any) => handleSubmitUserEmail(e)}
           >
             <input
@@ -66,12 +65,12 @@ const NewsletterContent = () => {
               type="email"
               placeholder="Email"
               value={userEmail}
-              className="newsletterContent_div_form_input"
+              className="newsletter_content_div_form_input"
               onChange={(e: any) => setUserEmail(e.target.value)}
             />
             <button
               type="submit"
-              className={`newsletterContent_div_form_button ${
+              className={`newsletter_content_div_form_button ${
                 !userEmail && "disabled"
               }`}
               disabled={!userEmail}
@@ -80,7 +79,7 @@ const NewsletterContent = () => {
             </button>
           </form>
           {errorMessage && !isSuscribed && (
-            <p className="newsletterContent_error">
+            <p className="newsletter_content_error">
               YA TE ENCUENTRAS SUSCRITO.
             </p>
           )}
