@@ -1,15 +1,21 @@
-import React from 'react';
-import './TertiaryButton.scss';
+import React from "react";
+import "./TertiaryButton.scss";
 
 interface TertiaryButtonProps {
-    text: string;
-    disabled?: any;
-    onClick: () => void;
+  text: string;
+  disabled?: any;
+  onClick: () => void;
 }
 
-const TertiaryButton = ({text, disabled, onClick}: TertiaryButtonProps) => {
+const TertiaryButton = ({ text, disabled, onClick }: TertiaryButtonProps) => {
   return (
-    <button onClick={onClick} className={`${disabled ? 'tertiaryButton_disabled' : 'tertiaryButton'}`} disabled={disabled} >{text}</button>
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`${disabled ? "tertiary_button_disabled" : "tertiary_button"}`}
+    >
+      {text}
+    </button>
   );
 };
 
