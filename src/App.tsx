@@ -14,8 +14,8 @@ const NotFound = React.lazy(() => import("./Views/NotFound/NotFound"));
 const ScrollToTop = React.lazy(
   () => import("./Components/ScrollToTop/ScrollToTop")
 );
-const ProductFinder = React.lazy(
-  () => import("./Views/ProductDetail/ProductFinder")
+const ProductDetail = React.lazy(
+  () => import("./Views/ProductDetail/ProductDetail")
 );
 const SecretDiscount = React.lazy(
   () => import("./Views/SecretDiscount/SecretDiscount")
@@ -44,7 +44,7 @@ function App() {
             <Route path="/shop/:idCategory" element={<Shop />} />
             <Route path="/essential_outfits" element={<EssentialOutfits />} />
             <Route path="/about" element={<About />} />
-            <Route path="/product/:category" element={<ProductFinder />} />
+            <Route path="/product/:productId" element={<ProductDetail />} />
             <Route
               path="/outfit/:idOutfit"
               element={<EssentialOutfitDetail />}
