@@ -1,14 +1,16 @@
-import React from 'react';
-import './QuaternaryButton.scss';
+import React from "react";
+import "./QuaternaryButton.scss";
 
 interface QuaternaryButtonProps {
-    text: string;
-    onClick: () => void;
-  };
+  text: string;
+  onClick: () => void;
+}
 
-const QuaternaryButton = ({text, onClick}: QuaternaryButtonProps) => {
+const QuaternaryButton = ({ text, onClick }: QuaternaryButtonProps) => {
   return (
-    <button className='quaternaryButton' onClick={onClick}>{text}</button>
+    <button className="quaternary_button" onClick={onClick}>
+      {text}
+    </button>
   );
 };
 
