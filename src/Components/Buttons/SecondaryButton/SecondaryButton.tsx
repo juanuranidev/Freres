@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './SecondaryButton.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./SecondaryButton.scss";
 
 interface SecondaryButtonProps {
   link: string;
@@ -8,12 +8,14 @@ interface SecondaryButtonProps {
   onClick: () => void;
 }
 
-const SecondaryButton = ({link, text, onClick}: SecondaryButtonProps) => {
+const SecondaryButton = ({ link, text, onClick }: SecondaryButtonProps) => {
   return (
     <Link to={link}>
-      <button className='secondaryButton' onClick={onClick}>{text}</button>
+      <button className="secondary_button" onClick={onClick}>
+        {text}
+      </button>
     </Link>
   );
-}
+};
 
 export default SecondaryButton;
