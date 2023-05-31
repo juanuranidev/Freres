@@ -1,15 +1,33 @@
-import React from "react";
-import Loader from "../../../Components/Loader/Loader";
-import ProductList from "../../../Components/ProductList/ProductList";
+import React, { useState, useEffect } from "react";
+import { handleGetMasterpieceProducts } from "../../../Services/products";
+import { formatProducts } from "../../../Utils/products";
+import { ProductModel } from "../../../Models/product.model";
 import PrimaryButton from "../../../Components/Buttons/PrimaryButton/PrimaryButton";
-import useGetCustomProducts from "../../../Hooks/useGetCustomProducts";
+import ProductList from "../../../Components/ProductList/ProductList";
+import Loader from "../../../Components/Loader/Loader";
 import "./Masterpieces.scss";
 
 const Masterpieces = () => {
-  const { products, loader } = useGetCustomProducts("masterpiece", "==", true);
+  const [loader, setLoader] = useState<boolean>(false);
+  const [products, setProducts] = useState<ProductModel[]>([]);
+
+  const handleGetProducts = async () => {
+    setLoader(true);
+    try {
+      const response: any = await handleGetMasterpieceProducts();
+      setProducts(formatProducts(response.docs));
+    } catch (error) {
+      console.log(error);
+      setLoader(false);
+    }
+    setLoader(false);
+  };
+
+  useEffect(() => {
+    handleGetProducts();
+  }, []);
 
   if (loader) return <Loader />;
-
   if (!products.length) return null;
 
   return (
